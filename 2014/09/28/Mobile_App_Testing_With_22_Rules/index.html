@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Test & testing & tester">
 <meta property="og:description" content="随着现在智能手机的大规模普及，移动app的使用也越来越广泛，导致了大量公司进入移动app开发领域。这一趋势带来的挑战是产品需要以更高的品质，在更短的时间内投放到市场，并不断得到改进。
 移动app可以分为原生app和混合Hybrid app，它相对于传统的桌面应用来说有着诸多不同，工具和方法论的相对缺乏导致移动app的测试给测试人员带来了更多的挑战。笔者经过两年多对电信运营商的移动门户app的测试，">
-<meta property="og:updated_time" content="2015-07-20T14:25:44.000Z">
+<meta property="og:updated_time" content="2015-07-20T14:58:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动app测试的22条军规">
 <meta name="twitter:description" content="随着现在智能手机的大规模普及，移动app的使用也越来越广泛，导致了大量公司进入移动app开发领域。这一趋势带来的挑战是产品需要以更高的品质，在更短的时间内投放到市场，并不断得到改进。
@@ -85,10 +85,10 @@
       
         <p>随着现在智能手机的大规模普及，移动app的使用也越来越广泛，导致了大量公司进入移动app开发领域。这一趋势带来的挑战是产品需要以更高的品质，在更短的时间内投放到市场，并不断得到改进。</p>
 <p>移动app可以分为原生app和混合Hybrid app，它相对于传统的桌面应用来说有着诸多不同，工具和方法论的相对缺乏导致移动app的测试给测试人员带来了更多的挑战。笔者经过两年多对电信运营商的移动门户app的测试，总结出以下对于原生app的测试经验和实践（其实对于Hybrid app，这些经验和实践在很大程度上也是通用的）。</p>
-<h2 id="1-_设备和平台">1. 设备和平台</h2><p>由于移动设备的碎片化（操作系统，设备硬件，屏幕尺寸，分辨率，像素密度），从资源和投入产出比的考虑出发，测试人员不可能穷尽所有设备和操作系统的版本来进行全覆盖的测试，从而需要根据目标用户的分布来选择需要测试的设备。通常，我们使用Google Analytics或Adobe Omniture来统计目标用户的分布，还需要考虑各种操作系统所占用户的比率，这个可以通过Apple和Google官方发布的版本占有率来了解。<a href="https://developer.apple.com/support/appstore/，http://developer.android.com/about/dashboards/index.html。" target="_blank" rel="external">https://developer.apple.com/support/appstore/，http://developer.android.com/about/dashboards/index.html。</a></p>
+<h2 id="1-_设备和平台">1. 设备和平台</h2><p>由于移动设备的碎片化（操作系统，设备硬件，屏幕尺寸，分辨率，像素密度），从资源和投入产出比的考虑出发，测试人员不可能穷尽所有设备和操作系统的版本来进行全覆盖的测试，从而需要根据目标用户的分布来选择需要测试的设备。通常，我们使用Google Analytics或Adobe Omniture来统计目标用户的分布，还需要考虑各种操作系统所占用户的比率，这个可以通过Apple和Google官方发布的版本占有率来了解。<a href="https://developer.apple.com/support/appstore/" target="_blank" rel="external">https://developer.apple.com/support/appstore/</a> 和 <a href="http://developer.android.com/about/dashboards/index.html" target="_blank" rel="external">http://developer.android.com/about/dashboards/index.html</a> 。</p>
 <h2 id="2-_移动网络切换">2. 移动网络切换</h2><p>由于移动app的特殊性－移动着应用，导致了我们需要更加关注移动网络变化对于app的影响，比如，不同网络（3g，4g，Wi-Fi）之间的使用和切换，无网络和/或Wi-Fi时，开启飞行模式时，对于需要进行网络注册并拿到信令的app会有比较大的影响；同时我们需要对这些情况进行异常处理，比如提供明确而人性化的提示。</p>
 <h2 id="3-_多任务处理">3. 多任务处理</h2><p>在智能手机上我们经常会同时执行多个app，这就要求我们对于app切换做处理。其中包括用户从一个app切换到其它的app，甚至是从后台关闭app，需要考虑是否对用户的当前操作进行保存，以及用户再次打开/恢复app的时候，需要进行什么操作。</p>
-<h2 id="4-_手势操作">4. 手势操作</h2><p>当前主流操作系统都支持手势操作，而app的手势有可能会和操作系统的手势冲突。比如iOS7开始支持的屏幕左边缘右滑返回上一级的手势操作，就和之前很多app的抽屉式导航操作起了冲突。细节可以参考<a href="http://www.zhihu.com/question/21198233。" target="_blank" rel="external">http://www.zhihu.com/question/21198233。</a></p>
+<h2 id="4-_手势操作">4. 手势操作</h2><p>当前主流操作系统都支持手势操作，而app的手势有可能会和操作系统的手势冲突。比如iOS7开始支持的屏幕左边缘右滑返回上一级的手势操作，就和之前很多app的抽屉式导航操作起了冲突。细节可以参考<a href="http://www.zhihu.com/question/21198233" target="_blank" rel="external">http://www.zhihu.com/question/21198233</a> 。</p>
 <h2 id="5-_用户体验">5. 用户体验</h2><p>我们不仅要考虑到横竖屏对app显示的影响，app对辅助功能accessibility的支持程度，还需要在认识到由于iOS和Android不同的设计风格和规范，app需要尽可能在不同设备上保持和操作系统使用习惯的一致性。对于同时需要支持Web和app的产品，在app上通过WebView实现Web功能时，需要考虑app上的显示问题。</p>
 <h2 id="6-_通知和消息">6. 通知和消息</h2><p>我们需要关注app运行时在通知栏的显示，以及如何展示app的消息推送(通知栏和app图标上的计数，尤其是后者计数超过99个时如何显示)。除此之外还需要考虑在安装和使用app过程中，app是否明确展示出应用对于数据流量，对使用关乎用户敏感信息的的传感器（如蓝牙和GPS等）进行提示。</p>
 <h2 id="7-_操作系统特性">7. 操作系统特性</h2><p>对于支持widget的iOS和Android app，在测试时应该把widget当成一项单独而重要的功能进行测试。对于app在Android上的安装和使用，也需要测试其对于Dalvik和ART的支持。对于iOS来说，如果应用支持在设置中对app进行设置，我们也需要对这种设置方式进行测试。</p>

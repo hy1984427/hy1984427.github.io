@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android Automation - Robotium - Test &amp; testing &amp; tester</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="For installation, please reference to Installing the SDK | Android Developers. The easiest way is to download Eclipse first, then install the Android Development Tools (ADT) as Plugin in Eclipse.
+How">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Automation - Robotium">
+<meta property="og:url" content="http://hy1984427.github.io/2012/05/18/Android_Automation_Robotium/index.html">
+<meta property="og:site_name" content="Test & testing & tester">
+<meta property="og:description" content="For installation, please reference to Installing the SDK | Android Developers. The easiest way is to download Eclipse first, then install the Android Development Tools (ADT) as Plugin in Eclipse.
+How">
+<meta property="og:updated_time" content="2015-07-20T05:34:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android Automation - Robotium">
+<meta name="twitter:description" content="For installation, please reference to Installing the SDK | Android Developers. The easiest way is to download Eclipse first, then install the Android Development Tools (ADT) as Plugin in Eclipse.
+How">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/AboutMe.html">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hy1984427.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Android_Automation_Robotium" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android Automation - Robotium
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/05/18/Android_Automation_Robotium/" class="article-date">
+  <time datetime="2012-05-17T16:00:00.000Z" itemprop="datePublished">2012-05-18</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>For installation</strong>, please reference to <a href="http://developer.android.com/sdk/installing.html" target="_blank" rel="external">Installing the SDK | Android Developers</a>. The easiest way is to download Eclipse first, then install the Android Development Tools (ADT) as Plugin in Eclipse.</p>
+<h3 id="How_to_use_the_attached_project_zip_file:">How to use the attached project zip file:</h3><ol>
+<li><p>Unzip it first then copy them to you workspace;</p>
+</li>
+<li><p>Open Eclipse, and select “File -&gt; New -&gt; Other…”;</p>
+</li>
+<li><p>Select “Android -&gt; Android Project”, and “Next”;</p>
+</li>
+<li><p>Select “Create project from existing source”, and input folder path of “AndroidCalculator” project into “Location”, and change “Project Name” to “AndroidCalculator”;</p>
+</li>
+<li><p>“Next” and select “Build Target” as “Android 2.3.3”, then “Finish”.</p>
+</li>
+</ol>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Note</span>:</span><br><span class="line"></span><br><span class="line">Please <span class="keyword">do</span> the same to <span class="string">"AndroidCalculatorTest, but change the project folder path and change "</span>Project Name<span class="string">" to "</span>AndroidCalculatorTest".*</span><br><span class="line"></span><br><span class="line"><span class="keyword">For</span> running RobotiumTests_DataDriven.java, you need to import TestData.csv to emulator first:</span><br><span class="line"></span><br><span class="line">1. <span class="keyword">Open</span> DDMS;</span><br><span class="line"></span><br><span class="line">2. <span class="keyword">Open</span> <span class="keyword">File</span> Explorer;</span><br><span class="line"></span><br><span class="line">3. Import the TestData.csv <span class="keyword">file</span> <span class="keyword">in</span> attached <span class="keyword">test</span> project folder, into /data/data/com/calculator/files.</span><br><span class="line"></span><br><span class="line">4. <span class="keyword">Run</span> the data driven <span class="keyword">test</span>.</span><br></pre></td></tr></table></figure>
+<h3 id="How_to_run_the_application_we_test_against:">How to run the application we test against:</h3><ol>
+<li><p>Create a AVD of Android 2.3.3 in Android Virtual Device Manager (AVD Manager) under “Window -&gt; AVD Manager” in Eclipse;</p>
+</li>
+<li><p>Select project “AndroidCalculator”, and “Run As” “Android Application”.</p>
+</li>
+</ol>
+<h3 id="How_to_run_tests_against_the_application:">How to run tests against the application:</h3><ol>
+<li><p>Create a AVD of Android 2.3.3 in Android Virtual Device Manager (AVD Manager) under “Window -&gt; AVD Manager” in Eclipse;</p>
+</li>
+<li><p>Open “AndroidCalculatorTest -&gt; src -&gt; com.calculator.test”;</p>
+</li>
+<li><p>Select any of the java file and “Run As” “Android JUnit Test”.</p>
+</li>
+</ol>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Note</span>: please only select one file to run, because all <span class="keyword">of</span> them have a main() <span class="keyword">method</span>, so they will conflict <span class="keyword">with</span> each other <span class="keyword">when</span> run them all together.</span><br></pre></td></tr></table></figure>
+<h3 id="Features_included_in_“AndroidCalculatorTest”:">Features included in “AndroidCalculatorTest”:</h3><ol>
+<li><p>“InstrumentationTests.java” is implemented by Instrumentation in Android SDK itself;</p>
+</li>
+<li><p>“RobotiumTests_APK.java” demonstrate how to test an Android APK file when only get the APK file itself, its “Package_ID” and “Main_Activity”;</p>
+</li>
+<li><p>“RobotiumTests_DataDriven.java” shows how to read a group of test data from a csv file, run series of tests, then export the results to another file;</p>
+</li>
+<li><p>“RobotiumTests_Whitebox.java” shows how to use Robotium in UT level, more from code coverage perspective;</p>
+</li>
+<li><p>“RobotiumTests.java” give you a brief knowledge of writing a basic Robotium test and take screenshot in the test. (please check the screenshot under “/mnt/sdcard” in DDMS).</p>
+</li>
+</ol>
+<h3 id="Library_Configuration_Tip:">Library Configuration Tip:</h3><ol>
+<li><p>To run the Robotium tests, we need to select all in “Properties -&gt; Java Build Path -&gt; Order and Export”;</p>
+</li>
+<li><p>Move the robotium up to top and move Android and Android Dependencies just below robotium (but still above any project).</p>
+</li>
+</ol>
+<h3 id="Issues_encountered_when_writing_Robotium_tests:">Issues encountered when writing Robotium tests:</h3><ol>
+<li><p>Unable to take ScreenShot (saving the file to emulator):  <a href="http://stackoverflow.com/questions/7550201/unable-to-take-screenshot-on-android-using-robotium-and-private-method" target="_blank" rel="external">Unable to take screenshot on android using robotium and private method</a></p>
+</li>
+<li><p>“Null pointer exception” or “Array out of boundary” when reading a csv file: please check the format of csv whether it’s compatible with jxl.</p>
+</li>
+</ol>
+<h3 id="Some_materials_for_Android_-_Robotium_framework:">Some materials for Android - Robotium framework:</h3><ol>
+<li><p><a href="http://developer.android.com/" target="_blank" rel="external">Android Developers</a></p>
+</li>
+<li><p><a href="http://code.google.com/p/robotium/" target="_blank" rel="external">robotium -  It’s like Selenium, but for Android™ - Google Project Hosting</a></p>
+</li>
+<li><p><a href="http://controlingquality.blogspot.com/2011/02/design-data-driven-framework-around.html" target="_blank" rel="external">Controling Quality: Design Data Driven Framework around Robotium</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Robotium_Black_Box_Testing_For_Android_Chinese.pdf" target="_blank" rel="external">Robotium_Black_Box_Testing_For_Android</a> <em>in Chinese</em></p>
+</li>
+</ol>
+<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Robotium.zip" target="_blank" rel="external">Robotium.zip</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Robotium/">Robotium</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/12/27/No_QA_In_Agile/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          敏捷中的qa会被取代吗？
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Huang Yong&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

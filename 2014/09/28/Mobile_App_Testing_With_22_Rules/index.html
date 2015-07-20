@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动app测试的22条军规 - Test &amp; testing &amp; tester</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="随着现在智能手机的大规模普及，移动app的使用也越来越广泛，导致了大量公司进入移动app开发领域。这一趋势带来的挑战是产品需要以更高的品质，在更短的时间内投放到市场，并不断得到改进。
+移动app可以分为原生app和混合Hybrid app，它相对于传统的桌面应用来说有着诸多不同，工具和方法论的相对缺乏导致移动app的测试给测试人员带来了更多的挑战。笔者经过两年多对电信运营商的移动门户app的测试，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动app测试的22条军规">
+<meta property="og:url" content="http://hy1984427.github.io/2014/09/28/Mobile_App_Testing_With_22_Rules/index.html">
+<meta property="og:site_name" content="Test & testing & tester">
+<meta property="og:description" content="随着现在智能手机的大规模普及，移动app的使用也越来越广泛，导致了大量公司进入移动app开发领域。这一趋势带来的挑战是产品需要以更高的品质，在更短的时间内投放到市场，并不断得到改进。
+移动app可以分为原生app和混合Hybrid app，它相对于传统的桌面应用来说有着诸多不同，工具和方法论的相对缺乏导致移动app的测试给测试人员带来了更多的挑战。笔者经过两年多对电信运营商的移动门户app的测试，">
+<meta property="og:updated_time" content="2015-07-20T14:25:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动app测试的22条军规">
+<meta name="twitter:description" content="随着现在智能手机的大规模普及，移动app的使用也越来越广泛，导致了大量公司进入移动app开发领域。这一趋势带来的挑战是产品需要以更高的品质，在更短的时间内投放到市场，并不断得到改进。
+移动app可以分为原生app和混合Hybrid app，它相对于传统的桌面应用来说有着诸多不同，工具和方法论的相对缺乏导致移动app的测试给测试人员带来了更多的挑战。笔者经过两年多对电信运营商的移动门户app的测试，">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/AboutMe.html">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hy1984427.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Mobile_App_Testing_With_22_Rules" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动app测试的22条军规
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2014/09/28/Mobile_App_Testing_With_22_Rules/" class="article-date">
+  <time datetime="2014-09-27T16:00:00.000Z" itemprop="datePublished">2014-09-28</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>随着现在智能手机的大规模普及，移动app的使用也越来越广泛，导致了大量公司进入移动app开发领域。这一趋势带来的挑战是产品需要以更高的品质，在更短的时间内投放到市场，并不断得到改进。</p>
+<p>移动app可以分为原生app和混合Hybrid app，它相对于传统的桌面应用来说有着诸多不同，工具和方法论的相对缺乏导致移动app的测试给测试人员带来了更多的挑战。笔者经过两年多对电信运营商的移动门户app的测试，总结出以下对于原生app的测试经验和实践（其实对于Hybrid app，这些经验和实践在很大程度上也是通用的）。</p>
+<h2 id="1-_设备和平台">1. 设备和平台</h2><p>由于移动设备的碎片化（操作系统，设备硬件，屏幕尺寸，分辨率，像素密度），从资源和投入产出比的考虑出发，测试人员不可能穷尽所有设备和操作系统的版本来进行全覆盖的测试，从而需要根据目标用户的分布来选择需要测试的设备。通常，我们使用Google Analytics或Adobe Omniture来统计目标用户的分布，还需要考虑各种操作系统所占用户的比率，这个可以通过Apple和Google官方发布的版本占有率来了解。<a href="https://developer.apple.com/support/appstore/，http://developer.android.com/about/dashboards/index.html。" target="_blank" rel="external">https://developer.apple.com/support/appstore/，http://developer.android.com/about/dashboards/index.html。</a></p>
+<h2 id="2-_移动网络切换">2. 移动网络切换</h2><p>由于移动app的特殊性－移动着应用，导致了我们需要更加关注移动网络变化对于app的影响，比如，不同网络（3g，4g，Wi-Fi）之间的使用和切换，无网络和/或Wi-Fi时，开启飞行模式时，对于需要进行网络注册并拿到信令的app会有比较大的影响；同时我们需要对这些情况进行异常处理，比如提供明确而人性化的提示。</p>
+<h2 id="3-_多任务处理">3. 多任务处理</h2><p>在智能手机上我们经常会同时执行多个app，这就要求我们对于app切换做处理。其中包括用户从一个app切换到其它的app，甚至是从后台关闭app，需要考虑是否对用户的当前操作进行保存，以及用户再次打开/恢复app的时候，需要进行什么操作。</p>
+<h2 id="4-_手势操作">4. 手势操作</h2><p>当前主流操作系统都支持手势操作，而app的手势有可能会和操作系统的手势冲突。比如iOS7开始支持的屏幕左边缘右滑返回上一级的手势操作，就和之前很多app的抽屉式导航操作起了冲突。细节可以参考<a href="http://www.zhihu.com/question/21198233。" target="_blank" rel="external">http://www.zhihu.com/question/21198233。</a></p>
+<h2 id="5-_用户体验">5. 用户体验</h2><p>我们不仅要考虑到横竖屏对app显示的影响，app对辅助功能accessibility的支持程度，还需要在认识到由于iOS和Android不同的设计风格和规范，app需要尽可能在不同设备上保持和操作系统使用习惯的一致性。对于同时需要支持Web和app的产品，在app上通过WebView实现Web功能时，需要考虑app上的显示问题。</p>
+<h2 id="6-_通知和消息">6. 通知和消息</h2><p>我们需要关注app运行时在通知栏的显示，以及如何展示app的消息推送(通知栏和app图标上的计数，尤其是后者计数超过99个时如何显示)。除此之外还需要考虑在安装和使用app过程中，app是否明确展示出应用对于数据流量，对使用关乎用户敏感信息的的传感器（如蓝牙和GPS等）进行提示。</p>
+<h2 id="7-_操作系统特性">7. 操作系统特性</h2><p>对于支持widget的iOS和Android app，在测试时应该把widget当成一项单独而重要的功能进行测试。对于app在Android上的安装和使用，也需要测试其对于Dalvik和ART的支持。对于iOS来说，如果应用支持在设置中对app进行设置，我们也需要对这种设置方式进行测试。</p>
+<h2 id="8-_不同设备信息同步">8. 不同设备信息同步</h2><p>如果app同时支持多个设备和操作系统，而且用户数据存放在服务器的时候，我们就需要验证这些信息在一个设备改变，其它设备需要相应地同步这些改变，尤其是当app有信息缓存机制的时候。</p>
+<h2 id="9-_特定设备">9. 特定设备</h2><p>除了操作系统版本和硬件不同之外，不同的设备还可能因设备商定制的用户界面（比如三星的TouchWiz，HTC的Sense，魅族的Flyme和LG的UX等），而产生显示甚至功能的不一致。例如HTC Sense 4.0时，当我们打开多任务界面，app显示的是一个截图，但实际我们点击进入app，会看到不同的页面。此外这些用户界面默认的字体不同很可能会对app的展示产生影响。</p>
+<h2 id="10-_多文件格式支持">10. 多文件格式支持</h2><p>对不同格式的文件，不同设备的展示也可能有很大不同。比如PDF文件，在iOS上默认支持，所以可以直接打开；而在Android上我们就需要考虑需要如何展示了，因为Android没有原生支持PDF。如果app还需要支持其他诸如微软的Office文件，各类图片和视频等，我们就更需要注意在各个平台上，尤其是没有相应的软件处理这些文件时，需要如何处理了。</p>
+<h2 id="11-_国家和地区支持">11. 国家和地区支持</h2><p>由于使用app的用户可以来自任何一个国家和地区，使用任何一种语言，所以在app安装和使用过程中，我们也需要考虑对于主要通用的语言（例如中文，英语，法语），时间和日期格式，尤其是不同输入法的兼容性。</p>
+<h2 id="12-_高内存占用">12. 高内存占用</h2><p>由于iOS和Android对于单个app使用的内存大小有限制，所以对于耗费内存的操作，比如处理高分辨率图片、语音和视频时，在开发中都建议单独启动新的进程来处理。因此我们在测试中也需要针对这个特点，对于耗费内存高的操作进行测试。</p>
+<h2 id="13-_非标准控件">13. 非标准控件</h2><p>在特定的版本上，我们想要app支持某种特性，可是操作系统并没有提供，我们很可能自己设计控件，或者利用第三方库来实现这个功能。一个例子就是在iOS7原生并不支持通知中心的widget。这种实现方式需要测试人员对于这个控件/库本身进行更多集成测试，确保它的功能以及和其它控件在app中行为的一致性。对于非标准控件，我们需要尽可能少地使用，因为在操作系统升级过程中，这些非标准控件很可能会被标准化，并且采用不同的方式实现，从而影响app的编码和测试。</p>
+<h2 id="14-_App升级管理">14. App升级管理</h2><p>绝大多数app都会持续更新，为用户带来新的功能和体验。用户在进行app升级的过程中，通常采用的是增量安装或者覆盖安装的方式，而不会先删除app再全新安装。所以在app升级的过程中，我们需要测试用户信息在升级后是否能正常显示，特别是当app升级涉及到app的数据库结构变化时。相应地，在用户删除app时，我们也需要考虑对app信息的删除。</p>
+<h2 id="15-_App缓存机制">15. App缓存机制</h2><p>一般app为了减少用户流量的使用，会缓存那些不常变化的数据；对于定期变化的数据，也会周期性地更新。对于这些数据，我们需要确保当它们变化后，app能及时更新和显示这些信息。</p>
+<h2 id="16-_第三方app集成和调用">16. 第三方app集成和调用</h2><p>对于第三方app集成例如Google Map需要进行集成测试，另外还需要测试app中对于第三方app的调用（比如分享到微信）。</p>
+<h2 id="17-_App依赖">17. App依赖</h2><p>尽量减少app对第三方系统/app和WebService的依赖关系，会有助于项目的准时发布和测试复杂度的简化。而为了确保这些依赖功能的完整性，我们需要对这些依赖进行API和集成测试。</p>
+<h2 id="18-_自动化测试和探索式测试">18. 自动化测试和探索式测试</h2><p>App自动化测试不仅需要在开发过程中进行单元测试，还需要对WebService进行自动化测试。另外，对于界面测试，由于现有自动化测试工具和框架不够成熟，测试人员在利用这些工具自动化测试用户旅程的同时，还需要更多地关注页面跳转和数据在不同页面间的流动，这是因为单元测试可以比较全面地覆盖每个activity和view内部的功能，但是对于页面跳转和不同页面间数据流动和展示等需要涉及到多个页面的流程操作，手动测试尤其是探索式测试就显得尤为重要。值得一提的是，自动化测试中应该尽可能多地使用模拟器来进行测试，这里推荐使用Genymotion做为默认的Android模拟器，而在探索式测试中，我们推荐使用实际设备来做测试。</p>
+<h2 id="19-_安全测试">19. 安全测试</h2><p>App安全测试包括测试手机上SQLite数据库的加密存储，验证app对发送请求中关于用户信息字段的加密等。可以使用的工具有iPhone Configuration Utility和Android DDMS。我们还可以通过使用这些工具分析log（还有iOS的XCode）， 方便地定位bug。对于app使用到的WebService的安全测试则可以参考桌面应用的安全测试方法。</p>
+<h2 id="20-_性能测试">20. 性能测试</h2><p>移动app也会涉及到性能测试，包括不同网络环境下app的连接速度和操作流畅度，以及使用的WebService的性能。</p>
+<h2 id="21-_操作系统升级">21. 操作系统升级</h2><p>在操作系统进行早期测试和开发的时候，开发团队会根据新的特性和设计规范，设计并实施app的更新。对于测试人员来说，当操作系统升级时，需要参考操作系统的文档，对于新的特性和设计及时了解，在进行当前操作系统版本app回归测试的同时，进行包含新操作系统版本特性和设计的app适应性测试。</p>
+<h2 id="22-_持续集成和持续部署">22. 持续集成和持续部署</h2><p>持续集成的目的是通过在模拟器上运行自动化测试有效地发现app的稳定性问题。虽然对于实际设备上app的持续部署我们现在没有办法实现全自动化，但是我们可以通过一些别的办法尽量简化这一过程，比如使用TestFlight来分发iOS app，使用Dropbox来分发Android app等。</p>
+<p><br></p>
+<p>这些实践和经验不一定能解决你在项目中所遇到的原生应用测试的所有问题，不过希望能起到抛砖引玉的作用，给大家带来更多的思考，继而带来更多的分享。</p>
+<p>移动app的兴起经历了从简单到多功能化的发展过程，随着技术的进步和思想的解放，我们拥有了更好更丰富的移动app，而且这一趋势仍旧在持续发展；同样对于移动app的测试，我们也正在经历从摸索到形成如同桌面应用类似的测试模式、方法和实践。对于测试人员来说，这是最坏的时候，这也是最好的时候，这是最该投身到移动app测试的时候。</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App-Testing/">App Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rules/">Rules</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2014/06/19/Practice_Of_Gamification_In_Insurance_Project/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">游戏化在保险项目中的实践&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Huang Yong&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

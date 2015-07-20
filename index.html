@@ -147,8 +147,8 @@
 <p>而且对于那些比较小的方面，比如说javascript脚本，其实只要利用5～10分钟的时间，可能我们就能写出一段可以在项目上使用的脚本，我们项目中现在就有一段可以辅助填表的脚本。这些小的改进都可以提高我们的效率，让我们有更多的时间去学习新技术和工具。</p>
 <p>对于项目组中只有一个QA的情况，除了上面的方法，我们还可以让Developer承担更多验证已有测试用例的活动，或者和他们结对来学习这些技术和工具。</p>
 <p>我们另一个项目实践是每个迭代都会发一封Quality Status给整个团队，以加强每个人对于质量的关注，分享QA最近的进展。下面给大家展示两个例子（代码是使用bootstrap实现的，下面的只是展示截图）。</p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/QA_capability_Iteration.jpg" alt="Quality Status for Iteration"></p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/QA_capability_Release.jpg" alt="Quality Status for Release"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/QA_capability_Iteration.png" alt="Quality Status for Iteration"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/QA_capability_Release.png" alt="Quality Status for Release"></p>
 
       
     </div>
@@ -156,6 +156,72 @@
     <footer class="article-footer">
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Capability/">Capability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-Windows_Phone_Automation_Windows_Phone_Test_Framework" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/05/18/Windows_Phone_Automation_Windows_Phone_Test_Framework/">Whindows Phone Automation - WindowsPhoneTestFramework</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/05/18/Windows_Phone_Automation_Windows_Phone_Test_Framework/" class="article-date">
+  <time datetime="2012-05-17T16:00:00.000Z" itemprop="datePublished">2012-05-18</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Better to install VS2010 first, otherwise required testing framework/dll can’t be found.</p>
+<p><a href="http://msdn.microsoft.com/zh-cn/windowsphone/ff955778.aspx" target="_blank" rel="external"><strong>WindowsPhone system structure</strong></a></p>
+<p><strong>WindowsPhoneApp developing basics:</strong></p>
+<ol>
+<li><a href="http://social.msdn.microsoft.com/Forums/zh-CN/windowsphonezhchs/thread/5aacf6ab-dab7-4dcc-9d3d-d2c9095e490e" target="_blank" rel="external">Windows Phone 7 开发常见问题汇集贴</a></li>
+<li><a href="http://msdn.microsoft.com/zh-cn/ff380145" target="_blank" rel="external">Windows Phone 7 手机开发</a></li>
+</ol>
+<p><strong>WindowsPhone Automation test:</strong></p>
+<ol>
+<li><a href="https://github.com/Expensify/WindowsPhoneTestFramework" target="_blank" rel="external">Expensify/WindowsPhoneTestFramework</a></li>
+<li><a href="http://www.slideshare.net/cirrious/ui-testing-on-windows-phone" target="_blank" rel="external">UI Testing on Windows Phone 7</a></li>
+<li><a href="http://www.cnblogs.com/chenkai/tag/Windows%20Phone/" target="_blank" rel="external">Windows Phone应用开发</a></li>
+</ol>
+<p><strong>Suggestions for development:</strong></p>
+<ol>
+<li>WindowsPhone app use MVVM pattern: M is Model, it controls the data and events; V is View, which controls the display; and VM is View-Model, which is the bridge from Model to View.</li>
+<li>A better way to design the app is heavily use M and VM, with light V. So that we can test the app easily and quickly, with stub and mock, rather than heavy UI tests.</li>
+<li>A tool recommended is MVVM light, check the references from <a href="http://mvvmlight.codeplex.com/" target="_blank" rel="external">http://mvvmlight.codeplex.com/</a> and <a href="http://www.galasoft.ch/mvvm/" target="_blank" rel="external">http://www.galasoft.ch/mvvm/</a>.</li>
+</ol>
+<p><strong>Problem encountered:</strong></p>
+<p>The development of WhindowsPhone app is quite easy (please refer to <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/WP7App.zip" target="_blank" rel="external">this</a>, it’s a basic WP7 app), but for automation testing, especially UI testing, it’s the opposite.</p>
+<p>When using WindowsPhoneTestFramework, following the steps in video of <a href="http://www.slideshare.net/cirrious/ui-testing-on-windows-phone" target="_blank" rel="external">Ui Testing on Windows Phone</a>, the step of install BDD class library show error of JsonValue 0.5.0 can’t be installed, even try to install JsonValue 0.6.0 still fails.</p>
+<p>I am blocked by this. No clue found.</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows-Phone/">Windows Phone</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WindowsPhoneTestFramework/">WindowsPhoneTestFramework</a></li></ul>
 
     </footer>
   
@@ -262,7 +328,369 @@
   
     <footer class="article-footer">
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Robotium/">Robotium</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Robotium/">Robotium</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-iOS_Automation_Frank" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/05/14/iOS_Automation_Frank/">iOS Automation - Frank</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/05/14/iOS_Automation_Frank/" class="article-date">
+  <time datetime="2012-05-13T16:00:00.000Z" itemprop="datePublished">2012-05-14</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Please download and unzip <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/HelloWorld_Frank.zip" target="_blank" rel="external">HelloWorld_Frank.zip</a>, and select “<strong>HelloWorld copy</strong>“ to run FrankTests.</p>
+<p><strong>Frank (Frankenstein!?) is ‘Selenium for native iOS apps’.</strong></p>
+<ol>
+<li>Frank use KIF and UISpec as base structure, and use UIQuery to locate elements.</li>
+<li>Frank used to based on other framework, but recently it’s changed to KIF, so some documents may out of date. Try to use the latest documents and samples.</li>
+<li>You can use Ruby in Frank rather than Objective-C in KIF.</li>
+</ol>
+<p><strong>Environment preparation:</strong></p>
+<ol>
+<li>Install rvm, ruby (1.9.2 is preferred to avoid issue when installing ruby-debug later), frank-cucumber and follow the <a href="http://www.testingwithfrank.com/installing.html" target="_blank" rel="external">installation script</a> provided by Frank.</li>
+<li>For debug use, I have added ruby-debug, please gem install it when you see message of that gem is required.</li>
+</ol>
+<p><strong><em>Note:</em></strong></p>
+<ol>
+<li>Screenshots will be generated under <em>HelloWorld/Frank/screenshots</em>, if the 1st step in <code>Then /^I can see &quot;([^&quot;]*)&quot;$/ do |welcomeMessage|</code> is enabled;</li>
+<li>DOM can be exported if the 2nd step in <code>Then /^I can see &quot;([^&quot;]*)&quot;$/ do |welcomeMessage|</code> is enabled;</li>
+<li>Add <em>@record</em> before scenario can start recording, but you should use it only once.</li>
+</ol>
+<p><strong>Highly recommend before you start using Frank:</strong></p>
+<ol>
+<li><a href="http://www.testingwithfrank.com/screencasts.html" target="_blank" rel="external">http://www.testingwithfrank.com/screencasts.html</a></li>
+<li><a href="http://www.testingwithfrank.com/presentations.html" target="_blank" rel="external">http://www.testingwithfrank.com/presentations.html</a></li>
+</ol>
+<p><strong>Tips/Limitations:</strong></p>
+<ol>
+<li>Build the app first, then run cucumber; otherwise sometimes, Frank can’t attach to the simulator.</li>
+<li>Encounter one issue which is not fixed, post in the gmail group: Google Groups. It’s about how to check a text filed with space in its value.</li>
+<li>For label, we can’t access their value and check on them, Apple should be blamed, so we can only write code by ourselves to implement it from ground: set accessibilityValue -&gt; write down the method to locate and compare the value -&gt; write the step definition to recall the method -&gt; use the step definition in Frank.</li>
+<li>Few documents/samples for Frank, even how to use selector; and some step definitions are not suitable for use, need to google or write down basic steps for action and validation.</li>
+</ol>
+<p><strong>How to use Symbiote (the elements’ tree viewer):</strong></p>
+<p>Few material for it, only found <a href="http://vimeo.com/22644221" target="_blank" rel="external">http://vimeo.com/22644221</a> and <a href="http://blog.thepete.net/2011/05/inspect-state-of-our-running-ios-apps.html" target="_blank" rel="external">http://blog.thepete.net/2011/05/inspect-state-of-our-running-ios-apps.html</a></p>
+<p><strong>Debug:</strong></p>
+<ol>
+<li>Using Frank is not easy to debug, using ruby, so can use ruby-debug to debug, but you need to install gem of ruby-debug first, then follow steps in <a href="https://gist.github.com/1333785" target="_blank" rel="external">https://gist.github.com/1333785</a>.</li>
+<li>A better way is just installing ruby1.9.2 rather than 1.9.3</li>
+<li>But for the step in Frank itself, you can only use “Console.app” on Mac to see log. Only few useful info can be found.</li>
+</ol>
+<p><a href="http://stackoverflow.com/questions/9745842/how-to-select-elements-for-frank-using-uiquery-uispec" target="_blank" rel="external"><strong>How to select elements for Frank using UIQuery/UISpec?</strong></a></p>
+<p><strong>Recording of script running:</strong></p>
+<ol>
+<li>Will recording everything from the scenario marked as <em>@record</em>.</li>
+<li>With multiple <em>@record</em> tags, it will open recording app multiple times, which is unusable when recording. So only use <em>@record</em> tag once.</li>
+<li>The recording is a feature of QuickTime player.</li>
+</ol>
+<p><strong>Reference</strong></p>
+<ol>
+<li><a href="https://github.com/moredip/Frank" target="_blank" rel="external">https://github.com/moredip/Frank</a></li>
+<li><a href="http://www.testingwithfrank.com/" target="_blank" rel="external">http://www.testingwithfrank.com/</a></li>
+<li><a href="https://groups.google.com/forum/?fromgroups#!forum/frank-discuss" target="_blank" rel="external">https://groups.google.com/forum/?fromgroups#!forum/frank-discuss</a></li>
+<li><a href="http://code.google.com/p/uispec" target="_blank" rel="external">http://code.google.com/p/uispec</a></li>
+<li>Ruby-debug: <a href="http://bashdb.sourceforge.net/ruby-debug.html" target="_blank" rel="external">http://bashdb.sourceforge.net/ruby-debug.html</a></li>
+</ol>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Frank/">Frank</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-Android_Automation_NativeDriver" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/05/09/Android_Automation_NativeDriver/">Android Automation - NativeDriver</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/05/09/Android_Automation_NativeDriver/" class="article-date">
+  <time datetime="2012-05-08T16:00:00.000Z" itemprop="datePublished">2012-05-09</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Library Configuration Tip:</strong></p>
+<ol>
+<li>To run the Robotium tests, we need to select all in “Properties -&gt; Java Build Path -&gt; Order and Export”;</li>
+<li>Move the robotium up to top and move Android and Android Dependencies just below robotium (but still above any project).</li>
+</ol>
+<p><strong>Tips:</strong></p>
+<ol>
+<li>Create the tests as JUnit tests;</li>
+<li>Under application folder, run <code>$Android-SDK-Prefix/platform-tools/adb shell am instrument com.calculator/com.google.android.testing.nativedriver.server.ServerInstrumentation</code>; then run <code>$Android-SDK-Prefix/platform-tools/adb forward tcp:54129 tcp:54129</code></li>
+<li>Connection and port forward are easily broken, need to check them when tests fail, especially once the tests fail or code is changed.</li>
+<li>If the element, especially textfield, is not focused, you can’t input anything in it; unless you <code>click()</code> it before <code>sendKeys()</code></li>
+<li>After input into textfield, you need to navigate back to disable keyboard, using <code>driver.navigate().back()</code></li>
+<li>No api about <code>wait()</code>, just use <code>Thread.sleep()</code></li>
+<li>Using the take screenshot method, you can only use full path</li>
+</ol>
+<p><strong>References:</strong></p>
+<ol>
+<li><a href="http://code.google.com/p/nativedriver" target="_blank" rel="external">NativeDriver</a></li>
+<li><a href="http://code.google.com/p/nativedriver/w/list" target="_blank" rel="external">NativeDriver Wiki</a></li>
+<li><a href="https://code.google.com/p/nativedriver/source/browse/trunk/android/test/com/google/android/testing/nativedriver/" target="_blank" rel="external">NativeDriver Source</a></li>
+<li><a href="https://groups.google.com/forum/#!forum/nativedriver-users" target="_blank" rel="external">NativeDriver Google Groups</a></li>
+<li><a href="http://kongqingyun123.blog.163.com/blog/static/63772835201172935833719/" target="_blank" rel="external">TestNG + NativeDriver实现android的UI自动化测试</a></li>
+<li><a href="https://groups.google.com/forum/#!msg/nativedriver-users/1eZRMu3KbPA/FMn9R6upuDwJ" target="_blank" rel="external">How to Screen Capture On Error</a></li>
+<li><a href="http://kongqingyun123.blog.163.com/blog/static/63772835201182932332956/" target="_blank" rel="external">Windows下NativeDriver截屏功能</a></li>
+</ol>
+<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/NativeDriverAndroidTests.zip" target="_blank" rel="external">NativeDriverAndroidTests.zip</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NativeDriver/">NativeDriver</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-iOS_Automation_NativeDriver" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/05/08/iOS_Automation_NativeDriver/">iOS Automation - NativeDriver</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/05/08/iOS_Automation_NativeDriver/" class="article-date">
+  <time datetime="2012-05-07T16:00:00.000Z" itemprop="datePublished">2012-05-08</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Very easy to learn, and can reuse lots of knowledge in Web testing.<br>Nothing need to explain, just follow the document to setup the environment.</p>
+<p><strong>Open “NativeDriverTests” in Eclipse, run the app in XCode simulator first, then run the tests in Eclipse as JUnit Test.</strong></p>
+<p><strong>References:</strong></p>
+<ol>
+<li><a href="http://code.google.com/p/nativedriver" target="_blank" rel="external">NativeDriver</a></li>
+<li><a href="http://code.google.com/p/nativedriver/w/list" target="_blank" rel="external">NativeDriver Wiki</a></li>
+<li><a href="http://code.google.com/p/selenium/" target="_blank" rel="external">Selenium</a></li>
+<li><a href="http://electronicingenuity.com/nativedriver-ios-first-impressions" target="_blank" rel="external">NativeDriver and iOS: First Impressions</a></li>
+</ol>
+<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/NativeDriverIOSTests.zip" target="_blank" rel="external">NativeDriverIOSTests.zip</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NativeDriver/">NativeDriver</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-iOS_Automation_UIAutomation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/04/26/iOS_Automation_UIAutomation/">iOS Automation - UIAutomation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/04/26/iOS_Automation_UIAutomation/" class="article-date">
+  <time datetime="2012-04-25T16:00:00.000Z" itemprop="datePublished">2012-04-26</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>This framework is not suggested!</strong></p>
+<p><strong>Some materials for iOS - UIAutomation framework:</strong></p>
+<ol>
+<li><a href="http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/" target="_blank" rel="external">Working with UIAutomation</a></li>
+<li><a href="http://www.sunsetlakesoftware.com/sites/default/files/Fall2010CourseNotes/ui%20automation.html" target="_blank" rel="external">UI Automation</a></li>
+<li><a href="https://developer.apple.com/library/prerelease/ios/documentation/DeveloperTools/Reference/UIAutomationRef/" target="_blank" rel="external">UI Automation JavaScript Reference for iOS</a></li>
+<li><a href="http://www.codeproject.com/Articles/107595/How-Do-I-Perform-UI-Automation-Testing-in-iOS-4" target="_blank" rel="external">How Do I Perform UI Automation Testing in iOS 4</a></li>
+<li><a href="http://stackoverflow.com/questions/8306076/ios-ui-automation-get-textfield-by-accessibility-label" target="_blank" rel="external">iOS - UI Automation get textfield by accessibility label?</a></li>
+<li><a href="http://blog.manbolo.com/2012/04/08/ios-automated-tests-with-uiautomation" target="_blank" rel="external">iOS Automated Tests with UIAutomation</a></li>
+<li><a href="http://stackoverflow.com/questions/7688311/cant-get-value-of-uiastatictext" target="_blank" rel="external">Can’t get value of UIAStaticText?</a></li>
+</ol>
+<p><strong>UIAutomation</strong></p>
+<ol>
+<li>Using JavaScript: each line of JavaScript in UIAutomation will trigger a request to iOS simulator, which make the awful performance of it;</li>
+<li>The framework is unstable: for the script attached, sometimes the testing results are different, even same environment and script are provided; and sometimes the simulator or instrument will hung and quit expected;</li>
+<li>The testing supporting of this framework is not good: the element can be get by its id, but can only get by its name/label occasionally, and there are some issues unresolved, like value of label item can’t be get;</li>
+<li>Readiness of JavaScript is hard, it doesn’t provide the capability to integrate with tools like Cucumber;</li>
+<li>It doesn’t have the capability to integrate with CI tools;</li>
+<li>It can’t run on real devices, but only on simulator, which means it can’t run parallel.</li>
+</ol>
+<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/UIAutomation.zip" target="_blank" rel="external">UIAutomation.zip</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIAutomation/">UIAutomation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-iOS_Automation_KIF_Keep_It_Functional" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/04/26/iOS_Automation_KIF_Keep_It_Functional/">iOS Automation - KIF (Keep It Functional)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/04/26/iOS_Automation_KIF_Keep_It_Functional/" class="article-date">
+  <time datetime="2012-04-25T16:00:00.000Z" itemprop="datePublished">2012-04-26</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Please download and unzip <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/KIF.zip" target="_blank" rel="external">KIF.zip</a>, and select “HelloWorld copy” to run KIFTests.</p>
+<p><strong>Note:</strong></p>
+<ol>
+<li>I have modified KIF framework: add “[(UITextField *) view setText:nil];” in KIFTestStep.m to clear text before input;</li>
+<li>By default, using “[super initializeScenarios]” in EXTestController.m to initialize all scenarios, the order of scenarios are defined according to the scenario name ascending; to change the order of them, change corresponding lines in “initializeScenarios” in EXTestController.m.</li>
+<li>For KIF tests, in order to get value of text field, we need to set “accessibilityValue” of it in code first, then we can access its value in testing code. It’s better we can package them into one class, which we can reuse later.</li>
+</ol>
+<p><strong>References for KIF:</strong></p>
+<ol>
+<li>KIF uses undocumented Apple APIs. This is true of most iOS testing frameworks, and is safe for testing purposes, but it’s important that KIF does not make it into production code, by duplicating a second target for the KIF-enabled version of the app to test. This gives you an easy way to begin testing — <em>just run this second target</em> — and also helps make sure that no testing code ever makes it into your App Store submission and gets your app rejected.</li>
+<li>All of the tests for KIF are written in Objective C, so the performance is good.</li>
+<li>Some detailed steps are not documented in KIF official documents, need to compare the docs with code provided in GitHub.</li>
+</ol>
+<h4 id="Advantages_of_KIF_comparing_to_UIAutomation_(official_by_KIF_group_but_briefly):">Advantages of KIF comparing to UIAutomation (official by KIF group but briefly):</h4><p><strong>KIF Pros</strong></p>
+<ol>
+<li>All objective-C. No need to write translations from JavaScript.</li>
+<li>Can easily hook into your code base for obscure things, like “fake a credit card swipe.”</li>
+<li>Easily runs on the command line for CI. Current shipping version of UIAutomation does not.</li>
+<li>No external dependencies. UIAutomation currently requires Instruments.</li>
+<li>Easy to integrate into your Xcode workflow.</li>
+<li>Tests run quickly. Runs in the app rather than being translated from Instruments/JS.</li>
+<li>It’s open source. If there’s something you want to add, you can. If something’s broken, it can be fixed quickly.</li>
+</ol>
+<p><strong>UIAutomation Pros</strong></p>
+<ol>
+<li>Runs outside of the process, so it could potentially simulate things like switching apps or hitting the home button. KIF could possibly do some of this using private API, but in general you need to mock these sorts of interactions.</li>
+<li>JS is less verbose and may appeal to some more than ObjC.</li>
+<li>Apple has full access to the frameworks and can potentially do some awesome things in the future.</li>
+<li>We get new features for free over time, and old ones will always be supported. KIF uses a lot of undocumented API, so it’s possible that future iOS releases would require it to be updated.</li>
+</ol>
+<p><strong>Some materials for iOS - KIF framework:</strong></p>
+<ol>
+<li><a href="https://github.com/square/KIF" target="_blank" rel="external">KIF</a></li>
+<li><a href="https://groups.google.com/forum/?fromgroups#!forum/kif-framework" target="_blank" rel="external">KIF Google Groups</a></li>
+<li><a href="http://corner.squareup.com/2011/07/ios-integration-testing.html" target="_blank" rel="external">iOS Integration Testing</a></li>
+<li><a href="http://sgleadow.github.com/blog/2011/11/16/enabling-accessibility-programatically-on-ios-devices/" target="_blank" rel="external">Enabling Accessibility Programatically on iOS Devices</a></li>
+</ol>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIAutomation/">UIAutomation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 
     </footer>
   

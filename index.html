@@ -53,6 +53,51 @@
   </div>
 </header>
     <section id="main" class="outer">
+      <article id="post-Speaking_Skills" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/10/Speaking_Skills/">演讲技巧</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/06/10/Speaking_Skills/" class="article-date">
+  <time datetime="2015-06-09T16:00:00.000Z" itemprop="datePublished">2015-06-10</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>演讲技巧的简单入门版。</p>
+<p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Speaking_Skills.pdf" target="_blank" rel="external">Speaking_Skills.pdf</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Skills/">Skills</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Speaking/">Speaking</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
       <article id="post-Mobile_App_Testing_With_22_Rules" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -357,6 +402,72 @@
 
 
     
+      <article id="post-Windows_Phone_Automation_Windows_Phone_Test_Framework" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/05/18/Windows_Phone_Automation_Windows_Phone_Test_Framework/">Whindows Phone Automation - WindowsPhoneTestFramework</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/05/18/Windows_Phone_Automation_Windows_Phone_Test_Framework/" class="article-date">
+  <time datetime="2012-05-17T16:00:00.000Z" itemprop="datePublished">2012-05-18</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Better to install VS2010 first, otherwise required testing framework/dll can’t be found.</p>
+<p><a href="http://msdn.microsoft.com/zh-cn/windowsphone/ff955778.aspx" target="_blank" rel="external"><strong>WindowsPhone system structure</strong></a></p>
+<p><strong>WindowsPhoneApp developing basics:</strong></p>
+<ol>
+<li><a href="http://social.msdn.microsoft.com/Forums/zh-CN/windowsphonezhchs/thread/5aacf6ab-dab7-4dcc-9d3d-d2c9095e490e" target="_blank" rel="external">Windows Phone 7 开发常见问题汇集贴</a></li>
+<li><a href="http://msdn.microsoft.com/zh-cn/ff380145" target="_blank" rel="external">Windows Phone 7 手机开发</a></li>
+</ol>
+<p><strong>WindowsPhone Automation test:</strong></p>
+<ol>
+<li><a href="https://github.com/Expensify/WindowsPhoneTestFramework" target="_blank" rel="external">Expensify/WindowsPhoneTestFramework</a></li>
+<li><a href="http://www.slideshare.net/cirrious/ui-testing-on-windows-phone" target="_blank" rel="external">UI Testing on Windows Phone 7</a></li>
+<li><a href="http://www.cnblogs.com/chenkai/tag/Windows%20Phone/" target="_blank" rel="external">Windows Phone应用开发</a></li>
+</ol>
+<p><strong>Suggestions for development:</strong></p>
+<ol>
+<li>WindowsPhone app use MVVM pattern: M is Model, it controls the data and events; V is View, which controls the display; and VM is View-Model, which is the bridge from Model to View.</li>
+<li>A better way to design the app is heavily use M and VM, with light V. So that we can test the app easily and quickly, with stub and mock, rather than heavy UI tests.</li>
+<li>A tool recommended is MVVM light, check the references from <a href="http://mvvmlight.codeplex.com/" target="_blank" rel="external">http://mvvmlight.codeplex.com/</a> and <a href="http://www.galasoft.ch/mvvm/" target="_blank" rel="external">http://www.galasoft.ch/mvvm/</a>.</li>
+</ol>
+<p><strong>Problem encountered:</strong></p>
+<p>The development of WhindowsPhone app is quite easy (please refer to <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/WP7App.zip" target="_blank" rel="external">this</a>, it’s a basic WP7 app), but for automation testing, especially UI testing, it’s the opposite.</p>
+<p>When using WindowsPhoneTestFramework, following the steps in video of <a href="http://www.slideshare.net/cirrious/ui-testing-on-windows-phone" target="_blank" rel="external">Ui Testing on Windows Phone</a>, the step of install BDD class library show error of JsonValue 0.5.0 can’t be installed, even try to install JsonValue 0.6.0 still fails.</p>
+<p>I am blocked by this. No clue found.</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows-Phone/">Windows Phone</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WindowsPhoneTestFramework/">WindowsPhoneTestFramework</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
       <article id="post-Android_Automation_Robotium" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -455,72 +566,6 @@
     <footer class="article-footer">
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Robotium/">Robotium</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-Windows_Phone_Automation_Windows_Phone_Test_Framework" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/18/Windows_Phone_Automation_Windows_Phone_Test_Framework/">Whindows Phone Automation - WindowsPhoneTestFramework</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/05/18/Windows_Phone_Automation_Windows_Phone_Test_Framework/" class="article-date">
-  <time datetime="2012-05-17T16:00:00.000Z" itemprop="datePublished">2012-05-18</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Better to install VS2010 first, otherwise required testing framework/dll can’t be found.</p>
-<p><a href="http://msdn.microsoft.com/zh-cn/windowsphone/ff955778.aspx" target="_blank" rel="external"><strong>WindowsPhone system structure</strong></a></p>
-<p><strong>WindowsPhoneApp developing basics:</strong></p>
-<ol>
-<li><a href="http://social.msdn.microsoft.com/Forums/zh-CN/windowsphonezhchs/thread/5aacf6ab-dab7-4dcc-9d3d-d2c9095e490e" target="_blank" rel="external">Windows Phone 7 开发常见问题汇集贴</a></li>
-<li><a href="http://msdn.microsoft.com/zh-cn/ff380145" target="_blank" rel="external">Windows Phone 7 手机开发</a></li>
-</ol>
-<p><strong>WindowsPhone Automation test:</strong></p>
-<ol>
-<li><a href="https://github.com/Expensify/WindowsPhoneTestFramework" target="_blank" rel="external">Expensify/WindowsPhoneTestFramework</a></li>
-<li><a href="http://www.slideshare.net/cirrious/ui-testing-on-windows-phone" target="_blank" rel="external">UI Testing on Windows Phone 7</a></li>
-<li><a href="http://www.cnblogs.com/chenkai/tag/Windows%20Phone/" target="_blank" rel="external">Windows Phone应用开发</a></li>
-</ol>
-<p><strong>Suggestions for development:</strong></p>
-<ol>
-<li>WindowsPhone app use MVVM pattern: M is Model, it controls the data and events; V is View, which controls the display; and VM is View-Model, which is the bridge from Model to View.</li>
-<li>A better way to design the app is heavily use M and VM, with light V. So that we can test the app easily and quickly, with stub and mock, rather than heavy UI tests.</li>
-<li>A tool recommended is MVVM light, check the references from <a href="http://mvvmlight.codeplex.com/" target="_blank" rel="external">http://mvvmlight.codeplex.com/</a> and <a href="http://www.galasoft.ch/mvvm/" target="_blank" rel="external">http://www.galasoft.ch/mvvm/</a>.</li>
-</ol>
-<p><strong>Problem encountered:</strong></p>
-<p>The development of WhindowsPhone app is quite easy (please refer to <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/WP7App.zip" target="_blank" rel="external">this</a>, it’s a basic WP7 app), but for automation testing, especially UI testing, it’s the opposite.</p>
-<p>When using WindowsPhoneTestFramework, following the steps in video of <a href="http://www.slideshare.net/cirrious/ui-testing-on-windows-phone" target="_blank" rel="external">Ui Testing on Windows Phone</a>, the step of install BDD class library show error of JsonValue 0.5.0 can’t be installed, even try to install JsonValue 0.6.0 still fails.</p>
-<p>I am blocked by this. No clue found.</p>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows-Phone/">Windows Phone</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WindowsPhoneTestFramework/">WindowsPhoneTestFramework</a></li></ul>
 
     </footer>
   
@@ -686,59 +731,6 @@
     <footer class="article-footer">
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NativeDriver/">NativeDriver</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-iOS_Automation_NativeDriver" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/08/iOS_Automation_NativeDriver/">iOS Automation - NativeDriver</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/05/08/iOS_Automation_NativeDriver/" class="article-date">
-  <time datetime="2012-05-07T16:00:00.000Z" itemprop="datePublished">2012-05-08</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Very easy to learn, and can reuse lots of knowledge in Web testing.<br>Nothing need to explain, just follow the document to setup the environment.</p>
-<p><strong>Open “NativeDriverTests” in Eclipse, run the app in XCode simulator first, then run the tests in Eclipse as JUnit Test.</strong></p>
-<p><strong>References:</strong></p>
-<ol>
-<li><a href="http://code.google.com/p/nativedriver" target="_blank" rel="external">NativeDriver</a></li>
-<li><a href="http://code.google.com/p/nativedriver/w/list" target="_blank" rel="external">NativeDriver Wiki</a></li>
-<li><a href="http://code.google.com/p/selenium/" target="_blank" rel="external">Selenium</a></li>
-<li><a href="http://electronicingenuity.com/nativedriver-ios-first-impressions" target="_blank" rel="external">NativeDriver and iOS: First Impressions</a></li>
-</ol>
-<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/NativeDriverIOSTests.zip" target="_blank" rel="external">NativeDriverIOSTests.zip</a></p>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NativeDriver/">NativeDriver</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 
     </footer>
   

@@ -53,6 +53,123 @@
   </div>
 </header>
     <section id="main" class="outer">
+      <article id="post-iOS_Automation_NativeDriver" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/05/08/iOS_Automation_NativeDriver/">iOS Automation - NativeDriver</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/05/08/iOS_Automation_NativeDriver/" class="article-date">
+  <time datetime="2012-05-07T16:00:00.000Z" itemprop="datePublished">2012-05-08</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Very easy to learn, and can reuse lots of knowledge in Web testing.<br>Nothing need to explain, just follow the document to setup the environment.</p>
+<p><strong>Open “NativeDriverTests” in Eclipse, run the app in XCode simulator first, then run the tests in Eclipse as JUnit Test.</strong></p>
+<p><strong>References:</strong></p>
+<ol>
+<li><a href="http://code.google.com/p/nativedriver" target="_blank" rel="external">NativeDriver</a></li>
+<li><a href="http://code.google.com/p/nativedriver/w/list" target="_blank" rel="external">NativeDriver Wiki</a></li>
+<li><a href="http://code.google.com/p/selenium/" target="_blank" rel="external">Selenium</a></li>
+<li><a href="http://electronicingenuity.com/nativedriver-ios-first-impressions" target="_blank" rel="external">NativeDriver and iOS: First Impressions</a></li>
+</ol>
+<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/NativeDriverIOSTests.zip" target="_blank" rel="external">NativeDriverIOSTests.zip</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NativeDriver/">NativeDriver</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-iOS_Automation_UIAutomation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/04/26/iOS_Automation_UIAutomation/">iOS Automation - UIAutomation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/04/26/iOS_Automation_UIAutomation/" class="article-date">
+  <time datetime="2012-04-25T16:00:00.000Z" itemprop="datePublished">2012-04-26</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>This framework is not suggested!</strong></p>
+<p><strong>Some materials for iOS - UIAutomation framework:</strong></p>
+<ol>
+<li><a href="http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/" target="_blank" rel="external">Working with UIAutomation</a></li>
+<li><a href="http://www.sunsetlakesoftware.com/sites/default/files/Fall2010CourseNotes/ui%20automation.html" target="_blank" rel="external">UI Automation</a></li>
+<li><a href="https://developer.apple.com/library/prerelease/ios/documentation/DeveloperTools/Reference/UIAutomationRef/" target="_blank" rel="external">UI Automation JavaScript Reference for iOS</a></li>
+<li><a href="http://www.codeproject.com/Articles/107595/How-Do-I-Perform-UI-Automation-Testing-in-iOS-4" target="_blank" rel="external">How Do I Perform UI Automation Testing in iOS 4</a></li>
+<li><a href="http://stackoverflow.com/questions/8306076/ios-ui-automation-get-textfield-by-accessibility-label" target="_blank" rel="external">iOS - UI Automation get textfield by accessibility label?</a></li>
+<li><a href="http://blog.manbolo.com/2012/04/08/ios-automated-tests-with-uiautomation" target="_blank" rel="external">iOS Automated Tests with UIAutomation</a></li>
+<li><a href="http://stackoverflow.com/questions/7688311/cant-get-value-of-uiastatictext" target="_blank" rel="external">Can’t get value of UIAStaticText?</a></li>
+</ol>
+<p><strong>UIAutomation</strong></p>
+<ol>
+<li>Using JavaScript: each line of JavaScript in UIAutomation will trigger a request to iOS simulator, which make the awful performance of it;</li>
+<li>The framework is unstable: for the script attached, sometimes the testing results are different, even same environment and script are provided; and sometimes the simulator or instrument will hung and quit expected;</li>
+<li>The testing supporting of this framework is not good: the element can be get by its id, but can only get by its name/label occasionally, and there are some issues unresolved, like value of label item can’t be get;</li>
+<li>Readiness of JavaScript is hard, it doesn’t provide the capability to integrate with tools like Cucumber;</li>
+<li>It doesn’t have the capability to integrate with CI tools;</li>
+<li>It can’t run on real devices, but only on simulator, which means it can’t run parallel.</li>
+</ol>
+<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/UIAutomation.zip" target="_blank" rel="external">UIAutomation.zip</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIAutomation/">UIAutomation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
       <article id="post-iOS_Automation_KIF_Keep_It_Functional" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -117,70 +234,6 @@
 <li><a href="http://corner.squareup.com/2011/07/ios-integration-testing.html" target="_blank" rel="external">iOS Integration Testing</a></li>
 <li><a href="http://sgleadow.github.com/blog/2011/11/16/enabling-accessibility-programatically-on-ios-devices/" target="_blank" rel="external">Enabling Accessibility Programatically on iOS Devices</a></li>
 </ol>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIAutomation/">UIAutomation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-iOS_Automation_UIAutomation" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/04/26/iOS_Automation_UIAutomation/">iOS Automation - UIAutomation</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/04/26/iOS_Automation_UIAutomation/" class="article-date">
-  <time datetime="2012-04-25T16:00:00.000Z" itemprop="datePublished">2012-04-26</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>This framework is not suggested!</strong></p>
-<p><strong>Some materials for iOS - UIAutomation framework:</strong></p>
-<ol>
-<li><a href="http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/" target="_blank" rel="external">Working with UIAutomation</a></li>
-<li><a href="http://www.sunsetlakesoftware.com/sites/default/files/Fall2010CourseNotes/ui%20automation.html" target="_blank" rel="external">UI Automation</a></li>
-<li><a href="https://developer.apple.com/library/prerelease/ios/documentation/DeveloperTools/Reference/UIAutomationRef/" target="_blank" rel="external">UI Automation JavaScript Reference for iOS</a></li>
-<li><a href="http://www.codeproject.com/Articles/107595/How-Do-I-Perform-UI-Automation-Testing-in-iOS-4" target="_blank" rel="external">How Do I Perform UI Automation Testing in iOS 4</a></li>
-<li><a href="http://stackoverflow.com/questions/8306076/ios-ui-automation-get-textfield-by-accessibility-label" target="_blank" rel="external">iOS - UI Automation get textfield by accessibility label?</a></li>
-<li><a href="http://blog.manbolo.com/2012/04/08/ios-automated-tests-with-uiautomation" target="_blank" rel="external">iOS Automated Tests with UIAutomation</a></li>
-<li><a href="http://stackoverflow.com/questions/7688311/cant-get-value-of-uiastatictext" target="_blank" rel="external">Can’t get value of UIAStaticText?</a></li>
-</ol>
-<p><strong>UIAutomation</strong></p>
-<ol>
-<li>Using JavaScript: each line of JavaScript in UIAutomation will trigger a request to iOS simulator, which make the awful performance of it;</li>
-<li>The framework is unstable: for the script attached, sometimes the testing results are different, even same environment and script are provided; and sometimes the simulator or instrument will hung and quit expected;</li>
-<li>The testing supporting of this framework is not good: the element can be get by its id, but can only get by its name/label occasionally, and there are some issues unresolved, like value of label item can’t be get;</li>
-<li>Readiness of JavaScript is hard, it doesn’t provide the capability to integrate with tools like Cucumber;</li>
-<li>It doesn’t have the capability to integrate with CI tools;</li>
-<li>It can’t run on real devices, but only on simulator, which means it can’t run parallel.</li>
-</ol>
-<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/UIAutomation.zip" target="_blank" rel="external">UIAutomation.zip</a></p>
 
       
     </div>
@@ -376,8 +429,8 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>This PPT is more theoretical, but I think we can have some basic knowledge from it.</p>
-<p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Security_Testing_Of_Web_Applications.ppt" target="_blank" rel="external">Security_Testing_Of_Web_Applications.ppt</a></p>
+        <p>This representation is more theoretical, but I think we can have some basic knowledge from it.</p>
+<p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Security_Testing_Of_Web_Applications.pdf" target="_blank" rel="external">Security_Testing_Of_Web_Applications.ppdf</a></p>
 
       
     </div>
@@ -534,7 +587,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Summarized my thoughts about Test Plan in Agile, please refer to <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Agile_Test_Plan.pdf" target="_blank" rel="external">PPT</a> and <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Test_Plan_For_I37_To_I39.pdf" target="_blank" rel="external">Sample</a> for more details.</p>
+        <p>Summarized my thoughts about Test Plan in Agile, please refer to <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Agile_Test_Plan.pdf" target="_blank" rel="external">representation</a> and <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Test_Plan_For_I37_To_I39.pdf" target="_blank" rel="external">Sample</a> for more details.</p>
 
       
     </div>

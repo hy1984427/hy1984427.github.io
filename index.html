@@ -53,6 +53,53 @@
   </div>
 </header>
     <section id="main" class="outer">
+      <article id="post-Book_References" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/14/Book_References/">Book references</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/07/14/Book_References/" class="article-date">
+  <time datetime="2015-07-13T16:00:00.000Z" itemprop="datePublished">2015-07-14</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在写《移动app测试的22条军规》时，参考和总结了一些移动app测试的资料。</p>
+<p>本来是作为书的最后一部分“参考资源和文献”发布出来的，但是出版社的编辑不知道出于什么原因，没有收录在书里。</p>
+<p>在这里我把这些资料发布出来，希望对大家有帮助。</p>
+<p>For the references of my book <pro 22="" mobile="" app="" testing="" with="" rules="">, please refer to <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Pro_Mobile_App_Testing_With_22_Rules_references.pdf" target="_blank" rel="external">参考资源和文献/References</a> for more details.</pro></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App-Testing/">App Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rules/">Rules</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
       <article id="post-Speaking_Skills" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -671,77 +718,8 @@
 
 
     
-      <article id="post-Android_Automation_NativeDriver" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/09/Android_Automation_NativeDriver/">Android Automation - NativeDriver</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/05/09/Android_Automation_NativeDriver/" class="article-date">
-  <time datetime="2012-05-08T16:00:00.000Z" itemprop="datePublished">2012-05-09</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Library Configuration Tip:</strong></p>
-<ol>
-<li>To run the Robotium tests, we need to select all in “Properties -&gt; Java Build Path -&gt; Order and Export”;</li>
-<li>Move the robotium up to top and move Android and Android Dependencies just below robotium (but still above any project).</li>
-</ol>
-<p><strong>Tips:</strong></p>
-<ol>
-<li>Create the tests as JUnit tests;</li>
-<li>Under application folder, run <code>$Android-SDK-Prefix/platform-tools/adb shell am instrument com.calculator/com.google.android.testing.nativedriver.server.ServerInstrumentation</code>; then run <code>$Android-SDK-Prefix/platform-tools/adb forward tcp:54129 tcp:54129</code></li>
-<li>Connection and port forward are easily broken, need to check them when tests fail, especially once the tests fail or code is changed.</li>
-<li>If the element, especially textfield, is not focused, you can’t input anything in it; unless you <code>click()</code> it before <code>sendKeys()</code></li>
-<li>After input into textfield, you need to navigate back to disable keyboard, using <code>driver.navigate().back()</code></li>
-<li>No api about <code>wait()</code>, just use <code>Thread.sleep()</code></li>
-<li>Using the take screenshot method, you can only use full path</li>
-</ol>
-<p><strong>References:</strong></p>
-<ol>
-<li><a href="http://code.google.com/p/nativedriver" target="_blank" rel="external">NativeDriver</a></li>
-<li><a href="http://code.google.com/p/nativedriver/w/list" target="_blank" rel="external">NativeDriver Wiki</a></li>
-<li><a href="https://code.google.com/p/nativedriver/source/browse/trunk/android/test/com/google/android/testing/nativedriver/" target="_blank" rel="external">NativeDriver Source</a></li>
-<li><a href="https://groups.google.com/forum/#!forum/nativedriver-users" target="_blank" rel="external">NativeDriver Google Groups</a></li>
-<li><a href="http://kongqingyun123.blog.163.com/blog/static/63772835201172935833719/" target="_blank" rel="external">TestNG + NativeDriver实现android的UI自动化测试</a></li>
-<li><a href="https://groups.google.com/forum/#!msg/nativedriver-users/1eZRMu3KbPA/FMn9R6upuDwJ" target="_blank" rel="external">How to Screen Capture On Error</a></li>
-<li><a href="http://kongqingyun123.blog.163.com/blog/static/63772835201182932332956/" target="_blank" rel="external">Windows下NativeDriver截屏功能</a></li>
-</ol>
-<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/NativeDriverAndroidTests.zip" target="_blank" rel="external">NativeDriverAndroidTests.zip</a></p>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NativeDriver/">NativeDriver</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
       <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
       </nav>
     </section>
     <footer id="footer">

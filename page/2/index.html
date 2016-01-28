@@ -160,6 +160,72 @@
 
 
     
+      <article id="post-Windows_Phone_Automation_Windows_Phone_Test_Framework" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/05/18/Windows_Phone_Automation_Windows_Phone_Test_Framework/">Whindows Phone Automation - WindowsPhoneTestFramework</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/05/18/Windows_Phone_Automation_Windows_Phone_Test_Framework/" class="article-date">
+  <time datetime="2012-05-17T16:00:00.000Z" itemprop="datePublished">2012-05-18</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Better to install VS2010 first, otherwise required testing framework/dll can’t be found.</p>
+<p><a href="http://msdn.microsoft.com/zh-cn/windowsphone/ff955778.aspx" target="_blank" rel="external"><strong>WindowsPhone system structure</strong></a></p>
+<p><strong>WindowsPhoneApp developing basics:</strong></p>
+<ol>
+<li><a href="http://social.msdn.microsoft.com/Forums/zh-CN/windowsphonezhchs/thread/5aacf6ab-dab7-4dcc-9d3d-d2c9095e490e" target="_blank" rel="external">Windows Phone 7 开发常见问题汇集贴</a></li>
+<li><a href="http://msdn.microsoft.com/zh-cn/ff380145" target="_blank" rel="external">Windows Phone 7 手机开发</a></li>
+</ol>
+<p><strong>WindowsPhone Automation test:</strong></p>
+<ol>
+<li><a href="https://github.com/Expensify/WindowsPhoneTestFramework" target="_blank" rel="external">Expensify/WindowsPhoneTestFramework</a></li>
+<li><a href="http://www.slideshare.net/cirrious/ui-testing-on-windows-phone" target="_blank" rel="external">UI Testing on Windows Phone 7</a></li>
+<li><a href="http://www.cnblogs.com/chenkai/tag/Windows%20Phone/" target="_blank" rel="external">Windows Phone应用开发</a></li>
+</ol>
+<p><strong>Suggestions for development:</strong></p>
+<ol>
+<li>WindowsPhone app use MVVM pattern: M is Model, it controls the data and events; V is View, which controls the display; and VM is View-Model, which is the bridge from Model to View.</li>
+<li>A better way to design the app is heavily use M and VM, with light V. So that we can test the app easily and quickly, with stub and mock, rather than heavy UI tests.</li>
+<li>A tool recommended is MVVM light, check the references from <a href="http://mvvmlight.codeplex.com/" target="_blank" rel="external">http://mvvmlight.codeplex.com/</a> and <a href="http://www.galasoft.ch/mvvm/" target="_blank" rel="external">http://www.galasoft.ch/mvvm/</a>.</li>
+</ol>
+<p><strong>Problem encountered:</strong></p>
+<p>The development of WhindowsPhone app is quite easy (please refer to <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/WP7App.zip" target="_blank" rel="external">this</a>, it’s a basic WP7 app), but for automation testing, especially UI testing, it’s the opposite.</p>
+<p>When using WindowsPhoneTestFramework, following the steps in video of <a href="http://www.slideshare.net/cirrious/ui-testing-on-windows-phone" target="_blank" rel="external">Ui Testing on Windows Phone</a>, the step of install BDD class library show error of JsonValue 0.5.0 can’t be installed, even try to install JsonValue 0.6.0 still fails.</p>
+<p>I am blocked by this. No clue found.</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows-Phone/">Windows Phone</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WindowsPhoneTestFramework/">WindowsPhoneTestFramework</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
       <article id="post-iOS_Automation_Frank" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -378,6 +444,70 @@
 
 
     
+      <article id="post-iOS_Automation_UIAutomation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/04/26/iOS_Automation_UIAutomation/">iOS Automation - UIAutomation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/04/26/iOS_Automation_UIAutomation/" class="article-date">
+  <time datetime="2012-04-25T16:00:00.000Z" itemprop="datePublished">2012-04-26</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>This framework is not suggested!</strong></p>
+<p><strong>Some materials for iOS - UIAutomation framework:</strong></p>
+<ol>
+<li><a href="http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/" target="_blank" rel="external">Working with UIAutomation</a></li>
+<li><a href="http://www.sunsetlakesoftware.com/sites/default/files/Fall2010CourseNotes/ui%20automation.html" target="_blank" rel="external">UI Automation</a></li>
+<li><a href="https://developer.apple.com/library/prerelease/ios/documentation/DeveloperTools/Reference/UIAutomationRef/" target="_blank" rel="external">UI Automation JavaScript Reference for iOS</a></li>
+<li><a href="http://www.codeproject.com/Articles/107595/How-Do-I-Perform-UI-Automation-Testing-in-iOS-4" target="_blank" rel="external">How Do I Perform UI Automation Testing in iOS 4</a></li>
+<li><a href="http://stackoverflow.com/questions/8306076/ios-ui-automation-get-textfield-by-accessibility-label" target="_blank" rel="external">iOS - UI Automation get textfield by accessibility label?</a></li>
+<li><a href="http://blog.manbolo.com/2012/04/08/ios-automated-tests-with-uiautomation" target="_blank" rel="external">iOS Automated Tests with UIAutomation</a></li>
+<li><a href="http://stackoverflow.com/questions/7688311/cant-get-value-of-uiastatictext" target="_blank" rel="external">Can’t get value of UIAStaticText?</a></li>
+</ol>
+<p><strong>UIAutomation</strong></p>
+<ol>
+<li>Using JavaScript: each line of JavaScript in UIAutomation will trigger a request to iOS simulator, which make the awful performance of it;</li>
+<li>The framework is unstable: for the script attached, sometimes the testing results are different, even same environment and script are provided; and sometimes the simulator or instrument will hung and quit expected;</li>
+<li>The testing supporting of this framework is not good: the element can be get by its id, but can only get by its name/label occasionally, and there are some issues unresolved, like value of label item can’t be get;</li>
+<li>Readiness of JavaScript is hard, it doesn’t provide the capability to integrate with tools like Cucumber;</li>
+<li>It doesn’t have the capability to integrate with CI tools;</li>
+<li>It can’t run on real devices, but only on simulator, which means it can’t run parallel.</li>
+</ol>
+<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/UIAutomation.zip" target="_blank" rel="external">UIAutomation.zip</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIAutomation/">UIAutomation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
       <article id="post-iOS_Automation_KIF_Keep_It_Functional" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -442,70 +572,6 @@
 <li><a href="http://corner.squareup.com/2011/07/ios-integration-testing.html" target="_blank" rel="external">iOS Integration Testing</a></li>
 <li><a href="http://sgleadow.github.com/blog/2011/11/16/enabling-accessibility-programatically-on-ios-devices/" target="_blank" rel="external">Enabling Accessibility Programatically on iOS Devices</a></li>
 </ol>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIAutomation/">UIAutomation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-iOS_Automation_UIAutomation" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/04/26/iOS_Automation_UIAutomation/">iOS Automation - UIAutomation</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/04/26/iOS_Automation_UIAutomation/" class="article-date">
-  <time datetime="2012-04-25T16:00:00.000Z" itemprop="datePublished">2012-04-26</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>This framework is not suggested!</strong></p>
-<p><strong>Some materials for iOS - UIAutomation framework:</strong></p>
-<ol>
-<li><a href="http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/" target="_blank" rel="external">Working with UIAutomation</a></li>
-<li><a href="http://www.sunsetlakesoftware.com/sites/default/files/Fall2010CourseNotes/ui%20automation.html" target="_blank" rel="external">UI Automation</a></li>
-<li><a href="https://developer.apple.com/library/prerelease/ios/documentation/DeveloperTools/Reference/UIAutomationRef/" target="_blank" rel="external">UI Automation JavaScript Reference for iOS</a></li>
-<li><a href="http://www.codeproject.com/Articles/107595/How-Do-I-Perform-UI-Automation-Testing-in-iOS-4" target="_blank" rel="external">How Do I Perform UI Automation Testing in iOS 4</a></li>
-<li><a href="http://stackoverflow.com/questions/8306076/ios-ui-automation-get-textfield-by-accessibility-label" target="_blank" rel="external">iOS - UI Automation get textfield by accessibility label?</a></li>
-<li><a href="http://blog.manbolo.com/2012/04/08/ios-automated-tests-with-uiautomation" target="_blank" rel="external">iOS Automated Tests with UIAutomation</a></li>
-<li><a href="http://stackoverflow.com/questions/7688311/cant-get-value-of-uiastatictext" target="_blank" rel="external">Can’t get value of UIAStaticText?</a></li>
-</ol>
-<p><strong>UIAutomation</strong></p>
-<ol>
-<li>Using JavaScript: each line of JavaScript in UIAutomation will trigger a request to iOS simulator, which make the awful performance of it;</li>
-<li>The framework is unstable: for the script attached, sometimes the testing results are different, even same environment and script are provided; and sometimes the simulator or instrument will hung and quit expected;</li>
-<li>The testing supporting of this framework is not good: the element can be get by its id, but can only get by its name/label occasionally, and there are some issues unresolved, like value of label item can’t be get;</li>
-<li>Readiness of JavaScript is hard, it doesn’t provide the capability to integrate with tools like Cucumber;</li>
-<li>It doesn’t have the capability to integrate with CI tools;</li>
-<li>It can’t run on real devices, but only on simulator, which means it can’t run parallel.</li>
-</ol>
-<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/UIAutomation.zip" target="_blank" rel="external">UIAutomation.zip</a></p>
 
       
     </div>
@@ -710,52 +776,6 @@
     <footer class="article-footer">
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Security/">Security</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-QA_Capability_Matrix" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/02/03/QA_Capability_Matrix/">QA Capability Matrix</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/02/03/QA_Capability_Matrix/" class="article-date">
-  <time datetime="2012-02-02T16:00:00.000Z" itemprop="datePublished">2012-02-03</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tester/">Tester</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Plan to use QA Capability Matrix to track my progress.</p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/QA_Capability_Matrix.png" alt="QA Capability Matrix"></p>
-<p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/QA_Capability_Matrix.pdf" target="_blank" rel="external">Sample</a> is also attached.</p>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Capability/">Capability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matrix/">Matrix</a></li></ul>
 
     </footer>
   

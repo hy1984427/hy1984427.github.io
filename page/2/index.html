@@ -53,6 +53,113 @@
   </div>
 </header>
     <section id="main" class="outer">
+      <article id="post-Android_Automation_Robotium" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/05/18/Android_Automation_Robotium/">Android Automation - Robotium</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/05/18/Android_Automation_Robotium/" class="article-date">
+  <time datetime="2012-05-17T16:00:00.000Z" itemprop="datePublished">2012-05-18</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>For installation</strong>, please reference to <a href="http://developer.android.com/sdk/installing.html" target="_blank" rel="external">Installing the SDK | Android Developers</a>. The easiest way is to download Eclipse first, then install the Android Development Tools (ADT) as Plugin in Eclipse.</p>
+<h3 id="How_to_use_the_attached_project_zip_file:">How to use the attached project zip file:</h3><ol>
+<li><p>Unzip it first then copy them to you workspace;</p>
+</li>
+<li><p>Open Eclipse, and select “File -&gt; New -&gt; Other…”;</p>
+</li>
+<li><p>Select “Android -&gt; Android Project”, and “Next”;</p>
+</li>
+<li><p>Select “Create project from existing source”, and input folder path of “AndroidCalculator” project into “Location”, and change “Project Name” to “AndroidCalculator”;</p>
+</li>
+<li><p>“Next” and select “Build Target” as “Android 2.3.3”, then “Finish”.</p>
+</li>
+</ol>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Note</span>:</span><br><span class="line"></span><br><span class="line">Please <span class="keyword">do</span> the same to <span class="string">"AndroidCalculatorTest, but change the project folder path and change "</span>Project Name<span class="string">" to "</span>AndroidCalculatorTest".*</span><br><span class="line"></span><br><span class="line"><span class="keyword">For</span> running RobotiumTests_DataDriven.java, you need to import TestData.csv to emulator first:</span><br><span class="line"></span><br><span class="line">1. <span class="keyword">Open</span> DDMS;</span><br><span class="line"></span><br><span class="line">2. <span class="keyword">Open</span> <span class="keyword">File</span> Explorer;</span><br><span class="line"></span><br><span class="line">3. Import the TestData.csv <span class="keyword">file</span> <span class="keyword">in</span> attached <span class="keyword">test</span> project folder, into /data/data/com/calculator/files.</span><br><span class="line"></span><br><span class="line">4. <span class="keyword">Run</span> the data driven <span class="keyword">test</span>.</span><br></pre></td></tr></table></figure>
+<h3 id="How_to_run_the_application_we_test_against:">How to run the application we test against:</h3><ol>
+<li><p>Create a AVD of Android 2.3.3 in Android Virtual Device Manager (AVD Manager) under “Window -&gt; AVD Manager” in Eclipse;</p>
+</li>
+<li><p>Select project “AndroidCalculator”, and “Run As” “Android Application”.</p>
+</li>
+</ol>
+<h3 id="How_to_run_tests_against_the_application:">How to run tests against the application:</h3><ol>
+<li><p>Create a AVD of Android 2.3.3 in Android Virtual Device Manager (AVD Manager) under “Window -&gt; AVD Manager” in Eclipse;</p>
+</li>
+<li><p>Open “AndroidCalculatorTest -&gt; src -&gt; com.calculator.test”;</p>
+</li>
+<li><p>Select any of the java file and “Run As” “Android JUnit Test”.</p>
+</li>
+</ol>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Note</span>: please only select one file to run, because all <span class="keyword">of</span> them have a main() <span class="keyword">method</span>, so they will conflict <span class="keyword">with</span> each other <span class="keyword">when</span> run them all together.</span><br></pre></td></tr></table></figure>
+<h3 id="Features_included_in_“AndroidCalculatorTest”:">Features included in “AndroidCalculatorTest”:</h3><ol>
+<li><p>“InstrumentationTests.java” is implemented by Instrumentation in Android SDK itself;</p>
+</li>
+<li><p>“RobotiumTests_APK.java” demonstrate how to test an Android APK file when only get the APK file itself, its “Package_ID” and “Main_Activity”;</p>
+</li>
+<li><p>“RobotiumTests_DataDriven.java” shows how to read a group of test data from a csv file, run series of tests, then export the results to another file;</p>
+</li>
+<li><p>“RobotiumTests_Whitebox.java” shows how to use Robotium in UT level, more from code coverage perspective;</p>
+</li>
+<li><p>“RobotiumTests.java” give you a brief knowledge of writing a basic Robotium test and take screenshot in the test. (please check the screenshot under “/mnt/sdcard” in DDMS).</p>
+</li>
+</ol>
+<h3 id="Library_Configuration_Tip:">Library Configuration Tip:</h3><ol>
+<li><p>To run the Robotium tests, we need to select all in “Properties -&gt; Java Build Path -&gt; Order and Export”;</p>
+</li>
+<li><p>Move the robotium up to top and move Android and Android Dependencies just below robotium (but still above any project).</p>
+</li>
+</ol>
+<h3 id="Issues_encountered_when_writing_Robotium_tests:">Issues encountered when writing Robotium tests:</h3><ol>
+<li><p>Unable to take ScreenShot (saving the file to emulator):  <a href="http://stackoverflow.com/questions/7550201/unable-to-take-screenshot-on-android-using-robotium-and-private-method" target="_blank" rel="external">Unable to take screenshot on android using robotium and private method</a></p>
+</li>
+<li><p>“Null pointer exception” or “Array out of boundary” when reading a csv file: please check the format of csv whether it’s compatible with jxl.</p>
+</li>
+</ol>
+<h3 id="Some_materials_for_Android_-_Robotium_framework:">Some materials for Android - Robotium framework:</h3><ol>
+<li><p><a href="http://developer.android.com/" target="_blank" rel="external">Android Developers</a></p>
+</li>
+<li><p><a href="http://code.google.com/p/robotium/" target="_blank" rel="external">robotium -  It’s like Selenium, but for Android™ - Google Project Hosting</a></p>
+</li>
+<li><p><a href="http://controlingquality.blogspot.com/2011/02/design-data-driven-framework-around.html" target="_blank" rel="external">Controling Quality: Design Data Driven Framework around Robotium</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Robotium_Black_Box_Testing_For_Android_Chinese.pdf" target="_blank" rel="external">Robotium_Black_Box_Testing_For_Android</a> <em>in Chinese</em></p>
+</li>
+</ol>
+<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Robotium.zip" target="_blank" rel="external">Robotium.zip</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Robotium/">Robotium</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
       <article id="post-iOS_Automation_Frank" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -271,70 +378,6 @@
 
 
     
-      <article id="post-iOS_Automation_UIAutomation" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/04/26/iOS_Automation_UIAutomation/">iOS Automation - UIAutomation</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/04/26/iOS_Automation_UIAutomation/" class="article-date">
-  <time datetime="2012-04-25T16:00:00.000Z" itemprop="datePublished">2012-04-26</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>This framework is not suggested!</strong></p>
-<p><strong>Some materials for iOS - UIAutomation framework:</strong></p>
-<ol>
-<li><a href="http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/" target="_blank" rel="external">Working with UIAutomation</a></li>
-<li><a href="http://www.sunsetlakesoftware.com/sites/default/files/Fall2010CourseNotes/ui%20automation.html" target="_blank" rel="external">UI Automation</a></li>
-<li><a href="https://developer.apple.com/library/prerelease/ios/documentation/DeveloperTools/Reference/UIAutomationRef/" target="_blank" rel="external">UI Automation JavaScript Reference for iOS</a></li>
-<li><a href="http://www.codeproject.com/Articles/107595/How-Do-I-Perform-UI-Automation-Testing-in-iOS-4" target="_blank" rel="external">How Do I Perform UI Automation Testing in iOS 4</a></li>
-<li><a href="http://stackoverflow.com/questions/8306076/ios-ui-automation-get-textfield-by-accessibility-label" target="_blank" rel="external">iOS - UI Automation get textfield by accessibility label?</a></li>
-<li><a href="http://blog.manbolo.com/2012/04/08/ios-automated-tests-with-uiautomation" target="_blank" rel="external">iOS Automated Tests with UIAutomation</a></li>
-<li><a href="http://stackoverflow.com/questions/7688311/cant-get-value-of-uiastatictext" target="_blank" rel="external">Can’t get value of UIAStaticText?</a></li>
-</ol>
-<p><strong>UIAutomation</strong></p>
-<ol>
-<li>Using JavaScript: each line of JavaScript in UIAutomation will trigger a request to iOS simulator, which make the awful performance of it;</li>
-<li>The framework is unstable: for the script attached, sometimes the testing results are different, even same environment and script are provided; and sometimes the simulator or instrument will hung and quit expected;</li>
-<li>The testing supporting of this framework is not good: the element can be get by its id, but can only get by its name/label occasionally, and there are some issues unresolved, like value of label item can’t be get;</li>
-<li>Readiness of JavaScript is hard, it doesn’t provide the capability to integrate with tools like Cucumber;</li>
-<li>It doesn’t have the capability to integrate with CI tools;</li>
-<li>It can’t run on real devices, but only on simulator, which means it can’t run parallel.</li>
-</ol>
-<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/UIAutomation.zip" target="_blank" rel="external">UIAutomation.zip</a></p>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIAutomation/">UIAutomation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
       <article id="post-iOS_Automation_KIF_Keep_It_Functional" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -399,6 +442,70 @@
 <li><a href="http://corner.squareup.com/2011/07/ios-integration-testing.html" target="_blank" rel="external">iOS Integration Testing</a></li>
 <li><a href="http://sgleadow.github.com/blog/2011/11/16/enabling-accessibility-programatically-on-ios-devices/" target="_blank" rel="external">Enabling Accessibility Programatically on iOS Devices</a></li>
 </ol>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIAutomation/">UIAutomation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-iOS_Automation_UIAutomation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/04/26/iOS_Automation_UIAutomation/">iOS Automation - UIAutomation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/04/26/iOS_Automation_UIAutomation/" class="article-date">
+  <time datetime="2012-04-25T16:00:00.000Z" itemprop="datePublished">2012-04-26</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>This framework is not suggested!</strong></p>
+<p><strong>Some materials for iOS - UIAutomation framework:</strong></p>
+<ol>
+<li><a href="http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/" target="_blank" rel="external">Working with UIAutomation</a></li>
+<li><a href="http://www.sunsetlakesoftware.com/sites/default/files/Fall2010CourseNotes/ui%20automation.html" target="_blank" rel="external">UI Automation</a></li>
+<li><a href="https://developer.apple.com/library/prerelease/ios/documentation/DeveloperTools/Reference/UIAutomationRef/" target="_blank" rel="external">UI Automation JavaScript Reference for iOS</a></li>
+<li><a href="http://www.codeproject.com/Articles/107595/How-Do-I-Perform-UI-Automation-Testing-in-iOS-4" target="_blank" rel="external">How Do I Perform UI Automation Testing in iOS 4</a></li>
+<li><a href="http://stackoverflow.com/questions/8306076/ios-ui-automation-get-textfield-by-accessibility-label" target="_blank" rel="external">iOS - UI Automation get textfield by accessibility label?</a></li>
+<li><a href="http://blog.manbolo.com/2012/04/08/ios-automated-tests-with-uiautomation" target="_blank" rel="external">iOS Automated Tests with UIAutomation</a></li>
+<li><a href="http://stackoverflow.com/questions/7688311/cant-get-value-of-uiastatictext" target="_blank" rel="external">Can’t get value of UIAStaticText?</a></li>
+</ol>
+<p><strong>UIAutomation</strong></p>
+<ol>
+<li>Using JavaScript: each line of JavaScript in UIAutomation will trigger a request to iOS simulator, which make the awful performance of it;</li>
+<li>The framework is unstable: for the script attached, sometimes the testing results are different, even same environment and script are provided; and sometimes the simulator or instrument will hung and quit expected;</li>
+<li>The testing supporting of this framework is not good: the element can be get by its id, but can only get by its name/label occasionally, and there are some issues unresolved, like value of label item can’t be get;</li>
+<li>Readiness of JavaScript is hard, it doesn’t provide the capability to integrate with tools like Cucumber;</li>
+<li>It doesn’t have the capability to integrate with CI tools;</li>
+<li>It can’t run on real devices, but only on simulator, which means it can’t run parallel.</li>
+</ol>
+<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/UIAutomation.zip" target="_blank" rel="external">UIAutomation.zip</a></p>
 
       
     </div>
@@ -649,73 +756,6 @@
     <footer class="article-footer">
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Capability/">Capability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matrix/">Matrix</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-Practices_Can_Be_Adopted_In_Projects" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2011/09/29/Practices_Can_Be_Adopted_In_Projects/">项目中可以采用的一些实践</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2011/09/29/Practices_Can_Be_Adopted_In_Projects/" class="article-date">
-  <time datetime="2011-09-28T16:00:00.000Z" itemprop="datePublished">2011-09-29</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tester/">Tester</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近总结了下在项目中采用的一些实践，以及一些需要注意和避免的细节问题</p>
-<ol>
-<li>QA完成故事测试时鼓掌等对团队正面反馈的一些实践（让团队更注重项目整体的进度并加强责任感），甚至可能包括一些团队建设的活动</li>
-<li>每天的Code Review，最好QA也能参与，让整个团队都能从业务和代码层面有统一、整体的认识</li>
-<li>在故事正式开始开发之前，不仅仅写好测试场景和用例，最好能写明自动化测试的场景，对于回归测试和对故事的认识都有更深入的了解</li>
-<li>发布经理和迭代经理的轮替，能让更多团队成员接触敏捷开发流程上的各方面，对增强团队责任感和对流程的理解有不少帮助</li>
-<li>多了解客户组织架构以及对客户的影响，分析在不同的情况下找哪个最合适的人来解决问题；同时需要多和客户沟通，加强个人的影响力，多方面加强与客户之间的关系</li>
-<li>更好地了解和分析客户的业务模式及需求，不仅仅是从单个故事的角度提出我们的建议，而是从更高的层级提供分析以实现更多的业务价值</li>
-<li>尝试用Ruby配合Cucumber搭建自动化测试环境，因为像使用cuke4duke配合Java这种实现方式，增加了中间插件自身的限制对于测试框架的影响；以及需要单独的测试环境和数据库</li>
-<li>更频繁地和客户进行周期性的反馈（至少一个月一次），以及更频繁的团队内部的一对一的交流和反馈</li>
-<li>合理的分配时间，控制同时参加活动的数量，保持精力的充沛</li>
-<li>加强和客户，以及其他团队的沟通，制定更好的沟通计划（定期，有明确的接口人）</li>
-<li>对于新人，尤其是QA的培训，可以分层次，采用技能矩阵的方法来制定比较详细的计划，想办法让他们保持积极性；可以建议每6个月换一下项目，加强 项目组和办公室之间的联系；对于新人的项目介绍和培训也需要系统化</li>
-<li>加强团队成员的质量意识，开发帮忙测试，交换开发和测试的职责，让团队成员自己使用和测试系统；团队成员共享向客户演示的职责</li>
-<li>增加测试覆盖率的可视化（手动以及自动化测试)，并进行分析</li>
-<li>根据模块、功能、实际的每一天进行缺陷等测试的分析</li>
-<li>在对客户演示之后进行反馈的总结，以帮助进行后续分析和开发的指导（迭代演示和故事卡演示）</li>
-<li>不要急于沟通，可以沉淀一下，对问题有清晰的认识以后，避免自己情绪的干扰，再进行沟通；更多地使用电话等即时沟通的方式；多使用图片等直观的形式</li>
-<li>通过不同的形式使故事卡、团队、迭代的进度更可视化</li>
-<li>有急事时通知团队做好相应的处理</li>
-<li>尽量避免打扰其他团队成员的工作</li>
-<li>坐的位置最好能覆盖不同的结对的开发人员，加强相互之间的沟通</li>
-<li>合理调节故事大小（包括技术故事），保证每天都有故事完成，增强团队的成就感</li>
-</ol>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Retro/">Retro</a></li></ul>
 
     </footer>
   

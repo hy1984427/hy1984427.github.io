@@ -22,6 +22,19 @@
   <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-73216141-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
 
 </head>
 <body>
@@ -151,6 +164,113 @@
     <footer class="article-footer">
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Book/">Book</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publish/">Publish</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-Bug_Series_Theory_And_Reality" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/27/Bug_Series_Theory_And_Reality/">Bug集锦 －理论与现实这么近</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/01/27/Bug_Series_Theory_And_Reality/" class="article-date">
+  <time datetime="2016-01-26T16:00:00.000Z" itemprop="datePublished">2016-01-27</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>写Bug集锦的目的在于分享从业这些年来遇到的这些有趣的问题，希望在读这些小故事的同时，能带给大家一些思考。</p>
+<h3 id="理论与现实这么近">理论与现实这么近</h3><p>作为计算机系毕业生的小蔡，一直觉得学校里学的理论知识，和现在的测试工作差距太大，在实际的工作中也没有什么作用。直到有一天她碰到这么一个有趣的问题。</p>
+<p>小蔡负责测试的是一个Web产品，基于不同的搜索条件，会显示大量的结果。由于搜索结果太多被分成了很多页，为了方便用户快捷跳转到特定的页面，开发人员特意设计了一个页面快速跳转的功能。</p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Bug_Series_1.1.png" alt="搜索结果页面快速跳转"></p>
+<p>图 1.1 － 搜索结果页面快速跳转</p>
+<p>在设计测试用例的时候小蔡就留心了，因为很多测试理论的书籍都描述过，对于输入框可以进行的验证点很多，比如说特殊字符、超长字符、负值、0值和null值，以及很大的数值等。对于大部分的测试用例，开发人员都处理得很好，没有发现缺陷，小蔡也松了口气。</p>
+<p>当测试到输入很大数值的用例时，由于不确定多大的数值会出错，也不能拿到代码，小蔡就自己选了一个数值：9999999999（10个9）。输入10个9、点击确定，突然，页面崩溃了！100以内的小数值，以及输入小于等于搜索结果页面数的数值等情况，小蔡在测试中都选取过，测试结果都很正常，那到底数值大到什么程度的时候页面会崩溃呢？一时想不到更好的办法，小菜只好硬着头皮使用尝试法开始确定出错的数值范围。</p>
+<p>10个9，出错；9个9，正常跳转到最后一页。突然小蔡想到，数据结构课程不是学过很多查找法吗！二分法就这么出现在了眼前，对，二分查找法！，5000000000（9个0），出错；2500000000（8个0），正常。没有线索，就这么一点一点查找。花了3个小时，小蔡终于定位到出错的数值：4294967295。小蔡很纳闷，怎么是这么一个奇怪的数值呢？有零有整的。计算机专业的背景给了小蔡一个提示，不会是2的多少次幂吧？果真，4294967295是2的32次方－1。和开发人员一沟通，才发现由于开发人员设想页面最大不会超过2的32次方，所以对于这个字段可以输入的最大数值的类型，选择的是int32；但是同时又没有对超过这个范围的数值进行任何的处理，就造成了程序判断中对于请求更大数值的页面时的溢出，从而导致了产品页面的崩溃。</p>
+<p>发现了这个隐藏的缺陷，小蔡还是很有成就感的，但又觉得如果能早点知道代码的逻辑，可能自己就不会花这么长的时间了。同时，一直觉得计算机的理论知识不会应用到测试实践中，可没想到这次多亏了学校中学到的这些基础知识，不只是int32，2的32次方，甚至还有二分查找的算法也给了自己解决问题的灵感。没有这些知识，定位问题就更困难了。</p>
+<h5 id="【扩展知识】">【扩展知识】</h5><p>边界值分析<br>二分查找法</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug/">Bug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug集锦/">Bug集锦</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Series/">Series</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-Bug_Series_Secutiry_In_All_Perspects" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/27/Bug_Series_Secutiry_In_All_Perspects/">Bug集锦 －安全应该是全面的</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/01/27/Bug_Series_Secutiry_In_All_Perspects/" class="article-date">
+  <time datetime="2016-01-26T16:00:00.000Z" itemprop="datePublished">2016-01-27</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>写Bug集锦的目的在于分享从业这些年来遇到的这些有趣的问题，希望在读这些小故事的同时，能带给大家一些思考。</p>
+<h3 id="安全应该是全面的">安全应该是全面的</h3><p>小蔡被分配到测试工资系统，这个系统不仅公司内部会使用，而且还会有面向其他大客户的定制版。</p>
+<p>由于工资系统的特殊性，不仅要求其在使用时的功能性，系统安全性也是一个很重要的指标。</p>
+<p>为了让系统更安全，业务分析人员在项目初始时就为系统设计了动态短信密码和随机键盘的功能（图5.1），使得系统在用户登录时就能验证用户的身份。只有在系统内部注册过手机号，并在登录时通过手机获取动态短信密码，并使用随机键盘输入自己设定的登陆密码之后，用户才能访问工资系统。</p>
+<p>在用户登录这部分，小蔡设计了不少安全性的测试用例，例如SQL注入等，但是都被系统防范住了。小蔡本以为安全测试做的很全面了，但是当测试功能点时，由于URL是www.xyz.com/user/123456的模式，她好奇地通过篡改URL最后的用户ID，期望系统能告知她无访问权限。可是没想到却查看到了另一个用户的信息。要知道企业内部的工号都是连续的，只要有人有耐心，这个缺陷可以让所有人的工资信息都曝光。</p>
+<p>小蔡意识到不仅是篡改用户ID会有问题，而且系统的URL模式也可能会有更大的问题。因为普通用户的URL是www.xyz.com/user/123456，而系统管理员的URL是www.xyz.com/admin/654321，最后几位也是工号。要知道管理员是可以看所有人的工资信息的！要是有人使用www.xyz.com/admin/123456，会被认为是管理员吗？</p>
+<p>小蔡带着这个问题进行了尝试，果真作为普通用户也被当成管理员，从而可以查看所有人的工资了。</p>
+<p>看来系统只是在登录时作了严格的安全性检测，但是对于登录之后的用户权限，却丝毫没有考虑。</p>
+<p>小蔡马上把这一发现通知项目经理，并确定这个缺陷为高优先级和高风险。整个开发团队在第一时间就修复了这个严重的缺陷。</p>
+<p>好奇心没有杀死猫，反而帮助小蔡在测试中发现了一个隐藏的重大安全性缺陷。小蔡也意识到，一个系统的安全性，并不单纯来自于防范系统外部的入侵，还需要严格审视系统内部的安全性漏洞。系统内外部的安全性是一体的，需要全面的设计。</p>
+<h5 id="【扩展知识】">【扩展知识】</h5><p>动态短信<br>随机键盘<br>SQL注入<br>OWASP Top 10<br>URL pattern<br>URL篡改</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug/">Bug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug集锦/">Bug集锦</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Series/">Series</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
 
     </footer>
   
@@ -751,176 +871,6 @@
     <footer class="article-footer">
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/User-Testing/">User Testing</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-Practice_QA_Capability_In_Project" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/12/03/Practice_QA_Capability_In_Project/">QA能力列表在项目中的实践</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/12/03/Practice_QA_Capability_In_Project/" class="article-date">
-  <time datetime="2012-12-02T16:00:00.000Z" itemprop="datePublished">2012-12-03</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tester/">Tester</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>大家可能都和我一样迷惑，在公司的不同项目上，我们怎么能提高自己的技术能力，并且通过能力的提升，使自己的工作和生活更加容易和便利？如果仅仅通过学习和看书，并不能很好地应用于项目和实践中。</p>
-<p>最近我们尝试把项目中需要用到的各项和QA相关的技术、工具，流程和方法列举出来，以方便我们有更明确的目的性，又有目标的提高自己的能力。也能让我们发现和QA能做的那个列表里面有哪些差距，在哪些方面我们可以提高和尝试。<br><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/QA_capability.jpg" alt="QA Capability List"></p>
-<p>通过上面这张图片，我们总结了关于”Business”, “Tools”, “Process”, “Framework”, “Language”, “Platform”和”Technique”这几个方面我们所涉及到的技术和工具等。</p>
-<p>根据这个QA能力列表，我们确定了自己近一个阶段所要针对提高的能力，比如我就选择了性能测试；而在这之后，我们把项目中的QA任务进行了划分，尽量让有不同目标的QA都能关注在自己想提高的领域，经过自己的学习和项目上的实践，不断巩固和提高这些能力，然后在项目组中分享和结对，转换发展方向，让更多的QA都能持续不断地提高。</p>
-<p>而且对于那些比较小的方面，比如说javascript脚本，其实只要利用5～10分钟的时间，可能我们就能写出一段可以在项目上使用的脚本，我们项目中现在就有一段可以辅助填表的脚本。这些小的改进都可以提高我们的效率，让我们有更多的时间去学习新技术和工具。</p>
-<p>对于项目组中只有一个QA的情况，除了上面的方法，我们还可以让Developer承担更多验证已有测试用例的活动，或者和他们结对来学习这些技术和工具。</p>
-<p>我们另一个项目实践是每个迭代都会发一封Quality Status给整个团队，以加强每个人对于质量的关注，分享QA最近的进展。下面给大家展示两个例子（代码是使用bootstrap实现的，下面的只是展示截图）。</p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/QA_capability_Iteration.png" alt="Quality Status for Iteration"></p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/QA_capability_Release.png" alt="Quality Status for Release"></p>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Capability/">Capability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-How_Google_Test_Software" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/06/29/How_Google_Test_Software/">How Google Test Software</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/06/29/How_Google_Test_Software/" class="article-date">
-  <time datetime="2012-06-28T16:00:00.000Z" itemprop="datePublished">2012-06-29</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Test/">Test</a><span>></span><a class="article-category-link" href="/categories/Test/Tester/">Tester</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>读《Google软件测试之道》后把一些重要的内容记录下来。</p>
-<h3 id="1-质量不等同于测试">1.质量不等同于测试</h3><ul>
-<li>质量是通过融合开发和测试，直至两者融为不能区分彼此的同一个体而达到的。</li>
-<li>测试是开发不可分割的一部分，开发和测试的结合会产生质量。</li>
-<li>把测试当做软件的feature。软件工程所交付的不是code，不是test，而是product，所以得让code和test集成在一起。</li>
-</ul>
-<h3 id="2-测试环境">2.测试环境</h3><ul>
-<li>小型测试（mock/fake环境）</li>
-<li>中型测试（mock/fake或真实环境）</li>
-<li>大型测试（真实环境）</li>
-<li>在小型和中型测试上强调自动化测试覆盖率，但在端到端测试时并不强调，避免投入过多，并且和特定功能设计绑定</li>
-<li>大、中、小型测试比例为1:2:7</li>
-</ul>
-<h3 id="3-测试类型">3.测试类型</h3><ul>
-<li>小型测试：测试代码单元的行为</li>
-<li>中型测试：测试一个或多个代码单元之间的交互</li>
-<li>大型测试：测试整个系统的工作</li>
-<li>小型测试保证代码质量，中型和大型测试保证产品质量</li>
-</ul>
-<h3 id="4-测试认证级别">4.测试认证级别</h3><ul>
-<li>5个级别：1～5，5级为最高</li>
-<li>分级依据<ul>
-<li>测试覆盖率</li>
-<li>分层测试情况</li>
-<li>持续集成</li>
-<li>缺陷和测试用例的关系</li>
-</ul>
-</li>
-</ul>
-<h3 id="5-详细测试认证级别">5.详细测试认证级别</h3><ul>
-<li>第1级<ul>
-<li>添加测试覆盖率的bundle</li>
-<li>搭建持续集成环境</li>
-<li>按照大、中、小型测试来区分测试</li>
-<li>识别具有不确定性的测试</li>
-<li>创建冒烟测试集</li>
-</ul>
-</li>
-<li>第5级：<ul>
-<li>为每一个非关键的bug添加测试</li>
-<li>主动使用各类分析工具</li>
-<li>总的测试覆盖率超过60%</li>
-</ul>
-</li>
-</ul>
-<h3 id="6-文档">6.文档</h3><ul>
-<li>所有Google项目都有设计文档</li>
-<li>设计文档是一个动态的文档（活文档，Living Document），随着项目的演化也在不断地保持更新</li>
-</ul>
-<h3 id="7-测试人员分类">7.测试人员分类</h3><ul>
-<li>测试开发工程师（SET）</li>
-<li>测试工程师（TE）</li>
-<li>测试工程经理</li>
-</ul>
-<h3 id="8-测试人员职责">8.测试人员职责</h3><ul>
-<li>SET主要负责mock/fake、API测试、测试工具、CI工具，更偏向于代码开发。</li>
-<li>TE是面向用户的测试，具备测试代码开发和用户为中心测试的双重能力。 </li>
-<li>TE完成测试整个过程，风险评估、测试计划、测试设计、测试执行、探索式测试、用户反馈。 </li>
-<li>测试工程经理，把TE和SET联系起来，需要足够的技术能力，需要足够了解产品，也需要知人善用的能力。</li>
-</ul>
-<h3 id="9-测试人员的未来">9.测试人员的未来</h3><ul>
-<li>测试开发工程师将变成开发人员，而测试开发工程师所具备的测试技能将被平均地分散到各个层级的开发工程师身上。 </li>
-<li>测试工程师会转型成为测试设计师。测试工程师可以成为如安全工程师这样的专家型角色，或者作为测试活动的管理者。 </li>
-<li>技术型测试主管，更多地成为资深工程师，同时作为思想领袖和协调者存在。测试活动由具体工作在产品上的人们负责。 </li>
-<li>测试开发工程师，测试工程师和测试经理分散到各个项目团队中去，更少关注测试流程，更多关注产品本身。</li>
-</ul>
-<h3 id="10-测试的未来">10.测试的未来</h3><ul>
-<li>测试基础设施会最终整体迁移到云端。</li>
-<li>测试用例库，测试代码的编辑、录制和执行都将在一个网站或通过浏览器插件完成。</li>
-<li>测试编写、执行和调试需要使用与被测的应用程序本身相同的语言和环境才最为高效。 </li>
-</ul>
-<h3 id="11-Google测试的原则和秘方">11.Google测试的原则和秘方</h3><ul>
-<li>Google测试的原则：Ship early and often；Fail fast </li>
-<li>Google测试的秘方：技能、稀缺、自动化、迭代集成</li>
-</ul>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Methodology/">Methodology</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Theory/">Theory</a></li></ul>
 
     </footer>
   

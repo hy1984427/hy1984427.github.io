@@ -66,7 +66,7 @@ ga('send', 'pageview');
   </div>
 </header>
     <section id="main" class="outer">
-      <article id="post-Practice_QA_Capability_In_Project" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-Speaking_Skills" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -74,720 +74,15 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2012/12/03/Practice_QA_Capability_In_Project/">QA能力列表在项目中的实践</a>
+      <a class="article-title" href="/2015/06/10/Speaking_Skills/">演讲技巧</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2012/12/03/Practice_QA_Capability_In_Project/" class="article-date">
-  <time datetime="2012-12-02T16:00:00.000Z" itemprop="datePublished">2012-12-03</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tester/">Tester</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>大家可能都和我一样迷惑，在公司的不同项目上，我们怎么能提高自己的技术能力，并且通过能力的提升，使自己的工作和生活更加容易和便利？如果仅仅通过学习和看书，并不能很好地应用于项目和实践中。</p>
-<p>最近我们尝试把项目中需要用到的各项和QA相关的技术、工具，流程和方法列举出来，以方便我们有更明确的目的性，又有目标的提高自己的能力。也能让我们发现和QA能做的那个列表里面有哪些差距，在哪些方面我们可以提高和尝试。<br><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/QA_capability.jpg" alt="QA Capability List"></p>
-<p>通过上面这张图片，我们总结了关于”Business”, “Tools”, “Process”, “Framework”, “Language”, “Platform”和”Technique”这几个方面我们所涉及到的技术和工具等。</p>
-<p>根据这个QA能力列表，我们确定了自己近一个阶段所要针对提高的能力，比如我就选择了性能测试；而在这之后，我们把项目中的QA任务进行了划分，尽量让有不同目标的QA都能关注在自己想提高的领域，经过自己的学习和项目上的实践，不断巩固和提高这些能力，然后在项目组中分享和结对，转换发展方向，让更多的QA都能持续不断地提高。</p>
-<p>而且对于那些比较小的方面，比如说javascript脚本，其实只要利用5～10分钟的时间，可能我们就能写出一段可以在项目上使用的脚本，我们项目中现在就有一段可以辅助填表的脚本。这些小的改进都可以提高我们的效率，让我们有更多的时间去学习新技术和工具。</p>
-<p>对于项目组中只有一个QA的情况，除了上面的方法，我们还可以让Developer承担更多验证已有测试用例的活动，或者和他们结对来学习这些技术和工具。</p>
-<p>我们另一个项目实践是每个迭代都会发一封Quality Status给整个团队，以加强每个人对于质量的关注，分享QA最近的进展。下面给大家展示两个例子（代码是使用bootstrap实现的，下面的只是展示截图）。</p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/QA_capability_Iteration.png" alt="Quality Status for Iteration"></p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/QA_capability_Release.png" alt="Quality Status for Release"></p>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Capability/">Capability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-How_Google_Test_Software" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/06/29/How_Google_Test_Software/">How Google Test Software</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/06/29/How_Google_Test_Software/" class="article-date">
-  <time datetime="2012-06-28T16:00:00.000Z" itemprop="datePublished">2012-06-29</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Test/">Test</a><span>></span><a class="article-category-link" href="/categories/Test/Tester/">Tester</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>读《Google软件测试之道》后把一些重要的内容记录下来。</p>
-<h3 id="1-质量不等同于测试">1.质量不等同于测试</h3><ul>
-<li>质量是通过融合开发和测试，直至两者融为不能区分彼此的同一个体而达到的。</li>
-<li>测试是开发不可分割的一部分，开发和测试的结合会产生质量。</li>
-<li>把测试当做软件的feature。软件工程所交付的不是code，不是test，而是product，所以得让code和test集成在一起。</li>
-</ul>
-<h3 id="2-测试环境">2.测试环境</h3><ul>
-<li>小型测试（mock/fake环境）</li>
-<li>中型测试（mock/fake或真实环境）</li>
-<li>大型测试（真实环境）</li>
-<li>在小型和中型测试上强调自动化测试覆盖率，但在端到端测试时并不强调，避免投入过多，并且和特定功能设计绑定</li>
-<li>大、中、小型测试比例为1:2:7</li>
-</ul>
-<h3 id="3-测试类型">3.测试类型</h3><ul>
-<li>小型测试：测试代码单元的行为</li>
-<li>中型测试：测试一个或多个代码单元之间的交互</li>
-<li>大型测试：测试整个系统的工作</li>
-<li>小型测试保证代码质量，中型和大型测试保证产品质量</li>
-</ul>
-<h3 id="4-测试认证级别">4.测试认证级别</h3><ul>
-<li>5个级别：1～5，5级为最高</li>
-<li>分级依据<ul>
-<li>测试覆盖率</li>
-<li>分层测试情况</li>
-<li>持续集成</li>
-<li>缺陷和测试用例的关系</li>
-</ul>
-</li>
-</ul>
-<h3 id="5-详细测试认证级别">5.详细测试认证级别</h3><ul>
-<li>第1级<ul>
-<li>添加测试覆盖率的bundle</li>
-<li>搭建持续集成环境</li>
-<li>按照大、中、小型测试来区分测试</li>
-<li>识别具有不确定性的测试</li>
-<li>创建冒烟测试集</li>
-</ul>
-</li>
-<li>第5级：<ul>
-<li>为每一个非关键的bug添加测试</li>
-<li>主动使用各类分析工具</li>
-<li>总的测试覆盖率超过60%</li>
-</ul>
-</li>
-</ul>
-<h3 id="6-文档">6.文档</h3><ul>
-<li>所有Google项目都有设计文档</li>
-<li>设计文档是一个动态的文档（活文档，Living Document），随着项目的演化也在不断地保持更新</li>
-</ul>
-<h3 id="7-测试人员分类">7.测试人员分类</h3><ul>
-<li>测试开发工程师（SET）</li>
-<li>测试工程师（TE）</li>
-<li>测试工程经理</li>
-</ul>
-<h3 id="8-测试人员职责">8.测试人员职责</h3><ul>
-<li>SET主要负责mock/fake、API测试、测试工具、CI工具，更偏向于代码开发。</li>
-<li>TE是面向用户的测试，具备测试代码开发和用户为中心测试的双重能力。 </li>
-<li>TE完成测试整个过程，风险评估、测试计划、测试设计、测试执行、探索式测试、用户反馈。 </li>
-<li>测试工程经理，把TE和SET联系起来，需要足够的技术能力，需要足够了解产品，也需要知人善用的能力。</li>
-</ul>
-<h3 id="9-测试人员的未来">9.测试人员的未来</h3><ul>
-<li>测试开发工程师将变成开发人员，而测试开发工程师所具备的测试技能将被平均地分散到各个层级的开发工程师身上。 </li>
-<li>测试工程师会转型成为测试设计师。测试工程师可以成为如安全工程师这样的专家型角色，或者作为测试活动的管理者。 </li>
-<li>技术型测试主管，更多地成为资深工程师，同时作为思想领袖和协调者存在。测试活动由具体工作在产品上的人们负责。 </li>
-<li>测试开发工程师，测试工程师和测试经理分散到各个项目团队中去，更少关注测试流程，更多关注产品本身。</li>
-</ul>
-<h3 id="10-测试的未来">10.测试的未来</h3><ul>
-<li>测试基础设施会最终整体迁移到云端。</li>
-<li>测试用例库，测试代码的编辑、录制和执行都将在一个网站或通过浏览器插件完成。</li>
-<li>测试编写、执行和调试需要使用与被测的应用程序本身相同的语言和环境才最为高效。 </li>
-</ul>
-<h3 id="11-Google测试的原则和秘方">11.Google测试的原则和秘方</h3><ul>
-<li>Google测试的原则：Ship early and often；Fail fast </li>
-<li>Google测试的秘方：技能、稀缺、自动化、迭代集成</li>
-</ul>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Methodology/">Methodology</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Theory/">Theory</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-Android_Automation_Robotium" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/18/Android_Automation_Robotium/">Android Automation - Robotium</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/05/18/Android_Automation_Robotium/" class="article-date">
-  <time datetime="2012-05-17T16:00:00.000Z" itemprop="datePublished">2012-05-18</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>For installation</strong>, please reference to <a href="http://developer.android.com/sdk/installing.html" target="_blank" rel="external">Installing the SDK | Android Developers</a>. The easiest way is to download Eclipse first, then install the Android Development Tools (ADT) as Plugin in Eclipse.</p>
-<h3 id="How_to_use_the_attached_project_zip_file:">How to use the attached project zip file:</h3><ol>
-<li><p>Unzip it first then copy them to you workspace;</p>
-</li>
-<li><p>Open Eclipse, and select “File -&gt; New -&gt; Other…”;</p>
-</li>
-<li><p>Select “Android -&gt; Android Project”, and “Next”;</p>
-</li>
-<li><p>Select “Create project from existing source”, and input folder path of “AndroidCalculator” project into “Location”, and change “Project Name” to “AndroidCalculator”;</p>
-</li>
-<li><p>“Next” and select “Build Target” as “Android 2.3.3”, then “Finish”.</p>
-</li>
-</ol>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Note</span>:</span><br><span class="line"></span><br><span class="line">Please <span class="keyword">do</span> the same to <span class="string">"AndroidCalculatorTest, but change the project folder path and change "</span>Project Name<span class="string">" to "</span>AndroidCalculatorTest".*</span><br><span class="line"></span><br><span class="line"><span class="keyword">For</span> running RobotiumTests_DataDriven.java, you need to import TestData.csv to emulator first:</span><br><span class="line"></span><br><span class="line">1. <span class="keyword">Open</span> DDMS;</span><br><span class="line"></span><br><span class="line">2. <span class="keyword">Open</span> <span class="keyword">File</span> Explorer;</span><br><span class="line"></span><br><span class="line">3. Import the TestData.csv <span class="keyword">file</span> <span class="keyword">in</span> attached <span class="keyword">test</span> project folder, into /data/data/com/calculator/files.</span><br><span class="line"></span><br><span class="line">4. <span class="keyword">Run</span> the data driven <span class="keyword">test</span>.</span><br></pre></td></tr></table></figure>
-<h3 id="How_to_run_the_application_we_test_against:">How to run the application we test against:</h3><ol>
-<li><p>Create a AVD of Android 2.3.3 in Android Virtual Device Manager (AVD Manager) under “Window -&gt; AVD Manager” in Eclipse;</p>
-</li>
-<li><p>Select project “AndroidCalculator”, and “Run As” “Android Application”.</p>
-</li>
-</ol>
-<h3 id="How_to_run_tests_against_the_application:">How to run tests against the application:</h3><ol>
-<li><p>Create a AVD of Android 2.3.3 in Android Virtual Device Manager (AVD Manager) under “Window -&gt; AVD Manager” in Eclipse;</p>
-</li>
-<li><p>Open “AndroidCalculatorTest -&gt; src -&gt; com.calculator.test”;</p>
-</li>
-<li><p>Select any of the java file and “Run As” “Android JUnit Test”.</p>
-</li>
-</ol>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Note</span>: please only select one file to run, because all <span class="keyword">of</span> them have a main() <span class="keyword">method</span>, so they will conflict <span class="keyword">with</span> each other <span class="keyword">when</span> run them all together.</span><br></pre></td></tr></table></figure>
-<h3 id="Features_included_in_“AndroidCalculatorTest”:">Features included in “AndroidCalculatorTest”:</h3><ol>
-<li><p>“InstrumentationTests.java” is implemented by Instrumentation in Android SDK itself;</p>
-</li>
-<li><p>“RobotiumTests_APK.java” demonstrate how to test an Android APK file when only get the APK file itself, its “Package_ID” and “Main_Activity”;</p>
-</li>
-<li><p>“RobotiumTests_DataDriven.java” shows how to read a group of test data from a csv file, run series of tests, then export the results to another file;</p>
-</li>
-<li><p>“RobotiumTests_Whitebox.java” shows how to use Robotium in UT level, more from code coverage perspective;</p>
-</li>
-<li><p>“RobotiumTests.java” give you a brief knowledge of writing a basic Robotium test and take screenshot in the test. (please check the screenshot under “/mnt/sdcard” in DDMS).</p>
-</li>
-</ol>
-<h3 id="Library_Configuration_Tip:">Library Configuration Tip:</h3><ol>
-<li><p>To run the Robotium tests, we need to select all in “Properties -&gt; Java Build Path -&gt; Order and Export”;</p>
-</li>
-<li><p>Move the robotium up to top and move Android and Android Dependencies just below robotium (but still above any project).</p>
-</li>
-</ol>
-<h3 id="Issues_encountered_when_writing_Robotium_tests:">Issues encountered when writing Robotium tests:</h3><ol>
-<li><p>Unable to take ScreenShot (saving the file to emulator):  <a href="http://stackoverflow.com/questions/7550201/unable-to-take-screenshot-on-android-using-robotium-and-private-method" target="_blank" rel="external">Unable to take screenshot on android using robotium and private method</a></p>
-</li>
-<li><p>“Null pointer exception” or “Array out of boundary” when reading a csv file: please check the format of csv whether it’s compatible with jxl.</p>
-</li>
-</ol>
-<h3 id="Some_materials_for_Android_-_Robotium_framework:">Some materials for Android - Robotium framework:</h3><ol>
-<li><p><a href="http://developer.android.com/" target="_blank" rel="external">Android Developers</a></p>
-</li>
-<li><p><a href="http://code.google.com/p/robotium/" target="_blank" rel="external">robotium -  It’s like Selenium, but for Android™ - Google Project Hosting</a></p>
-</li>
-<li><p><a href="http://controlingquality.blogspot.com/2011/02/design-data-driven-framework-around.html" target="_blank" rel="external">Controling Quality: Design Data Driven Framework around Robotium</a></p>
-</li>
-<li><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Robotium_Black_Box_Testing_For_Android_Chinese.pdf" target="_blank" rel="external">Robotium_Black_Box_Testing_For_Android</a> <em>in Chinese</em></p>
-</li>
-</ol>
-<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Robotium.zip" target="_blank" rel="external">Robotium.zip</a></p>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Robotium/">Robotium</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-Windows_Phone_Automation_Windows_Phone_Test_Framework" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/18/Windows_Phone_Automation_Windows_Phone_Test_Framework/">Whindows Phone Automation - WindowsPhoneTestFramework</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/05/18/Windows_Phone_Automation_Windows_Phone_Test_Framework/" class="article-date">
-  <time datetime="2012-05-17T16:00:00.000Z" itemprop="datePublished">2012-05-18</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Better to install VS2010 first, otherwise required testing framework/dll can’t be found.</p>
-<p><a href="http://msdn.microsoft.com/zh-cn/windowsphone/ff955778.aspx" target="_blank" rel="external"><strong>WindowsPhone system structure</strong></a></p>
-<p><strong>WindowsPhoneApp developing basics:</strong></p>
-<ol>
-<li><a href="http://social.msdn.microsoft.com/Forums/zh-CN/windowsphonezhchs/thread/5aacf6ab-dab7-4dcc-9d3d-d2c9095e490e" target="_blank" rel="external">Windows Phone 7 开发常见问题汇集贴</a></li>
-<li><a href="http://msdn.microsoft.com/zh-cn/ff380145" target="_blank" rel="external">Windows Phone 7 手机开发</a></li>
-</ol>
-<p><strong>WindowsPhone Automation test:</strong></p>
-<ol>
-<li><a href="https://github.com/Expensify/WindowsPhoneTestFramework" target="_blank" rel="external">Expensify/WindowsPhoneTestFramework</a></li>
-<li><a href="http://www.slideshare.net/cirrious/ui-testing-on-windows-phone" target="_blank" rel="external">UI Testing on Windows Phone 7</a></li>
-<li><a href="http://www.cnblogs.com/chenkai/tag/Windows%20Phone/" target="_blank" rel="external">Windows Phone应用开发</a></li>
-</ol>
-<p><strong>Suggestions for development:</strong></p>
-<ol>
-<li>WindowsPhone app use MVVM pattern: M is Model, it controls the data and events; V is View, which controls the display; and VM is View-Model, which is the bridge from Model to View.</li>
-<li>A better way to design the app is heavily use M and VM, with light V. So that we can test the app easily and quickly, with stub and mock, rather than heavy UI tests.</li>
-<li>A tool recommended is MVVM light, check the references from <a href="http://mvvmlight.codeplex.com/" target="_blank" rel="external">http://mvvmlight.codeplex.com/</a> and <a href="http://www.galasoft.ch/mvvm/" target="_blank" rel="external">http://www.galasoft.ch/mvvm/</a>.</li>
-</ol>
-<p><strong>Problem encountered:</strong></p>
-<p>The development of WhindowsPhone app is quite easy (please refer to <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/WP7App.zip" target="_blank" rel="external">this</a>, it’s a basic WP7 app), but for automation testing, especially UI testing, it’s the opposite.</p>
-<p>When using WindowsPhoneTestFramework, following the steps in video of <a href="http://www.slideshare.net/cirrious/ui-testing-on-windows-phone" target="_blank" rel="external">Ui Testing on Windows Phone</a>, the step of install BDD class library show error of JsonValue 0.5.0 can’t be installed, even try to install JsonValue 0.6.0 still fails.</p>
-<p>I am blocked by this. No clue found.</p>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows-Phone/">Windows Phone</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WindowsPhoneTestFramework/">WindowsPhoneTestFramework</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-iOS_Automation_Frank" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/14/iOS_Automation_Frank/">iOS Automation - Frank</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/05/14/iOS_Automation_Frank/" class="article-date">
-  <time datetime="2012-05-13T16:00:00.000Z" itemprop="datePublished">2012-05-14</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Please download and unzip <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/HelloWorld_Frank.zip" target="_blank" rel="external">HelloWorld_Frank.zip</a>, and select “<strong>HelloWorld copy</strong>“ to run FrankTests.</p>
-<p><strong>Frank (Frankenstein!?) is ‘Selenium for native iOS apps’.</strong></p>
-<ol>
-<li>Frank use KIF and UISpec as base structure, and use UIQuery to locate elements.</li>
-<li>Frank used to based on other framework, but recently it’s changed to KIF, so some documents may out of date. Try to use the latest documents and samples.</li>
-<li>You can use Ruby in Frank rather than Objective-C in KIF.</li>
-</ol>
-<p><strong>Environment preparation:</strong></p>
-<ol>
-<li>Install rvm, ruby (1.9.2 is preferred to avoid issue when installing ruby-debug later), frank-cucumber and follow the <a href="http://www.testingwithfrank.com/installing.html" target="_blank" rel="external">installation script</a> provided by Frank.</li>
-<li>For debug use, I have added ruby-debug, please gem install it when you see message of that gem is required.</li>
-</ol>
-<p><strong><em>Note:</em></strong></p>
-<ol>
-<li>Screenshots will be generated under <em>HelloWorld/Frank/screenshots</em>, if the 1st step in <code>Then /^I can see &quot;([^&quot;]*)&quot;$/ do |welcomeMessage|</code> is enabled;</li>
-<li>DOM can be exported if the 2nd step in <code>Then /^I can see &quot;([^&quot;]*)&quot;$/ do |welcomeMessage|</code> is enabled;</li>
-<li>Add <em>@record</em> before scenario can start recording, but you should use it only once.</li>
-</ol>
-<p><strong>Highly recommend before you start using Frank:</strong></p>
-<ol>
-<li><a href="http://www.testingwithfrank.com/screencasts.html" target="_blank" rel="external">http://www.testingwithfrank.com/screencasts.html</a></li>
-<li><a href="http://www.testingwithfrank.com/presentations.html" target="_blank" rel="external">http://www.testingwithfrank.com/presentations.html</a></li>
-</ol>
-<p><strong>Tips/Limitations:</strong></p>
-<ol>
-<li>Build the app first, then run cucumber; otherwise sometimes, Frank can’t attach to the simulator.</li>
-<li>Encounter one issue which is not fixed, post in the gmail group: Google Groups. It’s about how to check a text filed with space in its value.</li>
-<li>For label, we can’t access their value and check on them, Apple should be blamed, so we can only write code by ourselves to implement it from ground: set accessibilityValue -&gt; write down the method to locate and compare the value -&gt; write the step definition to recall the method -&gt; use the step definition in Frank.</li>
-<li>Few documents/samples for Frank, even how to use selector; and some step definitions are not suitable for use, need to google or write down basic steps for action and validation.</li>
-</ol>
-<p><strong>How to use Symbiote (the elements’ tree viewer):</strong></p>
-<p>Few material for it, only found <a href="http://vimeo.com/22644221" target="_blank" rel="external">http://vimeo.com/22644221</a> and <a href="http://blog.thepete.net/2011/05/inspect-state-of-our-running-ios-apps.html" target="_blank" rel="external">http://blog.thepete.net/2011/05/inspect-state-of-our-running-ios-apps.html</a></p>
-<p><strong>Debug:</strong></p>
-<ol>
-<li>Using Frank is not easy to debug, using ruby, so can use ruby-debug to debug, but you need to install gem of ruby-debug first, then follow steps in <a href="https://gist.github.com/1333785" target="_blank" rel="external">https://gist.github.com/1333785</a>.</li>
-<li>A better way is just installing ruby1.9.2 rather than 1.9.3</li>
-<li>But for the step in Frank itself, you can only use “Console.app” on Mac to see log. Only few useful info can be found.</li>
-</ol>
-<p><a href="http://stackoverflow.com/questions/9745842/how-to-select-elements-for-frank-using-uiquery-uispec" target="_blank" rel="external"><strong>How to select elements for Frank using UIQuery/UISpec?</strong></a></p>
-<p><strong>Recording of script running:</strong></p>
-<ol>
-<li>Will recording everything from the scenario marked as <em>@record</em>.</li>
-<li>With multiple <em>@record</em> tags, it will open recording app multiple times, which is unusable when recording. So only use <em>@record</em> tag once.</li>
-<li>The recording is a feature of QuickTime player.</li>
-</ol>
-<p><strong>Reference</strong></p>
-<ol>
-<li><a href="https://github.com/moredip/Frank" target="_blank" rel="external">https://github.com/moredip/Frank</a></li>
-<li><a href="http://www.testingwithfrank.com/" target="_blank" rel="external">http://www.testingwithfrank.com/</a></li>
-<li><a href="https://groups.google.com/forum/?fromgroups#!forum/frank-discuss" target="_blank" rel="external">https://groups.google.com/forum/?fromgroups#!forum/frank-discuss</a></li>
-<li><a href="http://code.google.com/p/uispec" target="_blank" rel="external">http://code.google.com/p/uispec</a></li>
-<li>Ruby-debug: <a href="http://bashdb.sourceforge.net/ruby-debug.html" target="_blank" rel="external">http://bashdb.sourceforge.net/ruby-debug.html</a></li>
-</ol>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Frank/">Frank</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-Android_Automation_NativeDriver" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/09/Android_Automation_NativeDriver/">Android Automation - NativeDriver</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/05/09/Android_Automation_NativeDriver/" class="article-date">
-  <time datetime="2012-05-08T16:00:00.000Z" itemprop="datePublished">2012-05-09</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Library Configuration Tip:</strong></p>
-<ol>
-<li>To run the Robotium tests, we need to select all in “Properties -&gt; Java Build Path -&gt; Order and Export”;</li>
-<li>Move the robotium up to top and move Android and Android Dependencies just below robotium (but still above any project).</li>
-</ol>
-<p><strong>Tips:</strong></p>
-<ol>
-<li>Create the tests as JUnit tests;</li>
-<li>Under application folder, run <code>$Android-SDK-Prefix/platform-tools/adb shell am instrument com.calculator/com.google.android.testing.nativedriver.server.ServerInstrumentation</code>; then run <code>$Android-SDK-Prefix/platform-tools/adb forward tcp:54129 tcp:54129</code></li>
-<li>Connection and port forward are easily broken, need to check them when tests fail, especially once the tests fail or code is changed.</li>
-<li>If the element, especially textfield, is not focused, you can’t input anything in it; unless you <code>click()</code> it before <code>sendKeys()</code></li>
-<li>After input into textfield, you need to navigate back to disable keyboard, using <code>driver.navigate().back()</code></li>
-<li>No api about <code>wait()</code>, just use <code>Thread.sleep()</code></li>
-<li>Using the take screenshot method, you can only use full path</li>
-</ol>
-<p><strong>References:</strong></p>
-<ol>
-<li><a href="http://code.google.com/p/nativedriver" target="_blank" rel="external">NativeDriver</a></li>
-<li><a href="http://code.google.com/p/nativedriver/w/list" target="_blank" rel="external">NativeDriver Wiki</a></li>
-<li><a href="https://code.google.com/p/nativedriver/source/browse/trunk/android/test/com/google/android/testing/nativedriver/" target="_blank" rel="external">NativeDriver Source</a></li>
-<li><a href="https://groups.google.com/forum/#!forum/nativedriver-users" target="_blank" rel="external">NativeDriver Google Groups</a></li>
-<li><a href="http://kongqingyun123.blog.163.com/blog/static/63772835201172935833719/" target="_blank" rel="external">TestNG + NativeDriver实现android的UI自动化测试</a></li>
-<li><a href="https://groups.google.com/forum/#!msg/nativedriver-users/1eZRMu3KbPA/FMn9R6upuDwJ" target="_blank" rel="external">How to Screen Capture On Error</a></li>
-<li><a href="http://kongqingyun123.blog.163.com/blog/static/63772835201182932332956/" target="_blank" rel="external">Windows下NativeDriver截屏功能</a></li>
-</ol>
-<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/NativeDriverAndroidTests.zip" target="_blank" rel="external">NativeDriverAndroidTests.zip</a></p>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NativeDriver/">NativeDriver</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-iOS_Automation_NativeDriver" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/08/iOS_Automation_NativeDriver/">iOS Automation - NativeDriver</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/05/08/iOS_Automation_NativeDriver/" class="article-date">
-  <time datetime="2012-05-07T16:00:00.000Z" itemprop="datePublished">2012-05-08</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Very easy to learn, and can reuse lots of knowledge in Web testing.<br>Nothing need to explain, just follow the document to setup the environment.</p>
-<p><strong>Open “NativeDriverTests” in Eclipse, run the app in XCode simulator first, then run the tests in Eclipse as JUnit Test.</strong></p>
-<p><strong>References:</strong></p>
-<ol>
-<li><a href="http://code.google.com/p/nativedriver" target="_blank" rel="external">NativeDriver</a></li>
-<li><a href="http://code.google.com/p/nativedriver/w/list" target="_blank" rel="external">NativeDriver Wiki</a></li>
-<li><a href="http://code.google.com/p/selenium/" target="_blank" rel="external">Selenium</a></li>
-<li><a href="http://electronicingenuity.com/nativedriver-ios-first-impressions" target="_blank" rel="external">NativeDriver and iOS: First Impressions</a></li>
-</ol>
-<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/NativeDriverIOSTests.zip" target="_blank" rel="external">NativeDriverIOSTests.zip</a></p>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NativeDriver/">NativeDriver</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-iOS_Automation_KIF_Keep_It_Functional" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/04/26/iOS_Automation_KIF_Keep_It_Functional/">iOS Automation - KIF (Keep It Functional)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/04/26/iOS_Automation_KIF_Keep_It_Functional/" class="article-date">
-  <time datetime="2012-04-25T16:00:00.000Z" itemprop="datePublished">2012-04-26</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Please download and unzip <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/KIF.zip" target="_blank" rel="external">KIF.zip</a>, and select “HelloWorld copy” to run KIFTests.</p>
-<p><strong>Note:</strong></p>
-<ol>
-<li>I have modified KIF framework: add “[(UITextField *) view setText:nil];” in KIFTestStep.m to clear text before input;</li>
-<li>By default, using “[super initializeScenarios]” in EXTestController.m to initialize all scenarios, the order of scenarios are defined according to the scenario name ascending; to change the order of them, change corresponding lines in “initializeScenarios” in EXTestController.m.</li>
-<li>For KIF tests, in order to get value of text field, we need to set “accessibilityValue” of it in code first, then we can access its value in testing code. It’s better we can package them into one class, which we can reuse later.</li>
-</ol>
-<p><strong>References for KIF:</strong></p>
-<ol>
-<li>KIF uses undocumented Apple APIs. This is true of most iOS testing frameworks, and is safe for testing purposes, but it’s important that KIF does not make it into production code, by duplicating a second target for the KIF-enabled version of the app to test. This gives you an easy way to begin testing — <em>just run this second target</em> — and also helps make sure that no testing code ever makes it into your App Store submission and gets your app rejected.</li>
-<li>All of the tests for KIF are written in Objective C, so the performance is good.</li>
-<li>Some detailed steps are not documented in KIF official documents, need to compare the docs with code provided in GitHub.</li>
-</ol>
-<h4 id="Advantages_of_KIF_comparing_to_UIAutomation_(official_by_KIF_group_but_briefly):">Advantages of KIF comparing to UIAutomation (official by KIF group but briefly):</h4><p><strong>KIF Pros</strong></p>
-<ol>
-<li>All objective-C. No need to write translations from JavaScript.</li>
-<li>Can easily hook into your code base for obscure things, like “fake a credit card swipe.”</li>
-<li>Easily runs on the command line for CI. Current shipping version of UIAutomation does not.</li>
-<li>No external dependencies. UIAutomation currently requires Instruments.</li>
-<li>Easy to integrate into your Xcode workflow.</li>
-<li>Tests run quickly. Runs in the app rather than being translated from Instruments/JS.</li>
-<li>It’s open source. If there’s something you want to add, you can. If something’s broken, it can be fixed quickly.</li>
-</ol>
-<p><strong>UIAutomation Pros</strong></p>
-<ol>
-<li>Runs outside of the process, so it could potentially simulate things like switching apps or hitting the home button. KIF could possibly do some of this using private API, but in general you need to mock these sorts of interactions.</li>
-<li>JS is less verbose and may appeal to some more than ObjC.</li>
-<li>Apple has full access to the frameworks and can potentially do some awesome things in the future.</li>
-<li>We get new features for free over time, and old ones will always be supported. KIF uses a lot of undocumented API, so it’s possible that future iOS releases would require it to be updated.</li>
-</ol>
-<p><strong>Some materials for iOS - KIF framework:</strong></p>
-<ol>
-<li><a href="https://github.com/square/KIF" target="_blank" rel="external">KIF</a></li>
-<li><a href="https://groups.google.com/forum/?fromgroups#!forum/kif-framework" target="_blank" rel="external">KIF Google Groups</a></li>
-<li><a href="http://corner.squareup.com/2011/07/ios-integration-testing.html" target="_blank" rel="external">iOS Integration Testing</a></li>
-<li><a href="http://sgleadow.github.com/blog/2011/11/16/enabling-accessibility-programatically-on-ios-devices/" target="_blank" rel="external">Enabling Accessibility Programatically on iOS Devices</a></li>
-</ol>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIAutomation/">UIAutomation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-iOS_Automation_UIAutomation" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/04/26/iOS_Automation_UIAutomation/">iOS Automation - UIAutomation</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/04/26/iOS_Automation_UIAutomation/" class="article-date">
-  <time datetime="2012-04-25T16:00:00.000Z" itemprop="datePublished">2012-04-26</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>This framework is not suggested!</strong></p>
-<p><strong>Some materials for iOS - UIAutomation framework:</strong></p>
-<ol>
-<li><a href="http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/" target="_blank" rel="external">Working with UIAutomation</a></li>
-<li><a href="http://www.sunsetlakesoftware.com/sites/default/files/Fall2010CourseNotes/ui%20automation.html" target="_blank" rel="external">UI Automation</a></li>
-<li><a href="https://developer.apple.com/library/prerelease/ios/documentation/DeveloperTools/Reference/UIAutomationRef/" target="_blank" rel="external">UI Automation JavaScript Reference for iOS</a></li>
-<li><a href="http://www.codeproject.com/Articles/107595/How-Do-I-Perform-UI-Automation-Testing-in-iOS-4" target="_blank" rel="external">How Do I Perform UI Automation Testing in iOS 4</a></li>
-<li><a href="http://stackoverflow.com/questions/8306076/ios-ui-automation-get-textfield-by-accessibility-label" target="_blank" rel="external">iOS - UI Automation get textfield by accessibility label?</a></li>
-<li><a href="http://blog.manbolo.com/2012/04/08/ios-automated-tests-with-uiautomation" target="_blank" rel="external">iOS Automated Tests with UIAutomation</a></li>
-<li><a href="http://stackoverflow.com/questions/7688311/cant-get-value-of-uiastatictext" target="_blank" rel="external">Can’t get value of UIAStaticText?</a></li>
-</ol>
-<p><strong>UIAutomation</strong></p>
-<ol>
-<li>Using JavaScript: each line of JavaScript in UIAutomation will trigger a request to iOS simulator, which make the awful performance of it;</li>
-<li>The framework is unstable: for the script attached, sometimes the testing results are different, even same environment and script are provided; and sometimes the simulator or instrument will hung and quit expected;</li>
-<li>The testing supporting of this framework is not good: the element can be get by its id, but can only get by its name/label occasionally, and there are some issues unresolved, like value of label item can’t be get;</li>
-<li>Readiness of JavaScript is hard, it doesn’t provide the capability to integrate with tools like Cucumber;</li>
-<li>It doesn’t have the capability to integrate with CI tools;</li>
-<li>It can’t run on real devices, but only on simulator, which means it can’t run parallel.</li>
-</ol>
-<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/UIAutomation.zip" target="_blank" rel="external">UIAutomation.zip</a></p>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIAutomation/">UIAutomation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-Write_Test_Case_Use_Mind_Map" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/04/23/Write_Test_Case_Use_Mind_Map/">使用Mind Map写Test Case</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/04/23/Write_Test_Case_Use_Mind_Map/" class="article-date">
-  <time datetime="2012-04-22T16:00:00.000Z" itemprop="datePublished">2012-04-23</time>
+      <a href="/2015/06/10/Speaking_Skills/" class="article-date">
+  <time datetime="2015-06-09T16:00:00.000Z" itemprop="datePublished">2015-06-10</time>
 </a>
       
   <div class="article-category">
@@ -798,40 +93,329 @@ ga('send', 'pageview');
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在之前的项目中，Acceptance Criteria （AC）的描述会存放在Jira Description中；在当前项目中，除了在Jira中描述AC外，我们会使用Mind Map来写AC，以便形成测试用例Test Case，并标注测试结果和注测试代码覆盖，用着效果不错。</p>
-<p>具体格式可以参考<a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/PageName_FeatureName_StoryID.mm" target="_blank" rel="external">这里</a>。</p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/test_case_in_mindmap.png" alt="Mind Map中的Test Case"></p>
-<p>Mind Map中的AC虽然没有严格按照标准方式书写Given When Then，但实际上通过每个节点的上下文，我们就能了解到相应的这几方面的内容。</p>
-<p>我觉得这种方式写Test Case的<strong>优势</strong>在于：</p>
-<ol>
-<li>有层次，一目了然</li>
-<li>也看得出AC的关联</li>
-<li>能知道哪些有测试实现</li>
-<li>能看得到测试结果</li>
-<li>任何角色都能看到MindMap，也都能了解相应的Story的状态。</li>
+        <h2 id="演讲的实用技巧">演讲的实用技巧</h2><hr>
+<h3 id="内容准备">内容准备</h3><ol>
+<li><p>熟悉内容</p>
+<p> <em>演讲最先需要准备的就是内容。只有保证了内容的吸引力，才会有观众，才会需要准备后续的内容。</em></p>
+</li>
+<li><p>⽇程</p>
+<p> <em>在演讲一开始，就需要明确告诉观众大致的流程，这样便于观众快速确定听的重点，也能让观众在走神的时候快速切换到正在演讲的内容。</em></p>
+</li>
+<li><p>图⽚</p>
+<p> <em>在一般的场合，演讲的材料最好以图片为主，避免过多的文字对于观众注意力的干扰。</em></p>
+</li>
+<li><p>字体</p>
+<p> <em>为了保证所有观众都能准确无误地接收到演讲的内容，需要在准备时调整字体大小，让即使最后一排的观众都能看得清楚。</em></p>
+</li>
+<li><p>备忘</p>
+<p> <em>演讲不可避免需要做一些备忘。这样可以在必要时提示演讲者。</em></p>
+</li>
 </ol>
-<p>对于Mind Map的<strong>书写和分类</strong>，目前我们是按照相对独立的Feature来分文件，Page-Feature-StoryID,方便找到需要的Mind Map。对于以后功能和页面过多的时候怎么分类（页面过多文件过多，功能多了后也必然会有不同页面的Feature的关联），还在思考中，逐步变化吧。</p>
-<p>之前是每次修改后就上传到一个地方，要么重命名要么覆盖，后来就建议使用Svn之类的工具来进行版本管理以便于追踪修改。</p>
-<p>与之对应，我们目前的<strong>工作流程</strong>是：</p>
-<ol>
-<li>BA确定需求后会写出Mind Map的初稿；</li>
-<li>QA和BA一起Review并得到最后的AC；</li>
-<li>Kick Off Story时会按照Mind Map来过一遍</li>
-<li>在Developer进行开发的时候，会将已实现单元测试的方法名加在对应的AC之后并加上单元测试覆盖的图标；</li>
-<li>QA能看到哪些AC被测试覆盖了，并着重未覆盖的AC也着重探索性，测试完成后会在对应的AC加上勾或者叉来标注结果。</li>
+<h3 id="演讲中">演讲中</h3><ol>
+<li><p>站位</p>
+<p> <em>大部分的演讲现在都会录制视频，在会后分享。一定要注意自己的站位不要阻挡摄像机，也需要让摄像机能拍摄到自己。同时还需要注意自己的手势有可能也会影响视频效果。</em></p>
+</li>
+<li><p>与观众交流</p>
+<p> <em>如果不是特意锻炼过，任何人在演讲的时候都或多或少会紧张。观众不仅可以是紧张的来源，也可以通过寻求观众中赞同的观点和眼神，来缓解自己的紧张感，更好地发挥。同样也包括和观众进行问答等互动，增强观众的参与度，让演讲更生动。</em></p>
+</li>
+<li><p>不要读ppt内容</p>
+<p> <em>没有人愿意在现场听人读稿子，如果这样，不如省下这些时间，在会后看分享的资料就好了。而如果在准备阶段，演讲稿大部分是图片，也没有太多机会陷入这个问题之中。</em></p>
+</li>
+<li><p>适当的停顿</p>
+<p> <em>适当的停顿是为了保证所有观众都能理解到演讲的重点，也让观众有时间去思考和消化相关的内容。</em></p>
+</li>
+<li><p>语调</p>
+<p> <em>语调的变化可以唤起观众的注意力，对于把走神的观众拉回演讲中很有帮助。同理还有反复强调某一内容</em></p>
+</li>
+<li><p>肢体语⾔</p>
+<p> <em>肢体语言不仅是表达内容的一个方式，能让演讲形势更加丰富，也可以让演讲者更自然地进行表达。</em></p>
+</li>
 </ol>
-<p>有<strong>欠缺</strong>的地方有：</p>
-<ol>
-<li>多了一次对Story的描述，最开始是当做Story的补充，因此Mind Map能否及时根据Story更新也成了要关注的问题；</li>
-<li>Mind Map是文档但不是可执行的文档。</li>
+<h3 id="回答问题">回答问题</h3><ol>
+<li><p>基于⾃⼰的实践</p>
+<p> <em>不少人都觉得谈项目实践会误导别人，毕竟项目情况是不一样的。其实大可不必，只需要适当介绍项目背景和执行具体实践的背景就可以了。大部分观众都想了解别人是如何做事的，从而给自己启发，自然项目实践会更贴近于观众的实际工作，更具有借鉴意义。</em></p>
+</li>
+<li><p>解决具体的问题，⽽不是⽅法论</p>
+<p> <em>很多人觉得对于观众的问题，需要提供大一统的解决方案，概括性地从根本解决观众的问题。实际项目中没有一个方法是银弹，所以更需要告诉观众每种解决方案都是有其特定的使用场景的。回答问题时需要更具体，更基于实践，而不是空洞的理论。</em></p>
+</li>
+<li><p>重复问题，得到确认</p>
+<p> <em>如果问题比较复杂，在回答观众提问之前，需要根据自己的理解重新描述问题，确保观众提问的和自己回答的是同一个问题。</em></p>
+</li>
+<li><p>详细说明会很占⽤时间，下来⼀起讨论</p>
+<p> <em>如果观众的问题太过于细节，同时需要更多的背景知识才能进行探讨，亦或是问题和主题不太相关，大多数人不关心，则可以向提问者提出等演讲结束，可以有更多时间一起深入问题进行探讨。</em></p>
+</li>
 </ol>
+<h3 id="演讲后">演讲后</h3><ol>
+<li><p>根据反馈更新内容</p>
+<p> <em>演讲之后除了搜集对于自己演讲的反馈之外，还需要根据观众的反馈，适度调整演讲稿的内容。这样对于之后的分享和演讲都很有帮助。</em></p>
+</li>
+<li><p>存档</p>
+<p> <em>对于演讲稿和相关的资料，例如图片等，需要进行存档，便于之后的查询和检索。</em></p>
+</li>
+<li><p>对外分享时使⽤PDF</p>
+<p> <em>对外分享的演讲稿，需要使用PDF的格式，尤其是演讲稿带有公司的logo的情形。</em></p>
+</li>
+</ol>
+<p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Speaking_Skills.pdf" target="_blank" rel="external">Speaking_Skills.pdf</a></p>
 
       
     </div>
   
     <footer class="article-footer">
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AC/">AC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Acceptance-Criteria/">Acceptance Criteria</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mind-Map/">Mind Map</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Test-Case/">Test Case</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Skills/">Skills</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Speaking/">Speaking</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-Mobile_App_Testing_With_22_Rules" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/09/28/Mobile_App_Testing_With_22_Rules/">移动app测试的22条军规</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2014/09/28/Mobile_App_Testing_With_22_Rules/" class="article-date">
+  <time datetime="2014-09-27T16:00:00.000Z" itemprop="datePublished">2014-09-28</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>随着现在智能手机的大规模普及，移动app的使用也越来越广泛，导致了大量公司进入移动app开发领域。这一趋势带来的挑战是产品需要以更高的品质，在更短的时间内投放到市场，并不断得到改进。</p>
+<p>移动app可以分为原生app和混合Hybrid app，它相对于传统的桌面应用来说有着诸多不同，工具和方法论的相对缺乏导致移动app的测试给测试人员带来了更多的挑战。笔者经过两年多对电信运营商的移动门户app的测试，总结出以下对于原生app的测试经验和实践（其实对于Hybrid app，这些经验和实践在很大程度上也是通用的）。</p>
+<h2 id="1-_设备和平台">1. 设备和平台</h2><p>由于移动设备的碎片化（操作系统，设备硬件，屏幕尺寸，分辨率，像素密度），从资源和投入产出比的考虑出发，测试人员不可能穷尽所有设备和操作系统的版本来进行全覆盖的测试，从而需要根据目标用户的分布来选择需要测试的设备。通常，我们使用Google Analytics或Adobe Omniture来统计目标用户的分布，还需要考虑各种操作系统所占用户的比率，这个可以通过Apple和Google官方发布的版本占有率来了解。<a href="https://developer.apple.com/support/appstore/" target="_blank" rel="external">https://developer.apple.com/support/appstore/</a> 和 <a href="http://developer.android.com/about/dashboards/index.html" target="_blank" rel="external">http://developer.android.com/about/dashboards/index.html</a> 。</p>
+<h2 id="2-_移动网络切换">2. 移动网络切换</h2><p>由于移动app的特殊性－移动着应用，导致了我们需要更加关注移动网络变化对于app的影响，比如，不同网络（3g，4g，Wi-Fi）之间的使用和切换，无网络和/或Wi-Fi时，开启飞行模式时，对于需要进行网络注册并拿到信令的app会有比较大的影响；同时我们需要对这些情况进行异常处理，比如提供明确而人性化的提示。</p>
+<h2 id="3-_多任务处理">3. 多任务处理</h2><p>在智能手机上我们经常会同时执行多个app，这就要求我们对于app切换做处理。其中包括用户从一个app切换到其它的app，甚至是从后台关闭app，需要考虑是否对用户的当前操作进行保存，以及用户再次打开/恢复app的时候，需要进行什么操作。</p>
+<h2 id="4-_手势操作">4. 手势操作</h2><p>当前主流操作系统都支持手势操作，而app的手势有可能会和操作系统的手势冲突。比如iOS7开始支持的屏幕左边缘右滑返回上一级的手势操作，就和之前很多app的抽屉式导航操作起了冲突。细节可以参考<a href="http://www.zhihu.com/question/21198233" target="_blank" rel="external">http://www.zhihu.com/question/21198233</a> 。</p>
+<h2 id="5-_用户体验">5. 用户体验</h2><p>我们不仅要考虑到横竖屏对app显示的影响，app对辅助功能accessibility的支持程度，还需要在认识到由于iOS和Android不同的设计风格和规范，app需要尽可能在不同设备上保持和操作系统使用习惯的一致性。对于同时需要支持Web和app的产品，在app上通过WebView实现Web功能时，需要考虑app上的显示问题。</p>
+<h2 id="6-_通知和消息">6. 通知和消息</h2><p>我们需要关注app运行时在通知栏的显示，以及如何展示app的消息推送(通知栏和app图标上的计数，尤其是后者计数超过99个时如何显示)。除此之外还需要考虑在安装和使用app过程中，app是否明确展示出应用对于数据流量，对使用关乎用户敏感信息的的传感器（如蓝牙和GPS等）进行提示。</p>
+<h2 id="7-_操作系统特性">7. 操作系统特性</h2><p>对于支持widget的iOS和Android app，在测试时应该把widget当成一项单独而重要的功能进行测试。对于app在Android上的安装和使用，也需要测试其对于Dalvik和ART的支持。对于iOS来说，如果应用支持在设置中对app进行设置，我们也需要对这种设置方式进行测试。</p>
+<h2 id="8-_不同设备信息同步">8. 不同设备信息同步</h2><p>如果app同时支持多个设备和操作系统，而且用户数据存放在服务器的时候，我们就需要验证这些信息在一个设备改变，其它设备需要相应地同步这些改变，尤其是当app有信息缓存机制的时候。</p>
+<h2 id="9-_特定设备">9. 特定设备</h2><p>除了操作系统版本和硬件不同之外，不同的设备还可能因设备商定制的用户界面（比如三星的TouchWiz，HTC的Sense，魅族的Flyme和LG的UX等），而产生显示甚至功能的不一致。例如HTC Sense 4.0时，当我们打开多任务界面，app显示的是一个截图，但实际我们点击进入app，会看到不同的页面。此外这些用户界面默认的字体不同很可能会对app的展示产生影响。</p>
+<h2 id="10-_多文件格式支持">10. 多文件格式支持</h2><p>对不同格式的文件，不同设备的展示也可能有很大不同。比如PDF文件，在iOS上默认支持，所以可以直接打开；而在Android上我们就需要考虑需要如何展示了，因为Android没有原生支持PDF。如果app还需要支持其他诸如微软的Office文件，各类图片和视频等，我们就更需要注意在各个平台上，尤其是没有相应的软件处理这些文件时，需要如何处理了。</p>
+<h2 id="11-_国家和地区支持">11. 国家和地区支持</h2><p>由于使用app的用户可以来自任何一个国家和地区，使用任何一种语言，所以在app安装和使用过程中，我们也需要考虑对于主要通用的语言（例如中文，英语，法语），时间和日期格式，尤其是不同输入法的兼容性。</p>
+<h2 id="12-_高内存占用">12. 高内存占用</h2><p>由于iOS和Android对于单个app使用的内存大小有限制，所以对于耗费内存的操作，比如处理高分辨率图片、语音和视频时，在开发中都建议单独启动新的进程来处理。因此我们在测试中也需要针对这个特点，对于耗费内存高的操作进行测试。</p>
+<h2 id="13-_非标准控件">13. 非标准控件</h2><p>在特定的版本上，我们想要app支持某种特性，可是操作系统并没有提供，我们很可能自己设计控件，或者利用第三方库来实现这个功能。一个例子就是在iOS7原生并不支持通知中心的widget。这种实现方式需要测试人员对于这个控件/库本身进行更多集成测试，确保它的功能以及和其它控件在app中行为的一致性。对于非标准控件，我们需要尽可能少地使用，因为在操作系统升级过程中，这些非标准控件很可能会被标准化，并且采用不同的方式实现，从而影响app的编码和测试。</p>
+<h2 id="14-_App升级管理">14. App升级管理</h2><p>绝大多数app都会持续更新，为用户带来新的功能和体验。用户在进行app升级的过程中，通常采用的是增量安装或者覆盖安装的方式，而不会先删除app再全新安装。所以在app升级的过程中，我们需要测试用户信息在升级后是否能正常显示，特别是当app升级涉及到app的数据库结构变化时。相应地，在用户删除app时，我们也需要考虑对app信息的删除。</p>
+<h2 id="15-_App缓存机制">15. App缓存机制</h2><p>一般app为了减少用户流量的使用，会缓存那些不常变化的数据；对于定期变化的数据，也会周期性地更新。对于这些数据，我们需要确保当它们变化后，app能及时更新和显示这些信息。</p>
+<h2 id="16-_第三方app集成和调用">16. 第三方app集成和调用</h2><p>对于第三方app集成例如Google Map需要进行集成测试，另外还需要测试app中对于第三方app的调用（比如分享到微信）。</p>
+<h2 id="17-_App依赖">17. App依赖</h2><p>尽量减少app对第三方系统/app和WebService的依赖关系，会有助于项目的准时发布和测试复杂度的简化。而为了确保这些依赖功能的完整性，我们需要对这些依赖进行API和集成测试。</p>
+<h2 id="18-_自动化测试和探索式测试">18. 自动化测试和探索式测试</h2><p>App自动化测试不仅需要在开发过程中进行单元测试，还需要对WebService进行自动化测试。另外，对于界面测试，由于现有自动化测试工具和框架不够成熟，测试人员在利用这些工具自动化测试用户旅程的同时，还需要更多地关注页面跳转和数据在不同页面间的流动，这是因为单元测试可以比较全面地覆盖每个activity和view内部的功能，但是对于页面跳转和不同页面间数据流动和展示等需要涉及到多个页面的流程操作，手动测试尤其是探索式测试就显得尤为重要。值得一提的是，自动化测试中应该尽可能多地使用模拟器来进行测试，这里推荐使用Genymotion做为默认的Android模拟器，而在探索式测试中，我们推荐使用实际设备来做测试。</p>
+<h2 id="19-_安全测试">19. 安全测试</h2><p>App安全测试包括测试手机上SQLite数据库的加密存储，验证app对发送请求中关于用户信息字段的加密等。可以使用的工具有iPhone Configuration Utility和Android DDMS。我们还可以通过使用这些工具分析log（还有iOS的XCode）， 方便地定位bug。对于app使用到的WebService的安全测试则可以参考桌面应用的安全测试方法。</p>
+<h2 id="20-_性能测试">20. 性能测试</h2><p>移动app也会涉及到性能测试，包括不同网络环境下app的连接速度和操作流畅度，以及使用的WebService的性能。</p>
+<h2 id="21-_操作系统升级">21. 操作系统升级</h2><p>在操作系统进行早期测试和开发的时候，开发团队会根据新的特性和设计规范，设计并实施app的更新。对于测试人员来说，当操作系统升级时，需要参考操作系统的文档，对于新的特性和设计及时了解，在进行当前操作系统版本app回归测试的同时，进行包含新操作系统版本特性和设计的app适应性测试。</p>
+<h2 id="22-_持续集成和持续部署">22. 持续集成和持续部署</h2><p>持续集成的目的是通过在模拟器上运行自动化测试有效地发现app的稳定性问题。虽然对于实际设备上app的持续部署我们现在没有办法实现全自动化，但是我们可以通过一些别的办法尽量简化这一过程，比如使用TestFlight来分发iOS app，使用Dropbox来分发Android app等。</p>
+<p><br></p>
+<p>这些实践和经验不一定能解决你在项目中所遇到的原生应用测试的所有问题，不过希望能起到抛砖引玉的作用，给大家带来更多的思考，继而带来更多的分享。</p>
+<p>移动app的兴起经历了从简单到多功能化的发展过程，随着技术的进步和思想的解放，我们拥有了更好更丰富的移动app，而且这一趋势仍旧在持续发展；同样对于移动app的测试，我们也正在经历从摸索到形成如同桌面应用类似的测试模式、方法和实践。对于测试人员来说，这是最坏的时候，这也是最好的时候，这是最该投身到移动app测试的时候。</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App-Testing/">App Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rules/">Rules</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-Practice_Of_Gamification_In_Insurance_Project" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/19/Practice_Of_Gamification_In_Insurance_Project/">游戏化在保险项目中的实践</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2014/06/19/Practice_Of_Gamification_In_Insurance_Project/" class="article-date">
+  <time datetime="2014-06-18T16:00:00.000Z" itemprop="datePublished">2014-06-19</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="引子">引子</h3><p>虽说是关于Gamification游戏化的实践分享，其实也是两年前做过的项目了。之所以现在才写出这篇实践分享，也是源于最近看《MacTalk人生元编程》中提到的使用智能手环对思想和行为的改变：“用这玩意的另一个好处就是，如果需要徒步去做点什么，以前的反映是‘我了个擦，怎么这么远’。现在的反映是‘好，又可以增加几千步了’”。 这让我意识到，这不也是游戏化嘛，只是不局限在和在线业务结合紧密的领域，但却更深入地改变了我们的生活习惯。</p>
+<p>言归正传，游戏化是最近几年比较热门的一个话题，不同的行业和领域都开始使用这一概念来吸引更多的用户，或者维持用户的粘性。</p>
+<h3 id="概念和意义">概念和意义</h3><p>对于游戏化概念，知乎有一篇很不错的介绍：<a href="http://www.zhihu.com/question/20381247" target="_blank" rel="external">游戏化 (Gamification) 是什么？如何应用于营销与管理？</a> ，对游戏化从设计思想和实际应用方面都进行了阐述。</p>
+<p>不过根据我自己的理解，游戏化这个概念，对于产品经理来说，就是通过类似于游戏打怪升级的方式来让用户保持对产品的新鲜感，并且更多地探索和尝试产品的各种功能及服务；对于用户来说，就是通过在使用产品的过程中，不断地获得成就感，以维持向他人炫耀的资本。说白了，就是让用户对你的产品感兴趣，并且上瘾。</p>
+<h3 id="游戏化项目背景">游戏化项目背景</h3><p>2012年的时候，我参与了一个澳洲保险公司的养老金项目，其中就包含了游戏化的一些应用。澳洲养老金并不像国内这样统一由政府管理，而是个人委托有相应资质的几家大型保险公司代为管理，并像股票基金一样有盈亏。由于遭遇了2008年的金融危机，澳洲养老金大幅缩水，导致很多人，包括以前不关注养老金的年轻人开始关注养老金的收益和投资。而我们项目的目的就在于如何吸引和留住这些年轻客户，从而提高市场占有率。因为对于一个保险公司来说，我们一贯的印象就是死板，还有多如牛毛的条款和说明。如果能让产品简洁明了，充满趣味性，不异于让用户对于这个公司形成新的企业形象。因此在项目启动阶段，我们就结合目标用户是年轻人的特点，提出了在项目中融入游戏化的概念。可喜的是，客户也很愿意尝试，毕竟这能很有效地拉大与市场竟品之间的差距。</p>
+<h3 id="游戏化的项目实施">游戏化的项目实施</h3><p>我们在项目游戏化的实施中，使用了很多很明确的步骤来保证用户几乎是每一次的有效操作都能得到视觉和进度上的一个反馈。比如说，客户一开始注册了我们的账户，就能在显示总完成度的进度条中得到第一个徽章，在徽章上会标明完成时间和获得原因，在进度条上也会显现出相应的进展（图1）；页面上还会同时展示出操作向导，在向导中也再次以高亮的形式向用户传递出游戏化的概念（图2，这里展示的只是最初设计时的图片，非最终版）。</p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_01.png" alt="图1 用户的各类进展（成就）都会通过徽章的形式展现在进度条中，点击徽章，还会出现具体完成的时间和事件"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_02.png" alt="图2 在之后的改进中，指导页面更加突出－通过让背景的颜色更黑，以凸显需要用户关注的内容"></p>
+<p>除了向导的游戏化提示之外，我们通过设计用户体验的流程，规划出几大类User Journey用户旅程，并对每一类旅程进行细化，把每个步骤简化为用户能通过一个简单操作获得徽章和明显的进度条进展的模块（图3-1，3-2，3-3和3-4）。不仅有进度条对总完成度进行展示，我们还通过一些动画的方式展示出用户的进度。例如当用户刚注册时，在浏览器地址栏和总进度条之间，我们放置了一个卡通化的澳洲“普通民居”（图4），（但是对我们来说就是别墅啦），一栋二层的独立住宅，院子里没有围墙，车也是很普通的一辆；但是当用户对系统进行了更深入的探索和使用后，会发现原来的房子变漂亮了，围墙有了，草和树也更茂密了，车子变豪华了，还会有运钞车给送钱来了，等等（图5-1和5-2）。</p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_03-1.png" alt="图3-1 这张图展示了指导栏中，对于用户下一步行为的高亮和详细介绍，通过这样的方式指导用户操作"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_03-2.png" alt="图3-2 用户完成了某一模快下特定的操作步骤，指导栏会显示该步骤“已经完成”，并虚化这一步骤"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_03-3.jpg" alt="图3-3 这是对应的各类徽章，设计上也是本着简洁明了的意图"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_03-4.png" alt="图3-4 这是各类徽章在导航栏上显示的样式"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_04.png" alt="图4 这是最初用户注册完成，登录系统时表明该用户完成度的最基本的民居样式"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_05-1.png" alt="图5-1 通过上图的对比，我们可以看出随着用户完成度的提高，民居的样式一步一步地出现了非常大的变化，这些变化都是随着用户的这种操作而不断添加的"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_05-2.jpg" alt="图5-2 这张图展示了一个动画效果：当用户完成某项操作后，一辆货车出现在系统上用户房屋前，并抛出几个钱袋，让用户能直观地感受到“钱来了”"></p>
+<p>除此之外，当用户完成一些重大的操作里程碑后，比如说把用户的税号和系统绑定成功后，我们还会展示出类似于愤怒的小鸟过关后那种评星级的动画效果，让用户视觉化地感受到完成了一个大事件。这里只展示一下类似的完成账户归集之后的效果（图6）。</p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_06.png" alt="图6 这个只是展示了另一种模块完成时的效果：在指导栏显示完成度信息，并指导用户进行下一个模块的操作"></p>
+<h3 id="游戏化设计需要整合架构和开发">游戏化设计需要整合架构和开发</h3><p>当然，这些游戏化的设计是在一开始就被设计到开发流程中的，如果是在开发流程中后期才加入游戏化的设计，对于现有功能的设计和实现，很可能需要按照新的设计方式重新进行编码，因为游戏化不是简单的功能堆砌，也需要进行整体设计。同时，在贯彻游戏化的过程中，也需要对系统功能进行精简和优化，没人会愿意去“玩”一个功能不明、逻辑混乱、支线情节枯燥无味的“游戏”。我们在设计中也通过游戏化对用户做有倾向性的指导和暗示，让用户更情愿地去做我们希望的用户旅程。</p>
+<p>就像每个项目都不可能平稳开展一样，游戏化的设计也需要不断地演进，而我们是通过定期持续的用户测试来获得反馈并及时调整的，当然中间也必不可少的需要团队的参与和讨论。比如我们对于主页的设计就经历过多次的变化（图7-1，7-2，7-3）。</p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_07-1.jpg" alt="图7-1 这是最初设计时的页面样式"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_07-2.png" alt="图7-2 这是进行了用户测试，根据反馈改进的页面样式"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_07-3.png" alt="图7-3 这是最后上线时，经过了5、6次用户测试，并不断改进后的样式"></p>
+<h3 id="项目成果">项目成果</h3><p>通过这些实践和努力，在经历了半年的开发，项目第一阶段成功于2012年底上线以后，由于系统设计简单明了，加之游戏化的趣味性，产品不仅吸引了大量的年轻用户，还获得了澳洲市场上百万级的用户市场，成为该保险公司在线业务中明星级的产品。当然，这一产品在持续的用户测试的反馈基础上，还在不断地演进和优化。</p>
+<h3 id="游戏化不是一剂万能灵药，但是至少它让我们用另一种方式去诠释自己的产品。所以拓展思维，从“游戏化”的角度重新考虑一下我们的产品，对于关注产品的所有人都是值得一试的。">游戏化不是一剂万能灵药，但是至少它让我们用另一种方式去诠释自己的产品。所以拓展思维，从“游戏化”的角度重新考虑一下我们的产品，对于关注产品的所有人都是值得一试的。</h3>
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Gamification/">Gamification</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-No_QA_In_Agile" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/12/27/No_QA_In_Agile/">敏捷中的qa会被取代吗？</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2013/12/27/No_QA_In_Agile/" class="article-date">
+  <time datetime="2013-12-26T16:00:00.000Z" itemprop="datePublished">2013-12-27</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tester/">Tester</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>随着业界对敏捷开发的逐步了解，经常有同事和朋友问我，你们现在敏捷里注重测试，所以每个人都在进行测试，甚至以前测试人员所认可的发展方向：自动化测试，都让开发人员参与了很多，那你们QA是不是会被取代呢？</p>
+<p>听到这么一说，我真是猛然感觉到危机感，不过细想了一下，如果QA会被取代，就说明他／她的工作不重要或者不必要。既然这样，就还是从QA工作内容开始看看和分析吧：</p>
+<ol>
+<li>让我们先从敏捷QA最早涉足的活动，业务需求分析入手。在业务分析阶段，QA可以通过自己的丰富知识，包括测试设计和分析的能力（例如实例化需求）来帮助业务分析人员以及客户发现遗漏的需求，以及从技术层面避免出现依赖等不合理的需求问题。</li>
+<li>在开发过程中，虽然开发人员参与了不少的自动化测试的活动：单元测试和功能性测试等。不过这里需要说明的是：单元测试基本都是由开发人员负责完成的，更多的是侧重于代码中方法调用及模块调用这一层级的。而开发人员参与的功能性测试，更多的是从自动化测试实现方面出发的。究其原因，开发人员的编码技能一般来说都要熟练于QA。但是QA在这些活动中也在提供着自身不可替代的作用：根据单元测试，功能测试的完成度和覆盖率，更有指导性地规划项目中的测试金字塔；而且运用测试设计的能力，设计自动化测试的场景以及用例，以保证在最小最有效的测试场景和用例集中，完成尽可能高的功能场景的覆盖。我相信除非是像QA这样在测试设计方面倾注了很大的心血和时间，不然很难有能力设计这些架构和场景。而且QA也是可以写自动化测试的啊！</li>
+<li>而在手动测试本身，基于自动化测试的覆盖力度，我们做得更多的是探索性的测试，而非基于明确的验收标准或者测试用例的验证性的测试。你也许会问那谁来做验证性测试，答案是开发人员、QA和业务分析人员一起在故事卡开发完成时来做的，而不是推到QA一个人的身上。对于探索性测试，QA采取了更有针对性和目的性的方法：根据对现有系统的理解和分析，归纳和总结出用户行为和功能点，然后以此为依据，开辟一段单独的时间，来对特定的行为和功能进行开放性的测试。这对于我们验收性的测试，是一种非常有效的补充。</li>
+<li>在手动测试结束后，QA很多时候还承担了和客户沟通需求以及演示产品的职责，这样他／她们对于产品的认识有了更全面的了解，以及为什么需要这么做；同时客户对于他／她们的信任程度也提高了，从而更容易接受他／她们提出的建议。正因为这样，QA担任PM和IM也是很常见的。</li>
+</ol>
+<p>除此之外，QA一般还会负责性能测试和安全性测试这些非功能性测试，以保证项目在各方面都有品质的保证。</p>
+<p>在具体测试当中，QA发挥了关键的作用；在其他方面，QA也发挥了不可取代的作用。</p>
+<ol>
+<li>首先，从项目整体上来说，对于项目部署和运维，QA也是很有发言权的。因为测试的过程中包含了这些部分。对于通过脚本部署产品，通过log分析和定位bug，QA对开发人员甚至运维人员都能提供帮助。</li>
+<li>其次 ，在敏捷里，QA不仅测试的是产品本身，还需要对项目中的一切进行测试，这就包括了项目流程以及各阶段的分析工作。合理和优化的项目流程能帮助团队“更高、更快、更强”地达到目标，而QA有很好的全局观，所以很自然地会更关注于流程的优化。对于分析工作，敏捷的QA不仅仅是测试，更重要的是对现有结果进行分析和估计，有针对性地提出专业性的建议，便于项目组下一阶段目标的制定。</li>
+</ol>
+<p>看到以上罗列的这些工作内容，有一个问题自然地会浮现在脑海里：“这么多工作，都是从理论上说的，QA能都做到吗？”答案你我都知道，不可能。实际项目中的QA能做到很大一部分已经很不容易了。但是就像其他角色一样，不可能在同时段时间内能做到所有的方面，但是我们至少知道了自己可以发展的方向，以及我们所特有的优势和技能。</p>
+<p>敏捷中的QA因为要关注的方面更多了，所以有些可以代理出去的工作可以让其他角色辅助，而不必事必躬亲；但是我们自身所特有的技能，并不是能代理出去或者其他角色能轻易达到的。</p>
+<p>如果下次有人在问我文章开头的问题，我会开心的告诉他：“欢迎你来取代我。”而他／她付出的会是“一万小时“的时间来成为QA方面的专家。到那时候，就不是取代我，而是成为我了。</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Agile/">Agile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/No-QA/">No QA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QA/">QA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Replace/">Replace</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-UserTesting_In_Project" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/01/28/UserTesting_In_Project/">用户测试User Testing在项目中的实践</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2013/01/28/UserTesting_In_Project/" class="article-date">
+  <time datetime="2013-01-27T16:00:00.000Z" itemprop="datePublished">2013-01-28</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本项目是对于养老金进行管理和投资的一个网站。</p>
+<p>以往大家对于养老金甚至银行的看法是守旧和难于打交道，他们的网站也是一样的糟糕。而恰恰是这一点，被我们当做是自己做有可能解决和成功的关键。</p>
+<p>为此，我们设计了Gamification（游戏化），并通过User Testing来检验整个系统的易用性。Gamification本身也是需要通过User Testing来验证的。</p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/User_Testing.png" alt="网站界面"></p>
+<p>对于User Testing，我们是在项目初期，就邀请用户参与（当然会发放一下小礼品或者现金），来了解用户对于产品的接受程度。这对我们很重要，因为养老金的用户覆盖范围比较广，从15岁到70岁，我们主要针对的是年轻的客户，同时也需要兼顾老年用户。</p>
+<p>我们基本上会每一个月或两个月进行一次User Testing，以确定我们的方向是正确的；在项目初期User Testing的频率会更高。</p>
+<p>在User Testing的初期，选择用户也是很关键的，因为我们需要让选择的用户对实际的目标客户有好的覆盖，也需要针对不同的User Testing侧重点选择有针对性的用户。（选择新的用户vs邀请以前参与过测试的用户；选择对产品一点都不了解的客户vs邀请对产品基本概念有一定了解的用户vs产品专家。。。）</p>
+<p>在测试过程中，我们最好能控制自己去协助用户进行操作的冲动，所以最好是留一个人，甚至是不留人和用户一起测试，而是通过视频等手段来记录用户行为（同时通过摄像头来录制用户的表情也是很有帮助的）。</p>
+<p>在测试结束后，需要让用户对产品进行反馈，并协助进行总结和归纳。</p>
+<p>我们在测试结束后，还需要对所有的反馈进行分析和整理，以确定对于项目的影响以及我们对应的行动。</p>
+<p>P.S. 测试人员的选择可以不仅是那些定期地User Testing的用户，也可以是项目组或者办公室的同事，能更多更频繁地提供反馈。我们在圣诞节时尝试让在用户所在地的成员把User Testing的脚本打印出来，拿回家让家里的长辈帮助测试。因为对家人的了解程度更高，这对我们针对反馈进行的行动提供了更多的信息和依据。</p>
+<p>Gamification的wiki:<a href="http://en.wikipedia.org/wiki/Gamification" target="_blank" rel="external">http://en.wikipedia.org/wiki/Gamification</a> 以及个人觉得比较好的中文解释: <a href="http://ucdchina.com/snap/9587" target="_blank" rel="external">http://ucdchina.com/snap/9587</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/User-Testing/">User Testing</a></li></ul>
 
     </footer>
   
@@ -842,7 +426,7 @@ ga('send', 'pageview');
 
     
       <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
+        <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
       </nav>
     </section>
     <footer id="footer">

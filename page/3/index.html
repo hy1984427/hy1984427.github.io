@@ -66,7 +66,7 @@ ga('send', 'pageview');
   </div>
 </header>
     <section id="main" class="outer">
-      <article id="post-Practice_QA_Capability_In_Project" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-Exploratory_Testing_For_Android" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -74,15 +74,142 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2012/12/03/Practice_QA_Capability_In_Project/">QA能力列表在项目中的实践</a>
+      <a class="article-title" href="/2012/04/18/Exploratory_Testing_For_Android/">Android下的探索性测试</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2012/12/03/Practice_QA_Capability_In_Project/" class="article-date">
-  <time datetime="2012-12-02T16:00:00.000Z" itemprop="datePublished">2012-12-03</time>
+      <a href="/2012/04/18/Exploratory_Testing_For_Android/" class="article-date">
+  <time datetime="2012-04-17T16:00:00.000Z" itemprop="datePublished">2012-04-18</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>根据Android的特点，我们可以想到一些进行探索性测试时需要注意的地方:</p>
+<h3 id="1-_对于用户输入:">1. 对于用户输入:</h3><ul>
+<li>使用实体键盘或者虚拟键盘？</li>
+<li>触摸点击输入还是手写输入？针对老年人的产品，比较好的方式是采用的是手写输入，易于让用户适应</li>
+<li>如何定位到输入字符串中的某个位置？手指粗，或者屏幕小，很难精确定位到特定位置</li>
+</ul>
+<h3 id="2-_对于软件状态的考虑:">2. 对于软件状态的考虑:</h3><ul>
+<li>程序运行中接电话，是否会造成死机，或者程序锁死？</li>
+<li>中断后能否回复以前的状态？</li>
+<li>比如播放歌曲时接电话，歌曲能否自动暂停，挂机后能否继续播放？</li>
+</ul>
+<h3 id="3-_基于场景考虑:">3. 基于场景考虑:</h3><ul>
+<li>用户在使用程序时是否会同时使用别的程序？</li>
+<li>在用程序得到结果时，是否还需要用到别的程序？</li>
+<li>比如计算完财务状况，可能需要发邮件向银行确认错误的账单？</li>
+</ul>
+<h3 id="4-对于系统SDK的API和程序使用类库之间冲突的考虑:">4.对于系统SDK的API和程序使用类库之间冲突的考虑:</h3><ul>
+<li>当前Android还处于高速的发展和改变的时期，很多功能甚至API还不完善很稳定，一些工具和类库的接口有时会和SDK的API不一致，例如Robotium</li>
+</ul>
+<h3 id="5-对于程序并行运行的考虑:">5.对于程序并行运行的考虑:</h3><ul>
+<li>是否允许多个程序进程同时执行？</li>
+<li>如果可以，资源：硬件和用户数据是否会死锁，是否会有竞争？</li>
+<li>是否允许本程序和其他应用程序一起运行？</li>
+<li>如何保证数据的安全性？</li>
+</ul>
+<h3 id="6-对于程序兼容性的考虑:">6.对于程序兼容性的考虑:</h3><ul>
+<li>对不同大小分辨率的兼容？不止是外观的改动，手机和平板的使用习惯也会有不同。手机大部分是简直是来快速的获取重要的内容，要点要突出明确，而平板大部分时间会用来获取详细的内容和报告；</li>
+<li>对不同的系统版本的支持？尤其是Android几个月就对版本进行升级的策略的应对；</li>
+<li>程序是否可以升级？</li>
+<li>如何保持向下兼容性？</li>
+</ul>
+<h3 id="7-对其他程序提供的接口的调用:">7.对其他程序提供的接口的调用:</h3><ul>
+<li>不同与传统软件和系统，Android允许程序调用其他程序暴露、或者说提供的接口，来进行调用，如何处理这些调用，以及这些调用带来的稳定性和安全性问题？<br>Android使用自己的Dalvik虚拟机，而Dalvik是基于沙盒的，每个程序都单独存在于自己的虚拟机之中，如何进行有效的数据交换和授权？</li>
+</ul>
+<h3 id="8-内存管理:">8.内存管理:</h3><ul>
+<li>Android系统为每个应用分配的内存上限为24M。</li>
+</ul>
+<p><strong>很重要的一点，</strong>就是不能太依赖于模拟器进行测试:由于模拟器的限制，有很多测试（比如多点触摸和重力感应等传感器相关的）没有办法实现.</p>
+<p><strong>而更重要的一点:</strong>就是只有用实际的测试机器，真正地在生活中使用它们，才能更好地从用户的角度出发，达到进行探索性测试的目的。</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Exploratory-Testing/">Exploratory Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-Security_Testing_Of_Web_Applications" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/02/21/Security_Testing_Of_Web_Applications/">Security Testing of Web Applications</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/02/21/Security_Testing_Of_Web_Applications/" class="article-date">
+  <time datetime="2012-02-20T16:00:00.000Z" itemprop="datePublished">2012-02-21</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This representation is more theoretical, but I think we can have some basic knowledge from it.</p>
+<p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Security_Testing_Of_Web_Applications.pdf" target="_blank" rel="external">Security_Testing_Of_Web_Applications.ppdf</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Security/">Security</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-QA_Capability_Matrix" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/02/03/QA_Capability_Matrix/">QA Capability Matrix</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/02/03/QA_Capability_Matrix/" class="article-date">
+  <time datetime="2012-02-02T16:00:00.000Z" itemprop="datePublished">2012-02-03</time>
 </a>
       
   <div class="article-category">
@@ -93,22 +220,16 @@ ga('send', 'pageview');
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>大家可能都和我一样迷惑，在公司的不同项目上，我们怎么能提高自己的技术能力，并且通过能力的提升，使自己的工作和生活更加容易和便利？如果仅仅通过学习和看书，并不能很好地应用于项目和实践中。</p>
-<p>最近我们尝试把项目中需要用到的各项和QA相关的技术、工具，流程和方法列举出来，以方便我们有更明确的目的性，又有目标的提高自己的能力。也能让我们发现和QA能做的那个列表里面有哪些差距，在哪些方面我们可以提高和尝试。<br><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/QA_capability.jpg" alt="QA Capability List"></p>
-<p>通过上面这张图片，我们总结了关于”Business”, “Tools”, “Process”, “Framework”, “Language”, “Platform”和”Technique”这几个方面我们所涉及到的技术和工具等。</p>
-<p>根据这个QA能力列表，我们确定了自己近一个阶段所要针对提高的能力，比如我就选择了性能测试；而在这之后，我们把项目中的QA任务进行了划分，尽量让有不同目标的QA都能关注在自己想提高的领域，经过自己的学习和项目上的实践，不断巩固和提高这些能力，然后在项目组中分享和结对，转换发展方向，让更多的QA都能持续不断地提高。</p>
-<p>而且对于那些比较小的方面，比如说javascript脚本，其实只要利用5～10分钟的时间，可能我们就能写出一段可以在项目上使用的脚本，我们项目中现在就有一段可以辅助填表的脚本。这些小的改进都可以提高我们的效率，让我们有更多的时间去学习新技术和工具。</p>
-<p>对于项目组中只有一个QA的情况，除了上面的方法，我们还可以让Developer承担更多验证已有测试用例的活动，或者和他们结对来学习这些技术和工具。</p>
-<p>我们另一个项目实践是每个迭代都会发一封Quality Status给整个团队，以加强每个人对于质量的关注，分享QA最近的进展。下面给大家展示两个例子（代码是使用bootstrap实现的，下面的只是展示截图）。</p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/QA_capability_Iteration.png" alt="Quality Status for Iteration"></p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/QA_capability_Release.png" alt="Quality Status for Release"></p>
+        <p>Plan to use QA Capability Matrix to track my progress.</p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/QA_Capability_Matrix.png" alt="QA Capability Matrix"></p>
+<p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/QA_Capability_Matrix.pdf" target="_blank" rel="external">Sample</a> is also attached.</p>
 
       
     </div>
   
     <footer class="article-footer">
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Capability/">Capability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Capability/">Capability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matrix/">Matrix</a></li></ul>
 
     </footer>
   
@@ -118,7 +239,7 @@ ga('send', 'pageview');
 
 
     
-      <article id="post-How_Google_Test_Software" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-Practices_Can_Be_Adopted_In_Projects" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -126,107 +247,56 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2012/06/29/How_Google_Test_Software/">How Google Test Software</a>
+      <a class="article-title" href="/2011/09/29/Practices_Can_Be_Adopted_In_Projects/">项目中可以采用的一些实践</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2012/06/29/How_Google_Test_Software/" class="article-date">
-  <time datetime="2012-06-28T16:00:00.000Z" itemprop="datePublished">2012-06-29</time>
+      <a href="/2011/09/29/Practices_Can_Be_Adopted_In_Projects/" class="article-date">
+  <time datetime="2011-09-28T16:00:00.000Z" itemprop="datePublished">2011-09-29</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Test/">Test</a><span>></span><a class="article-category-link" href="/categories/Test/Tester/">Tester</a>
+    <a class="article-category-link" href="/categories/Tester/">Tester</a>
   </div>
 
       
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>读《Google软件测试之道》后把一些重要的内容记录下来。</p>
-<h3 id="1-质量不等同于测试">1.质量不等同于测试</h3><ul>
-<li>质量是通过融合开发和测试，直至两者融为不能区分彼此的同一个体而达到的。</li>
-<li>测试是开发不可分割的一部分，开发和测试的结合会产生质量。</li>
-<li>把测试当做软件的feature。软件工程所交付的不是code，不是test，而是product，所以得让code和test集成在一起。</li>
-</ul>
-<h3 id="2-测试环境">2.测试环境</h3><ul>
-<li>小型测试（mock/fake环境）</li>
-<li>中型测试（mock/fake或真实环境）</li>
-<li>大型测试（真实环境）</li>
-<li>在小型和中型测试上强调自动化测试覆盖率，但在端到端测试时并不强调，避免投入过多，并且和特定功能设计绑定</li>
-<li>大、中、小型测试比例为1:2:7</li>
-</ul>
-<h3 id="3-测试类型">3.测试类型</h3><ul>
-<li>小型测试：测试代码单元的行为</li>
-<li>中型测试：测试一个或多个代码单元之间的交互</li>
-<li>大型测试：测试整个系统的工作</li>
-<li>小型测试保证代码质量，中型和大型测试保证产品质量</li>
-</ul>
-<h3 id="4-测试认证级别">4.测试认证级别</h3><ul>
-<li>5个级别：1～5，5级为最高</li>
-<li>分级依据<ul>
-<li>测试覆盖率</li>
-<li>分层测试情况</li>
-<li>持续集成</li>
-<li>缺陷和测试用例的关系</li>
-</ul>
-</li>
-</ul>
-<h3 id="5-详细测试认证级别">5.详细测试认证级别</h3><ul>
-<li>第1级<ul>
-<li>添加测试覆盖率的bundle</li>
-<li>搭建持续集成环境</li>
-<li>按照大、中、小型测试来区分测试</li>
-<li>识别具有不确定性的测试</li>
-<li>创建冒烟测试集</li>
-</ul>
-</li>
-<li>第5级：<ul>
-<li>为每一个非关键的bug添加测试</li>
-<li>主动使用各类分析工具</li>
-<li>总的测试覆盖率超过60%</li>
-</ul>
-</li>
-</ul>
-<h3 id="6-文档">6.文档</h3><ul>
-<li>所有Google项目都有设计文档</li>
-<li>设计文档是一个动态的文档（活文档，Living Document），随着项目的演化也在不断地保持更新</li>
-</ul>
-<h3 id="7-测试人员分类">7.测试人员分类</h3><ul>
-<li>测试开发工程师（SET）</li>
-<li>测试工程师（TE）</li>
-<li>测试工程经理</li>
-</ul>
-<h3 id="8-测试人员职责">8.测试人员职责</h3><ul>
-<li>SET主要负责mock/fake、API测试、测试工具、CI工具，更偏向于代码开发。</li>
-<li>TE是面向用户的测试，具备测试代码开发和用户为中心测试的双重能力。 </li>
-<li>TE完成测试整个过程，风险评估、测试计划、测试设计、测试执行、探索式测试、用户反馈。 </li>
-<li>测试工程经理，把TE和SET联系起来，需要足够的技术能力，需要足够了解产品，也需要知人善用的能力。</li>
-</ul>
-<h3 id="9-测试人员的未来">9.测试人员的未来</h3><ul>
-<li>测试开发工程师将变成开发人员，而测试开发工程师所具备的测试技能将被平均地分散到各个层级的开发工程师身上。 </li>
-<li>测试工程师会转型成为测试设计师。测试工程师可以成为如安全工程师这样的专家型角色，或者作为测试活动的管理者。 </li>
-<li>技术型测试主管，更多地成为资深工程师，同时作为思想领袖和协调者存在。测试活动由具体工作在产品上的人们负责。 </li>
-<li>测试开发工程师，测试工程师和测试经理分散到各个项目团队中去，更少关注测试流程，更多关注产品本身。</li>
-</ul>
-<h3 id="10-测试的未来">10.测试的未来</h3><ul>
-<li>测试基础设施会最终整体迁移到云端。</li>
-<li>测试用例库，测试代码的编辑、录制和执行都将在一个网站或通过浏览器插件完成。</li>
-<li>测试编写、执行和调试需要使用与被测的应用程序本身相同的语言和环境才最为高效。 </li>
-</ul>
-<h3 id="11-Google测试的原则和秘方">11.Google测试的原则和秘方</h3><ul>
-<li>Google测试的原则：Ship early and often；Fail fast </li>
-<li>Google测试的秘方：技能、稀缺、自动化、迭代集成</li>
-</ul>
+        <p>最近总结了下在项目中采用的一些实践，以及一些需要注意和避免的细节问题</p>
+<ol>
+<li>QA完成故事测试时鼓掌等对团队正面反馈的一些实践（让团队更注重项目整体的进度并加强责任感），甚至可能包括一些团队建设的活动</li>
+<li>每天的Code Review，最好QA也能参与，让整个团队都能从业务和代码层面有统一、整体的认识</li>
+<li>在故事正式开始开发之前，不仅仅写好测试场景和用例，最好能写明自动化测试的场景，对于回归测试和对故事的认识都有更深入的了解</li>
+<li>发布经理和迭代经理的轮替，能让更多团队成员接触敏捷开发流程上的各方面，对增强团队责任感和对流程的理解有不少帮助</li>
+<li>多了解客户组织架构以及对客户的影响，分析在不同的情况下找哪个最合适的人来解决问题；同时需要多和客户沟通，加强个人的影响力，多方面加强与客户之间的关系</li>
+<li>更好地了解和分析客户的业务模式及需求，不仅仅是从单个故事的角度提出我们的建议，而是从更高的层级提供分析以实现更多的业务价值</li>
+<li>尝试用Ruby配合Cucumber搭建自动化测试环境，因为像使用cuke4duke配合Java这种实现方式，增加了中间插件自身的限制对于测试框架的影响；以及需要单独的测试环境和数据库</li>
+<li>更频繁地和客户进行周期性的反馈（至少一个月一次），以及更频繁的团队内部的一对一的交流和反馈</li>
+<li>合理的分配时间，控制同时参加活动的数量，保持精力的充沛</li>
+<li>加强和客户，以及其他团队的沟通，制定更好的沟通计划（定期，有明确的接口人）</li>
+<li>对于新人，尤其是QA的培训，可以分层次，采用技能矩阵的方法来制定比较详细的计划，想办法让他们保持积极性；可以建议每6个月换一下项目，加强 项目组和办公室之间的联系；对于新人的项目介绍和培训也需要系统化</li>
+<li>加强团队成员的质量意识，开发帮忙测试，交换开发和测试的职责，让团队成员自己使用和测试系统；团队成员共享向客户演示的职责</li>
+<li>增加测试覆盖率的可视化（手动以及自动化测试)，并进行分析</li>
+<li>根据模块、功能、实际的每一天进行缺陷等测试的分析</li>
+<li>在对客户演示之后进行反馈的总结，以帮助进行后续分析和开发的指导（迭代演示和故事卡演示）</li>
+<li>不要急于沟通，可以沉淀一下，对问题有清晰的认识以后，避免自己情绪的干扰，再进行沟通；更多地使用电话等即时沟通的方式；多使用图片等直观的形式</li>
+<li>通过不同的形式使故事卡、团队、迭代的进度更可视化</li>
+<li>有急事时通知团队做好相应的处理</li>
+<li>尽量避免打扰其他团队成员的工作</li>
+<li>坐的位置最好能覆盖不同的结对的开发人员，加强相互之间的沟通</li>
+<li>合理调节故事大小（包括技术故事），保证每天都有故事完成，增强团队的成就感</li>
+</ol>
 
       
     </div>
   
     <footer class="article-footer">
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Methodology/">Methodology</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Theory/">Theory</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Retro/">Retro</a></li></ul>
 
     </footer>
   
@@ -236,7 +306,7 @@ ga('send', 'pageview');
 
 
     
-      <article id="post-Android_Automation_Robotium" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-Agile_Test_Plan" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -244,96 +314,33 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/18/Android_Automation_Robotium/">Android Automation - Robotium</a>
+      <a class="article-title" href="/2011/09/07/Agile_Test_Plan/">Agile Test Plan</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2012/05/18/Android_Automation_Robotium/" class="article-date">
-  <time datetime="2012-05-17T16:00:00.000Z" itemprop="datePublished">2012-05-18</time>
+      <a href="/2011/09/07/Agile_Test_Plan/" class="article-date">
+  <time datetime="2011-09-06T16:00:00.000Z" itemprop="datePublished">2011-09-07</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+    <a class="article-category-link" href="/categories/Test/">Test</a>
   </div>
 
       
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>For installation</strong>, please reference to <a href="http://developer.android.com/sdk/installing.html" target="_blank" rel="external">Installing the SDK | Android Developers</a>. The easiest way is to download Eclipse first, then install the Android Development Tools (ADT) as Plugin in Eclipse.</p>
-<h3 id="How_to_use_the_attached_project_zip_file:">How to use the attached project zip file:</h3><ol>
-<li><p>Unzip it first then copy them to you workspace;</p>
-</li>
-<li><p>Open Eclipse, and select “File -&gt; New -&gt; Other…”;</p>
-</li>
-<li><p>Select “Android -&gt; Android Project”, and “Next”;</p>
-</li>
-<li><p>Select “Create project from existing source”, and input folder path of “AndroidCalculator” project into “Location”, and change “Project Name” to “AndroidCalculator”;</p>
-</li>
-<li><p>“Next” and select “Build Target” as “Android 2.3.3”, then “Finish”.</p>
-</li>
-</ol>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Note</span>:</span><br><span class="line"></span><br><span class="line">Please <span class="keyword">do</span> the same to <span class="string">"AndroidCalculatorTest, but change the project folder path and change "</span>Project Name<span class="string">" to "</span>AndroidCalculatorTest".*</span><br><span class="line"></span><br><span class="line"><span class="keyword">For</span> running RobotiumTests_DataDriven.java, you need to import TestData.csv to emulator first:</span><br><span class="line"></span><br><span class="line">1. <span class="keyword">Open</span> DDMS;</span><br><span class="line"></span><br><span class="line">2. <span class="keyword">Open</span> <span class="keyword">File</span> Explorer;</span><br><span class="line"></span><br><span class="line">3. Import the TestData.csv <span class="keyword">file</span> <span class="keyword">in</span> attached <span class="keyword">test</span> project folder, into /data/data/com/calculator/files.</span><br><span class="line"></span><br><span class="line">4. <span class="keyword">Run</span> the data driven <span class="keyword">test</span>.</span><br></pre></td></tr></table></figure>
-<h3 id="How_to_run_the_application_we_test_against:">How to run the application we test against:</h3><ol>
-<li><p>Create a AVD of Android 2.3.3 in Android Virtual Device Manager (AVD Manager) under “Window -&gt; AVD Manager” in Eclipse;</p>
-</li>
-<li><p>Select project “AndroidCalculator”, and “Run As” “Android Application”.</p>
-</li>
-</ol>
-<h3 id="How_to_run_tests_against_the_application:">How to run tests against the application:</h3><ol>
-<li><p>Create a AVD of Android 2.3.3 in Android Virtual Device Manager (AVD Manager) under “Window -&gt; AVD Manager” in Eclipse;</p>
-</li>
-<li><p>Open “AndroidCalculatorTest -&gt; src -&gt; com.calculator.test”;</p>
-</li>
-<li><p>Select any of the java file and “Run As” “Android JUnit Test”.</p>
-</li>
-</ol>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Note</span>: please only select one file to run, because all <span class="keyword">of</span> them have a main() <span class="keyword">method</span>, so they will conflict <span class="keyword">with</span> each other <span class="keyword">when</span> run them all together.</span><br></pre></td></tr></table></figure>
-<h3 id="Features_included_in_“AndroidCalculatorTest”:">Features included in “AndroidCalculatorTest”:</h3><ol>
-<li><p>“InstrumentationTests.java” is implemented by Instrumentation in Android SDK itself;</p>
-</li>
-<li><p>“RobotiumTests_APK.java” demonstrate how to test an Android APK file when only get the APK file itself, its “Package_ID” and “Main_Activity”;</p>
-</li>
-<li><p>“RobotiumTests_DataDriven.java” shows how to read a group of test data from a csv file, run series of tests, then export the results to another file;</p>
-</li>
-<li><p>“RobotiumTests_Whitebox.java” shows how to use Robotium in UT level, more from code coverage perspective;</p>
-</li>
-<li><p>“RobotiumTests.java” give you a brief knowledge of writing a basic Robotium test and take screenshot in the test. (please check the screenshot under “/mnt/sdcard” in DDMS).</p>
-</li>
-</ol>
-<h3 id="Library_Configuration_Tip:">Library Configuration Tip:</h3><ol>
-<li><p>To run the Robotium tests, we need to select all in “Properties -&gt; Java Build Path -&gt; Order and Export”;</p>
-</li>
-<li><p>Move the robotium up to top and move Android and Android Dependencies just below robotium (but still above any project).</p>
-</li>
-</ol>
-<h3 id="Issues_encountered_when_writing_Robotium_tests:">Issues encountered when writing Robotium tests:</h3><ol>
-<li><p>Unable to take ScreenShot (saving the file to emulator):  <a href="http://stackoverflow.com/questions/7550201/unable-to-take-screenshot-on-android-using-robotium-and-private-method" target="_blank" rel="external">Unable to take screenshot on android using robotium and private method</a></p>
-</li>
-<li><p>“Null pointer exception” or “Array out of boundary” when reading a csv file: please check the format of csv whether it’s compatible with jxl.</p>
-</li>
-</ol>
-<h3 id="Some_materials_for_Android_-_Robotium_framework:">Some materials for Android - Robotium framework:</h3><ol>
-<li><p><a href="http://developer.android.com/" target="_blank" rel="external">Android Developers</a></p>
-</li>
-<li><p><a href="http://code.google.com/p/robotium/" target="_blank" rel="external">robotium -  It’s like Selenium, but for Android™ - Google Project Hosting</a></p>
-</li>
-<li><p><a href="http://controlingquality.blogspot.com/2011/02/design-data-driven-framework-around.html" target="_blank" rel="external">Controling Quality: Design Data Driven Framework around Robotium</a></p>
-</li>
-<li><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Robotium_Black_Box_Testing_For_Android_Chinese.pdf" target="_blank" rel="external">Robotium_Black_Box_Testing_For_Android</a> <em>in Chinese</em></p>
-</li>
-</ol>
-<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Robotium.zip" target="_blank" rel="external">Robotium.zip</a></p>
+        <p>“”<br>Summarized my thoughts about Test Plan in Agile, please refer to <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Agile_Test_Plan.pdf" target="_blank" rel="external">representation</a> and <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Test_Plan_For_I37_To_I39.pdf" target="_blank" rel="external">Sample</a> for more details.</p>
 
       
     </div>
   
     <footer class="article-footer">
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Robotium/">Robotium</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Agile/">Agile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Test-Plan/">Test Plan</a></li></ul>
 
     </footer>
   
@@ -343,7 +350,7 @@ ga('send', 'pageview');
 
 
     
-      <article id="post-Windows_Phone_Automation_Windows_Phone_Test_Framework" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-Game_The_Marshmallow_Challenge" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -351,151 +358,65 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/18/Windows_Phone_Automation_Windows_Phone_Test_Framework/">Whindows Phone Automation - WindowsPhoneTestFramework</a>
+      <a class="article-title" href="/2011/08/31/Game_The_Marshmallow_Challenge/">游戏：棉花糖挑战</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2012/05/18/Windows_Phone_Automation_Windows_Phone_Test_Framework/" class="article-date">
-  <time datetime="2012-05-17T16:00:00.000Z" itemprop="datePublished">2012-05-18</time>
+      <a href="/2011/08/31/Game_The_Marshmallow_Challenge/" class="article-date">
+  <time datetime="2011-08-30T16:00:00.000Z" itemprop="datePublished">2011-08-31</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+    <a class="article-category-link" href="/categories/Test/">Test</a>
   </div>
 
       
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Better to install VS2010 first, otherwise required testing framework/dll can’t be found.</p>
-<p><a href="http://msdn.microsoft.com/zh-cn/windowsphone/ff955778.aspx" target="_blank" rel="external"><strong>WindowsPhone system structure</strong></a></p>
-<p><strong>WindowsPhoneApp developing basics:</strong></p>
-<ol>
-<li><a href="http://social.msdn.microsoft.com/Forums/zh-CN/windowsphonezhchs/thread/5aacf6ab-dab7-4dcc-9d3d-d2c9095e490e" target="_blank" rel="external">Windows Phone 7 开发常见问题汇集贴</a></li>
-<li><a href="http://msdn.microsoft.com/zh-cn/ff380145" target="_blank" rel="external">Windows Phone 7 手机开发</a></li>
+        <h3 id="目的：">目的：</h3><p>鼓励团队在实践中体验合作和创新。</p>
+<h3 id="人数：">人数：</h3><p>20～30人，4~5组</p>
+<h3 id="时长：">时长：</h3><p>45~60分钟。5分钟（规则说明和准备）+20分钟（进行游戏）+20分钟（分享体会）</p>
+<h3 id="道具：">道具：</h3><ul>
+<li>20根意面x10；</li>
+<li>1捆线绳x5；</li>
+<li>1个棉花糖x10；</li>
+<li>1卷胶带x5；</li>
+<li>1把剪刀x5；</li>
+<li>笔纸若干x5；</li>
+<li>1把长直尺；</li>
+<li>1个计时器。</li>
+</ul>
+<h3 id="规则：">规则：</h3><ol>
+<li>创造一个尽可能高的、独立式的结构：尽可能高是指支撑结构的高度；支撑结构需要独立，不能依靠其他的物体。需要支撑棉花糖至少30秒</li>
+<li>整个棉花糖需要在支撑结构的顶部：不能切分或穿透棉花糖</li>
+<li>使用尽可能少的材料：只能使用提供的材料进行构建；胶带只能用于连接材料，不能用于将材料粘在桌子上</li>
+<li>材料可以被切割分开：意面可以被折断，20根足够使用，不用担心；线绳、胶带可以被剪开</li>
+<li>游戏时长20分钟，在最后5分钟会有提示</li>
+<li>开始游戏前请确保了解游戏规则</li>
 </ol>
-<p><strong>WindowsPhone Automation test:</strong></p>
-<ol>
-<li><a href="https://github.com/Expensify/WindowsPhoneTestFramework" target="_blank" rel="external">Expensify/WindowsPhoneTestFramework</a></li>
-<li><a href="http://www.slideshare.net/cirrious/ui-testing-on-windows-phone" target="_blank" rel="external">UI Testing on Windows Phone 7</a></li>
-<li><a href="http://www.cnblogs.com/chenkai/tag/Windows%20Phone/" target="_blank" rel="external">Windows Phone应用开发</a></li>
+<h3 id="游戏提示:">游戏提示:</h3><h4 id="游戏中">游戏中</h4><ol>
+<li>需要注意各组的开发状况，同时注意各组采用的创新的形式</li>
+<li>注意提醒各组剩余时间，不用太过频繁，剩余10分钟、5分钟、1分钟各提醒一次，最后倒数10秒钟计时</li>
+<li>让各组都了解到其他组的进度：鼓励创新并增加组内信心，允许各组相互参考和借鉴</li>
+<li>提示各组支撑结构有可能不能支撑棉花糖，支撑结构需要结实和稳定</li>
+<li>每组需要有一个观察员协助澄清规则，在尝试总是失败的时候提出一点建议，做小的辅助</li>
 </ol>
-<p><strong>Suggestions for development:</strong></p>
-<ol>
-<li>WindowsPhone app use MVVM pattern: M is Model, it controls the data and events; V is View, which controls the display; and VM is View-Model, which is the bridge from Model to View.</li>
-<li>A better way to design the app is heavily use M and VM, with light V. So that we can test the app easily and quickly, with stub and mock, rather than heavy UI tests.</li>
-<li>A tool recommended is MVVM light, check the references from <a href="http://mvvmlight.codeplex.com/" target="_blank" rel="external">http://mvvmlight.codeplex.com/</a> and <a href="http://www.galasoft.ch/mvvm/" target="_blank" rel="external">http://www.galasoft.ch/mvvm/</a>.</li>
+<h4 id="游戏结束">游戏结束</h4><ol>
+<li>让参与者相互参观各组成果，测量并记录各组高度，公布结果</li>
+<li>让参与者表达自己对游戏的感受和体会</li>
 </ol>
-<p><strong>Problem encountered:</strong></p>
-<p>The development of WhindowsPhone app is quite easy (please refer to <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/WP7App.zip" target="_blank" rel="external">this</a>, it’s a basic WP7 app), but for automation testing, especially UI testing, it’s the opposite.</p>
-<p>When using WindowsPhoneTestFramework, following the steps in video of <a href="http://www.slideshare.net/cirrious/ui-testing-on-windows-phone" target="_blank" rel="external">Ui Testing on Windows Phone</a>, the step of install BDD class library show error of JsonValue 0.5.0 can’t be installed, even try to install JsonValue 0.6.0 still fails.</p>
-<p>I am blocked by this. No clue found.</p>
+<p><strong>游戏参考：</strong><br><a href="http://www.marshmallowchallenge.com" target="_blank" rel="external">http://www.marshmallowchallenge.com</a></p>
 
       
     </div>
   
     <footer class="article-footer">
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows-Phone/">Windows Phone</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WindowsPhoneTestFramework/">WindowsPhoneTestFramework</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-iOS_Automation_Frank" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/14/iOS_Automation_Frank/">iOS Automation - Frank</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/05/14/iOS_Automation_Frank/" class="article-date">
-  <time datetime="2012-05-13T16:00:00.000Z" itemprop="datePublished">2012-05-14</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Please download and unzip <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/HelloWorld_Frank.zip" target="_blank" rel="external">HelloWorld_Frank.zip</a>, and select “<strong>HelloWorld copy</strong>“ to run FrankTests.</p>
-<p><strong>Frank (Frankenstein!?) is ‘Selenium for native iOS apps’.</strong></p>
-<ol>
-<li>Frank use KIF and UISpec as base structure, and use UIQuery to locate elements.</li>
-<li>Frank used to based on other framework, but recently it’s changed to KIF, so some documents may out of date. Try to use the latest documents and samples.</li>
-<li>You can use Ruby in Frank rather than Objective-C in KIF.</li>
-</ol>
-<p><strong>Environment preparation:</strong></p>
-<ol>
-<li>Install rvm, ruby (1.9.2 is preferred to avoid issue when installing ruby-debug later), frank-cucumber and follow the <a href="http://www.testingwithfrank.com/installing.html" target="_blank" rel="external">installation script</a> provided by Frank.</li>
-<li>For debug use, I have added ruby-debug, please gem install it when you see message of that gem is required.</li>
-</ol>
-<p><strong><em>Note:</em></strong></p>
-<ol>
-<li>Screenshots will be generated under <em>HelloWorld/Frank/screenshots</em>, if the 1st step in <code>Then /^I can see &quot;([^&quot;]*)&quot;$/ do |welcomeMessage|</code> is enabled;</li>
-<li>DOM can be exported if the 2nd step in <code>Then /^I can see &quot;([^&quot;]*)&quot;$/ do |welcomeMessage|</code> is enabled;</li>
-<li>Add <em>@record</em> before scenario can start recording, but you should use it only once.</li>
-</ol>
-<p><strong>Highly recommend before you start using Frank:</strong></p>
-<ol>
-<li><a href="http://www.testingwithfrank.com/screencasts.html" target="_blank" rel="external">http://www.testingwithfrank.com/screencasts.html</a></li>
-<li><a href="http://www.testingwithfrank.com/presentations.html" target="_blank" rel="external">http://www.testingwithfrank.com/presentations.html</a></li>
-</ol>
-<p><strong>Tips/Limitations:</strong></p>
-<ol>
-<li>Build the app first, then run cucumber; otherwise sometimes, Frank can’t attach to the simulator.</li>
-<li>Encounter one issue which is not fixed, post in the gmail group: Google Groups. It’s about how to check a text filed with space in its value.</li>
-<li>For label, we can’t access their value and check on them, Apple should be blamed, so we can only write code by ourselves to implement it from ground: set accessibilityValue -&gt; write down the method to locate and compare the value -&gt; write the step definition to recall the method -&gt; use the step definition in Frank.</li>
-<li>Few documents/samples for Frank, even how to use selector; and some step definitions are not suitable for use, need to google or write down basic steps for action and validation.</li>
-</ol>
-<p><strong>How to use Symbiote (the elements’ tree viewer):</strong></p>
-<p>Few material for it, only found <a href="http://vimeo.com/22644221" target="_blank" rel="external">http://vimeo.com/22644221</a> and <a href="http://blog.thepete.net/2011/05/inspect-state-of-our-running-ios-apps.html" target="_blank" rel="external">http://blog.thepete.net/2011/05/inspect-state-of-our-running-ios-apps.html</a></p>
-<p><strong>Debug:</strong></p>
-<ol>
-<li>Using Frank is not easy to debug, using ruby, so can use ruby-debug to debug, but you need to install gem of ruby-debug first, then follow steps in <a href="https://gist.github.com/1333785" target="_blank" rel="external">https://gist.github.com/1333785</a>.</li>
-<li>A better way is just installing ruby1.9.2 rather than 1.9.3</li>
-<li>But for the step in Frank itself, you can only use “Console.app” on Mac to see log. Only few useful info can be found.</li>
-</ol>
-<p><a href="http://stackoverflow.com/questions/9745842/how-to-select-elements-for-frank-using-uiquery-uispec" target="_blank" rel="external"><strong>How to select elements for Frank using UIQuery/UISpec?</strong></a></p>
-<p><strong>Recording of script running:</strong></p>
-<ol>
-<li>Will recording everything from the scenario marked as <em>@record</em>.</li>
-<li>With multiple <em>@record</em> tags, it will open recording app multiple times, which is unusable when recording. So only use <em>@record</em> tag once.</li>
-<li>The recording is a feature of QuickTime player.</li>
-</ol>
-<p><strong>Reference</strong></p>
-<ol>
-<li><a href="https://github.com/moredip/Frank" target="_blank" rel="external">https://github.com/moredip/Frank</a></li>
-<li><a href="http://www.testingwithfrank.com/" target="_blank" rel="external">http://www.testingwithfrank.com/</a></li>
-<li><a href="https://groups.google.com/forum/?fromgroups#!forum/frank-discuss" target="_blank" rel="external">https://groups.google.com/forum/?fromgroups#!forum/frank-discuss</a></li>
-<li><a href="http://code.google.com/p/uispec" target="_blank" rel="external">http://code.google.com/p/uispec</a></li>
-<li>Ruby-debug: <a href="http://bashdb.sourceforge.net/ruby-debug.html" target="_blank" rel="external">http://bashdb.sourceforge.net/ruby-debug.html</a></li>
-</ol>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Frank/">Frank</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Game/">Game</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Marshmallow-Challenge/">Marshmallow Challenge</a></li></ul>
 
     </footer>
   
@@ -506,7 +427,7 @@ ga('send', 'pageview');
 
     
       <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">下一页 &raquo;</a>
+        <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
       </nav>
     </section>
     <footer id="footer">

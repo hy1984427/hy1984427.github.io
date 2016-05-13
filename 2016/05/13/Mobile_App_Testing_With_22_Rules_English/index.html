@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>22 Rules In Mobile App Testing - Test &amp; testing &amp; tester</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[Translated from my Chinese article.]
+Nowadays, with the popularization of mobile devices, mobile apps are widely used everywhere, and lots of companies start business in mobile apps field.
+This trend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="22 Rules In Mobile App Testing">
+<meta property="og:url" content="http://hy1984427.github.io/2016/05/13/Mobile_App_Testing_With_22_Rules_English/index.html">
+<meta property="og:site_name" content="Test & testing & tester">
+<meta property="og:description" content="[Translated from my Chinese article.]
+Nowadays, with the popularization of mobile devices, mobile apps are widely used everywhere, and lots of companies start business in mobile apps field.
+This trend">
+<meta property="og:updated_time" content="2016-05-13T09:17:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="22 Rules In Mobile App Testing">
+<meta name="twitter:description" content="[Translated from my Chinese article.]
+Nowadays, with the popularization of mobile devices, mobile apps are widely used everywhere, and lots of companies start business in mobile apps field.
+This trend">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-73216141-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/AboutMe.html">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hy1984427.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Mobile_App_Testing_With_22_Rules_English" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      22 Rules In Mobile App Testing
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/05/13/Mobile_App_Testing_With_22_Rules_English/" class="article-date">
+  <time datetime="2016-05-12T16:00:00.000Z" itemprop="datePublished">2016-05-13</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[Translated from my Chinese article.]</p>
+<p>Nowadays, with the popularization of mobile devices, mobile apps are widely used everywhere, and lots of companies start business in mobile apps field.</p>
+<p>This trend brings the challenges to use: we need to deliver the mobile apps to market in time with high quality, and continuously improve them.</p>
+<p>We can categorize mobile apps to native apps and hybrid apps. They have many differences compared with Desktop/Web applications, and testers are encountered with more challenges due to the lacks of testing tool and methodology.</p>
+<p>With testing a Telecom mobile portal app for more than 2 years, I have summarized some testing experience and practices for native apps on iOS and Android. And most of them are also useful for testing hybrid apps.</p>
+<h2 id="1-_Define_your_testing_devices_and_operation_systems">1.    Define your testing devices and operation systems</h2><p>As we all know, the issue of mobile devices’ fragmentation is getting more and more serious, because there are more operation systems with different versions, different hardware of devices, different screen sizes, different resolutions, different pixel densities and etc.</p>
+<p>We can’t cover all the devices and operation systems from ROI (Return of Investment) perspective, so we need to choose the testing devices based on the popularization of them in market.</p>
+<p>We can not only use Google Analytics or Adobe Omniture to tracking user and generate the devices’ usage report to define testing devices and operation systems, but also read the market share of iOS and Android operation system from their official website:<br><a href="https://developer.apple.com/support/appstore/" target="_blank" rel="external">https://developer.apple.com/support/appstore/</a>, <a href="http://developer.android.com/about/dashboards/index.html" target="_blank" rel="external">http://developer.android.com/about/dashboards/index.html</a>.</p>
+<h2 id="2-_Switch_between_networks">2.    Switch between networks</h2><p>The particularity of mobile app is user always use the app on their way, so when we are conducting our testing, we should also focus on the impact of network switch to app. For example we need to cover the scenario of using app on 3G network and then switch to 4G or Wi-Fi or Airplane Mode and so on.</p>
+<p>If the app will authenticated on the mobile network and get a token from it then proceed functionalities forward, we will definitely cover the scenario of switching mobile network to other networks.</p>
+<p>When we perform testing on network switching scenarios, we need also pay attention to the error message given to user. The error message should be user friendly, and give user instructions to follow to solve the issues.</p>
+<h2 id="3-_Multi-tasking">3.    Multi-tasking</h2><p>We usually run multiple apps on our mobile devices, so when we testing mobile apps, we need to consider the app switching.</p>
+<p>This includes the scenarios of switching app to another, or close app at background, then how app acts when user open it again: should it reload the info when user left, or it will start from scratch?</p>
+<h2 id="4-_Gestures">4.    Gestures</h2><p>Gestures are supported by iOS and Android operation systems, when app introduces it own gestures to user, they would conflict with the system ones.</p>
+<p>Such as the wipe gesture to go back introduced in iOS 7: for a long time, to get back one screen, you had to tap the upper left corner on screen (named as “&lt;” or“back” button); on iOS 7, we can swipe the screen to the right and go back.</p>
+<p>But before iOS 7 introduced this gesture, many app use this gesture to call out drawer navigation panel in app. At the time when iOS 7 is released, many apps are not ready for this gesture, so when user use this gesture in app, sometimes it will go back, and sometimes it will call out the drawer navigation panel.</p>
+<p>Since the user experience for this is so wired, so we should not let this happen from beginning.</p>
+<h2 id="5-_User_experience">5.    User experience</h2><p>As we talk about user experience, we are not only focus on the layout and stuff like that, but also test app’s portrait and landscape display.</p>
+<p>And we need to check the level of support to accessibility, so that more people can use our app more easily and freely.</p>
+<p>We need also check whether app is following the design guide of iOS and Android official documents. Especially for the apps support both iOS and Android operation systems, it’s better to let each app follow the design guide of corresponding operation system, rather than all apps just follow iOS design guide.</p>
+<p>And for the apps embedded Webview, if the Webview is not Responsive designed, it will cause display issues on different devices, therefore we may spend lots of efforts to fix them.</p>
+<h2 id="6-_Display_messages_and_notifications">6.    Display messages and notifications</h2><p>Since iOS and Android have different notification methods: on Lock Screen, Status Bar, Notification Center and App Icon, we need to check how the messages display when new message come.</p>
+<p>When app use sensors or location services, we should also notify user about the changes.</p>
+<p>If we consider the cache mechanism in app, the scenarios will be more complex.</p>
+<p>Although using cache, we can reduce the workload of server to provide responses to mobile app client, but it complex our testing: we need to make sure once the message is changed, even the cached message is still valid, we should show the updated message, rather than the cached one.</p>
+<h2 id="7-_Features_of_Operation_System">7.    Features of Operation System</h2><p>Because iOS starts to support widget since iOS 8, and Android supports widget for a long time, so when we are testing mobile apps, we need to consider widget as a serious feature, and prioritize it in features list.</p>
+<p>And for Android apps, we also need to verify when apps are installed and running on both Dalvik and ART runtimes.</p>
+<p>For iOS, if app allow user to configure its settings in System Settings, we need to test this feature as well.</p>
+<h2 id="8-_Sync_on_different_devices">8.    Sync on different devices</h2><p>Apps like Facebook and Twitter support both iOS and Android; also support multiple devices, such as iPad, iPhone, Android phones and Android tablets.</p>
+<p>Some of them allow user to login the same account on different devices. When this happens, we need to check once the message is delivered on one device, this message should be synced to other devices at same time.</p>
+<h2 id="9-_Customized_User_Interface">9.    Customized User Interface</h2><p>Besides the OS and hardware differences, different devices may also have different user interface installed, such as Samsung’s Touchwiz, HTC Sense, LG UX and Sony Xperia UI.</p>
+<p>For example, Touchwiz has different default font compared to Android native font, which may cause your one line sentence displayed in two lines.</p>
+<p>And previously on HTC Sense, you will see a menu bar all the time when using an app, this will affect the display of your app.</p>
+<p>Also on HTC Sense 4.x, the multi-tasking screen shows the screenshot of apps, but when you open the app, because the app would refresh, so they may have differences between the screenshot in multi-tasking screen and app current view.</p>
+<h2 id="10-_Support_different_file_formats">10.    Support different file formats</h2><p>Sometime we need to display the legal information in mobile apps, usually the legal file are stored as PDF, so it’s hard for app to support this.</p>
+<p>One reason is the PDF is usually designed for web or desktop, when viewing it on mobile devices, it’s hard for user to see, even with zoom in.</p>
+<p>Another reason is Android doesn’t provide native support for PDF files, unlike iOS. So if we want to display PDF files to user, we need to figure out whether we need to add support to PDF, or we just let user to download one PDF viewer app to open the legal files.</p>
+<p>If we need to deal with files in other format, we need to pay more attentions to this.</p>
+<h2 id="11-_Support_multiple_countries,_locales_and_languages">11.    Support multiple countries, locales and languages</h2><p>Many countries have immigrants from global, and there maybe more than one language even in one country, so we can’t decide there is only one language for our app.</p>
+<p>I know we can’t test with all countries, locale settings and languages, but we can test the widely used languages and corresponding formats, such as English, Chinese, French, Spanish and etc.</p>
+<p>We need to verify not only the display of them in app, but also the input of them.</p>
+<h2 id="12-_High_memory_usage_actions">12.    High memory usage actions</h2><p>Both iOS and Android have limitations for the memory size can be consumed by app, so when app need to deal with actions need to consume large memory, such as high density images, voices and videos, we need to perform the actions in another process, to avoid the memory leak or app killed by OS.</p>
+<p>So we can check this by loading bulk of images, voices and videos. </p>
+<h2 id="13-_Non-standard_controls">13.    Non-standard controls</h2><p>On particular OS version, we may want to support some features, which OS can’t provide.</p>
+<p>Usually we will implement it by ourselves or using 3rd party library.</p>
+<p>One example is theme of app: in iOS 4, we need to implement it all by ourselves from scratch; in iOS 5, we can use UIApperance protocol to reduce some work; and in iOS 7, we can easily use tintColor property to achieve it.</p>
+<p>If we are using our self made controls or 3rd party library, we need to pay more attentions when testing, to make sure the behavior the same as other parts.</p>
+<p>And as in the example above, with the upgrades of OS, the control may be standardized and provided by OS natively. At that time, we need to merge our codes to native codes, to avoid merging it in the future.</p>
+<p>To merge and test the codes are additional efforts compared to implemented it with native codes, so once we need to implement feature by ourselves or using 3rd party library, we need think twice before we actually work on it.</p>
+<h2 id="14-_App_upgrade">14.    App upgrade</h2><p>Most app will upgrade gradually, to bring new feature and experience to users.</p>
+<p>Once user installed app, when upgrade it, they won’t uninstall it first, but overwrite it or install incrementally.</p>
+<p>So we will also test how app behaves after upgrading, especially the user profile stored previously, and other data stored.</p>
+<p>We need be more careful if there is app database schema change in app upgrade.</p>
+<p>Likewise, we need to verify app stored data are removed after app uninstallation.</p>
+<h2 id="15-_Integrate_with_3rd_party_app">15.    Integrate with 3rd party app</h2><p>If app integrate with 3rd party app, such as Google Map or Facebook login, we need to make sure app can perform correctly when 3rd party app doesn’t work properly.</p>
+<p>And we also need to monitor the 3rd party app or services.</p>
+<p>Sometimes we need to consider to test when 3rd party app integrate with our app and want to share information to our app.</p>
+<h2 id="16-_Reduce_dependencies">16.    Reduce dependencies</h2><p>We can try our best to reduce the dependencies to 3rd party system/app/service and other web services we need.</p>
+<p>This can help us minimize the complexity of app and reduce the testing efforts.</p>
+<p>We also need to use different methodologies to make sure they work fine, such as API and integration testing and monitoring.</p>
+<h2 id="17-_Automation_and_Exploratory_testing">17.    Automation and Exploratory testing</h2><p>Many companies and teams are using Agile now, so TDD and API testing are implemented in development.</p>
+<p>For UI automation, we should use Test Pyramid to design our test first, then only automated test scenarios based user journey. </p>
+<p>Because unit test can cover the functionalities in every activity and view, but they can’t help us when we are testing the interactions between activities and views.</p>
+<p>Likewise, when we conduct exploratory testing, we should focus on the workflows with data in them, and the ways the activities/views interact with each other.</p>
+<p>I suggest you to use simulator or emulator to do automation, and if you are testing Android apps, Genymotion is a good choice for you; and for exploratory testing, we probably can use devices.</p>
+<p>For the automation tools, they are plenty of them: appium, Frank, Calabash, UIAutomation, UiAutomator and so on.</p>
+<h2 id="18-_Security_testing">18.    Security testing</h2><p>Both iOS and Android support app to store their data in local SQLite databases, so we need to make sure the databases are encrypted.</p>
+<p>We can also use tools like iPhone Configuration Utility and Android DDMS to sniffer the web traffic, checking whether there is cleartext in the request and response.</p>
+<p>To test the security of mobile services, we can use the same way when we testing Web applications.</p>
+<h2 id="19-_Performance_testing">19.    Performance testing</h2><p>Performance testing can be also involved in mobile app testing.</p>
+<p>It includes testing the app in slow network connection, batch load large quantity of data and such scenarios.</p>
+<p>We can also test the performance of mobile services.</p>
+<h2 id="20-_Operation_System_upgrade">20.    Operation System upgrade</h2><p>Different with app upgrade, when operation system is going to upgrade, Apple and Google will let developers know in advanced, so that they can prepare their app to follow the new rules (guides :P).</p>
+<p>When we testing the existing app, we need also to learn the changes introduced in new OS version, and prepare for them technically and in mind.</p>
+<p>When the app for new OS is developing, we will cover the tests for both existing app and the new app at same time.</p>
+<h2 id="21-_Benefits_from_Log">21.    Benefits from Log</h2><p>In developing stage, we usually use Crashlytics, HockeyApp and such tool to collect crash issues, which can make the life for both developers and testers much easier.</p>
+<p>And we can also us iPhone Configuration Utility and Android DDMS to collect general app logs.</p>
+<p>When releasing app to market, it’s better we can have some ways to collect the crash information, either to ask user to give feedbacks or ask user to allow app to send logs to us when necessary.</p>
+<h2 id="22-_Continuous_integration_and_continuous_deployment">22.    Continuous integration and continuous deployment</h2><p>We can use continuous integration to help us find the stability issue and build a safe net for us.</p>
+<p>Although we can’t 100% automate the process of continuous deployment, we can try our best to ease it, such as using TestFlight to distribute iOS apps, while using HockeyApp and other tools to distribute Android apps.</p>
+<p>An alternative way to distribute Android app is using Dropbox: we can install Dropbox on the app package desktop and testing devices, once the app is packaged, we can use script to move it to the Dropbox folder on the packaging desktop; after Dropbox sync the apk file, we can open Dropxbox on testing devices to install the app.</p>
+<p><br><br>I know those practices and sharing won’t solve all the problems and fix all the issues, but hope they can inspire you.</p>
+<p>Since mobile apps are evolving, so does the mobile app development and testing. We will have new tools, techniques and methodologies in this trend. I am looking forward to hear your thoughts about mobile testing.</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App-Testing/">App Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rules/">Rules</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/01/28/How_To_Publish_A_Technical_Book/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何出一本技术书&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Huang Yong&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

@@ -66,6 +66,73 @@ ga('send', 'pageview');
   </div>
 </header>
     <section id="main" class="outer">
+      <article id="post-Practice_Of_Gamification_In_Insurance_Project" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/19/Practice_Of_Gamification_In_Insurance_Project/">游戏化在保险项目中的实践</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2014/06/19/Practice_Of_Gamification_In_Insurance_Project/" class="article-date">
+  <time datetime="2014-06-18T16:00:00.000Z" itemprop="datePublished">2014-06-19</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="引子">引子</h3><p>虽说是关于Gamification游戏化的实践分享，其实也是两年前做过的项目了。之所以现在才写出这篇实践分享，也是源于最近看《MacTalk人生元编程》中提到的使用智能手环对思想和行为的改变：“用这玩意的另一个好处就是，如果需要徒步去做点什么，以前的反映是‘我了个擦，怎么这么远’。现在的反映是‘好，又可以增加几千步了’”。 这让我意识到，这不也是游戏化嘛，只是不局限在和在线业务结合紧密的领域，但却更深入地改变了我们的生活习惯。</p>
+<p>言归正传，游戏化是最近几年比较热门的一个话题，不同的行业和领域都开始使用这一概念来吸引更多的用户，或者维持用户的粘性。</p>
+<h3 id="概念和意义">概念和意义</h3><p>对于游戏化概念，知乎有一篇很不错的介绍：<a href="http://www.zhihu.com/question/20381247" target="_blank" rel="external">游戏化 (Gamification) 是什么？如何应用于营销与管理？</a> ，对游戏化从设计思想和实际应用方面都进行了阐述。</p>
+<p>不过根据我自己的理解，游戏化这个概念，对于产品经理来说，就是通过类似于游戏打怪升级的方式来让用户保持对产品的新鲜感，并且更多地探索和尝试产品的各种功能及服务；对于用户来说，就是通过在使用产品的过程中，不断地获得成就感，以维持向他人炫耀的资本。说白了，就是让用户对你的产品感兴趣，并且上瘾。</p>
+<h3 id="游戏化项目背景">游戏化项目背景</h3><p>2012年的时候，我参与了一个澳洲保险公司的养老金项目，其中就包含了游戏化的一些应用。澳洲养老金并不像国内这样统一由政府管理，而是个人委托有相应资质的几家大型保险公司代为管理，并像股票基金一样有盈亏。由于遭遇了2008年的金融危机，澳洲养老金大幅缩水，导致很多人，包括以前不关注养老金的年轻人开始关注养老金的收益和投资。而我们项目的目的就在于如何吸引和留住这些年轻客户，从而提高市场占有率。因为对于一个保险公司来说，我们一贯的印象就是死板，还有多如牛毛的条款和说明。如果能让产品简洁明了，充满趣味性，不异于让用户对于这个公司形成新的企业形象。因此在项目启动阶段，我们就结合目标用户是年轻人的特点，提出了在项目中融入游戏化的概念。可喜的是，客户也很愿意尝试，毕竟这能很有效地拉大与市场竟品之间的差距。</p>
+<h3 id="游戏化的项目实施">游戏化的项目实施</h3><p>我们在项目游戏化的实施中，使用了很多很明确的步骤来保证用户几乎是每一次的有效操作都能得到视觉和进度上的一个反馈。比如说，客户一开始注册了我们的账户，就能在显示总完成度的进度条中得到第一个徽章，在徽章上会标明完成时间和获得原因，在进度条上也会显现出相应的进展（图1）；页面上还会同时展示出操作向导，在向导中也再次以高亮的形式向用户传递出游戏化的概念（图2，这里展示的只是最初设计时的图片，非最终版）。</p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_01.png" alt="图1 用户的各类进展（成就）都会通过徽章的形式展现在进度条中，点击徽章，还会出现具体完成的时间和事件"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_02.png" alt="图2 在之后的改进中，指导页面更加突出－通过让背景的颜色更黑，以凸显需要用户关注的内容"></p>
+<p>除了向导的游戏化提示之外，我们通过设计用户体验的流程，规划出几大类User Journey用户旅程，并对每一类旅程进行细化，把每个步骤简化为用户能通过一个简单操作获得徽章和明显的进度条进展的模块（图3-1，3-2，3-3和3-4）。不仅有进度条对总完成度进行展示，我们还通过一些动画的方式展示出用户的进度。例如当用户刚注册时，在浏览器地址栏和总进度条之间，我们放置了一个卡通化的澳洲“普通民居”（图4），（但是对我们来说就是别墅啦），一栋二层的独立住宅，院子里没有围墙，车也是很普通的一辆；但是当用户对系统进行了更深入的探索和使用后，会发现原来的房子变漂亮了，围墙有了，草和树也更茂密了，车子变豪华了，还会有运钞车给送钱来了，等等（图5-1和5-2）。</p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_03-1.png" alt="图3-1 这张图展示了指导栏中，对于用户下一步行为的高亮和详细介绍，通过这样的方式指导用户操作"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_03-2.png" alt="图3-2 用户完成了某一模快下特定的操作步骤，指导栏会显示该步骤“已经完成”，并虚化这一步骤"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_03-3.jpg" alt="图3-3 这是对应的各类徽章，设计上也是本着简洁明了的意图"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_03-4.png" alt="图3-4 这是各类徽章在导航栏上显示的样式"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_04.png" alt="图4 这是最初用户注册完成，登录系统时表明该用户完成度的最基本的民居样式"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_05-1.png" alt="图5-1 通过上图的对比，我们可以看出随着用户完成度的提高，民居的样式一步一步地出现了非常大的变化，这些变化都是随着用户的这种操作而不断添加的"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_05-2.jpg" alt="图5-2 这张图展示了一个动画效果：当用户完成某项操作后，一辆货车出现在系统上用户房屋前，并抛出几个钱袋，让用户能直观地感受到“钱来了”"></p>
+<p>除此之外，当用户完成一些重大的操作里程碑后，比如说把用户的税号和系统绑定成功后，我们还会展示出类似于愤怒的小鸟过关后那种评星级的动画效果，让用户视觉化地感受到完成了一个大事件。这里只展示一下类似的完成账户归集之后的效果（图6）。</p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_06.png" alt="图6 这个只是展示了另一种模块完成时的效果：在指导栏显示完成度信息，并指导用户进行下一个模块的操作"></p>
+<h3 id="游戏化设计需要整合架构和开发">游戏化设计需要整合架构和开发</h3><p>当然，这些游戏化的设计是在一开始就被设计到开发流程中的，如果是在开发流程中后期才加入游戏化的设计，对于现有功能的设计和实现，很可能需要按照新的设计方式重新进行编码，因为游戏化不是简单的功能堆砌，也需要进行整体设计。同时，在贯彻游戏化的过程中，也需要对系统功能进行精简和优化，没人会愿意去“玩”一个功能不明、逻辑混乱、支线情节枯燥无味的“游戏”。我们在设计中也通过游戏化对用户做有倾向性的指导和暗示，让用户更情愿地去做我们希望的用户旅程。</p>
+<p>就像每个项目都不可能平稳开展一样，游戏化的设计也需要不断地演进，而我们是通过定期持续的用户测试来获得反馈并及时调整的，当然中间也必不可少的需要团队的参与和讨论。比如我们对于主页的设计就经历过多次的变化（图7-1，7-2，7-3）。</p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_07-1.jpg" alt="图7-1 这是最初设计时的页面样式"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_07-2.png" alt="图7-2 这是进行了用户测试，根据反馈改进的页面样式"></p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Gamification_07-3.png" alt="图7-3 这是最后上线时，经过了5、6次用户测试，并不断改进后的样式"></p>
+<h3 id="项目成果">项目成果</h3><p>通过这些实践和努力，在经历了半年的开发，项目第一阶段成功于2012年底上线以后，由于系统设计简单明了，加之游戏化的趣味性，产品不仅吸引了大量的年轻用户，还获得了澳洲市场上百万级的用户市场，成为该保险公司在线业务中明星级的产品。当然，这一产品在持续的用户测试的反馈基础上，还在不断地演进和优化。</p>
+<h3 id="游戏化不是一剂万能灵药，但是至少它让我们用另一种方式去诠释自己的产品。所以拓展思维，从“游戏化”的角度重新考虑一下我们的产品，对于关注产品的所有人都是值得一试的。">游戏化不是一剂万能灵药，但是至少它让我们用另一种方式去诠释自己的产品。所以拓展思维，从“游戏化”的角度重新考虑一下我们的产品，对于关注产品的所有人都是值得一试的。</h3>
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Gamification/">Gamification</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
       <article id="post-No_QA_In_Agile" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -733,86 +800,6 @@ ga('send', 'pageview');
     <footer class="article-footer">
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NativeDriver/">NativeDriver</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-iOS_Automation_KIF_Keep_It_Functional" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/04/26/iOS_Automation_KIF_Keep_It_Functional/">iOS Automation - KIF (Keep It Functional)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/04/26/iOS_Automation_KIF_Keep_It_Functional/" class="article-date">
-  <time datetime="2012-04-25T16:00:00.000Z" itemprop="datePublished">2012-04-26</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Please download and unzip <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/KIF.zip" target="_blank" rel="external">KIF.zip</a>, and select “HelloWorld copy” to run KIFTests.</p>
-<p><strong>Note:</strong></p>
-<ol>
-<li>I have modified KIF framework: add “[(UITextField *) view setText:nil];” in KIFTestStep.m to clear text before input;</li>
-<li>By default, using “[super initializeScenarios]” in EXTestController.m to initialize all scenarios, the order of scenarios are defined according to the scenario name ascending; to change the order of them, change corresponding lines in “initializeScenarios” in EXTestController.m.</li>
-<li>For KIF tests, in order to get value of text field, we need to set “accessibilityValue” of it in code first, then we can access its value in testing code. It’s better we can package them into one class, which we can reuse later.</li>
-</ol>
-<p><strong>References for KIF:</strong></p>
-<ol>
-<li>KIF uses undocumented Apple APIs. This is true of most iOS testing frameworks, and is safe for testing purposes, but it’s important that KIF does not make it into production code, by duplicating a second target for the KIF-enabled version of the app to test. This gives you an easy way to begin testing — <em>just run this second target</em> — and also helps make sure that no testing code ever makes it into your App Store submission and gets your app rejected.</li>
-<li>All of the tests for KIF are written in Objective C, so the performance is good.</li>
-<li>Some detailed steps are not documented in KIF official documents, need to compare the docs with code provided in GitHub.</li>
-</ol>
-<h4 id="Advantages_of_KIF_comparing_to_UIAutomation_(official_by_KIF_group_but_briefly):">Advantages of KIF comparing to UIAutomation (official by KIF group but briefly):</h4><p><strong>KIF Pros</strong></p>
-<ol>
-<li>All objective-C. No need to write translations from JavaScript.</li>
-<li>Can easily hook into your code base for obscure things, like “fake a credit card swipe.”</li>
-<li>Easily runs on the command line for CI. Current shipping version of UIAutomation does not.</li>
-<li>No external dependencies. UIAutomation currently requires Instruments.</li>
-<li>Easy to integrate into your Xcode workflow.</li>
-<li>Tests run quickly. Runs in the app rather than being translated from Instruments/JS.</li>
-<li>It’s open source. If there’s something you want to add, you can. If something’s broken, it can be fixed quickly.</li>
-</ol>
-<p><strong>UIAutomation Pros</strong></p>
-<ol>
-<li>Runs outside of the process, so it could potentially simulate things like switching apps or hitting the home button. KIF could possibly do some of this using private API, but in general you need to mock these sorts of interactions.</li>
-<li>JS is less verbose and may appeal to some more than ObjC.</li>
-<li>Apple has full access to the frameworks and can potentially do some awesome things in the future.</li>
-<li>We get new features for free over time, and old ones will always be supported. KIF uses a lot of undocumented API, so it’s possible that future iOS releases would require it to be updated.</li>
-</ol>
-<p><strong>Some materials for iOS - KIF framework:</strong></p>
-<ol>
-<li><a href="https://github.com/square/KIF" target="_blank" rel="external">KIF</a></li>
-<li><a href="https://groups.google.com/forum/?fromgroups#!forum/kif-framework" target="_blank" rel="external">KIF Google Groups</a></li>
-<li><a href="http://corner.squareup.com/2011/07/ios-integration-testing.html" target="_blank" rel="external">iOS Integration Testing</a></li>
-<li><a href="http://sgleadow.github.com/blog/2011/11/16/enabling-accessibility-programatically-on-ios-devices/" target="_blank" rel="external">Enabling Accessibility Programatically on iOS Devices</a></li>
-</ol>
-
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIAutomation/">UIAutomation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 
     </footer>
   

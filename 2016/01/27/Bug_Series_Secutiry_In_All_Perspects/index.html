@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Bug集锦 －安全应该是全面的 - Test &amp; testing &amp; tester</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="写Bug集锦的目的在于分享从业这些年来遇到的这些有趣的问题，希望在读这些小故事的同时，能带给大家一些思考。 安全应该是全面的小蔡被分配到测试工资系统，这个系统不仅公司内部会使用，而且还会有面向其他大客户的定制版。 由于工资系统的特殊性，不仅要求其在使用时的功能性，系统安全性也是一个很重要的指标。 为了让系统更安全，业务分析人员在项目初始时就为系统设计了动态短信密码和随机键盘的功能（图5.1），使得">
+<meta name="keywords" content="Practice,Web,Bug,Series,Bug集锦">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bug集锦 －安全应该是全面的">
+<meta property="og:url" content="http://hy1984427.github.io/2016/01/27/Bug_Series_Secutiry_In_All_Perspects/index.html">
+<meta property="og:site_name" content="Test &amp; testing &amp; tester">
+<meta property="og:description" content="写Bug集锦的目的在于分享从业这些年来遇到的这些有趣的问题，希望在读这些小故事的同时，能带给大家一些思考。 安全应该是全面的小蔡被分配到测试工资系统，这个系统不仅公司内部会使用，而且还会有面向其他大客户的定制版。 由于工资系统的特殊性，不仅要求其在使用时的功能性，系统安全性也是一个很重要的指标。 为了让系统更安全，业务分析人员在项目初始时就为系统设计了动态短信密码和随机键盘的功能（图5.1），使得">
+<meta property="og:updated_time" content="2017-07-09T23:33:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bug集锦 －安全应该是全面的">
+<meta name="twitter:description" content="写Bug集锦的目的在于分享从业这些年来遇到的这些有趣的问题，希望在读这些小故事的同时，能带给大家一些思考。 安全应该是全面的小蔡被分配到测试工资系统，这个系统不仅公司内部会使用，而且还会有面向其他大客户的定制版。 由于工资系统的特殊性，不仅要求其在使用时的功能性，系统安全性也是一个很重要的指标。 为了让系统更安全，业务分析人员在项目初始时就为系统设计了动态短信密码和随机键盘的功能（图5.1），使得">
+  
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hy1984427.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Bug_Series_Secutiry_In_All_Perspects" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Bug集锦 －安全应该是全面的
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/01/27/Bug_Series_Secutiry_In_All_Perspects/" class="article-date">
+  <time datetime="2016-01-26T13:00:00.000Z" itemprop="datePublished">2016-01-27</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>写Bug集锦的目的在于分享从业这些年来遇到的这些有趣的问题，希望在读这些小故事的同时，能带给大家一些思考。</p>
+<h3 id="安全应该是全面的">安全应该是全面的</h3><p>小蔡被分配到测试工资系统，这个系统不仅公司内部会使用，而且还会有面向其他大客户的定制版。</p>
+<p>由于工资系统的特殊性，不仅要求其在使用时的功能性，系统安全性也是一个很重要的指标。</p>
+<p>为了让系统更安全，业务分析人员在项目初始时就为系统设计了动态短信密码和随机键盘的功能（图5.1），使得系统在用户登录时就能验证用户的身份。只有在系统内部注册过手机号，并在登录时通过手机获取动态短信密码，并使用随机键盘输入自己设定的登陆密码之后，用户才能访问工资系统。</p>
+<p>在用户登录这部分，小蔡设计了不少安全性的测试用例，例如SQL注入等，但是都被系统防范住了。小蔡本以为安全测试做的很全面了，但是当测试功能点时，由于URL是www.xyz.com/user/123456的模式，她好奇地通过篡改URL最后的用户ID，期望系统能告知她无访问权限。可是没想到却查看到了另一个用户的信息。要知道企业内部的工号都是连续的，只要有人有耐心，这个缺陷可以让所有人的工资信息都曝光。</p>
+<p>小蔡意识到不仅是篡改用户ID会有问题，而且系统的URL模式也可能会有更大的问题。因为普通用户的URL是www.xyz.com/user/123456，而系统管理员的URL是www.xyz.com/admin/654321，最后几位也是工号。要知道管理员是可以看所有人的工资信息的！要是有人使用www.xyz.com/admin/123456，会被认为是管理员吗？</p>
+<p>小蔡带着这个问题进行了尝试，果真作为普通用户也被当成管理员，从而可以查看所有人的工资了。</p>
+<p>看来系统只是在登录时作了严格的安全性检测，但是对于登录之后的用户权限，却丝毫没有考虑。</p>
+<p>小蔡马上把这一发现通知项目经理，并确定这个缺陷为高优先级和高风险。整个开发团队在第一时间就修复了这个严重的缺陷。</p>
+<p>好奇心没有杀死猫，反而帮助小蔡在测试中发现了一个隐藏的重大安全性缺陷。小蔡也意识到，一个系统的安全性，并不单纯来自于防范系统外部的入侵，还需要严格审视系统内部的安全性漏洞。系统内外部的安全性是一体的，需要全面的设计。</p>
+<h5 id="【扩展知识】">【扩展知识】</h5><p>动态短信<br>随机键盘<br>SQL注入<br>OWASP Top 10<br>URL pattern<br>URL篡改</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug/">Bug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug集锦/">Bug集锦</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Series/">Series</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/28/How_To_Publish_A_Technical_Book/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          如何出一本技术书
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/27/Bug_Series_Theory_And_Reality/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Bug集锦 －理论与现实这么近&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Huang Yong&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

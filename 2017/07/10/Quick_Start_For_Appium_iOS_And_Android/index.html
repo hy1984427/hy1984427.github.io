@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Quick start for appium (iOS and Android) - Test &amp; testing &amp; tester</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="There are many changes compared to the early version of appium, so I would like to start from scratch to build a simple testing script for appium. For further reading about how to apply Page Object an">
+<meta name="keywords" content="Mobile,iOS,Automation,Android,Appium,Get-Start">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quick start for appium (iOS and Android)">
+<meta property="og:url" content="http://hy1984427.github.io/2017/07/10/Quick_Start_For_Appium_iOS_And_Android/index.html">
+<meta property="og:site_name" content="Test &amp; testing &amp; tester">
+<meta property="og:description" content="There are many changes compared to the early version of appium, so I would like to start from scratch to build a simple testing script for appium. For further reading about how to apply Page Object an">
+<meta property="og:updated_time" content="2017-07-10T00:50:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Quick start for appium (iOS and Android)">
+<meta name="twitter:description" content="There are many changes compared to the early version of appium, so I would like to start from scratch to build a simple testing script for appium. For further reading about how to apply Page Object an">
+  
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hy1984427.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Quick_Start_For_Appium_iOS_And_Android" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Quick start for appium (iOS and Android)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/07/10/Quick_Start_For_Appium_iOS_And_Android/" class="article-date">
+  <time datetime="2017-07-09T14:00:00.000Z" itemprop="datePublished">2017-07-10</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="There_are_many_changes_compared_to_the_early_version_of_appium,_so_I_would_like_to_start_from_scratch_to_build_a_simple_testing_script_for_appium-_For_further_reading_about_how_to_apply_Page_Object_and_BDD_to_appium,_you_can_read_my_previous_article_Cookbook_for_appium_and_BDD_with_PageObject-">There are many changes compared to the early version of appium, so I would like to start from scratch to build a simple testing script for appium. For further reading about how to apply Page Object and BDD to appium, you can read my previous article <a href="http://hy1984427.github.io/appium/">Cookbook for appium</a> and <a href="http://hy1984427.github.io/BDD-with-PageObject/">BDD with PageObject</a>.</h5><h3 id="Environment_Settings:">Environment Settings:</h3><ol>
+<li><p>Install XCode and its command line tool.</p>
+<p>To install XCode command line tool, you can use the following command in Terminal:</p>
+<p><code>xcode-select --install</code></p>
+<p>And download the OS versions you want to work with.</p>
+</li>
+<li><p>It’s better to choose Ruby to write the test script as it’s easy to get familiar with. And to install/upgrade it, we can use following commands:</p>
+<p>1) Install Homebrew</p>
+<p><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p>
+<p>2) Install Ruby</p>
+<p><code>brew install ruby</code></p>
+</li>
+<li><p>Install appium and related gems:</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>libimobiledevice --HEAD</div><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>node</div><div class="line">npm <span class="keyword">install </span>-g ios-deploy</div><div class="line">sudo gem <span class="keyword">install </span>xcpretty</div><div class="line">npm <span class="keyword">install </span>appium-doctor -g</div><div class="line">npm <span class="keyword">install </span>-g appium</div><div class="line">npm <span class="keyword">install </span>wd</div><div class="line">npm <span class="keyword">install </span>appium-xcuitest-driver</div><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>carthage</div><div class="line">gem <span class="keyword">install </span>--no-rdoc --no-ri <span class="keyword">bundler</span></div><div class="line">gem <span class="keyword">install </span>--no-rdoc --no-ri appium_lib</div><div class="line">gem <span class="keyword">install </span>--no-rdoc --no-ri appium_console</div></pre></td></tr></table></figure>
+</li>
+<li><p>Install JDK for Android:</p>
+<p>Download from <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">Java SE Development Kit 8 - Downloads</a> and install.</p>
+</li>
+<li><p>Install Android Studio from <a href="https://developer.android.com/studio/index.html" target="_blank" rel="external">Download Android Studio and SDK Tools | Android Studio</a> and download the OS version you want to work with.</p>
+</li>
+<li><p>Configure the bach_profile to set environment parameters:</p>
+<p>Edit your <em><code>~/.bash_profile</code></em>, if you don’t have one, just create it and add following lines to it:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="builtin-name">export</span> <span class="attribute">ANDROID_HOME</span>=/Users/$your_name/Library/Android/sdk</div><div class="line"><span class="builtin-name">export</span> <span class="attribute">ANDROID_SDK</span>=<span class="variable">$ANDROID_HOME</span></div><div class="line"><span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$ANDROID_HOME/build-tools</div><div class="line"><span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$ANDROID_HOME/platform-tools</div><div class="line"><span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$ANDROID_HOME/tools</div><div class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=<span class="string">"`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home`"</span></div><div class="line"><span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$JAVA_HOME/bin</div><div class="line"><span class="builtin-name">export</span> PATH</div></pre></td></tr></table></figure>
+</li>
+<li><p>Run <em><code>appium-doctor</code></em> in Terminal to see if everything works fine. (You need to see there are all green.)</p>
+</li>
+</ol>
+<h3 id="Generate_the_apps_to_be_tested:">Generate the apps to be tested:</h3><ol>
+<li><p>Download the iOS UIKit Catalog source code from <a href="https://developer.apple.com/library/content/samplecode/UICatalog/UIKitCatalogiOSCreatingandCustomizingUIKitControls.zip" target="_blank" rel="external">UIKitCatalog</a>.</p>
+<p>1) Unzip it and open the project in the Swift folder.</p>
+<p>2) Build it in XCode by selecting the OS version you would like to test.</p>
+<p>3) Expand the “Products” folder in the project structure, and select the app generated.</p>
+<p>4) Right click it and select “Show in Finder”, and copy the app with extension as .app to your test folder for future use.</p>
+</li>
+<li><p>Download the “TextSwitcher” from “Import an Android code sample” in Android Studio welcome screen.</p>
+<p>1) Change the “minSdkVersion” from 7 to 9 in “build.gradle (Module:Application)” and build the app.</p>
+<p>2) Right click the root of project structure and select “Reveal in Finder”, and copy the app with extension as .apk in “/Users/$your_name/AndroidStudioProjects/TextSwitcher/Application/build/outputs/apk” to your test folder for future use.</p>
+</li>
+</ol>
+<h3 id="Identify_elements_using_appium_GUI:">Identify elements using appium GUI:</h3><ol>
+<li><p>Download the appium GUI through their website;</p>
+</li>
+<li><p>Start appium GUI after install;</p>
+</li>
+<li><p>Start the server by default;</p>
+</li>
+<li><p>Start a new session;</p>
+</li>
+<li><p>Input all capabilities you want to use in “Desired Capabilities”, such as:</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">platformName   <span class="keyword">text</span>   iOS</div><div class="line">platformVersion   <span class="keyword">text</span>   <span class="number">10.2</span></div><div class="line">deviceName   <span class="keyword">text</span>   iPhone <span class="number">7</span></div><div class="line">app   <span class="keyword">text</span> /Users/$your_name/Documents/UIKitCatalog.app</div></pre></td></tr></table></figure>
+<p>Above shows the basic capabilities you must pass to appium to run the app. (For Android, it’s basically the same, unless you first activity is not MainActivity so you need to set “appActivity” pointed to the right one.)</p>
+</li>
+<li><p>Then you can actually “Start Session”. (For Android, you need to start your emulator before this, appium won’t automatically start Android emulator like it does for iOS.)</p>
+</li>
+<li><p>Wait for some time, another window would popup. In this window, you should see the app’s visual and could inspect elements in it.</p>
+</li>
+<li><p>Once click the element on app UI in the inspector window, you can see the properties of the element shows on the right side.</p>
+<p>1) Try to use id to locate element as possible.</p>
+<p>2) The “Tap”, “Send Keys” and “Clear” button in the right “Selected Element” panel will simulate the corresponding action, and you will see the consequences in the app UI.</p>
+<p>3) You can use “Back” on the top of this window to simulate hardware Back action, and next to it is Refresh.</p>
+<p>4) The eye icon is very useful if you would like to record all your steps into a script. Any action after you click that icon will be recorded, until it’s been clicked again.</p>
+<p>5) You can choose the language you want to record, and you can select to show/hide the supporting code (the code to support you start and end tests rather than the test steps), copy and delete the test codes.</p>
+<p>6) The last one on the top will close this window and entire session.</p>
+</li>
+<li><p>With the inspector, you have recorded some script, or you have written your own code with the inspector to locate elements. The code should look like following:</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">require 'rubygems'</div><div class="line">require 'appium_lib'</div><div class="line">caps = &#123;&#125;</div><div class="line">caps[<span class="string">"platformName"</span>] = <span class="string">"iOS"</span></div><div class="line">caps[<span class="string">"platformVersion"</span>] = <span class="string">"10.2"</span></div><div class="line">caps[<span class="string">"deviceName"</span>] = <span class="string">"iPhone 7"</span></div><div class="line">caps[<span class="string">"app"</span>] = <span class="string">"/Users/$your_name/Documents/UIKitCatalog.app"</span></div><div class="line">opts = &#123;</div><div class="line"><span class="section">sauce_username: nil,</span></div><div class="line"><span class="section">server_url: "http://localhost:4723/wd/hub"</span></div><div class="line">&#125;</div><div class="line">driver = Appium::Driver.new(&#123;caps: caps, appium_lib: opts&#125;).start_driver</div><div class="line">driver.navigate.back</div><div class="line">el1 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[14]"</span>)</div><div class="line">el1.click</div><div class="line">el2 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[1]/XCUIElementTypeTextField"</span>)</div><div class="line">el2.send_keys <span class="string">"123"</span></div><div class="line">el3 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[2]/XCUIElementTypeTextField"</span>)</div><div class="line">el3.send_keys <span class="string">"456"</span></div><div class="line">driver.quit</div></pre></td></tr></table></figure>
+<p>Save the script to a .sh file, such as test.sh.</p>
+</li>
+</ol>
+<h3 id="Run_appium_test:">Run appium test:</h3><ol>
+<li><p>Now we can run the script through the command line (Terminal).</p>
+</li>
+<li><p>After we close appium GUI, we need to run appium in a Terminal tab, then open your test folder. Under the folder, run following command:</p>
+<p> <code>ruby test.sh</code></p>
+</li>
+<li><p>You should see the simulator started and test runs.</p>
+</li>
+<li><p>But we DO NOT have any assertion. Let’s add some.</p>
+<p>1) Install RSpec through</p>
+<p><code>gem install rspec</code></p>
+<p>2) Include RSpec and its matchers in the “Require” section</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'rubygems'</span></div><div class="line"><span class="keyword">require</span> <span class="string">'appium_lib'</span></div><div class="line"><span class="keyword">require</span> <span class="string">'rspec'</span></div><div class="line"><span class="keyword">include</span> RSpec::Matchers</div></pre></td></tr></table></figure>
+<p>3) Add assertions to the test, like:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">driver<span class="selector-class">.navigate</span><span class="selector-class">.back</span></div><div class="line">el1 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[14]"</span>)</div><div class="line">el1<span class="selector-class">.click</span></div><div class="line">el2 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[1]/XCUIElementTypeTextField"</span>)</div><div class="line">el2<span class="selector-class">.send_keys</span> <span class="string">"123"</span></div><div class="line">el2<span class="selector-class">.value</span><span class="selector-class">.should</span> == <span class="string">"123"</span></div><div class="line">el3 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[2]/XCUIElementTypeTextField"</span>)</div><div class="line">el3<span class="selector-class">.send_keys</span> <span class="string">"456"</span></div><div class="line">el3<span class="selector-class">.value</span><span class="selector-class">.should</span> == <span class="string">"456"</span></div></pre></td></tr></table></figure>
+<p>4) To make sure the assertions really works, we can alter like:</p>
+<p><code>el3.value.should == &quot;345&quot;</code></p>
+<p>5) And run it again, it should show following in Terminal:</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/usr/local/<span class="class"><span class="keyword">lib</span>/<span class="title">ruby</span>/<span class="title">gems</span>/2.4.0/<span class="title">gems</span>/<span class="title">rspec</span>-<span class="title">support</span>-3.6.0/<span class="title">lib</span>/<span class="title">rspec</span>/<span class="title">support</span>.<span class="title">rb</span>:87:<span class="title">in</span> `<span class="title">block</span> <span class="title">in</span> &lt;<span class="title">module</span>:<span class="title">Support</span>&gt;': <span class="title">expected</span>: "345" (<span class="title">RSpec::Expectations::ExpectationNotMetError</span>)</span></div><div class="line"><span class="symbol">got:</span> <span class="string">"456"</span> (using ==)</div></pre></td></tr></table></figure>
+<p>6) Now we can revert the change, and complete the test script.</p>
+<p>7) The final test script should looks like:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">require <span class="string">'rubygems'</span></div><div class="line">require <span class="string">'appium_lib'</span></div><div class="line">require <span class="string">'rspec'</span></div><div class="line">include RSpec::Matchers</div><div class="line">caps = &#123;&#125;</div><div class="line">caps[<span class="string">"platformName"</span>] = <span class="string">"iOS"</span></div><div class="line">caps[<span class="string">"platformVersion"</span>] = <span class="string">"10.2"</span></div><div class="line">caps[<span class="string">"deviceName"</span>] = <span class="string">"iPhone 7"</span></div><div class="line">caps[<span class="string">"app"</span>] = <span class="string">"/Users/yhuang/Documents/appium/UIKitCatalog.app"</span></div><div class="line">opts = &#123;</div><div class="line">sauce_username: nil,</div><div class="line">server_url: <span class="string">"http://localhost:4723/wd/hub"</span></div><div class="line">&#125;</div><div class="line">driver = Appium::Driver.new(&#123;caps: caps, appium_lib: opts&#125;)<span class="selector-class">.start_driver</span></div><div class="line">driver<span class="selector-class">.navigate</span><span class="selector-class">.back</span></div><div class="line">el1 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[14]"</span>)</div><div class="line">el1<span class="selector-class">.click</span></div><div class="line">el2 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[1]/XCUIElementTypeTextField"</span>)</div><div class="line">el2<span class="selector-class">.send_keys</span> <span class="string">"123"</span></div><div class="line">el2<span class="selector-class">.value</span><span class="selector-class">.should</span> == <span class="string">"123"</span></div><div class="line">el3 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[2]/XCUIElementTypeTextField"</span>)</div><div class="line">el3<span class="selector-class">.send_keys</span> <span class="string">"456"</span></div><div class="line">el3<span class="selector-class">.value</span><span class="selector-class">.should</span> == <span class="string">"456"</span></div><div class="line">driver.quit</div></pre></td></tr></table></figure>
+</li>
+<li><p>Now it’s all done.</p>
+</li>
+</ol>
+<h3 id="Please_Note:">Please Note:</h3><ol>
+<li><p>This is just a sample to run test, but we actually should write it in BDD way with Page Object.</p>
+</li>
+<li><p>It should also be integrated with CI.</p>
+</li>
+<li><p>If you want to use Appium to test Android, I recommend you to use Genymotion rather than AVD, even you are using x86 kernel for AVD.</p>
+</li>
+<li><p>You can reference to the <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/UIKitCatalog.app" target="_blank" rel="external">app</a> and <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/UIKitCatalog.sh" target="_blank" rel="external">script</a> for UIKitCatalog and the <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/AndroidCalculator.apk" target="_blank" rel="external">app</a> and <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/AndroidCalculator.sh" target="_blank" rel="external">script</a> for Android Calculator.</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Appium/">Appium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Get-Start/">Get-Start</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/06/06/Domestic_Project_Manager/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">国内交付项目新手PM生存指南&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Huang Yong&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

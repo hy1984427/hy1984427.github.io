@@ -67,6 +67,188 @@ ga('send', 'pageview');
   </div>
 </header>
     <section id="main" class="outer">
+      <article id="post-Quick_Start_For_Mocha_Chai_SuperTest_In_API_Testing_With_Tips_And_Mock_Server_Moco" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/14/Quick_Start_For_Mocha_Chai_SuperTest_In_API_Testing_With_Tips_And_Mock_Server_Moco/">Quick start for Mocha + Chai + SuperTest in API Testing with Tips and Mock Server (moco)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/07/14/Quick_Start_For_Mocha_Chai_SuperTest_In_API_Testing_With_Tips_And_Mock_Server_Moco/" class="article-date">
+  <time datetime="2017-07-13T14:00:00.000Z" itemprop="datePublished">2017-07-14</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="There-are-many-combinations-to-test-APIs-but-here-we-choose-a-commonly-used-combination-for-demonstration-the-rests-will-be-pretty-much-the-same-or-likely-And-we-will-use-moco-to-quickly-simulate-a-server"><a href="#There-are-many-combinations-to-test-APIs-but-here-we-choose-a-commonly-used-combination-for-demonstration-the-rests-will-be-pretty-much-the-same-or-likely-And-we-will-use-moco-to-quickly-simulate-a-server" class="headerlink" title="There are many combinations to test APIs, but here we choose a commonly used combination for demonstration, the rests will be pretty much the same or likely. And we will use moco to quickly simulate a server."></a>There are many combinations to test APIs, but here we choose a commonly used combination for demonstration, the rests will be pretty much the same or likely. And we will use moco to quickly simulate a server.</h5><h3 id="Environment-Settings"><a href="#Environment-Settings" class="headerlink" title="Environment Settings:"></a>Environment Settings:</h3><ol>
+<li><p>Install Homebrew</p>
+<p><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p>
+</li>
+<li><p>Install NodeJS</p>
+<p><code>brew install node</code></p>
+</li>
+<li><p>Install Mocha, Chai, SuperTest, Exoress and Body-Parser</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> -g mocha</div><div class="line">npm <span class="keyword">install</span> chai</div><div class="line">npm <span class="keyword">install</span> supertest</div><div class="line">npm <span class="keyword">install</span> express</div><div class="line">npm <span class="keyword">install</span> <span class="keyword">body</span>-parser</div></pre></td></tr></table></figure>
+</li>
+<li><p>Download the moco standalone file from <a href="http://central.maven.org/maven2/com/github/dreamhead/moco-runner/0.11.1/moco-runner-0.11.1-standalone.jar" target="_blank" rel="external">Github</a></p>
+</li>
+<li><p>Since Mocha will only run scripts under “test” folder, so we have to create a folder named “test”.</p>
+</li>
+</ol>
+<h3 id="Start-a-simple-server-and-test-on-it"><a href="#Start-a-simple-server-and-test-on-it" class="headerlink" title="Start a simple server and test on it:"></a>Start a simple server and test on it:</h3><ol>
+<li><p>Create a json file named “user1.json”, and add following content to it:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"response"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"status"</span> : <span class="string">"200"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<p><em>Please note: we only define the HTTP status code here for now.</em></p>
+</li>
+<li><p>Start the Mock server using the command when under the “test” folder:</p>
+<p><code>java -jar moco-runner-0.11.1-standalone.jar http -p 3000 -c user1.json</code></p>
+<p>And you should see following lines in your Terminal:</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">10 </span>Jul <span class="number">2017</span> <span class="number">16</span>:<span class="number">17</span>:<span class="number">43</span> [main] INFO  Server is started at <span class="number">3000</span></div><div class="line"><span class="symbol">10 </span>Jul <span class="number">2017</span> <span class="number">16</span>:<span class="number">17</span>:<span class="number">43</span> [main] INFO  Shutdown port is <span class="number">56123</span></div><div class="line"><span class="symbol">10 </span>Jul <span class="number">2017</span> <span class="number">16</span>:<span class="number">17</span>:<span class="number">45</span> [nioEventLoopGroup-<span class="number">3</span>-<span class="number">2</span>] INFO  Request received:</div></pre></td></tr></table></figure>
+</li>
+<li><p>You can open the URL <a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a> in browser to check the response of the API, but currently since we havn’t set and response value except the status code, so you won’t see anything in the browser.</p>
+</li>
+<li><p>Create a script file named “user1_test.js”, and add following to it:</p>
+<p>1) Add the alias to shorten the names for requiring libs:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> should = <span class="built_in">require</span>(<span class="string">'chai'</span>).should(),</div><div class="line">expect = <span class="built_in">require</span>(<span class="string">'chai'</span>).expect,</div><div class="line">supertest = <span class="built_in">require</span>(<span class="string">'supertest'</span>),</div></pre></td></tr></table></figure>
+<p>2) Setup the URL we want to test against:</p>
+<p><code>api = supertest(&#39;http://localhost:3000&#39;);</code></p>
+<p>3) Define a function to describe the feature we want to test:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">describe(<span class="string">'User'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>4) Define a detailed test step to execute the test script, by adding it in the content of function above:</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">it('should return a response with HTTP code <span class="number">200</span>', function(<span class="name">done</span>) &#123;</div><div class="line">  api.get('').expect(<span class="number">200</span>, done)<span class="comment">;</span></div><div class="line">&#125;)<span class="comment">;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Run the test to check the result by using:</p>
+<p><code>mocha</code> or <code>mocha user1_test.js</code></p>
+<p>And you should see the result like:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  ✓ should return <span class="selector-tag">a</span> response with HTTP <span class="selector-tag">code</span> <span class="number">200</span></div><div class="line"></div><div class="line"><span class="number">1</span> passing (<span class="number">28ms</span>)</div></pre></td></tr></table></figure>
+<p>Great! It works.</p>
+</li>
+<li><p>Now, let’s make sure it works as expected by change the expected HTTP code to 404, and run it again. You should see the following:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  1) should return a response with HTTP code 200</div><div class="line"></div><div class="line">0 passing (32ms)</div><div class="line">1 failing</div><div class="line"></div><div class="line">1)<span class="built_in"> User </span>should return a response with HTTP code 200:</div><div class="line">   Error: expected 404 <span class="string">"Not Found"</span>, got 200 <span class="string">"OK"</span></div></pre></td></tr></table></figure>
+<p>Awesome! It means the test really works. Now, revert the change.</p>
+</li>
+<li><p>It’s time to add more parameters to make it a little complex.</p>
+<p>1) Add the formatter of HTTP request header in test script, and change the line of API test to following:</p>
+<p><code>api.get(&#39;&#39;).set(&#39;Accept&#39;, &#39;application/json&#39;).expect(200, done);</code></p>
+<p>2) Change the response of server to point to a specific URL, by adding the URI above the HTTP status code in “user1.json”, and the entire file should looks like:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"request"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"uri"</span> : <span class="string">"/users/1"</span></div><div class="line">    &#125;,</div><div class="line">  <span class="attr">"response"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"status"</span> : <span class="string">"200"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<p><em>Please note: don’t bother to restart the Mock Server. Once you save the json file with correct format moco provided, it will restart itself automatically. But if you save with any error, you have to fix it before start it, otherwise it won’t response correctly. For detailed moco usage and API docuemnts, please refer to the Documents section on <a href="https://github.com/dreamhead/moco" target="_blank" rel="external">moco Github page</a>.</em></p>
+<p>3) Now, it’s time to change the test script accordingly. We need to change the line of API test to following:</p>
+<p><code>api.get(&#39;/users/1&#39;).set(&#39;Accept&#39;, &#39;application/json&#39;).expect(200, done);</code></p>
+<p>4) Let’s run the test script again, you should see the test pass:</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">✓ should return a response with HTTP code <span class="number">200</span> (<span class="number">177</span>ms)</div><div class="line"></div><div class="line"><span class="number">1</span> passing (<span class="number">186</span>ms)</div></pre></td></tr></table></figure>
+<p>5) We can also add some text response into API response, like following:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"request"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"uri"</span> : <span class="string">"/users/1"</span></div><div class="line">    &#125;,</div><div class="line">  <span class="attr">"response"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"status"</span> : <span class="string">"200"</span>,</div><div class="line">      <span class="attr">"json"</span>:</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"text"</span>: <span class="string">"Not Empty"</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>6) Then change the test script correspondingly:</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">it('should return a response with HTTP code <span class="number">200</span> and the response text should be <span class="string">"Not Empty"</span>', function(<span class="name">done</span>) &#123;</div><div class="line">  api.get('/users/1').set('Accept', 'application/json').expect(<span class="number">200</span>).end(<span class="name">function</span>(<span class="name">err</span>,res)&#123;</div><div class="line">    expect(<span class="name">res</span>.body).to.have.property(<span class="string">"text"</span>)<span class="comment">;</span></div><div class="line">    expect(<span class="name">res</span>.body.text).to.equal(<span class="string">"Not Empty"</span>)<span class="comment">;</span></div><div class="line">    done(<span class="name">err</span>)<span class="comment">;</span></div><div class="line">  &#125;)<span class="comment">;</span></div><div class="line">&#125;)<span class="comment">;</span></div></pre></td></tr></table></figure>
+<p>The test result should show “Pass”.</p>
+<p>7) What if we change the expected HTTP status code ot the expected response text? Let’s try.</p>
+<p>After change the expected HTTP status code to 500, once the test run, the result will be:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  <span class="number">1</span>) should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span> <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Not Empty"</span></div><div class="line"></div><div class="line"><span class="number">0</span> passing (<span class="number">44</span>ms)</div><div class="line"><span class="number">1</span> failing</div><div class="line"></div><div class="line"><span class="number">1</span>) User should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span> <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Not Empty"</span>:</div><div class="line">   Error: expected <span class="number">500</span> <span class="string">"Internal Server Error"</span>, got <span class="number">200</span> <span class="string">"OK"</span></div></pre></td></tr></table></figure>
+<p>Revert the change and change the expected response text to “Empty”, once the test run, the result will be:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  <span class="number">1</span>) should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span> <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Not Empty"</span></div><div class="line"></div><div class="line"><span class="number">0</span> passing (<span class="number">46</span>ms)</div><div class="line"><span class="number">1</span> failing</div><div class="line"></div><div class="line"><span class="number">1</span>) User should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span> <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Not Empty"</span>:</div><div class="line"></div><div class="line">    Uncaught AssertionError: expected <span class="string">'Not Empty'</span> <span class="built_in">to</span> equal <span class="string">'Empty'</span></div><div class="line">    + expected - actual</div><div class="line"></div><div class="line">    -Not Empty</div><div class="line">    +Empty</div></pre></td></tr></table></figure>
+<p> Don’t forget to revert the change.</p>
+<p>8) The test script works as expected, so next, we will make it more complex.</p>
+</li>
+</ol>
+<h3 id="Make-the-server-more-complex-and-of-course-test-against-it"><a href="#Make-the-server-more-complex-and-of-course-test-against-it" class="headerlink" title="Make the server more complex and of course, test against it:"></a>Make the server more complex and of course, test against it:</h3><ol>
+<li><p>Append the API response to only respond to specific request, change the API response to:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"request"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"uri"</span> : <span class="string">"/users/1"</span>,</div><div class="line">      <span class="attr">"json"</span>: &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"Yale"</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">  <span class="attr">"response"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"status"</span> : <span class="string">"200"</span>,</div><div class="line">      <span class="attr">"json"</span>:</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"gender"</span>: <span class="string">"Male"</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+</li>
+<li><p>Change the test script to reflect the changes:</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">it('should return a response with HTTP code <span class="number">200</span>, and the response text should be <span class="string">"Male"</span> if request the gender of <span class="string">"Yale"</span> as <span class="string">"name"</span>', function(<span class="name">done</span>) &#123;</div><div class="line">  api.get('/users/1').set('Accept', 'application/json').send(&#123;name:<span class="string">"Yale"</span>&#125;).expect(<span class="number">200</span>).end(<span class="name">function</span>(<span class="name">err</span>,res)&#123;</div><div class="line">    expect(<span class="name">res</span>.body).to.have.property(<span class="string">"gender"</span>)<span class="comment">;</span></div><div class="line">    expect(<span class="name">res</span>.body.gender).to.equal(<span class="string">"Male"</span>)<span class="comment">;</span></div><div class="line">    done(<span class="name">err</span>)<span class="comment">;</span></div><div class="line">  &#125;)<span class="comment">;</span></div><div class="line">&#125;)<span class="comment">;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Once run the test script, it will Pass.</p>
+</li>
+<li><p>If we change the value in the request, like change “Yale” to “Yong”, once test script runs, it will show:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">    <span class="number">1</span>) should <span class="literal">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="built_in">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line">  <span class="number">0</span> passing (<span class="number">47</span>ms)</div><div class="line">  <span class="number">1</span> failing</div><div class="line"></div><div class="line">  <span class="number">1</span>) User should <span class="literal">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="built_in">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span>:</div><div class="line">     Uncaught AssertionError: expected &#123;&#125; <span class="keyword">to</span> have <span class="keyword">property</span> 'gender'</div></pre></td></tr></table></figure>
+</li>
+<li><p>If we change the value in the request, like change the 2 “gender” to “sex”, once test script runs, it will show:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  <span class="number">1</span>) should <span class="literal">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="built_in">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line"><span class="number">0</span> passing (<span class="number">39</span>ms)</div><div class="line"><span class="number">1</span> failing</div><div class="line"></div><div class="line"><span class="number">1</span>) User should <span class="literal">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="built_in">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span>:</div><div class="line">   Uncaught AssertionError: expected &#123;&#125; <span class="keyword">to</span> have <span class="keyword">property</span> 'sex'</div></pre></td></tr></table></figure>
+</li>
+<li><p>If we change the value in the request, like change “Male” to “Man”, once test script runs, it will show:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  <span class="number">1</span>) should <span class="literal">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="built_in">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line"><span class="number">0</span> passing (<span class="number">44</span>ms)</div><div class="line"><span class="number">1</span> failing</div><div class="line"></div><div class="line"><span class="number">1</span>) User should <span class="literal">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="built_in">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span>:</div><div class="line">   Uncaught AssertionError: expected &#123;&#125; <span class="keyword">to</span> have <span class="keyword">property</span> 'gender'</div></pre></td></tr></table></figure>
+</li>
+<li><p>You may notice that in the test script, we still use GET method rather than PUT or POST, but we still can let the test Pass. Now, let’s strict it. In the API response, we need to change it to following:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"request"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"uri"</span> : <span class="string">"/users/1"</span>,</div><div class="line">      <span class="attr">"method"</span>: <span class="string">"get"</span>,</div><div class="line">      <span class="attr">"json"</span>: &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"Yale"</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">  <span class="attr">"response"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"status"</span> : <span class="string">"500"</span>,</div><div class="line">      <span class="attr">"json"</span>:</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"gender"</span>: <span class="string">"Male"</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"request"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"uri"</span> : <span class="string">"/users/1"</span>,</div><div class="line">      <span class="attr">"method"</span>: <span class="string">"put"</span>,</div><div class="line">      <span class="attr">"json"</span>: &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"Yale"</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">  <span class="attr">"response"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"status"</span> : <span class="string">"200"</span>,</div><div class="line">      <span class="attr">"json"</span>:</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"gender"</span>: <span class="string">"Male"</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+</li>
+<li><p>Simply change the HTTP method to “put” in test script and check the result:</p>
+<p>In the test script:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">api</span><span class="selector-class">.put</span>(<span class="string">'/users/1'</span>)<span class="selector-class">.set</span>(<span class="string">'Accept'</span>, <span class="string">'application/json'</span>)<span class="selector-class">.send</span>(&#123;<span class="attribute">name</span>:<span class="string">"Yale"</span>&#125;)<span class="selector-class">.expect</span>(<span class="number">200</span>)<span class="selector-class">.end</span>(function(err,res)&#123;</div><div class="line">  <span class="selector-tag">expect</span>(res.body)<span class="selector-class">.to</span><span class="selector-class">.have</span><span class="selector-class">.property</span>(<span class="string">"gender"</span>);</div><div class="line">  <span class="selector-tag">expect</span>(res.body.gender)<span class="selector-class">.to</span><span class="selector-class">.equal</span>(<span class="string">"Male"</span>);</div><div class="line">  <span class="selector-tag">done</span>(err);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>And the test result:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  ✓ should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line"><span class="number">1</span> passing (<span class="number">41</span>ms)</div></pre></td></tr></table></figure>
+</li>
+<li><p>Let’s see what if we change the HTTP method to “get” again in test script and check the result:</p>
+<p>In the test script:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">api</span><span class="selector-class">.get</span>(<span class="string">'/users/1'</span>)<span class="selector-class">.set</span>(<span class="string">'Accept'</span>, <span class="string">'application/json'</span>)<span class="selector-class">.send</span>(&#123;<span class="attribute">name</span>:<span class="string">"Yale"</span>&#125;)<span class="selector-class">.expect</span>(<span class="number">200</span>)<span class="selector-class">.end</span>(function(err,res)&#123;</div><div class="line">  <span class="selector-tag">expect</span>(res.body)<span class="selector-class">.to</span><span class="selector-class">.have</span><span class="selector-class">.property</span>(<span class="string">"gender"</span>);</div><div class="line">  <span class="selector-tag">expect</span>(res.body.gender)<span class="selector-class">.to</span><span class="selector-class">.equal</span>(<span class="string">"Male"</span>);</div><div class="line">  <span class="selector-tag">done</span>(err);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>And the test result:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  <span class="number">1</span>) should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line"><span class="number">0</span> passing (<span class="number">39</span>ms)</div><div class="line"><span class="number">1</span> failing</div><div class="line"></div><div class="line"><span class="number">1</span>) User should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span>:</div><div class="line">   Error: expected <span class="number">200</span> <span class="string">"OK"</span>, got <span class="number">500</span> <span class="string">"Internal Server Error"</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Final-stage-more-advanced-usage"><a href="#Final-stage-more-advanced-usage" class="headerlink" title="Final stage - more advanced usage:"></a>Final stage - more advanced usage:</h3><ol>
+<li><p>If we want to add more API responses, do we need to add them into one json file? Certainly not, let’s see how we can do that.</p>
+<p>1) Create another json file named “user2”, and add following content to it:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"request"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"uri"</span> : <span class="string">"/users/2"</span>,</div><div class="line">      <span class="attr">"method"</span>: <span class="string">"post"</span>,</div><div class="line">      <span class="attr">"json"</span>: &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"Yong"</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">  <span class="attr">"response"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"status"</span> : <span class="string">"500"</span>,</div><div class="line">      <span class="attr">"text"</span> : <span class="string">"Internal Server Error"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>2) Create another js file named “user2_test.js”, and add following into its content:</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var should = <span class="built_in">require</span>(<span class="string">'chai'</span>).should(),</div><div class="line">  expect = <span class="built_in">require</span>(<span class="string">'chai'</span>).expect,</div><div class="line">  supertest = <span class="built_in">require</span>(<span class="string">'supertest'</span>),</div><div class="line">  api = supertest(<span class="string">'http://localhost:3000'</span>);</div><div class="line">describe(<span class="string">'User'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span> &#123;</div><div class="line">  it(<span class="string">'should return a response with HTTP code 500 and its content if request the gender of "Yong" as "name"'</span>, <span class="function"><span class="keyword">function</span><span class="params">(done)</span></span> &#123;</div><div class="line">    api.post(<span class="string">'/users/2'</span>).set(<span class="string">'Accept'</span>, <span class="string">'application/json'</span>).send(&#123;name:<span class="string">"Yong"</span>&#125;).expect(<span class="number">500</span>).<span class="keyword">end</span>(<span class="function"><span class="keyword">function</span><span class="params">(err,res)</span></span>&#123;</div><div class="line">      <span class="keyword">if</span> (err) <span class="keyword">return</span> done(err);</div><div class="line">      expect(res.<span class="built_in">error</span>.text).to.equal(<span class="string">"Internal Server Error"</span>);</div><div class="line">      done(err);</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>3) Once you run the test script, it will show:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">    ✓ should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">500</span> <span class="keyword">and</span> its content <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yong"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line">  <span class="number">1</span> passing (<span class="number">41</span>ms)</div></pre></td></tr></table></figure>
+<p>4) If we only change the expected HTTP status code in the test script to 404, the result will be:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line"><span class="number">1</span>) should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">500</span> <span class="keyword">and</span> its content <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yong"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line"><span class="number">0</span> passing (<span class="number">45</span>ms)</div><div class="line"><span class="number">1</span> failing</div><div class="line"></div><div class="line"><span class="number">1</span>) User should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">500</span> <span class="keyword">and</span> its content <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yong"</span> <span class="keyword">as</span> <span class="string">"name"</span>:</div><div class="line">  Error: expected <span class="number">404</span> <span class="string">"Not Found"</span>, got <span class="number">500</span> <span class="string">"Internal Server Error"</span></div></pre></td></tr></table></figure>
+<p>5) And if we only change the expected response message to “Not Found”, the result will be:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line"><span class="number">1</span>) should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">500</span> <span class="keyword">and</span> its content <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yong"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line"><span class="number">0</span> passing (<span class="number">43</span>ms)</div><div class="line"><span class="number">1</span> failing</div><div class="line"></div><div class="line"><span class="number">1</span>) User should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">500</span> <span class="keyword">and</span> its content <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yong"</span> <span class="keyword">as</span> <span class="string">"name"</span>:</div><div class="line"></div><div class="line">    Uncaught AssertionError: expected <span class="string">'Internal Server Error'</span> <span class="built_in">to</span> equal <span class="string">'Not Found'</span></div><div class="line">    + expected - actual</div><div class="line"></div><div class="line">    -Internal Server Error</div><div class="line">    +Not Found</div></pre></td></tr></table></figure>
+<p>6) Revert all changes back again, and create another json file named “combined.json”, and add following:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">    <span class="attr">"include"</span>: <span class="string">"user1.json"</span></div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    <span class="attr">"include"</span>: <span class="string">"user2.json"</span></div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<p> And start the Mock Server using <code>java -jar moco-runner-0.11.1-standalone.jar http -p 3000 -g combined.json</code></p>
+<p>7) Use Mocha to run all the test scripts:</p>
+<p><code>mocha *.js</code></p>
+<p>And you should see:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">    ✓ should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line">  User</div><div class="line">    ✓ should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">500</span> <span class="keyword">and</span> its content <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yong"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line">  <span class="number">2</span> passing (<span class="number">49</span>ms)</div></pre></td></tr></table></figure>
+<p>8) If you want to run a single test script to test all steps, you can create a js file named “users_test.js”, and add following content:</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var should = require(<span class="symbol">'chai</span>').should(),</div><div class="line">  expect = require(<span class="symbol">'chai</span>').expect,</div><div class="line">  supertest = require(<span class="symbol">'supertest</span>'),</div><div class="line">  api = supertest(<span class="symbol">'http</span>://localhost:<span class="number">3000</span>');</div><div class="line">describe(<span class="symbol">'User</span>', <span class="keyword">function</span>() &#123;</div><div class="line">  it(<span class="symbol">'should</span> <span class="keyword">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> the response text should be <span class="string">"Male"</span> <span class="keyword">if</span> request the gender <span class="keyword">of</span> <span class="string">"Yale"</span> as <span class="string">"name"</span>', <span class="keyword">function</span>(done) &#123;</div><div class="line">    api.put('/users/<span class="number">1</span>').set(<span class="symbol">'Accept</span>', <span class="symbol">'application</span>/json').send(&#123;name:<span class="string">"Yale"</span>&#125;).expect(<span class="number">200</span>).<span class="keyword">end</span>(<span class="keyword">function</span>(err,res)&#123;</div><div class="line">      expect(res.<span class="keyword">body</span>).to.have.property(<span class="string">"gender"</span>);</div><div class="line">      expect(res.<span class="keyword">body</span>.gender).to.equal(<span class="string">"Male"</span>);</div><div class="line">      done(err);</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  it(<span class="symbol">'should</span> <span class="keyword">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">500</span> <span class="keyword">and</span> its content <span class="keyword">if</span> request the gender <span class="keyword">of</span> <span class="string">"Yong"</span> as <span class="string">"name"</span>', <span class="keyword">function</span>(done) &#123;</div><div class="line">    api.post('/users/<span class="number">2</span>').set(<span class="symbol">'Accept</span>', <span class="symbol">'application</span>/json').send(&#123;name:<span class="string">"Yong"</span>&#125;).expect(<span class="number">500</span>).<span class="keyword">end</span>(<span class="keyword">function</span>(err,res)&#123;</div><div class="line">      <span class="keyword">if</span> (err) <span class="keyword">return</span> done(err);</div><div class="line">      expect(res.error.text).to.equal(<span class="string">"Internal Server Error"</span>);</div><div class="line">      done(err);</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>9) Run the test using <code>mocha users_test.js</code>, it will show the same result as above.</p>
+</li>
+</ol>
+<h3 id="Later-on"><a href="#Later-on" class="headerlink" title="Later on:"></a>Later on:</h3><p>Since you already can run your test scripts smoothly through command line, you can simply add them to CI tools, such as Jenkins and such.</p>
+<p>Have fun!</p>
+<p><strong><em>You can find all the test scripts from <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/API_Test_Mocha_Chai_SuperTest.zip" target="_blank" rel="external">here</a>.</em></strong></p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/API/">API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chai/">Chai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mocha/">Mocha</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mock-Server/">Mock Server</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quick-Start/">Quick-Start</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Supertest/">Supertest</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/moco/">moco</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
       <article id="post-Quick_Start_For_Appium_iOS_And_Android" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -94,7 +276,7 @@ ga('send', 'pageview');
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="There_are_many_changes_compared_to_the_early_version_of_appium,_so_I_would_like_to_start_from_scratch_to_build_a_simple_testing_script_for_appium-_For_further_reading_about_how_to_apply_Page_Object_and_BDD_to_appium,_you_can_read_my_previous_article_Cookbook_for_appium_and_BDD_with_PageObject-">There are many changes compared to the early version of appium, so I would like to start from scratch to build a simple testing script for appium. For further reading about how to apply Page Object and BDD to appium, you can read my previous article <a href="http://hy1984427.github.io/appium/">Cookbook for appium</a> and <a href="http://hy1984427.github.io/BDD-with-PageObject/">BDD with PageObject</a>.</h5><h3 id="Environment_Settings:">Environment Settings:</h3><ol>
+        <h5 id="There-are-many-changes-compared-to-the-early-version-of-appium-so-I-would-like-to-start-from-scratch-to-build-a-simple-testing-script-for-appium-For-further-reading-about-how-to-apply-Page-Object-and-BDD-to-appium-you-can-read-my-previous-article-Cookbook-for-appium-and-BDD-with-PageObject"><a href="#There-are-many-changes-compared-to-the-early-version-of-appium-so-I-would-like-to-start-from-scratch-to-build-a-simple-testing-script-for-appium-For-further-reading-about-how-to-apply-Page-Object-and-BDD-to-appium-you-can-read-my-previous-article-Cookbook-for-appium-and-BDD-with-PageObject" class="headerlink" title="There are many changes compared to the early version of appium, so I would like to start from scratch to build a simple testing script for appium. For further reading about how to apply Page Object and BDD to appium, you can read my previous article Cookbook for appium and BDD with PageObject."></a>There are many changes compared to the early version of appium, so I would like to start from scratch to build a simple testing script for appium. For further reading about how to apply Page Object and BDD to appium, you can read my previous article <a href="http://hy1984427.github.io/appium/">Cookbook for appium</a> and <a href="http://hy1984427.github.io/BDD-with-PageObject/">BDD with PageObject</a>.</h5><h3 id="Environment-Settings"><a href="#Environment-Settings" class="headerlink" title="Environment Settings:"></a>Environment Settings:</h3><ol>
 <li><p>Install XCode and its command line tool.</p>
 <p>To install XCode command line tool, you can use the following command in Terminal:</p>
 <p><code>xcode-select --install</code></p>
@@ -121,7 +303,7 @@ ga('send', 'pageview');
 <li><p>Run <em><code>appium-doctor</code></em> in Terminal to see if everything works fine. (You need to see there are all green.)</p>
 </li>
 </ol>
-<h3 id="Generate_the_apps_to_be_tested:">Generate the apps to be tested:</h3><ol>
+<h3 id="Generate-the-apps-to-be-tested"><a href="#Generate-the-apps-to-be-tested" class="headerlink" title="Generate the apps to be tested:"></a>Generate the apps to be tested:</h3><ol>
 <li><p>Download the iOS UIKit Catalog source code from <a href="https://developer.apple.com/library/content/samplecode/UICatalog/UIKitCatalogiOSCreatingandCustomizingUIKitControls.zip" target="_blank" rel="external">UIKitCatalog</a>.</p>
 <p>1) Unzip it and open the project in the Swift folder.</p>
 <p>2) Build it in XCode by selecting the OS version you would like to test.</p>
@@ -133,7 +315,7 @@ ga('send', 'pageview');
 <p>2) Right click the root of project structure and select “Reveal in Finder”, and copy the app with extension as .apk in “/Users/$your_name/AndroidStudioProjects/TextSwitcher/Application/build/outputs/apk” to your test folder for future use.</p>
 </li>
 </ol>
-<h3 id="Identify_elements_using_appium_GUI:">Identify elements using appium GUI:</h3><ol>
+<h3 id="Identify-elements-using-appium-GUI"><a href="#Identify-elements-using-appium-GUI" class="headerlink" title="Identify elements using appium GUI:"></a>Identify elements using appium GUI:</h3><ol>
 <li><p>Download the appium GUI through their website;</p>
 </li>
 <li><p>Start appium GUI after install;</p>
@@ -163,7 +345,7 @@ ga('send', 'pageview');
 <p>Save the script to a .sh file, such as test.sh.</p>
 </li>
 </ol>
-<h3 id="Run_appium_test:">Run appium test:</h3><ol>
+<h3 id="Run-appium-test"><a href="#Run-appium-test" class="headerlink" title="Run appium test:"></a>Run appium test:</h3><ol>
 <li><p>Now we can run the script through the command line (Terminal).</p>
 </li>
 <li><p>After we close appium GUI, we need to run appium in a Terminal tab, then open your test folder. Under the folder, run following command:</p>
@@ -189,7 +371,7 @@ ga('send', 'pageview');
 <li><p>Now it’s all done.</p>
 </li>
 </ol>
-<h3 id="Please_Note:">Please Note:</h3><ol>
+<h3 id="Please-Note"><a href="#Please-Note" class="headerlink" title="Please Note:"></a>Please Note:</h3><ol>
 <li><p>This is just a sample to run test, but we actually should write it in BDD way with Page Object.</p>
 </li>
 <li><p>It should also be integrated with CI.</p>
@@ -206,7 +388,7 @@ ga('send', 'pageview');
     
       <footer class="article-footer">
         
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Appium/">Appium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Get-Start/">Get-Start</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Appium/">Appium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quick-Start/">Quick-Start</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 
       </footer>
     
@@ -1162,122 +1344,8 @@ ga('send', 'pageview');
 
 
     
-      <article id="post-Speaking_Skills" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/10/Speaking_Skills/">演讲技巧</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2015/06/10/Speaking_Skills/" class="article-date">
-  <time datetime="2015-06-09T14:00:00.000Z" itemprop="datePublished">2015-06-10</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Test/">Test</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="演讲的实用技巧">演讲的实用技巧</h2><hr>
-<h3 id="内容准备">内容准备</h3><ol>
-<li><p>熟悉内容</p>
-<p> <em>演讲最先需要准备的就是内容。只有保证了内容的吸引力，才会有观众，才会需要准备后续的内容。</em></p>
-</li>
-<li><p>⽇程</p>
-<p> <em>在演讲一开始，就需要明确告诉观众大致的流程，这样便于观众快速确定听的重点，也能让观众在走神的时候快速切换到正在演讲的内容。</em></p>
-</li>
-<li><p>图⽚</p>
-<p> <em>在一般的场合，演讲的材料最好以图片为主，避免过多的文字对于观众注意力的干扰。</em></p>
-</li>
-<li><p>字体</p>
-<p> <em>为了保证所有观众都能准确无误地接收到演讲的内容，需要在准备时调整字体大小，让即使最后一排的观众都能看得清楚。</em></p>
-</li>
-<li><p>备忘</p>
-<p> <em>演讲不可避免需要做一些备忘。这样可以在必要时提示演讲者。</em></p>
-</li>
-</ol>
-<h3 id="演讲中">演讲中</h3><ol>
-<li><p>站位</p>
-<p> <em>大部分的演讲现在都会录制视频，在会后分享。一定要注意自己的站位不要阻挡摄像机，也需要让摄像机能拍摄到自己。同时还需要注意自己的手势有可能也会影响视频效果。</em></p>
-</li>
-<li><p>与观众交流</p>
-<p> <em>如果不是特意锻炼过，任何人在演讲的时候都或多或少会紧张。观众不仅可以是紧张的来源，也可以通过寻求观众中赞同的观点和眼神，来缓解自己的紧张感，更好地发挥。同样也包括和观众进行问答等互动，增强观众的参与度，让演讲更生动。</em></p>
-</li>
-<li><p>不要读ppt内容</p>
-<p> <em>没有人愿意在现场听人读稿子，如果这样，不如省下这些时间，在会后看分享的资料就好了。而如果在准备阶段，演讲稿大部分是图片，也没有太多机会陷入这个问题之中。</em></p>
-</li>
-<li><p>适当的停顿</p>
-<p> <em>适当的停顿是为了保证所有观众都能理解到演讲的重点，也让观众有时间去思考和消化相关的内容。</em></p>
-</li>
-<li><p>语调</p>
-<p> <em>语调的变化可以唤起观众的注意力，对于把走神的观众拉回演讲中很有帮助。同理还有反复强调某一内容</em></p>
-</li>
-<li><p>肢体语⾔</p>
-<p> <em>肢体语言不仅是表达内容的一个方式，能让演讲形势更加丰富，也可以让演讲者更自然地进行表达。</em></p>
-</li>
-</ol>
-<h3 id="回答问题">回答问题</h3><ol>
-<li><p>基于⾃⼰的实践</p>
-<p> <em>不少人都觉得谈项目实践会误导别人，毕竟项目情况是不一样的。其实大可不必，只需要适当介绍项目背景和执行具体实践的背景就可以了。大部分观众都想了解别人是如何做事的，从而给自己启发，自然项目实践会更贴近于观众的实际工作，更具有借鉴意义。</em></p>
-</li>
-<li><p>解决具体的问题，⽽不是⽅法论</p>
-<p> <em>很多人觉得对于观众的问题，需要提供大一统的解决方案，概括性地从根本解决观众的问题。实际项目中没有一个方法是银弹，所以更需要告诉观众每种解决方案都是有其特定的使用场景的。回答问题时需要更具体，更基于实践，而不是空洞的理论。</em></p>
-</li>
-<li><p>重复问题，得到确认</p>
-<p> <em>如果问题比较复杂，在回答观众提问之前，需要根据自己的理解重新描述问题，确保观众提问的和自己回答的是同一个问题。</em></p>
-</li>
-<li><p>详细说明会很占⽤时间，下来⼀起讨论</p>
-<p> <em>如果观众的问题太过于细节，同时需要更多的背景知识才能进行探讨，亦或是问题和主题不太相关，大多数人不关心，则可以向提问者提出等演讲结束，可以有更多时间一起深入问题进行探讨。</em></p>
-</li>
-</ol>
-<h3 id="演讲后">演讲后</h3><ol>
-<li><p>根据反馈更新内容</p>
-<p> <em>演讲之后除了搜集对于自己演讲的反馈之外，还需要根据观众的反馈，适度调整演讲稿的内容。这样对于之后的分享和演讲都很有帮助。</em></p>
-</li>
-<li><p>存档</p>
-<p> <em>对于演讲稿和相关的资料，例如图片等，需要进行存档，便于之后的查询和检索。</em></p>
-</li>
-<li><p>对外分享时使⽤PDF</p>
-<p> <em>对外分享的演讲稿，需要使用PDF的格式，尤其是演讲稿带有公司的logo的情形。</em></p>
-</li>
-</ol>
-<p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Speaking_Skills.pdf" target="_blank" rel="external">Speaking_Skills.pdf</a></p>
-
-      
-    </div>
-    
-    
-      <footer class="article-footer">
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Skills/">Skills</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Speaking/">Speaking</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-    
       <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
       </nav>
     </section>
     <div class="Adsense">

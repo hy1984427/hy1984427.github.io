@@ -67,6 +67,61 @@ ga('send', 'pageview');
   </div>
 </header>
     <section id="main" class="outer">
+      <article id="post-Book_References" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/14/Book_References/">Book references</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/07/14/Book_References/" class="article-date">
+  <time datetime="2015-07-13T14:00:00.000Z" itemprop="datePublished">2015-07-14</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在写《移动app测试的22条军规》时，参考和总结了一些移动app测试的资料。</p>
+<p>本来是作为书的最后一部分“参考资源和文献”发布出来的，但是出版社的编辑不知道出于什么原因，没有收录在书里。</p>
+<p>在这里我把这些资料发布出来，希望对大家有帮助。</p>
+<p>For the references of my book <pro 22="" mobile="" app="" testing="" with="" rules="">, please refer to <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Pro_Mobile_App_Testing_With_22_Rules_references.pdf" target="_blank" rel="external">参考资源和文献/References</a> for more details.</pro></p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App-Testing/">App Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rules/">Rules</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
       <article id="post-Speaking_Skills" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -826,110 +881,6 @@ ga('send', 'pageview');
       <footer class="article-footer">
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows-Phone/">Windows Phone</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WindowsPhoneTestFramework/">WindowsPhoneTestFramework</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-    
-      <article id="post-iOS_Automation_Frank" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/14/iOS_Automation_Frank/">iOS Automation - Frank</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/05/14/iOS_Automation_Frank/" class="article-date">
-  <time datetime="2012-05-13T14:00:00.000Z" itemprop="datePublished">2012-05-14</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Please download and unzip <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/HelloWorld_Frank.zip" target="_blank" rel="external">HelloWorld_Frank.zip</a>, and select “<strong>HelloWorld copy</strong>“ to run FrankTests.</p>
-<p><strong>Frank (Frankenstein!?) is ‘Selenium for native iOS apps’.</strong></p>
-<ol>
-<li>Frank use KIF and UISpec as base structure, and use UIQuery to locate elements.</li>
-<li>Frank used to based on other framework, but recently it’s changed to KIF, so some documents may out of date. Try to use the latest documents and samples.</li>
-<li>You can use Ruby in Frank rather than Objective-C in KIF.</li>
-</ol>
-<p><strong>Environment preparation:</strong></p>
-<ol>
-<li>Install rvm, ruby (1.9.2 is preferred to avoid issue when installing ruby-debug later), frank-cucumber and follow the <a href="http://www.testingwithfrank.com/installing.html" target="_blank" rel="external">installation script</a> provided by Frank.</li>
-<li>For debug use, I have added ruby-debug, please gem install it when you see message of that gem is required.</li>
-</ol>
-<p><strong><em>Note:</em></strong></p>
-<ol>
-<li>Screenshots will be generated under <em>HelloWorld/Frank/screenshots</em>, if the 1st step in <code>Then /^I can see &quot;([^&quot;]*)&quot;$/ do |welcomeMessage|</code> is enabled;</li>
-<li>DOM can be exported if the 2nd step in <code>Then /^I can see &quot;([^&quot;]*)&quot;$/ do |welcomeMessage|</code> is enabled;</li>
-<li>Add <em>@record</em> before scenario can start recording, but you should use it only once.</li>
-</ol>
-<p><strong>Highly recommend before you start using Frank:</strong></p>
-<ol>
-<li><a href="http://www.testingwithfrank.com/screencasts.html" target="_blank" rel="external">http://www.testingwithfrank.com/screencasts.html</a></li>
-<li><a href="http://www.testingwithfrank.com/presentations.html" target="_blank" rel="external">http://www.testingwithfrank.com/presentations.html</a></li>
-</ol>
-<p><strong>Tips/Limitations:</strong></p>
-<ol>
-<li>Build the app first, then run cucumber; otherwise sometimes, Frank can’t attach to the simulator.</li>
-<li>Encounter one issue which is not fixed, post in the gmail group: Google Groups. It’s about how to check a text filed with space in its value.</li>
-<li>For label, we can’t access their value and check on them, Apple should be blamed, so we can only write code by ourselves to implement it from ground: set accessibilityValue -&gt; write down the method to locate and compare the value -&gt; write the step definition to recall the method -&gt; use the step definition in Frank.</li>
-<li>Few documents/samples for Frank, even how to use selector; and some step definitions are not suitable for use, need to google or write down basic steps for action and validation.</li>
-</ol>
-<p><strong>How to use Symbiote (the elements’ tree viewer):</strong></p>
-<p>Few material for it, only found <a href="http://vimeo.com/22644221" target="_blank" rel="external">http://vimeo.com/22644221</a> and <a href="http://blog.thepete.net/2011/05/inspect-state-of-our-running-ios-apps.html" target="_blank" rel="external">http://blog.thepete.net/2011/05/inspect-state-of-our-running-ios-apps.html</a></p>
-<p><strong>Debug:</strong></p>
-<ol>
-<li>Using Frank is not easy to debug, using ruby, so can use ruby-debug to debug, but you need to install gem of ruby-debug first, then follow steps in <a href="https://gist.github.com/1333785" target="_blank" rel="external">https://gist.github.com/1333785</a>.</li>
-<li>A better way is just installing ruby1.9.2 rather than 1.9.3</li>
-<li>But for the step in Frank itself, you can only use “Console.app” on Mac to see log. Only few useful info can be found.</li>
-</ol>
-<p><a href="http://stackoverflow.com/questions/9745842/how-to-select-elements-for-frank-using-uiquery-uispec" target="_blank" rel="external"><strong>How to select elements for Frank using UIQuery/UISpec?</strong></a></p>
-<p><strong>Recording of script running:</strong></p>
-<ol>
-<li>Will recording everything from the scenario marked as <em>@record</em>.</li>
-<li>With multiple <em>@record</em> tags, it will open recording app multiple times, which is unusable when recording. So only use <em>@record</em> tag once.</li>
-<li>The recording is a feature of QuickTime player.</li>
-</ol>
-<p><strong>Reference</strong></p>
-<ol>
-<li><a href="https://github.com/moredip/Frank" target="_blank" rel="external">https://github.com/moredip/Frank</a></li>
-<li><a href="http://www.testingwithfrank.com/" target="_blank" rel="external">http://www.testingwithfrank.com/</a></li>
-<li><a href="https://groups.google.com/forum/?fromgroups#!forum/frank-discuss" target="_blank" rel="external">https://groups.google.com/forum/?fromgroups#!forum/frank-discuss</a></li>
-<li><a href="http://code.google.com/p/uispec" target="_blank" rel="external">http://code.google.com/p/uispec</a></li>
-<li>Ruby-debug: <a href="http://bashdb.sourceforge.net/ruby-debug.html" target="_blank" rel="external">http://bashdb.sourceforge.net/ruby-debug.html</a></li>
-</ol>
-
-      
-    </div>
-    
-    
-      <footer class="article-footer">
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Frank/">Frank</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 
       </footer>
     

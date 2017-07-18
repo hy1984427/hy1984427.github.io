@@ -67,6 +67,66 @@ ga('send', 'pageview');
   </div>
 </header>
     <section id="main" class="outer">
+      <article id="post-Qucik_Start_For_Docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/18/Qucik_Start_For_Docker/">Quick Start for Docker</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/07/18/Qucik_Start_For_Docker/" class="article-date">
+  <time datetime="2017-07-17T14:00:00.000Z" itemprop="datePublished">2017-07-18</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><p>  Download from <a href="https://www.docker.com/docker-mac" target="_blank" rel="external">https://www.docker.com/docker-mac</a></p>
+<h3 id="Register-a-Docker-account"><a href="#Register-a-Docker-account" class="headerlink" title="Register a Docker account"></a>Register a Docker account</h3><p>  Register on <a href="https://www.docker.com/" target="_blank" rel="external">https://www.docker.com/</a></p>
+<h3 id="Check-Docker-availability"><a href="#Check-Docker-availability" class="headerlink" title="Check Docker availability"></a>Check Docker availability</h3><p>  Run following commands in Terminal<br>  <code>docker -v</code><br>  <code>docker -info</code></p>
+<h3 id="Pull-a-Docker-image-e-g-“Ruby”"><a href="#Pull-a-Docker-image-e-g-“Ruby”" class="headerlink" title="Pull a Docker image. e.g. “Ruby”"></a>Pull a Docker image. e.g. “Ruby”</h3><p>  <code>docker pull ruby</code></p>
+<h3 id="Check-the-ruby-version-in-Docker-image-“Ruby”"><a href="#Check-the-ruby-version-in-Docker-image-“Ruby”" class="headerlink" title="Check the ruby version in Docker image “Ruby”"></a>Check the ruby version in Docker image “Ruby”</h3><p>  <code>docker run ruby ruby -v</code></p>
+<h3 id="Run-Docker-image-at-background-and-with-an-alias-e-g-“trail”"><a href="#Run-Docker-image-at-background-and-with-an-alias-e-g-“trail”" class="headerlink" title="Run Docker image at background and with an alias, e.g. “trail”"></a>Run Docker image at background and with an alias, e.g. “trail”</h3><p>  <code>docker run -idt --name=trial ruby</code></p>
+<h4 id="Check-all-the-running-Docker-images"><a href="#Check-all-the-running-Docker-images" class="headerlink" title="Check all the running Docker images"></a>Check all the running Docker images</h4><p>  <code>docker ps</code></p>
+<h4 id="Attach-to-the-running-Docker-image-and-execute-commands-in-it"><a href="#Attach-to-the-running-Docker-image-and-execute-commands-in-it" class="headerlink" title="Attach to the running Docker image and execute commands in it"></a>Attach to the running Docker image and execute commands in it</h4><p>  You can use <code>docker attach trial</code><br>  But it’s better to use <code>docker exec -i -t trial sh</code></p>
+<p><strong>Reference</strong><br><a href="https://yeasy.gitbooks.io/docker_practice/" target="_blank" rel="external">Docker — 从入门到实践</a></p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quick-Start/">Quick-Start</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
       <article id="post-Quick_Start_For_Mocha_Chai_SuperTest_In_API_Testing_With_Tips_And_Mock_Server_Moco" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -977,6 +1037,67 @@ ga('send', 'pageview');
 
 
     
+      <article id="post-Bug_Series_Theory_And_Reality" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/27/Bug_Series_Theory_And_Reality/">Bug集锦 －理论与现实这么近</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/01/27/Bug_Series_Theory_And_Reality/" class="article-date">
+  <time datetime="2016-01-26T13:00:00.000Z" itemprop="datePublished">2016-01-27</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>写Bug集锦的目的在于分享从业这些年来遇到的这些有趣的问题，希望在读这些小故事的同时，能带给大家一些思考。</p>
+<h3 id="理论与现实这么近">理论与现实这么近</h3><p>作为计算机系毕业生的小蔡，一直觉得学校里学的理论知识，和现在的测试工作差距太大，在实际的工作中也没有什么作用。直到有一天她碰到这么一个有趣的问题。</p>
+<p>小蔡负责测试的是一个Web产品，基于不同的搜索条件，会显示大量的结果。由于搜索结果太多被分成了很多页，为了方便用户快捷跳转到特定的页面，开发人员特意设计了一个页面快速跳转的功能。</p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Bug_Series_1.1.png" alt="搜索结果页面快速跳转"></p>
+<p>图 1.1 － 搜索结果页面快速跳转</p>
+<p>在设计测试用例的时候小蔡就留心了，因为很多测试理论的书籍都描述过，对于输入框可以进行的验证点很多，比如说特殊字符、超长字符、负值、0值和null值，以及很大的数值等。对于大部分的测试用例，开发人员都处理得很好，没有发现缺陷，小蔡也松了口气。</p>
+<p>当测试到输入很大数值的用例时，由于不确定多大的数值会出错，也不能拿到代码，小蔡就自己选了一个数值：9999999999（10个9）。输入10个9、点击确定，突然，页面崩溃了！100以内的小数值，以及输入小于等于搜索结果页面数的数值等情况，小蔡在测试中都选取过，测试结果都很正常，那到底数值大到什么程度的时候页面会崩溃呢？一时想不到更好的办法，小菜只好硬着头皮使用尝试法开始确定出错的数值范围。</p>
+<p>10个9，出错；9个9，正常跳转到最后一页。突然小蔡想到，数据结构课程不是学过很多查找法吗！二分法就这么出现在了眼前，对，二分查找法！，5000000000（9个0），出错；2500000000（8个0），正常。没有线索，就这么一点一点查找。花了3个小时，小蔡终于定位到出错的数值：4294967295。小蔡很纳闷，怎么是这么一个奇怪的数值呢？有零有整的。计算机专业的背景给了小蔡一个提示，不会是2的多少次幂吧？果真，4294967295是2的32次方－1。和开发人员一沟通，才发现由于开发人员设想页面最大不会超过2的32次方，所以对于这个字段可以输入的最大数值的类型，选择的是int32；但是同时又没有对超过这个范围的数值进行任何的处理，就造成了程序判断中对于请求更大数值的页面时的溢出，从而导致了产品页面的崩溃。</p>
+<p>发现了这个隐藏的缺陷，小蔡还是很有成就感的，但又觉得如果能早点知道代码的逻辑，可能自己就不会花这么长的时间了。同时，一直觉得计算机的理论知识不会应用到测试实践中，可没想到这次多亏了学校中学到的这些基础知识，不只是int32，2的32次方，甚至还有二分查找的算法也给了自己解决问题的灵感。没有这些知识，定位问题就更困难了。</p>
+<h5 id="【扩展知识】">【扩展知识】</h5><p>边界值分析<br>二分查找法</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug/">Bug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug集锦/">Bug集锦</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Series/">Series</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
       <article id="post-Bug_Series_Secutiry_In_All_Perspects" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1016,67 +1137,6 @@ ga('send', 'pageview');
 <p>小蔡马上把这一发现通知项目经理，并确定这个缺陷为高优先级和高风险。整个开发团队在第一时间就修复了这个严重的缺陷。</p>
 <p>好奇心没有杀死猫，反而帮助小蔡在测试中发现了一个隐藏的重大安全性缺陷。小蔡也意识到，一个系统的安全性，并不单纯来自于防范系统外部的入侵，还需要严格审视系统内部的安全性漏洞。系统内外部的安全性是一体的，需要全面的设计。</p>
 <h5 id="【扩展知识】">【扩展知识】</h5><p>动态短信<br>随机键盘<br>SQL注入<br>OWASP Top 10<br>URL pattern<br>URL篡改</p>
-
-      
-    </div>
-    
-    
-      <footer class="article-footer">
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug/">Bug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug集锦/">Bug集锦</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Series/">Series</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-    
-      <article id="post-Bug_Series_Theory_And_Reality" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/27/Bug_Series_Theory_And_Reality/">Bug集锦 －理论与现实这么近</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/01/27/Bug_Series_Theory_And_Reality/" class="article-date">
-  <time datetime="2016-01-26T13:00:00.000Z" itemprop="datePublished">2016-01-27</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Test/">Test</a>
-  </div>
-
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>写Bug集锦的目的在于分享从业这些年来遇到的这些有趣的问题，希望在读这些小故事的同时，能带给大家一些思考。</p>
-<h3 id="理论与现实这么近">理论与现实这么近</h3><p>作为计算机系毕业生的小蔡，一直觉得学校里学的理论知识，和现在的测试工作差距太大，在实际的工作中也没有什么作用。直到有一天她碰到这么一个有趣的问题。</p>
-<p>小蔡负责测试的是一个Web产品，基于不同的搜索条件，会显示大量的结果。由于搜索结果太多被分成了很多页，为了方便用户快捷跳转到特定的页面，开发人员特意设计了一个页面快速跳转的功能。</p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Bug_Series_1.1.png" alt="搜索结果页面快速跳转"></p>
-<p>图 1.1 － 搜索结果页面快速跳转</p>
-<p>在设计测试用例的时候小蔡就留心了，因为很多测试理论的书籍都描述过，对于输入框可以进行的验证点很多，比如说特殊字符、超长字符、负值、0值和null值，以及很大的数值等。对于大部分的测试用例，开发人员都处理得很好，没有发现缺陷，小蔡也松了口气。</p>
-<p>当测试到输入很大数值的用例时，由于不确定多大的数值会出错，也不能拿到代码，小蔡就自己选了一个数值：9999999999（10个9）。输入10个9、点击确定，突然，页面崩溃了！100以内的小数值，以及输入小于等于搜索结果页面数的数值等情况，小蔡在测试中都选取过，测试结果都很正常，那到底数值大到什么程度的时候页面会崩溃呢？一时想不到更好的办法，小菜只好硬着头皮使用尝试法开始确定出错的数值范围。</p>
-<p>10个9，出错；9个9，正常跳转到最后一页。突然小蔡想到，数据结构课程不是学过很多查找法吗！二分法就这么出现在了眼前，对，二分查找法！，5000000000（9个0），出错；2500000000（8个0），正常。没有线索，就这么一点一点查找。花了3个小时，小蔡终于定位到出错的数值：4294967295。小蔡很纳闷，怎么是这么一个奇怪的数值呢？有零有整的。计算机专业的背景给了小蔡一个提示，不会是2的多少次幂吧？果真，4294967295是2的32次方－1。和开发人员一沟通，才发现由于开发人员设想页面最大不会超过2的32次方，所以对于这个字段可以输入的最大数值的类型，选择的是int32；但是同时又没有对超过这个范围的数值进行任何的处理，就造成了程序判断中对于请求更大数值的页面时的溢出，从而导致了产品页面的崩溃。</p>
-<p>发现了这个隐藏的缺陷，小蔡还是很有成就感的，但又觉得如果能早点知道代码的逻辑，可能自己就不会花这么长的时间了。同时，一直觉得计算机的理论知识不会应用到测试实践中，可没想到这次多亏了学校中学到的这些基础知识，不只是int32，2的32次方，甚至还有二分查找的算法也给了自己解决问题的灵感。没有这些知识，定位问题就更困难了。</p>
-<h5 id="【扩展知识】">【扩展知识】</h5><p>边界值分析<br>二分查找法</p>
 
       
     </div>
@@ -1286,61 +1346,6 @@ ga('send', 'pageview');
       <footer class="article-footer">
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Business-Travel/">Business Travel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tips/">Tips</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-    
-      <article id="post-Book_References" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/14/Book_References/">Book references</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2015/07/14/Book_References/" class="article-date">
-  <time datetime="2015-07-13T14:00:00.000Z" itemprop="datePublished">2015-07-14</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Test/">Test</a>
-  </div>
-
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在写《移动app测试的22条军规》时，参考和总结了一些移动app测试的资料。</p>
-<p>本来是作为书的最后一部分“参考资源和文献”发布出来的，但是出版社的编辑不知道出于什么原因，没有收录在书里。</p>
-<p>在这里我把这些资料发布出来，希望对大家有帮助。</p>
-<p>For the references of my book <pro 22="" mobile="" app="" testing="" with="" rules="">, please refer to <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Pro_Mobile_App_Testing_With_22_Rules_references.pdf" target="_blank" rel="external">参考资源和文献/References</a> for more details.</pro></p>
-
-      
-    </div>
-    
-    
-      <footer class="article-footer">
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App-Testing/">App Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rules/">Rules</a></li></ul>
 
       </footer>
     

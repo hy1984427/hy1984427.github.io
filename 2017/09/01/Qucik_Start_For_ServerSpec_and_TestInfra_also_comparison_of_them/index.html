@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Quick start for ServerSpec and Testinfra, also comparison of them - Test &amp; testing &amp; tester</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ServerSpec is to check servers are configured correctly through their actual state using RSpec tests. Testinfra is kind of a Serverspec equivalent in Python and based on Pytest.Prerequisite: RVM, Ruby">
+<meta name="keywords" content="Comparison,Quick-Start,Ruby,Infrastructure Testing,Testinfra,Python,ServerSpec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quick start for ServerSpec and Testinfra, also comparison of them">
+<meta property="og:url" content="http://hy1984427.github.io/2017/09/01/Qucik_Start_For_ServerSpec_and_TestInfra_also_comparison_of_them/index.html">
+<meta property="og:site_name" content="Test &amp; testing &amp; tester">
+<meta property="og:description" content="ServerSpec is to check servers are configured correctly through their actual state using RSpec tests. Testinfra is kind of a Serverspec equivalent in Python and based on Pytest.Prerequisite: RVM, Ruby">
+<meta property="og:updated_time" content="2017-09-06T03:21:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Quick start for ServerSpec and Testinfra, also comparison of them">
+<meta name="twitter:description" content="ServerSpec is to check servers are configured correctly through their actual state using RSpec tests. Testinfra is kind of a Serverspec equivalent in Python and based on Pytest.Prerequisite: RVM, Ruby">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', '73216141', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/AboutMe.html">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hy1984427.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Qucik_Start_For_ServerSpec_and_TestInfra_also_comparison_of_them" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Quick start for ServerSpec and Testinfra, also comparison of them
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/09/01/Qucik_Start_For_ServerSpec_and_TestInfra_also_comparison_of_them/" class="article-date">
+  <time datetime="2017-08-31T14:00:00.000Z" itemprop="datePublished">2017-09-01</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="ServerSpec-is-to-check-servers-are-configured-correctly-through-their-actual-state-using-RSpec-tests-Testinfra-is-kind-of-a-Serverspec-equivalent-in-Python-and-based-on-Pytest"><a href="#ServerSpec-is-to-check-servers-are-configured-correctly-through-their-actual-state-using-RSpec-tests-Testinfra-is-kind-of-a-Serverspec-equivalent-in-Python-and-based-on-Pytest" class="headerlink" title="ServerSpec is to check servers are configured correctly through their actual state using RSpec tests. Testinfra is kind of a Serverspec equivalent in Python and based on Pytest."></a>ServerSpec is to check servers are configured correctly through their actual state using RSpec tests. Testinfra is kind of a Serverspec equivalent in Python and based on Pytest.</h5><h3 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite:"></a>Prerequisite:</h3><ol>
+<li><p>RVM, Ruby and rubygems are installed.</p>
+</li>
+<li><p>Python and pip are installed.</p>
+</li>
+<li><p>We would expect to run Testinfra and ServerSpec against the server rather than our local machine, so we may need to tweak a little bit by connecting the server with ssh key.</p>
+<ul>
+<li>Generate ssh key: <code>ssh-keygen -t rsa</code></li>
+<li>Copy ssh public key to server: <code>ssh-copy-id -i ~/.ssh/id_rsa.pub username@server</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="Get-Started-for-ServerSpec"><a href="#Get-Started-for-ServerSpec" class="headerlink" title="Get Started for ServerSpec:"></a>Get Started for ServerSpec:</h3><ol>
+<li><p>Install ServerSpec.</p>
+<p><code>gem install serverspec</code></p>
+</li>
+<li><p>Initial ServerSpec folder with basic settings. Please note the server will be set in this step.</p>
+<p><code>serverspec-init</code></p>
+</li>
+<li><p>Write and run the ServerSpec script according to its <a href="http://serverspec.org/resource_types.html" target="_blank" rel="external">API document</a>.</p>
+<p>You can reference the script  <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/ServerSpec.zip" target="_blank" rel="external">here</a>.</p>
+<p>Using <code>rake spec</code> under the test folder to run and check the result.</p>
+</li>
+<li><p>To run specific test rather than the entire test suite.</p>
+<p> Using <code>rake spec spec/host_server/sample_spec.rb</code> under the test folder to run and check the result.</p>
+</li>
+</ol>
+<h3 id="Get-Started-for-Testinfra"><a href="#Get-Started-for-Testinfra" class="headerlink" title="Get Started for Testinfra:"></a>Get Started for Testinfra:</h3><ol>
+<li><p>Install Testinfra.</p>
+<p><code>pip install testinfra</code></p>
+</li>
+<li><p>Write and run the Testinfra script according to its <a href="http://testinfra.readthedocs.io/en/latest/modules.html" target="_blank" rel="external">API document</a>.</p>
+<p>You can reference the script  <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/testinfra_test.py" target="_blank" rel="external">here</a>.</p>
+<p>Using <code>testinfra testinfra_test.py</code> to run and check the result.</p>
+</li>
+<li><p>Some useful arguments we can use to make the test result more clear.</p>
+<p>Instead of using <code>testinfra testinfra_test.py</code> directly, we can add some arguments, such as <code>-q</code>, <code>-s</code>, <code>--disable-warnings</code> and <code>--junit-xml</code>.</p>
+<ul>
+<li>The argument <code>-q</code> will run Testinfra in quiet mode, with less info exposed</li>
+<li>The argument <code>-s</code> will let Testinfra capture No pre-test info</li>
+<li>The argument <code>--disable-warnings</code> will disable warnings during Testinfra runs</li>
+<li>The argument <code>--junit-xml</code> will export Testinfra test result into a xml file</li>
+</ul>
+<p>After adding those arguments, the command should be look like <code>testinfra -q -s --disable-warnings testinfra_test.py --junit-xml=report.xml</code></p>
+</li>
+<li><p>Now we can run Testinfra against the server using <code>testinfra -q -s --disable-warnings --ssh-config=/Path/to/ssh/config --hosts=server testinfra_test.py --junit-xml=report.xml</code>.</p>
+</li>
+</ol>
+<h3 id="Comparison-between-ServerSpec-and-Testinfra"><a href="#Comparison-between-ServerSpec-and-Testinfra" class="headerlink" title="Comparison between ServerSpec and Testinfra:"></a>Comparison between ServerSpec and Testinfra:</h3><h5 id="Advantages-of-ServerSpec"><a href="#Advantages-of-ServerSpec" class="headerlink" title="Advantages of ServerSpec"></a>Advantages of ServerSpec</h5><ul>
+<li><p>More documents and community support (compared to Testinfra);</p>
+</li>
+<li><p>The scripts, test results and reports are more readable (Testinfra is based on Pytest, and can only export report to XML not JSON);</p>
+</li>
+<li><p>Although Testinfra support “sysctl” and it runs successfully on the server, the command in script can’t run, and prompts error “bash: sysctl: command not found”; may also occurs to other commands/resources (potential risk);</p>
+</li>
+<li><p>ServerSpec can support more resources and attributes for resources than Testinfra.</p>
+</li>
+</ul>
+<h5 id="Advantages-of-Testinfra"><a href="#Advantages-of-Testinfra" class="headerlink" title="Advantages of Testinfra"></a>Advantages of Testinfra</h5><ul>
+<li><p>Can support most common resources, such as Docker, File, Group, Service, Socket and etc (equivalent to ServerSpec);</p>
+</li>
+<li><p>Can show the actual value when validating the permission but failed, so the debug will be quicker.</p>
+</li>
+</ul>
+<h4 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h4><p>  If you can only choose Python as your programming language, you have to use Testinfra; otherwise, I recommend ServerSpec because of the benefits it can bring.</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Comparison/">Comparison</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Infrastructure-Testing/">Infrastructure Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quick-Start/">Quick-Start</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ServerSpec/">ServerSpec</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Testinfra/">Testinfra</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/06/Qucik_Start_For_Integrating_ZAP_into_CI/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Quick start for integrating ZAP into CI
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/18/Qucik_Start_For_Docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Quick Start for Docker&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Huang Yong&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

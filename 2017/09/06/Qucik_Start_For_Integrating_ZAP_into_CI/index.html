@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Quick start for integrating ZAP into CI - Test &amp; testing &amp; tester</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="OWASP ZAP is widely used security testing tool and it’s open sourced. Let’s see how we can integrate it with our automated functionality testing in CI.Prerequisite:  RVM, Ruby and rubygems are install">
+<meta name="keywords" content="Security,Quick-Start,ZAP,CI,Ruby">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quick start for integrating ZAP into CI">
+<meta property="og:url" content="http://hy1984427.github.io/2017/09/06/Qucik_Start_For_Integrating_ZAP_into_CI/index.html">
+<meta property="og:site_name" content="Test &amp; testing &amp; tester">
+<meta property="og:description" content="OWASP ZAP is widely used security testing tool and it’s open sourced. Let’s see how we can integrate it with our automated functionality testing in CI.Prerequisite:  RVM, Ruby and rubygems are install">
+<meta property="og:updated_time" content="2017-09-06T01:36:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Quick start for integrating ZAP into CI">
+<meta name="twitter:description" content="OWASP ZAP is widely used security testing tool and it’s open sourced. Let’s see how we can integrate it with our automated functionality testing in CI.Prerequisite:  RVM, Ruby and rubygems are install">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', '73216141', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/AboutMe.html">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hy1984427.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Qucik_Start_For_Integrating_ZAP_into_CI" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Quick start for integrating ZAP into CI
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/09/06/Qucik_Start_For_Integrating_ZAP_into_CI/" class="article-date">
+  <time datetime="2017-09-05T14:00:00.000Z" itemprop="datePublished">2017-09-06</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="OWASP-ZAP-is-widely-used-security-testing-tool-and-it’s-open-sourced-Let’s-see-how-we-can-integrate-it-with-our-automated-functionality-testing-in-CI"><a href="#OWASP-ZAP-is-widely-used-security-testing-tool-and-it’s-open-sourced-Let’s-see-how-we-can-integrate-it-with-our-automated-functionality-testing-in-CI" class="headerlink" title="OWASP ZAP is widely used security testing tool and it’s open sourced. Let’s see how we can integrate it with our automated functionality testing in CI."></a>OWASP ZAP is widely used security testing tool and it’s open sourced. Let’s see how we can integrate it with our automated functionality testing in CI.</h5><h3 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite:"></a>Prerequisite:</h3><p>  RVM, Ruby and rubygems are installed.</p>
+<h3 id="Get-Started"><a href="#Get-Started" class="headerlink" title="Get Started:"></a>Get Started:</h3><ol>
+<li><p>Download ZAP from <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project" target="_blank" rel="external">OWASP_Zed_Attack_Proxy_Project</a> and install it.</p>
+</li>
+<li><p>Install Selenium-WebDriver, IO, Rest-Client and RSpec gems:</p>
+<p>1) Install Selenium-WebDriver</p>
+<p><code>gem install selenium-webdriver</code></p>
+<p>2) Install IO</p>
+<p><code>gem install io</code></p>
+<p>3) Install Rest-Client</p>
+<p><code>gem install rest-client</code></p>
+<p>4) Install RSpec</p>
+<p><code>gem install rspec</code></p>
+</li>
+<li><p>Write and run a basic Selenium-WebDriver script using Ruby. The script is the same as in my previous Gitbook <a href="http://hy1984427.github.io/BDD-with-PageObject/SimpleWebDriverTestByRuby/SimpleWebDriverTestByRuby.html">BDD with PageObject</a>.</p>
+<p>The script will be like following:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'selenium-webdriver'</span></div><div class="line"></div><div class="line">driver = Selenium::WebDriver.<span class="keyword">for</span> <span class="symbol">:firefox</span></div><div class="line"></div><div class="line">driver.get <span class="string">"http://www.google.com"</span></div><div class="line">element = driver.find_element <span class="symbol">:name</span> =&gt; <span class="string">"q"</span></div><div class="line">element.send_keys <span class="string">"Cheese!"</span></div><div class="line">element.submit</div><div class="line">p <span class="string">"Page title is <span class="subst">#&#123;driver.title&#125;</span>"</span></div><div class="line">wait = Selenium::WebDriver::Wait.new(<span class="symbol">:timeout</span> =&gt; <span class="number">10</span>)</div><div class="line">wait.<span class="keyword">until</span> &#123; driver.title.downcase.start_with? <span class="string">"cheese!"</span> &#125;</div><div class="line">p <span class="string">"Page title is <span class="subst">#&#123;driver.title&#125;</span>"</span></div><div class="line"></div><div class="line">driver.quit</div></pre></td></tr></table></figure>
+<p>You can reference the script  <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/simple_script.rb" target="_blank" rel="external">here</a>.</p>
+<p>Using <code>ruby simple_script.rb</code> to run and check the result.</p>
+</li>
+<li><p>Add steps to start ZAP and proxy the testing script using ZAP.</p>
+<p>The script will become as following:</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">require 'selenium-webdriver'</div><div class="line"><span class="addition">+ require 'io/console'</span></div><div class="line"></div><div class="line"><span class="addition">+ system("pkill java") #To close any existing ZAP instance.</span></div><div class="line"><span class="addition">+ system("pkill firefox") #To close any existing Firefox instance.</span></div><div class="line"><span class="addition">+ IO.popen("/Applications/ZAP\\ 2.6.0.app/Contents/Java/zap.sh -daemon -config api.disablekey=true") #The path here should be the zap.sh path under ZAP package/folder on your machine; with the option -config api.disablekey=true, ZAP will not check the apikey, which is enable by default after ZAP 2.6.0</span></div><div class="line"><span class="addition">+ p "OWASP ZAP launch completed"</span></div><div class="line"><span class="addition">+ sleep 5 #To let ZAP start completely</span></div><div class="line"></div><div class="line"><span class="addition">+ profile = Selenium::WebDriver::Firefox::Profile.new</span></div><div class="line"><span class="addition">+ proxy = Selenium::WebDriver::Proxy.new(http: "localhost:8080") #Normally ZAP will listening at port 8080, if not, please change it to the actual port ZAP is listening</span></div><div class="line"><span class="addition">+ profile.proxy = proxy</span></div><div class="line"><span class="addition">+ options = Selenium::WebDriver::Firefox::Options.new(profile: profile)</span></div><div class="line"><span class="addition">+ driver = Selenium::WebDriver.for :firefox, options: options</span></div><div class="line"><span class="deletion">- driver = Selenium::WebDriver.for :firefox</span></div><div class="line"></div><div class="line">driver.get "http://www.google.com"</div><div class="line">element = driver.find_element :name =&gt; "q"</div><div class="line">element.send_keys "Cheese!"</div><div class="line">element.submit</div><div class="line">p "Page title is #&#123;driver.title&#125;"</div><div class="line">wait = Selenium::WebDriver::Wait.new(:timeout =&gt; 10)</div><div class="line">wait.until &#123; driver.title.downcase.start_with? "cheese!" &#125;</div><div class="line">p "Page title is #&#123;driver.title&#125;"</div><div class="line"></div><div class="line">driver.quit</div></pre></td></tr></table></figure>
+<p>You can reference the script  <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/add_zap_start.rb" target="_blank" rel="external">here</a>.</p>
+<p>Using <code>ruby add_zap_start.rb</code> to run and check the result.</p>
+</li>
+<li><p>Read the test results from ZAP.</p>
+<p>The script will become as following:</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">require 'selenium-webdriver'</div><div class="line">require 'io/console'</div><div class="line"><span class="addition">+ require 'rest-client'</span></div><div class="line"></div><div class="line">system("pkill java") #To close any existing ZAP instance.</div><div class="line">system("pkill firefox") #To close any existing Firefox instance.</div><div class="line">IO.popen("/Applications/ZAP\\ 2.6.0.app/Contents/Java/zap.sh -daemon -config api.disablekey=true") #The path here should be the zap.sh path under ZAP package/folder on your machine; with the option -config api.disablekey=true, ZAP will not check the apikey, which is enable by default after ZAP 2.6.0</div><div class="line">p "OWASP ZAP launch completed"</div><div class="line">sleep 5 #To let ZAP start completely</div><div class="line"></div><div class="line">profile = Selenium::WebDriver::Firefox::Profile.new</div><div class="line">proxy = Selenium::WebDriver::Proxy.new(http: "localhost:8080") #Normally ZAP will listening at port 8080, if not, please change it to the actual port ZAP is listening</div><div class="line">profile.proxy = proxy</div><div class="line">options = Selenium::WebDriver::Firefox::Options.new(profile: profile)</div><div class="line">driver = Selenium::WebDriver.for :firefox, options: options</div><div class="line"></div><div class="line">driver.get "http://www.google.com"</div><div class="line">element = driver.find_element :name =&gt; "q"</div><div class="line">element.send_keys "Cheese!"</div><div class="line">element.submit</div><div class="line">p "Page title is #&#123;driver.title&#125;"</div><div class="line">wait = Selenium::WebDriver::Wait.new(:timeout =&gt; 10)</div><div class="line">wait.until &#123; driver.title.downcase.start_with? "cheese!" &#125;</div><div class="line">p "Page title is #&#123;driver.title&#125;"</div><div class="line"></div><div class="line"><span class="addition">+ JSON.parse RestClient.get "http://localhost:8080/json/core/view/alerts" #To trigger ZAP to raise alerts if any</span></div><div class="line"><span class="addition">+ sleep 5 #Give ZAP some time to process</span></div><div class="line"><span class="addition">+ response = JSON.parse RestClient.get "http://localhost:8080/json/core/view/alerts", params: &#123; zapapiformat: 'JSON', baseurl: "http://clients1.google.com", start: 1 &#125; #Get the alerts ZAP found, please note the baseurl will exact match from the beginning</span></div><div class="line"></div><div class="line">driver.quit</div><div class="line"><span class="addition">+ RestClient.get "http://localhost:8080/JSON/core/action/shutdown" #Close ZAP instance</span></div></pre></td></tr></table></figure>
+<p>You can reference the script  <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/read_zap_result.rb" target="_blank" rel="external">here</a>.</p>
+<p>Using <code>ruby read_zap_result.rb</code> to run and check the result.</p>
+</li>
+<li><p>Set up assertions to check the Low Risks.</p>
+<p>The script will become as following:</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">require 'selenium-webdriver'</div><div class="line">require 'io/console'</div><div class="line">require 'rest-client'</div><div class="line"><span class="addition">+ require 'rspec/expectations'</span></div><div class="line"><span class="addition">+ include RSpec::Matchers</span></div><div class="line"></div><div class="line">system("pkill java") #To close any existing ZAP instance.</div><div class="line">system("pkill firefox") #To close any existing Firefox instance.</div><div class="line">IO.popen("/Applications/ZAP\\ 2.6.0.app/Contents/Java/zap.sh -daemon -config api.disablekey=true") #The path here should be the zap.sh path under ZAP package/folder on your machine; with the option -config api.disablekey=true, ZAP will not check the apikey, which is enable by default after ZAP 2.6.0</div><div class="line">p "OWASP ZAP launch completed"</div><div class="line">sleep 5 #To let ZAP start completely</div><div class="line"></div><div class="line">profile = Selenium::WebDriver::Firefox::Profile.new</div><div class="line">proxy = Selenium::WebDriver::Proxy.new(http: "localhost:8080") #Normally ZAP will listening at port 8080, if not, please change it to the actual port ZAP is listening</div><div class="line">profile.proxy = proxy</div><div class="line">options = Selenium::WebDriver::Firefox::Options.new(profile: profile)</div><div class="line">driver = Selenium::WebDriver.for :firefox, options: options</div><div class="line"></div><div class="line">driver.get "http://www.google.com"</div><div class="line">element = driver.find_element :name =&gt; "q"</div><div class="line">element.send_keys "Cheese!"</div><div class="line">element.submit</div><div class="line">p "Page title is #&#123;driver.title&#125;"</div><div class="line">wait = Selenium::WebDriver::Wait.new(:timeout =&gt; 10)</div><div class="line">wait.until &#123; driver.title.downcase.start_with? "cheese!" &#125;</div><div class="line">p "Page title is #&#123;driver.title&#125;"</div><div class="line"></div><div class="line">JSON.parse RestClient.get "http://localhost:8080/json/core/view/alerts" #To trigger ZAP to raise alerts if any</div><div class="line">sleep 5 #Give ZAP some time to process</div><div class="line">response = JSON.parse RestClient.get "http://localhost:8080/json/core/view/alerts", params: &#123; zapapiformat: 'JSON', baseurl: "http://clients1.google.com", start: 1 &#125; #Get the alerts ZAP found</div><div class="line"><span class="addition">+ response['alerts'].each &#123;|x| p "#&#123;x['alert']&#125; risk level: #&#123;x['risk']&#125;"&#125; #Extract the risks found</span></div><div class="line"><span class="addition">+ events = response['alerts']</span></div><div class="line"><span class="addition">+ low_count = events.select&#123;|x| x['risk'] == 'Low'&#125;.size #Count the Low Risks</span></div><div class="line"><span class="addition">+ expect(low_count).to equal(1) #Expecxt only one Low Risk</span></div><div class="line"></div><div class="line">driver.quit</div><div class="line">RestClient.get "http://localhost:8080/JSON/core/action/shutdown" #Close ZAP instance</div></pre></td></tr></table></figure>
+<p>You can reference the script  <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/add_assertions_to_check_zap_result.rb" target="_blank" rel="external">here</a>.</p>
+<p>Using <code>ruby add_assertions_to_check_zap_result.rb</code> to run and check the result.</p>
+</li>
+<li><p>Now we can trigger this script in any CI using command above.</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CI/">CI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quick-Start/">Quick-Start</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Security/">Security</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ZAP/">ZAP</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/01/Qucik_Start_For_ServerSpec_and_TestInfra_also_comparison_of_them/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Quick start for ServerSpec and Testinfra, also comparison of them&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Huang Yong&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

@@ -111,7 +111,7 @@ ga('send', 'pageview');
 <p>1) Edit GRUB file: <code>vi /etc/default/grub</code></p>
 <p>2) Append <code>vga=792</code> to the line <code>GRUB_CMDLINE_LINUX=&quot;crashkernel=auto rd.lvm.lv=cl/root rd.lvm.lv=cl/swap rhgb quiet</code>,</p>
 <p>and you will have <code>GRUB_CMDLINE_LINUX=&quot;crashkernel=auto rd.lvm.lv=cl/root rd.lvm.lv=cl/swap rhgb quiet vga=792</code>;</p>
-<p><em>for detailed <a href="#GRUB-VGA-Modes">GRUB VGA Modes</a>, please refer to the last section of this article</em></p>
+<p><em>Check for the detailed <a href="#GRUB-VGA-Modes">GRUB VGA Modes</a>, or scroll down to the bottom of this article.</em></p>
 <p>3) Add this change to GRUB configuration: <code>grub2-mkconfig -o /boot/grub2/grub.cfg</code></p>
 <p>4) Reboot to take effect: <code>reboot</code>.</p>
 </li>

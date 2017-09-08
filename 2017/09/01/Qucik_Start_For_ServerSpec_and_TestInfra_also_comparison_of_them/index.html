@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://hy1984427.github.io/2017/09/01/Qucik_Start_For_ServerSpec_and_TestInfra_also_comparison_of_them/index.html">
 <meta property="og:site_name" content="Test &amp; testing &amp; tester">
 <meta property="og:description" content="ServerSpec is to check servers are configured correctly through their actual state using RSpec tests. Testinfra is kind of a Serverspec equivalent in Python and based on Pytest.Prerequisite: RVM, Ruby">
-<meta property="og:updated_time" content="2017-09-06T03:21:44.000Z">
+<meta property="og:updated_time" content="2017-09-07T23:17:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Quick start for ServerSpec and Testinfra, also comparison of them">
 <meta name="twitter:description" content="ServerSpec is to check servers are configured correctly through their actual state using RSpec tests. Testinfra is kind of a Serverspec equivalent in Python and based on Pytest.Prerequisite: RVM, Ruby">
@@ -105,6 +105,9 @@ ga('send', 'pageview');
 <ul>
 <li>Generate ssh key: <code>ssh-keygen -t rsa</code></li>
 <li>Copy ssh public key to server: <code>ssh-copy-id -i ~/.ssh/id_rsa.pub username@server</code></li>
+<li><p>Add following lines to ~/.ssh/config.</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Host<span class="built_in"> server</span></div><div class="line"> <span class="built_in"> User </span>username</div></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ol>
@@ -124,8 +127,8 @@ ga('send', 'pageview');
 </li>
 </ol>
 <h3 id="Get-Started-for-Testinfra"><a href="#Get-Started-for-Testinfra" class="headerlink" title="Get Started for Testinfra:"></a>Get Started for Testinfra:</h3><ol>
-<li><p>Install Testinfra.</p>
-<p><code>pip install testinfra</code></p>
+<li><p>Install Testinfra and Paramiko.</p>
+<p><code>pip install testinfra</code><br><code>pip install paramiko</code></p>
 </li>
 <li><p>Write and run the Testinfra script according to its <a href="http://testinfra.readthedocs.io/en/latest/modules.html" target="_blank" rel="external">API document</a>.</p>
 <p>You can reference the script  <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/testinfra_test.py" target="_blank" rel="external">here</a>.</p>

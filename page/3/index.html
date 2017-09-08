@@ -67,6 +67,132 @@ ga('send', 'pageview');
   </div>
 </header>
     <section id="main" class="outer">
+      <article id="post-How_Google_Test_Software" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/06/29/How_Google_Test_Software/">How Google Test Software</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/06/29/How_Google_Test_Software/" class="article-date">
+  <time datetime="2012-06-28T14:00:00.000Z" itemprop="datePublished">2012-06-29</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a><span>></span><a class="article-category-link" href="/categories/Test/Tester/">Tester</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>读《Google软件测试之道》后把一些重要的内容记录下来。</p>
+<h3 id="1-质量不等同于测试">1.质量不等同于测试</h3><ul>
+<li>质量是通过融合开发和测试，直至两者融为不能区分彼此的同一个体而达到的。</li>
+<li>测试是开发不可分割的一部分，开发和测试的结合会产生质量。</li>
+<li>把测试当做软件的feature。软件工程所交付的不是code，不是test，而是product，所以得让code和test集成在一起。</li>
+</ul>
+<h3 id="2-测试环境">2.测试环境</h3><ul>
+<li>小型测试（mock/fake环境）</li>
+<li>中型测试（mock/fake或真实环境）</li>
+<li>大型测试（真实环境）</li>
+<li>在小型和中型测试上强调自动化测试覆盖率，但在端到端测试时并不强调，避免投入过多，并且和特定功能设计绑定</li>
+<li>大、中、小型测试比例为1:2:7</li>
+</ul>
+<h3 id="3-测试类型">3.测试类型</h3><ul>
+<li>小型测试：测试代码单元的行为</li>
+<li>中型测试：测试一个或多个代码单元之间的交互</li>
+<li>大型测试：测试整个系统的工作</li>
+<li>小型测试保证代码质量，中型和大型测试保证产品质量</li>
+</ul>
+<h3 id="4-测试认证级别">4.测试认证级别</h3><ul>
+<li>5个级别：1～5，5级为最高</li>
+<li>分级依据<ul>
+<li>测试覆盖率</li>
+<li>分层测试情况</li>
+<li>持续集成</li>
+<li>缺陷和测试用例的关系</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-详细测试认证级别">5.详细测试认证级别</h3><ul>
+<li>第1级<ul>
+<li>添加测试覆盖率的bundle</li>
+<li>搭建持续集成环境</li>
+<li>按照大、中、小型测试来区分测试</li>
+<li>识别具有不确定性的测试</li>
+<li>创建冒烟测试集</li>
+</ul>
+</li>
+<li>第5级：<ul>
+<li>为每一个非关键的bug添加测试</li>
+<li>主动使用各类分析工具</li>
+<li>总的测试覆盖率超过60%</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-文档">6.文档</h3><ul>
+<li>所有Google项目都有设计文档</li>
+<li>设计文档是一个动态的文档（活文档，Living Document），随着项目的演化也在不断地保持更新</li>
+</ul>
+<h3 id="7-测试人员分类">7.测试人员分类</h3><ul>
+<li>测试开发工程师（SET）</li>
+<li>测试工程师（TE）</li>
+<li>测试工程经理</li>
+</ul>
+<h3 id="8-测试人员职责">8.测试人员职责</h3><ul>
+<li>SET主要负责mock/fake、API测试、测试工具、CI工具，更偏向于代码开发。</li>
+<li>TE是面向用户的测试，具备测试代码开发和用户为中心测试的双重能力。 </li>
+<li>TE完成测试整个过程，风险评估、测试计划、测试设计、测试执行、探索式测试、用户反馈。 </li>
+<li>测试工程经理，把TE和SET联系起来，需要足够的技术能力，需要足够了解产品，也需要知人善用的能力。</li>
+</ul>
+<h3 id="9-测试人员的未来">9.测试人员的未来</h3><ul>
+<li>测试开发工程师将变成开发人员，而测试开发工程师所具备的测试技能将被平均地分散到各个层级的开发工程师身上。 </li>
+<li>测试工程师会转型成为测试设计师。测试工程师可以成为如安全工程师这样的专家型角色，或者作为测试活动的管理者。 </li>
+<li>技术型测试主管，更多地成为资深工程师，同时作为思想领袖和协调者存在。测试活动由具体工作在产品上的人们负责。 </li>
+<li>测试开发工程师，测试工程师和测试经理分散到各个项目团队中去，更少关注测试流程，更多关注产品本身。</li>
+</ul>
+<h3 id="10-测试的未来">10.测试的未来</h3><ul>
+<li>测试基础设施会最终整体迁移到云端。</li>
+<li>测试用例库，测试代码的编辑、录制和执行都将在一个网站或通过浏览器插件完成。</li>
+<li>测试编写、执行和调试需要使用与被测的应用程序本身相同的语言和环境才最为高效。 </li>
+</ul>
+<h3 id="11-Google测试的原则和秘方">11.Google测试的原则和秘方</h3><ul>
+<li>Google测试的原则：Ship early and often；Fail fast </li>
+<li>Google测试的秘方：技能、稀缺、自动化、迭代集成</li>
+</ul>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Methodology/">Methodology</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Theory/">Theory</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
       <article id="post-Android_Automation_Robotium" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -498,78 +624,6 @@ ga('send', 'pageview');
 
 
     
-      <article id="post-iOS_Automation_UIAutomation" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/04/26/iOS_Automation_UIAutomation/">iOS Automation - UIAutomation</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/04/26/iOS_Automation_UIAutomation/" class="article-date">
-  <time datetime="2012-04-25T14:00:00.000Z" itemprop="datePublished">2012-04-26</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>This framework is not suggested!</strong></p>
-<p><strong>Some materials for iOS - UIAutomation framework:</strong></p>
-<ol>
-<li><a href="http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/" target="_blank" rel="external">Working with UIAutomation</a></li>
-<li><a href="http://www.sunsetlakesoftware.com/sites/default/files/Fall2010CourseNotes/ui%20automation.html" target="_blank" rel="external">UI Automation</a></li>
-<li><a href="https://developer.apple.com/library/prerelease/ios/documentation/DeveloperTools/Reference/UIAutomationRef/" target="_blank" rel="external">UI Automation JavaScript Reference for iOS</a></li>
-<li><a href="http://www.codeproject.com/Articles/107595/How-Do-I-Perform-UI-Automation-Testing-in-iOS-4" target="_blank" rel="external">How Do I Perform UI Automation Testing in iOS 4</a></li>
-<li><a href="http://stackoverflow.com/questions/8306076/ios-ui-automation-get-textfield-by-accessibility-label" target="_blank" rel="external">iOS - UI Automation get textfield by accessibility label?</a></li>
-<li><a href="http://blog.manbolo.com/2012/04/08/ios-automated-tests-with-uiautomation" target="_blank" rel="external">iOS Automated Tests with UIAutomation</a></li>
-<li><a href="http://stackoverflow.com/questions/7688311/cant-get-value-of-uiastatictext" target="_blank" rel="external">Can’t get value of UIAStaticText?</a></li>
-</ol>
-<p><strong>UIAutomation</strong></p>
-<ol>
-<li>Using JavaScript: each line of JavaScript in UIAutomation will trigger a request to iOS simulator, which make the awful performance of it;</li>
-<li>The framework is unstable: for the script attached, sometimes the testing results are different, even same environment and script are provided; and sometimes the simulator or instrument will hung and quit expected;</li>
-<li>The testing supporting of this framework is not good: the element can be get by its id, but can only get by its name/label occasionally, and there are some issues unresolved, like value of label item can’t be get;</li>
-<li>Readiness of JavaScript is hard, it doesn’t provide the capability to integrate with tools like Cucumber;</li>
-<li>It doesn’t have the capability to integrate with CI tools;</li>
-<li>It can’t run on real devices, but only on simulator, which means it can’t run parallel.</li>
-</ol>
-<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/UIAutomation.zip" target="_blank" rel="external">UIAutomation.zip</a></p>
-
-      
-    </div>
-    
-    
-      <footer class="article-footer">
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIAutomation/">UIAutomation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-    
       <article id="post-iOS_Automation_KIF_Keep_It_Functional" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -635,6 +689,78 @@ ga('send', 'pageview');
 <li><a href="http://corner.squareup.com/2011/07/ios-integration-testing.html" target="_blank" rel="external">iOS Integration Testing</a></li>
 <li><a href="http://sgleadow.github.com/blog/2011/11/16/enabling-accessibility-programatically-on-ios-devices/" target="_blank" rel="external">Enabling Accessibility Programatically on iOS Devices</a></li>
 </ol>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIAutomation/">UIAutomation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-iOS_Automation_UIAutomation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/04/26/iOS_Automation_UIAutomation/">iOS Automation - UIAutomation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2012/04/26/iOS_Automation_UIAutomation/" class="article-date">
+  <time datetime="2012-04-25T14:00:00.000Z" itemprop="datePublished">2012-04-26</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>This framework is not suggested!</strong></p>
+<p><strong>Some materials for iOS - UIAutomation framework:</strong></p>
+<ol>
+<li><a href="http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/" target="_blank" rel="external">Working with UIAutomation</a></li>
+<li><a href="http://www.sunsetlakesoftware.com/sites/default/files/Fall2010CourseNotes/ui%20automation.html" target="_blank" rel="external">UI Automation</a></li>
+<li><a href="https://developer.apple.com/library/prerelease/ios/documentation/DeveloperTools/Reference/UIAutomationRef/" target="_blank" rel="external">UI Automation JavaScript Reference for iOS</a></li>
+<li><a href="http://www.codeproject.com/Articles/107595/How-Do-I-Perform-UI-Automation-Testing-in-iOS-4" target="_blank" rel="external">How Do I Perform UI Automation Testing in iOS 4</a></li>
+<li><a href="http://stackoverflow.com/questions/8306076/ios-ui-automation-get-textfield-by-accessibility-label" target="_blank" rel="external">iOS - UI Automation get textfield by accessibility label?</a></li>
+<li><a href="http://blog.manbolo.com/2012/04/08/ios-automated-tests-with-uiautomation" target="_blank" rel="external">iOS Automated Tests with UIAutomation</a></li>
+<li><a href="http://stackoverflow.com/questions/7688311/cant-get-value-of-uiastatictext" target="_blank" rel="external">Can’t get value of UIAStaticText?</a></li>
+</ol>
+<p><strong>UIAutomation</strong></p>
+<ol>
+<li>Using JavaScript: each line of JavaScript in UIAutomation will trigger a request to iOS simulator, which make the awful performance of it;</li>
+<li>The framework is unstable: for the script attached, sometimes the testing results are different, even same environment and script are provided; and sometimes the simulator or instrument will hung and quit expected;</li>
+<li>The testing supporting of this framework is not good: the element can be get by its id, but can only get by its name/label occasionally, and there are some issues unresolved, like value of label item can’t be get;</li>
+<li>Readiness of JavaScript is hard, it doesn’t provide the capability to integrate with tools like Cucumber;</li>
+<li>It doesn’t have the capability to integrate with CI tools;</li>
+<li>It can’t run on real devices, but only on simulator, which means it can’t run parallel.</li>
+</ol>
+<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/UIAutomation.zip" target="_blank" rel="external">UIAutomation.zip</a></p>
 
       
     </div>
@@ -811,59 +937,6 @@ ga('send', 'pageview');
       <footer class="article-footer">
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Exploratory-Testing/">Exploratory Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-    
-      <article id="post-Security_Testing_Of_Web_Applications" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/02/21/Security_Testing_Of_Web_Applications/">Security Testing of Web Applications</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2012/02/21/Security_Testing_Of_Web_Applications/" class="article-date">
-  <time datetime="2012-02-20T13:00:00.000Z" itemprop="datePublished">2012-02-21</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>This representation is more theoretical, but I think we can have some basic knowledge from it.</p>
-<p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Security_Testing_Of_Web_Applications.pdf" target="_blank" rel="external">Security_Testing_Of_Web_Applications.ppdf</a></p>
-
-      
-    </div>
-    
-    
-      <footer class="article-footer">
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Security/">Security</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
 
       </footer>
     

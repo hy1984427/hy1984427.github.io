@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://hy1984427.github.io/2017/09/07/Integrate_ServerSpec_Testinfra_and_ZAP_with_CentOS_7_Minimal/index.html">
 <meta property="og:site_name" content="Test &amp; testing &amp; tester">
 <meta property="og:description" content="We already know how to setup tests with ServerSpec and Testinfra in Quick start for ServerSpec and Testinfra, also comparison of them and Quick start for integrating ZAP into CI. Now, let’s see how to">
-<meta property="og:updated_time" content="2017-09-12T04:49:22.000Z">
+<meta property="og:updated_time" content="2017-09-12T05:26:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Integrate ServerSpec, Testinfra and ZAP with CentOS 7 Minimal">
 <meta name="twitter:description" content="We already know how to setup tests with ServerSpec and Testinfra in Quick start for ServerSpec and Testinfra, also comparison of them and Quick start for integrating ZAP into CI. Now, let’s see how to">
@@ -201,7 +201,9 @@ ga('send', 'pageview');
 <p><code>gem install rspec</code></p>
 <p>5) Install and configure the headless Firefox</p>
  <figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">yum -y install firefox Xvfb libXfont Xorg</div><div class="line">yum -y groupinstall <span class="string">"X Window System"</span> <span class="string">"Desktop"</span> <span class="string">"Fonts"</span> <span class="string">"General Purpose Desktop"</span></div><div class="line">Xvfb :99 -ac -screen 0 1280x1024x24 &amp;</div><div class="line"><span class="builtin-name">export</span> <span class="attribute">DISPLAY</span>=:99</div></pre></td></tr></table></figure>
-<p>6) Add following lines to ~/.bash_profile.</p>
+<p>6) Download and setup geckodriver.</p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/mozilla/geckodriver/releases/download/v0<span class="meta">.18</span><span class="meta">.0</span>/geckodriver-v0<span class="meta">.18</span><span class="meta">.0</span>-linux64.tar.gz</div><div class="line">tar -xvzf geckodriver-v0<span class="meta">.18</span><span class="meta">.0</span>-linux64.tar.gz</div><div class="line">mv geckodriver /usr/lib64</div></pre></td></tr></table></figure>
+<p>7) Add following lines to ~/.bash_profile.</p>
 <p> <code>$PATH=$PATH:/usr/lib64</code></p>
 <p> And run <code>source ~/.bash_profile</code>.</p>
 </li>

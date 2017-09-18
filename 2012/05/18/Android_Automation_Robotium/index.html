@@ -6,7 +6,7 @@
   <title>Android Automation - Robotium - Test &amp; testing &amp; tester</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="For installation, please reference to Installing the SDK | Android Developers. The easiest way is to download Eclipse first, then install the Android Development Tools (ADT) as Plugin in Eclipse. How">
-<meta name="keywords" content="Mobile,Automation,Framework,Android,Robotium">
+<meta name="keywords" content="Mobile,Android,Automation,Framework,Robotium">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android Automation - Robotium">
 <meta property="og:url" content="http://hy1984427.github.io/2012/05/18/Android_Automation_Robotium/index.html">
@@ -97,7 +97,7 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>For installation</strong>, please reference to <a href="http://developer.android.com/sdk/installing.html" target="_blank" rel="external">Installing the SDK | Android Developers</a>. The easiest way is to download Eclipse first, then install the Android Development Tools (ADT) as Plugin in Eclipse.</p>
-<h3 id="How_to_use_the_attached_project_zip_file:">How to use the attached project zip file:</h3><ol>
+<h3 id="How-to-use-the-attached-project-zip-file"><a href="#How-to-use-the-attached-project-zip-file" class="headerlink" title="How to use the attached project zip file:"></a>How to use the attached project zip file:</h3><ol>
 <li><p>Unzip it first then copy them to you workspace;</p>
 </li>
 <li><p>Open Eclipse, and select “File -&gt; New -&gt; Other…”;</p>
@@ -110,13 +110,13 @@ ga('send', 'pageview');
 </li>
 </ol>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Note</span>:</div><div class="line"></div><div class="line">Please <span class="keyword">do</span> the same to <span class="string">"AndroidCalculatorTest, but change the project folder path and change "</span>Project Name<span class="string">" to "</span>AndroidCalculatorTest".*</div><div class="line"></div><div class="line"><span class="keyword">For</span> running RobotiumTests_DataDriven.java, you need to import TestData.csv to emulator first:</div><div class="line"></div><div class="line">1. <span class="keyword">Open</span> DDMS;</div><div class="line"></div><div class="line">2. <span class="keyword">Open</span> <span class="keyword">File</span> Explorer;</div><div class="line"></div><div class="line">3. Import the TestData.csv <span class="keyword">file</span> <span class="keyword">in</span> attached <span class="keyword">test</span> project folder, into /data/data/com/calculator/files.</div><div class="line"></div><div class="line">4. <span class="keyword">Run</span> the data driven <span class="keyword">test</span>.</div></pre></td></tr></table></figure>
-<h3 id="How_to_run_the_application_we_test_against:">How to run the application we test against:</h3><ol>
+<h3 id="How-to-run-the-application-we-test-against"><a href="#How-to-run-the-application-we-test-against" class="headerlink" title="How to run the application we test against:"></a>How to run the application we test against:</h3><ol>
 <li><p>Create a AVD of Android 2.3.3 in Android Virtual Device Manager (AVD Manager) under “Window -&gt; AVD Manager” in Eclipse;</p>
 </li>
 <li><p>Select project “AndroidCalculator”, and “Run As” “Android Application”.</p>
 </li>
 </ol>
-<h3 id="How_to_run_tests_against_the_application:">How to run tests against the application:</h3><ol>
+<h3 id="How-to-run-tests-against-the-application"><a href="#How-to-run-tests-against-the-application" class="headerlink" title="How to run tests against the application:"></a>How to run tests against the application:</h3><ol>
 <li><p>Create a AVD of Android 2.3.3 in Android Virtual Device Manager (AVD Manager) under “Window -&gt; AVD Manager” in Eclipse;</p>
 </li>
 <li><p>Open “AndroidCalculatorTest -&gt; src -&gt; com.calculator.test”;</p>
@@ -125,7 +125,7 @@ ga('send', 'pageview');
 </li>
 </ol>
 <figure class="highlight oxygene"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Note: please only <span class="keyword">select</span> one file <span class="keyword">to</span> run, because all <span class="keyword">of</span> them have a main() <span class="function"><span class="keyword">method</span>, <span class="title">so</span> <span class="title">they</span> <span class="title">will</span> <span class="title">conflict</span> <span class="title">with</span> <span class="title">each</span> <span class="title">other</span> <span class="title">when</span> <span class="title">run</span> <span class="title">them</span> <span class="title">all</span> <span class="title">together</span>.</span></div></pre></td></tr></table></figure>
-<h3 id="Features_included_in_“AndroidCalculatorTest”:">Features included in “AndroidCalculatorTest”:</h3><ol>
+<h3 id="Features-included-in-“AndroidCalculatorTest”"><a href="#Features-included-in-“AndroidCalculatorTest”" class="headerlink" title="Features included in “AndroidCalculatorTest”:"></a>Features included in “AndroidCalculatorTest”:</h3><ol>
 <li><p>“InstrumentationTests.java” is implemented by Instrumentation in Android SDK itself;</p>
 </li>
 <li><p>“RobotiumTests_APK.java” demonstrate how to test an Android APK file when only get the APK file itself, its “Package_ID” and “Main_Activity”;</p>
@@ -137,19 +137,19 @@ ga('send', 'pageview');
 <li><p>“RobotiumTests.java” give you a brief knowledge of writing a basic Robotium test and take screenshot in the test. (please check the screenshot under “/mnt/sdcard” in DDMS).</p>
 </li>
 </ol>
-<h3 id="Library_Configuration_Tip:">Library Configuration Tip:</h3><ol>
+<h3 id="Library-Configuration-Tip"><a href="#Library-Configuration-Tip" class="headerlink" title="Library Configuration Tip:"></a>Library Configuration Tip:</h3><ol>
 <li><p>To run the Robotium tests, we need to select all in “Properties -&gt; Java Build Path -&gt; Order and Export”;</p>
 </li>
 <li><p>Move the robotium up to top and move Android and Android Dependencies just below robotium (but still above any project).</p>
 </li>
 </ol>
-<h3 id="Issues_encountered_when_writing_Robotium_tests:">Issues encountered when writing Robotium tests:</h3><ol>
+<h3 id="Issues-encountered-when-writing-Robotium-tests"><a href="#Issues-encountered-when-writing-Robotium-tests" class="headerlink" title="Issues encountered when writing Robotium tests:"></a>Issues encountered when writing Robotium tests:</h3><ol>
 <li><p>Unable to take ScreenShot (saving the file to emulator):  <a href="http://stackoverflow.com/questions/7550201/unable-to-take-screenshot-on-android-using-robotium-and-private-method" target="_blank" rel="external">Unable to take screenshot on android using robotium and private method</a></p>
 </li>
 <li><p>“Null pointer exception” or “Array out of boundary” when reading a csv file: please check the format of csv whether it’s compatible with jxl.</p>
 </li>
 </ol>
-<h3 id="Some_materials_for_Android_-_Robotium_framework:">Some materials for Android - Robotium framework:</h3><ol>
+<h3 id="Some-materials-for-Android-Robotium-framework"><a href="#Some-materials-for-Android-Robotium-framework" class="headerlink" title="Some materials for Android - Robotium framework:"></a>Some materials for Android - Robotium framework:</h3><ol>
 <li><p><a href="http://developer.android.com/" target="_blank" rel="external">Android Developers</a></p>
 </li>
 <li><p><a href="http://code.google.com/p/robotium/" target="_blank" rel="external">robotium -  It’s like Selenium, but for Android™ - Google Project Hosting</a></p>
@@ -159,7 +159,7 @@ ga('send', 'pageview');
 <li><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Robotium_Black_Box_Testing_For_Android_Chinese.pdf" target="_blank" rel="external">Robotium_Black_Box_Testing_For_Android</a> <em>in Chinese</em></p>
 </li>
 </ol>
-<h3 id="Attachments:">Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Robotium.zip" target="_blank" rel="external">Robotium.zip</a></p>
+<h3 id="Attachments"><a href="#Attachments" class="headerlink" title="Attachments:"></a>Attachments:</h3><p><a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/Robotium.zip" target="_blank" rel="external">Robotium.zip</a></p>
 
       
     </div>

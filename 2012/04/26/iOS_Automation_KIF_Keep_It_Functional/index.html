@@ -6,7 +6,7 @@
   <title>iOS Automation - KIF (Keep It Functional) - Test &amp; testing &amp; tester</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Please download and unzip KIF.zip, and select “HelloWorld copy” to run KIFTests. Note:  I have modified KIF framework: add “[(UITextField *) view setText:nil];” in KIFTestStep.m to clear text before i">
-<meta name="keywords" content="Mobile,iOS,Automation,Framework,UIAutomation">
+<meta name="keywords" content="Mobile,Automation,Framework,iOS,UIAutomation">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS Automation - KIF (Keep It Functional)">
 <meta property="og:url" content="http://hy1984427.github.io/2012/04/26/iOS_Automation_KIF_Keep_It_Functional/index.html">
@@ -105,11 +105,11 @@ ga('send', 'pageview');
 </ol>
 <p><strong>References for KIF:</strong></p>
 <ol>
-<li>KIF uses undocumented Apple APIs. This is true of most iOS testing frameworks, and is safe for testing purposes, but it’s important that KIF does not make it into production code, by duplicating a second target for the KIF-enabled version of the app to test. This gives you an easy way to begin testing — <em>just run this second target</em> — and also helps make sure that no testing code ever makes it into your App Store submission and gets your app rejected.</li>
+<li>KIF uses undocumented Apple APIs. This is true of most iOS testing frameworks, and is safe for testing purposes, but it’s important that KIF does not make it into production code, by duplicating a second target for the KIF-enabled version of the app to test. This gives you an easy way to begin testing – <em>just run this second target</em> – and also helps make sure that no testing code ever makes it into your App Store submission and gets your app rejected.</li>
 <li>All of the tests for KIF are written in Objective C, so the performance is good.</li>
 <li>Some detailed steps are not documented in KIF official documents, need to compare the docs with code provided in GitHub.</li>
 </ol>
-<h4 id="Advantages_of_KIF_comparing_to_UIAutomation_(official_by_KIF_group_but_briefly):">Advantages of KIF comparing to UIAutomation (official by KIF group but briefly):</h4><p><strong>KIF Pros</strong></p>
+<h4 id="Advantages-of-KIF-comparing-to-UIAutomation-official-by-KIF-group-but-briefly"><a href="#Advantages-of-KIF-comparing-to-UIAutomation-official-by-KIF-group-but-briefly" class="headerlink" title="Advantages of KIF comparing to UIAutomation (official by KIF group but briefly):"></a>Advantages of KIF comparing to UIAutomation (official by KIF group but briefly):</h4><p><strong>KIF Pros</strong></p>
 <ol>
 <li>All objective-C. No need to write translations from JavaScript.</li>
 <li>Can easily hook into your code base for obscure things, like “fake a credit card swipe.”</li>

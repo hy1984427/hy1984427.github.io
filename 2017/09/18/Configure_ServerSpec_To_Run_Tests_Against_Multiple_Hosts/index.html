@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Configure ServerSpec to run tests against multiple hosts - Test &amp; testing &amp; tester</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="We have learnt how to setup tests with ServerSpec in Quick start for ServerSpec and Testinfra, also comparison of them, but the folder structure can only support testing against one host. In the real">
+<meta name="keywords" content="Ruby,Infrastructure Testing,ServerSpec,Advanced,Multiple Hosts">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Configure ServerSpec to run tests against multiple hosts">
+<meta property="og:url" content="http://hy1984427.github.io/2017/09/18/Configure_ServerSpec_To_Run_Tests_Against_Multiple_Hosts/index.html">
+<meta property="og:site_name" content="Test &amp; testing &amp; tester">
+<meta property="og:description" content="We have learnt how to setup tests with ServerSpec in Quick start for ServerSpec and Testinfra, also comparison of them, but the folder structure can only support testing against one host. In the real">
+<meta property="og:updated_time" content="2017-09-18T01:34:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Configure ServerSpec to run tests against multiple hosts">
+<meta name="twitter:description" content="We have learnt how to setup tests with ServerSpec in Quick start for ServerSpec and Testinfra, also comparison of them, but the folder structure can only support testing against one host. In the real">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', '73216141', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/AboutMe.html">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hy1984427.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Configure_ServerSpec_To_Run_Tests_Against_Multiple_Hosts" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Configure ServerSpec to run tests against multiple hosts
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/09/18/Configure_ServerSpec_To_Run_Tests_Against_Multiple_Hosts/" class="article-date">
+  <time datetime="2017-09-17T14:00:00.000Z" itemprop="datePublished">2017-09-18</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="We-have-learnt-how-to-setup-tests-with-ServerSpec-in-Quick-start-for-ServerSpec-and-Testinfra-also-comparison-of-them-but-the-folder-structure-can-only-support-testing-against-one-host-In-the-real-world-we-need-to-reuse-the-tests-to-test-against-multiple-hosts-so-we-will-see-how-we-can-do-that"><a href="#We-have-learnt-how-to-setup-tests-with-ServerSpec-in-Quick-start-for-ServerSpec-and-Testinfra-also-comparison-of-them-but-the-folder-structure-can-only-support-testing-against-one-host-In-the-real-world-we-need-to-reuse-the-tests-to-test-against-multiple-hosts-so-we-will-see-how-we-can-do-that" class="headerlink" title="We have learnt how to setup tests with ServerSpec in Quick start for ServerSpec and Testinfra, also comparison of them, but the folder structure can only support testing against one host. In the real world, we need to reuse the tests to test against multiple hosts, so we will see how we can do that."></a>We have learnt how to setup tests with ServerSpec in <a href="http://hy1984427.github.io/2017/09/01/Qucik_Start_For_ServerSpec_and_TestInfra_also_comparison_of_them/">Quick start for ServerSpec and Testinfra, also comparison of them</a>, but the folder structure can only support testing against one host. In the real world, we need to reuse the tests to test against multiple hosts, so we will see how we can do that.</h5><h3 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite:"></a>Prerequisite:</h3><p>  ServerSpec setup is completed according to the steps in <a href="http://hy1984427.github.io/2017/09/01/Qucik_Start_For_ServerSpec_and_TestInfra_also_comparison_of_them/">Quick start for ServerSpec and Testinfra, also comparison of them</a>.</p>
+<h3 id="Configure-ServerSpec-to-run-tests-against-multiple-hosts"><a href="#Configure-ServerSpec-to-run-tests-against-multiple-hosts" class="headerlink" title="Configure ServerSpec to run tests against multiple hosts:"></a>Configure ServerSpec to run tests against multiple hosts:</h3><p>  Actually we only need to change the Rakefile in the test folder. And its content should be changed to following:</p>
+  <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'rake'</span></div><div class="line"><span class="keyword">require</span> <span class="string">'rspec/core/rake_task'</span></div><div class="line"></div><div class="line">hosts = <span class="string">%w(</span></div><div class="line">  host1</div><div class="line">  host2</div><div class="line">)</div><div class="line"></div><div class="line">task <span class="symbol">:spec</span> =&gt; <span class="string">'spec:all'</span></div><div class="line"></div><div class="line">namespace <span class="symbol">:spec</span> <span class="keyword">do</span></div><div class="line"></div><div class="line">  task <span class="symbol">:all</span> =&gt; hosts.map &#123;<span class="params">|h|</span> <span class="string">'spec:'</span> + h &#125;</div><div class="line">  hosts.each <span class="keyword">do</span> <span class="params">|host|</span></div><div class="line">    desc <span class="string">"Run serverspec to <span class="subst">#&#123;host&#125;</span>"</span></div><div class="line">    RSpec::Core::RakeTask.new(host) <span class="keyword">do</span> <span class="params">|t|</span></div><div class="line">      ENV[<span class="string">'TARGET_HOST'</span>] = host</div><div class="line">      t.pattern = <span class="string">"spec/&#123;host_server&#125;/*_spec.rb"</span></div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>  Please note, <code>host1</code> and <code>host2</code> are the hosts we would like to run our tests against, the reason we put <code>host_server</code> in above lines is because we have the folder named “host_server” in our test scripts structure.</p>
+<p>  You can reference the script  <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/ServerSpecAdvanced.zip" target="_blank" rel="external">here</a>.</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Advanced/">Advanced</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Infrastructure-Testing/">Infrastructure Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Multiple-Hosts/">Multiple Hosts</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ServerSpec/">ServerSpec</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/07/Integrate_ServerSpec_Testinfra_and_ZAP_with_CentOS_7_Minimal/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Integrate ServerSpec, Testinfra and ZAP with CentOS 7 Minimal&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Huang Yong&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

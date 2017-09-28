@@ -188,9 +188,6 @@ ga('send', 'pageview');
 <li><p>Install Ruby.</p>
 <p><code>yum install ruby</code></p>
 </li>
-<li><p>Install all necessary libraries.</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">yum install gcc g++ <span class="keyword">make</span> automake autoconf curl-devel openssl-devel zlib-devel httpd-devel apr-devel apr-util-devel sqlite-devel wget net-tools</div><div class="line"></div><div class="line">yum install <span class="keyword">ruby</span>-rdoc <span class="keyword">ruby</span>-devel</div></pre></td></tr></table></figure>
-</li>
 <li><p>Install RubyGems.</p>
 <p><code>yum install rubygems</code></p>
 </li>
@@ -261,6 +258,15 @@ ga('send', 'pageview');
 <p>7) Add following lines to ~/.bash_profile.</p>
 <p> <code>$PATH=$PATH:/usr/lib64</code></p>
 <p> And run <code>source ~/.bash_profile</code>.</p>
+<p>8) Alternatively, we can use Chromedriver:</p>
+<p> i) Create a file called /etc/yum.repos.d/google-chrome.repo and add the following lines of code to it.</p>
+   <figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="section">[google-chrome]</span></div><div class="line"><span class="attr">name</span>=google-chrome</div><div class="line"><span class="attr">baseurl</span>=http://dl.google.com/linux/chrome/rpm/stable/<span class="variable">$basearch</span></div><div class="line"><span class="attr">enabled</span>=<span class="number">1</span></div><div class="line"><span class="attr">gpgcheck</span>=<span class="number">1</span></div><div class="line"><span class="attr">gpgkey</span>=https://dl-ssl.google.com/linux/linux_signing_key.pub</div></pre></td></tr></table></figure>
+<p> ii) Check whether the latest version available from the Google�s own repository using <code>yum info google-chrome-stable</code></p>
+<p> iii) Update yum using ‘yum update’</p>
+<p> ix) Install Chrome using <code>yum install google-chrome-stable unzip</code></p>
+<p> x) Download Chromedriver using <code>wget https://chromedriver.storage.googleapis.com/2.32/chromedriver_linux64.zip</code></p>
+<p> xi) Unzip Chromedriver using <code>unzip chromedriver_linux64.zip</code></p>
+<p> xii) Move Chromedriver to a place in $PATH using <code>mv chromedriver bin/</code></p>
 </li>
 <li><p>Using <code>ruby add_assertions_to_check_zap_result.rb</code> to run and check the result.</p>
 <p>You can reference the script  <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/add_assertions_to_check_zap_result.rb" target="_blank" rel="external">here</a>.</p>
@@ -1423,7 +1429,7 @@ ga('send', 'pageview');
 
     
       <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
       </nav>
     </section>
     

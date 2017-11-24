@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Quick start for UI tests with XCTest - Test &amp; testing &amp; tester</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="XCTest is introduced by XCode 5 for iOS 7, but until XCode 8 with iOS 10, XCTest became the default and the only choice if you want to conduct UI testing, the previous UIAutomation is deprecated at th">
+<meta name="keywords" content="Quick-Start,iOS,UI Tests,XCTest">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quick start for UI tests with XCTest">
+<meta property="og:url" content="http://hy1984427.github.io/2017/11/24/Quick_Start_For_UI_tests_with_XCTest/index.html">
+<meta property="og:site_name" content="Test &amp; testing &amp; tester">
+<meta property="og:description" content="XCTest is introduced by XCode 5 for iOS 7, but until XCode 8 with iOS 10, XCTest became the default and the only choice if you want to conduct UI testing, the previous UIAutomation is deprecated at th">
+<meta property="og:updated_time" content="2017-11-24T02:54:31.908Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Quick start for UI tests with XCTest">
+<meta name="twitter:description" content="XCTest is introduced by XCode 5 for iOS 7, but until XCode 8 with iOS 10, XCTest became the default and the only choice if you want to conduct UI testing, the previous UIAutomation is deprecated at th">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', '73216141', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/AboutMe.html">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hy1984427.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Quick_Start_For_UI_tests_with_XCTest" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Quick start for UI tests with XCTest
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/11/24/Quick_Start_For_UI_tests_with_XCTest/" class="article-date">
+  <time datetime="2017-11-23T13:00:00.000Z" itemprop="datePublished">2017-11-24</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="XCTest-is-introduced-by-XCode-5-for-iOS-7-but-until-XCode-8-with-iOS-10-XCTest-became-the-default-and-the-only-choice-if-you-want-to-conduct-UI-testing-the-previous-UIAutomation-is-deprecated-at-that-time"><a href="#XCTest-is-introduced-by-XCode-5-for-iOS-7-but-until-XCode-8-with-iOS-10-XCTest-became-the-default-and-the-only-choice-if-you-want-to-conduct-UI-testing-the-previous-UIAutomation-is-deprecated-at-that-time" class="headerlink" title="XCTest is introduced by XCode 5 for iOS 7, but until XCode 8 with iOS 10, XCTest became the default and the only choice if you want to conduct UI testing, the previous UIAutomation is deprecated at that time."></a>XCTest is introduced by XCode 5 for iOS 7, but until XCode 8 with iOS 10, XCTest became the default and the only choice if you want to conduct UI testing, the previous UIAutomation is deprecated at that time.</h5><h3 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite:"></a>Prerequisite:</h3><ul>
+<li><p>XCode and XCode command line tools should be installed.</p>
+</li>
+<li><p>Download the sample XCOde project from <a href="https://developer.apple.com/library/content/samplecode/UICatalog/UIKitCatalogiOSCreatingandCustomizingUIKitControls.zip" target="_blank" rel="external">here</a>, unzip and open the Swift project.</p>
+</li>
+</ul>
+<h3 id="Get-Started-for-XCTest"><a href="#Get-Started-for-XCTest" class="headerlink" title="Get Started for XCTest:"></a>Get Started for XCTest:</h3><ol>
+<li><p>Add a new Target of iOS UI Testing through “File”-&gt;”New”-&gt;”Target…”-&gt;”iOS UI Testing Bundle”, and input all the required info.</p>
+</li>
+<li><p>Use the red dot (named “Record UI Test”) on the bottom to start recording, once finished, click it again to complete.</p>
+</li>
+<li><p>Add assertions to the ends of each scenarios, such as the script in the “UIKitCatalogUITests.swift” of <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/XCTestSample.zip" target="_blank" rel="external">XCTestSample.zip</a>.</p>
+<p>For the detailed usage of assertions, you can reference to the “Test Assertions” in the <a href="https://developer.apple.com/documentation/xctest" target="_blank" rel="external">XCTest Topics</a>.</p>
+</li>
+<li><p>It’s hard to just check the text on some labels, so if we want to check it, we need to add value to identifier of the label, then in the testing script, using following lines:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let label=app<span class="selector-class">.staticTexts</span>[<span class="string">"label_identifier"</span>]</div><div class="line"><span class="function"><span class="title">XCTAssertEqual</span><span class="params">(label.label,<span class="string">"label_text"</span>)</span></span></div><div class="line"><span class="function"><span class="title">XCTAssert</span><span class="params">(app.staticTexts[<span class="string">"label_text"</span>].exists)</span></span></div></pre></td></tr></table></figure>
+</li>
+<li><p>If you want to know more usage of the XCTest, you can reference to <a href="https://github.com/joemasilotti/UI-Testing-Cheat-Sheet" target="_blank" rel="external">the Cheat Sheet</a>.</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quick-Start/">Quick-Start</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI-Tests/">UI Tests</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XCTest/">XCTest</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/24/Quick_Start_For_InSpec_and_ServerSpec_also_comparison_of_them/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Quick start for InSpec and ServerSpec also comparison of them&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Huang Yong&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

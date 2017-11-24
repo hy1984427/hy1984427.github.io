@@ -67,6 +67,141 @@ ga('send', 'pageview');
   </div>
 </header>
     <section id="main" class="outer">
+      <article id="post-Mobile_App_Testing_With_22_Rules_English" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/13/Mobile_App_Testing_With_22_Rules_English/">22 Rules In Mobile App Testing</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/05/13/Mobile_App_Testing_With_22_Rules_English/" class="article-date">
+  <time datetime="2016-05-12T14:00:00.000Z" itemprop="datePublished">2016-05-13</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[Translated from my Chinese article.]</p>
+<p>Nowadays, with the popularization of mobile devices, mobile apps are widely used everywhere, and lots of companies start business in mobile apps field.</p>
+<p>This trend brings the challenges to use: we need to deliver the mobile apps to market in time with high quality, and continuously improve them.</p>
+<p>We can categorize mobile apps to native apps and hybrid apps. They have many differences compared with Desktop/Web applications, and testers are encountered with more challenges due to the lacks of testing tool and methodology.</p>
+<p>With testing a Telecom mobile portal app for more than 2 years, I have summarized some testing experience and practices for native apps on iOS and Android. And most of them are also useful for testing hybrid apps.</p>
+<h2 id="1-Define-your-testing-devices-and-operation-systems"><a href="#1-Define-your-testing-devices-and-operation-systems" class="headerlink" title="1.    Define your testing devices and operation systems"></a>1.    Define your testing devices and operation systems</h2><p>As we all know, the issue of mobile devices’ fragmentation is getting more and more serious, because there are more operation systems with different versions, different hardware of devices, different screen sizes, different resolutions, different pixel densities and etc.</p>
+<p>We can’t cover all the devices and operation systems from ROI (Return of Investment) perspective, so we need to choose the testing devices based on the popularization of them in market.</p>
+<p>We can not only use Google Analytics or Adobe Omniture to tracking user and generate the devices’ usage report to define testing devices and operation systems, but also read the market share of iOS and Android operation system from their official website:<br><a href="https://developer.apple.com/support/appstore/" target="_blank" rel="external">https://developer.apple.com/support/appstore/</a>, <a href="http://developer.android.com/about/dashboards/index.html" target="_blank" rel="external">http://developer.android.com/about/dashboards/index.html</a>.</p>
+<h2 id="2-Switch-between-networks"><a href="#2-Switch-between-networks" class="headerlink" title="2.    Switch between networks"></a>2.    Switch between networks</h2><p>The particularity of mobile app is user always use the app on their way, so when we are conducting our testing, we should also focus on the impact of network switch to app. For example we need to cover the scenario of using app on 3G network and then switch to 4G or Wi-Fi or Airplane Mode and so on.</p>
+<p>If the app will authenticated on the mobile network and get a token from it then proceed functionalities forward, we will definitely cover the scenario of switching mobile network to other networks.</p>
+<p>When we perform testing on network switching scenarios, we need also pay attention to the error message given to user. The error message should be user friendly, and give user instructions to follow to solve the issues.</p>
+<h2 id="3-Multi-tasking"><a href="#3-Multi-tasking" class="headerlink" title="3.    Multi-tasking"></a>3.    Multi-tasking</h2><p>We usually run multiple apps on our mobile devices, so when we testing mobile apps, we need to consider the app switching.</p>
+<p>This includes the scenarios of switching app to another, or close app at background, then how app acts when user open it again: should it reload the info when user left, or it will start from scratch?</p>
+<h2 id="4-Gestures"><a href="#4-Gestures" class="headerlink" title="4.    Gestures"></a>4.    Gestures</h2><p>Gestures are supported by iOS and Android operation systems, when app introduces it own gestures to user, they would conflict with the system ones.</p>
+<p>Such as the wipe gesture to go back introduced in iOS 7: for a long time, to get back one screen, you had to tap the upper left corner on screen (named as “&lt;” or“back” button); on iOS 7, we can swipe the screen to the right and go back.</p>
+<p>But before iOS 7 introduced this gesture, many app use this gesture to call out drawer navigation panel in app. At the time when iOS 7 is released, many apps are not ready for this gesture, so when user use this gesture in app, sometimes it will go back, and sometimes it will call out the drawer navigation panel.</p>
+<p>Since the user experience for this is so wired, so we should not let this happen from beginning.</p>
+<h2 id="5-User-experience"><a href="#5-User-experience" class="headerlink" title="5.    User experience"></a>5.    User experience</h2><p>As we talk about user experience, we are not only focus on the layout and stuff like that, but also test app’s portrait and landscape display.</p>
+<p>And we need to check the level of support to accessibility, so that more people can use our app more easily and freely.</p>
+<p>We need also check whether app is following the design guide of iOS and Android official documents. Especially for the apps support both iOS and Android operation systems, it’s better to let each app follow the design guide of corresponding operation system, rather than all apps just follow iOS design guide.</p>
+<p>And for the apps embedded Webview, if the Webview is not Responsive designed, it will cause display issues on different devices, therefore we may spend lots of efforts to fix them.</p>
+<h2 id="6-Display-messages-and-notifications"><a href="#6-Display-messages-and-notifications" class="headerlink" title="6.    Display messages and notifications"></a>6.    Display messages and notifications</h2><p>Since iOS and Android have different notification methods: on Lock Screen, Status Bar, Notification Center and App Icon, we need to check how the messages display when new message come.</p>
+<p>When app use sensors or location services, we should also notify user about the changes.</p>
+<p>If we consider the cache mechanism in app, the scenarios will be more complex.</p>
+<p>Although using cache, we can reduce the workload of server to provide responses to mobile app client, but it complex our testing: we need to make sure once the message is changed, even the cached message is still valid, we should show the updated message, rather than the cached one.</p>
+<h2 id="7-Features-of-Operation-System"><a href="#7-Features-of-Operation-System" class="headerlink" title="7.    Features of Operation System"></a>7.    Features of Operation System</h2><p>Because iOS starts to support widget since iOS 8, and Android supports widget for a long time, so when we are testing mobile apps, we need to consider widget as a serious feature, and prioritize it in features list.</p>
+<p>And for Android apps, we also need to verify when apps are installed and running on both Dalvik and ART runtimes.</p>
+<p>For iOS, if app allow user to configure its settings in System Settings, we need to test this feature as well.</p>
+<h2 id="8-Sync-on-different-devices"><a href="#8-Sync-on-different-devices" class="headerlink" title="8.    Sync on different devices"></a>8.    Sync on different devices</h2><p>Apps like Facebook and Twitter support both iOS and Android; also support multiple devices, such as iPad, iPhone, Android phones and Android tablets.</p>
+<p>Some of them allow user to login the same account on different devices. When this happens, we need to check once the message is delivered on one device, this message should be synced to other devices at same time.</p>
+<h2 id="9-Customized-User-Interface"><a href="#9-Customized-User-Interface" class="headerlink" title="9.    Customized User Interface"></a>9.    Customized User Interface</h2><p>Besides the OS and hardware differences, different devices may also have different user interface installed, such as Samsung’s Touchwiz, HTC Sense, LG UX and Sony Xperia UI.</p>
+<p>For example, Touchwiz has different default font compared to Android native font, which may cause your one line sentence displayed in two lines.</p>
+<p>And previously on HTC Sense, you will see a menu bar all the time when using an app, this will affect the display of your app.</p>
+<p>Also on HTC Sense 4.x, the multi-tasking screen shows the screenshot of apps, but when you open the app, because the app would refresh, so they may have differences between the screenshot in multi-tasking screen and app current view.</p>
+<h2 id="10-Support-different-file-formats"><a href="#10-Support-different-file-formats" class="headerlink" title="10.    Support different file formats"></a>10.    Support different file formats</h2><p>Sometime we need to display the legal information in mobile apps, usually the legal file are stored as PDF, so it’s hard for app to support this.</p>
+<p>One reason is the PDF is usually designed for web or desktop, when viewing it on mobile devices, it’s hard for user to see, even with zoom in.</p>
+<p>Another reason is Android doesn’t provide native support for PDF files, unlike iOS. So if we want to display PDF files to user, we need to figure out whether we need to add support to PDF, or we just let user to download one PDF viewer app to open the legal files.</p>
+<p>If we need to deal with files in other format, we need to pay more attentions to this.</p>
+<h2 id="11-Support-multiple-countries-locales-and-languages"><a href="#11-Support-multiple-countries-locales-and-languages" class="headerlink" title="11.    Support multiple countries, locales and languages"></a>11.    Support multiple countries, locales and languages</h2><p>Many countries have immigrants from global, and there maybe more than one language even in one country, so we can’t decide there is only one language for our app.</p>
+<p>I know we can’t test with all countries, locale settings and languages, but we can test the widely used languages and corresponding formats, such as English, Chinese, French, Spanish and etc.</p>
+<p>We need to verify not only the display of them in app, but also the input of them.</p>
+<h2 id="12-High-memory-usage-actions"><a href="#12-High-memory-usage-actions" class="headerlink" title="12.    High memory usage actions"></a>12.    High memory usage actions</h2><p>Both iOS and Android have limitations for the memory size can be consumed by app, so when app need to deal with actions need to consume large memory, such as high density images, voices and videos, we need to perform the actions in another process, to avoid the memory leak or app killed by OS.</p>
+<p>So we can check this by loading bulk of images, voices and videos. </p>
+<h2 id="13-Non-standard-controls"><a href="#13-Non-standard-controls" class="headerlink" title="13.    Non-standard controls"></a>13.    Non-standard controls</h2><p>On particular OS version, we may want to support some features, which OS can’t provide.</p>
+<p>Usually we will implement it by ourselves or using 3rd party library.</p>
+<p>One example is theme of app: in iOS 4, we need to implement it all by ourselves from scratch; in iOS 5, we can use UIApperance protocol to reduce some work; and in iOS 7, we can easily use tintColor property to achieve it.</p>
+<p>If we are using our self made controls or 3rd party library, we need to pay more attentions when testing, to make sure the behavior the same as other parts.</p>
+<p>And as in the example above, with the upgrades of OS, the control may be standardized and provided by OS natively. At that time, we need to merge our codes to native codes, to avoid merging it in the future.</p>
+<p>To merge and test the codes are additional efforts compared to implemented it with native codes, so once we need to implement feature by ourselves or using 3rd party library, we need think twice before we actually work on it.</p>
+<h2 id="14-App-upgrade"><a href="#14-App-upgrade" class="headerlink" title="14.    App upgrade"></a>14.    App upgrade</h2><p>Most app will upgrade gradually, to bring new feature and experience to users.</p>
+<p>Once user installed app, when upgrade it, they won’t uninstall it first, but overwrite it or install incrementally.</p>
+<p>So we will also test how app behaves after upgrading, especially the user profile stored previously, and other data stored.</p>
+<p>We need be more careful if there is app database schema change in app upgrade.</p>
+<p>Likewise, we need to verify app stored data are removed after app uninstallation.</p>
+<h2 id="15-Integrate-with-3rd-party-app"><a href="#15-Integrate-with-3rd-party-app" class="headerlink" title="15.    Integrate with 3rd party app"></a>15.    Integrate with 3rd party app</h2><p>If app integrate with 3rd party app, such as Google Map or Facebook login, we need to make sure app can perform correctly when 3rd party app doesn’t work properly.</p>
+<p>And we also need to monitor the 3rd party app or services.</p>
+<p>Sometimes we need to consider to test when 3rd party app integrate with our app and want to share information to our app.</p>
+<h2 id="16-Reduce-dependencies"><a href="#16-Reduce-dependencies" class="headerlink" title="16.    Reduce dependencies"></a>16.    Reduce dependencies</h2><p>We can try our best to reduce the dependencies to 3rd party system/app/service and other web services we need.</p>
+<p>This can help us minimize the complexity of app and reduce the testing efforts.</p>
+<p>We also need to use different methodologies to make sure they work fine, such as API and integration testing and monitoring.</p>
+<h2 id="17-Automation-and-Exploratory-testing"><a href="#17-Automation-and-Exploratory-testing" class="headerlink" title="17.    Automation and Exploratory testing"></a>17.    Automation and Exploratory testing</h2><p>Many companies and teams are using Agile now, so TDD and API testing are implemented in development.</p>
+<p>For UI automation, we should use Test Pyramid to design our test first, then only automated test scenarios based user journey. </p>
+<p>Because unit test can cover the functionalities in every activity and view, but they can’t help us when we are testing the interactions between activities and views.</p>
+<p>Likewise, when we conduct exploratory testing, we should focus on the workflows with data in them, and the ways the activities/views interact with each other.</p>
+<p>I suggest you to use simulator or emulator to do automation, and if you are testing Android apps, Genymotion is a good choice for you; and for exploratory testing, we probably can use devices.</p>
+<p>For the automation tools, they are plenty of them: appium, Frank, Calabash, UIAutomation, UiAutomator and so on.</p>
+<h2 id="18-Security-testing"><a href="#18-Security-testing" class="headerlink" title="18.    Security testing"></a>18.    Security testing</h2><p>Both iOS and Android support app to store their data in local SQLite databases, so we need to make sure the databases are encrypted.</p>
+<p>We can also use tools like iPhone Configuration Utility and Android DDMS to sniffer the web traffic, checking whether there is cleartext in the request and response.</p>
+<p>To test the security of mobile services, we can use the same way when we testing Web applications.</p>
+<h2 id="19-Performance-testing"><a href="#19-Performance-testing" class="headerlink" title="19.    Performance testing"></a>19.    Performance testing</h2><p>Performance testing can be also involved in mobile app testing.</p>
+<p>It includes testing the app in slow network connection, batch load large quantity of data and such scenarios.</p>
+<p>We can also test the performance of mobile services.</p>
+<h2 id="20-Operation-System-upgrade"><a href="#20-Operation-System-upgrade" class="headerlink" title="20.    Operation System upgrade"></a>20.    Operation System upgrade</h2><p>Different with app upgrade, when operation system is going to upgrade, Apple and Google will let developers know in advanced, so that they can prepare their app to follow the new rules (guides :P).</p>
+<p>When we testing the existing app, we need also to learn the changes introduced in new OS version, and prepare for them technically and in mind.</p>
+<p>When the app for new OS is developing, we will cover the tests for both existing app and the new app at same time.</p>
+<h2 id="21-Benefits-from-Log"><a href="#21-Benefits-from-Log" class="headerlink" title="21.    Benefits from Log"></a>21.    Benefits from Log</h2><p>In developing stage, we usually use Crashlytics, HockeyApp and such tool to collect crash issues, which can make the life for both developers and testers much easier.</p>
+<p>And we can also us iPhone Configuration Utility and Android DDMS to collect general app logs.</p>
+<p>When releasing app to market, it’s better we can have some ways to collect the crash information, either to ask user to give feedbacks or ask user to allow app to send logs to us when necessary.</p>
+<h2 id="22-Continuous-integration-and-continuous-deployment"><a href="#22-Continuous-integration-and-continuous-deployment" class="headerlink" title="22.    Continuous integration and continuous deployment"></a>22.    Continuous integration and continuous deployment</h2><p>We can use continuous integration to help us find the stability issue and build a safe net for us.</p>
+<p>Although we can’t 100% automate the process of continuous deployment, we can try our best to ease it, such as using TestFlight to distribute iOS apps, while using HockeyApp and other tools to distribute Android apps.</p>
+<p>An alternative way to distribute Android app is using Dropbox: we can install Dropbox on the app package desktop and testing devices, once the app is packaged, we can use script to move it to the Dropbox folder on the packaging desktop; after Dropbox sync the apk file, we can open Dropxbox on testing devices to install the app.</p>
+<p><br><br>I know those practices and sharing won’t solve all the problems and fix all the issues, but hope they can inspire you.</p>
+<p>Since mobile apps are evolving, so does the mobile app development and testing. We will have new tools, techniques and methodologies in this trend. I am looking forward to hear your thoughts about mobile testing.</p>
+<p>You can also find my presentation <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/22Rules_In_Mobile_App_Testing.pdf" target="_blank" rel="external">here</a>.</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App-Testing/">App Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rules/">Rules</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
       <article id="post-How_To_Publish_A_Technical_Book" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -194,6 +329,67 @@ ga('send', 'pageview');
 
 
     
+      <article id="post-Bug_Series_Theory_And_Reality" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/27/Bug_Series_Theory_And_Reality/">Bug集锦 －理论与现实这么近</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/01/27/Bug_Series_Theory_And_Reality/" class="article-date">
+  <time datetime="2016-01-26T13:00:00.000Z" itemprop="datePublished">2016-01-27</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>写Bug集锦的目的在于分享从业这些年来遇到的这些有趣的问题，希望在读这些小故事的同时，能带给大家一些思考。</p>
+<h3 id="理论与现实这么近"><a href="#理论与现实这么近" class="headerlink" title="理论与现实这么近"></a>理论与现实这么近</h3><p>作为计算机系毕业生的小蔡，一直觉得学校里学的理论知识，和现在的测试工作差距太大，在实际的工作中也没有什么作用。直到有一天她碰到这么一个有趣的问题。</p>
+<p>小蔡负责测试的是一个Web产品，基于不同的搜索条件，会显示大量的结果。由于搜索结果太多被分成了很多页，为了方便用户快捷跳转到特定的页面，开发人员特意设计了一个页面快速跳转的功能。</p>
+<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Bug_Series_1.1.png" alt="搜索结果页面快速跳转"></p>
+<p>图 1.1 － 搜索结果页面快速跳转</p>
+<p>在设计测试用例的时候小蔡就留心了，因为很多测试理论的书籍都描述过，对于输入框可以进行的验证点很多，比如说特殊字符、超长字符、负值、0值和null值，以及很大的数值等。对于大部分的测试用例，开发人员都处理得很好，没有发现缺陷，小蔡也松了口气。</p>
+<p>当测试到输入很大数值的用例时，由于不确定多大的数值会出错，也不能拿到代码，小蔡就自己选了一个数值：9999999999（10个9）。输入10个9、点击确定，突然，页面崩溃了！100以内的小数值，以及输入小于等于搜索结果页面数的数值等情况，小蔡在测试中都选取过，测试结果都很正常，那到底数值大到什么程度的时候页面会崩溃呢？一时想不到更好的办法，小菜只好硬着头皮使用尝试法开始确定出错的数值范围。</p>
+<p>10个9，出错；9个9，正常跳转到最后一页。突然小蔡想到，数据结构课程不是学过很多查找法吗！二分法就这么出现在了眼前，对，二分查找法！，5000000000（9个0），出错；2500000000（8个0），正常。没有线索，就这么一点一点查找。花了3个小时，小蔡终于定位到出错的数值：4294967295。小蔡很纳闷，怎么是这么一个奇怪的数值呢？有零有整的。计算机专业的背景给了小蔡一个提示，不会是2的多少次幂吧？果真，4294967295是2的32次方－1。和开发人员一沟通，才发现由于开发人员设想页面最大不会超过2的32次方，所以对于这个字段可以输入的最大数值的类型，选择的是int32；但是同时又没有对超过这个范围的数值进行任何的处理，就造成了程序判断中对于请求更大数值的页面时的溢出，从而导致了产品页面的崩溃。</p>
+<p>发现了这个隐藏的缺陷，小蔡还是很有成就感的，但又觉得如果能早点知道代码的逻辑，可能自己就不会花这么长的时间了。同时，一直觉得计算机的理论知识不会应用到测试实践中，可没想到这次多亏了学校中学到的这些基础知识，不只是int32，2的32次方，甚至还有二分查找的算法也给了自己解决问题的灵感。没有这些知识，定位问题就更困难了。</p>
+<p>#####【扩展知识】<br>边界值分析<br>二分查找法</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug/">Bug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug集锦/">Bug集锦</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Series/">Series</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
       <article id="post-Bug_Series_Secutiry_In_All_Perspects" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -233,67 +429,6 @@ ga('send', 'pageview');
 <p>小蔡马上把这一发现通知项目经理，并确定这个缺陷为高优先级和高风险。整个开发团队在第一时间就修复了这个严重的缺陷。</p>
 <p>好奇心没有杀死猫，反而帮助小蔡在测试中发现了一个隐藏的重大安全性缺陷。小蔡也意识到，一个系统的安全性，并不单纯来自于防范系统外部的入侵，还需要严格审视系统内部的安全性漏洞。系统内外部的安全性是一体的，需要全面的设计。</p>
 <p>#####【扩展知识】<br>动态短信<br>随机键盘<br>SQL注入<br>OWASP Top 10<br>URL pattern<br>URL篡改</p>
-
-      
-    </div>
-    
-    
-      <footer class="article-footer">
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug/">Bug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug集锦/">Bug集锦</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Series/">Series</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-    
-      <article id="post-Bug_Series_Theory_And_Reality" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/27/Bug_Series_Theory_And_Reality/">Bug集锦 －理论与现实这么近</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/01/27/Bug_Series_Theory_And_Reality/" class="article-date">
-  <time datetime="2016-01-26T13:00:00.000Z" itemprop="datePublished">2016-01-27</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Test/">Test</a>
-  </div>
-
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>写Bug集锦的目的在于分享从业这些年来遇到的这些有趣的问题，希望在读这些小故事的同时，能带给大家一些思考。</p>
-<h3 id="理论与现实这么近"><a href="#理论与现实这么近" class="headerlink" title="理论与现实这么近"></a>理论与现实这么近</h3><p>作为计算机系毕业生的小蔡，一直觉得学校里学的理论知识，和现在的测试工作差距太大，在实际的工作中也没有什么作用。直到有一天她碰到这么一个有趣的问题。</p>
-<p>小蔡负责测试的是一个Web产品，基于不同的搜索条件，会显示大量的结果。由于搜索结果太多被分成了很多页，为了方便用户快捷跳转到特定的页面，开发人员特意设计了一个页面快速跳转的功能。</p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Bug_Series_1.1.png" alt="搜索结果页面快速跳转"></p>
-<p>图 1.1 － 搜索结果页面快速跳转</p>
-<p>在设计测试用例的时候小蔡就留心了，因为很多测试理论的书籍都描述过，对于输入框可以进行的验证点很多，比如说特殊字符、超长字符、负值、0值和null值，以及很大的数值等。对于大部分的测试用例，开发人员都处理得很好，没有发现缺陷，小蔡也松了口气。</p>
-<p>当测试到输入很大数值的用例时，由于不确定多大的数值会出错，也不能拿到代码，小蔡就自己选了一个数值：9999999999（10个9）。输入10个9、点击确定，突然，页面崩溃了！100以内的小数值，以及输入小于等于搜索结果页面数的数值等情况，小蔡在测试中都选取过，测试结果都很正常，那到底数值大到什么程度的时候页面会崩溃呢？一时想不到更好的办法，小菜只好硬着头皮使用尝试法开始确定出错的数值范围。</p>
-<p>10个9，出错；9个9，正常跳转到最后一页。突然小蔡想到，数据结构课程不是学过很多查找法吗！二分法就这么出现在了眼前，对，二分查找法！，5000000000（9个0），出错；2500000000（8个0），正常。没有线索，就这么一点一点查找。花了3个小时，小蔡终于定位到出错的数值：4294967295。小蔡很纳闷，怎么是这么一个奇怪的数值呢？有零有整的。计算机专业的背景给了小蔡一个提示，不会是2的多少次幂吧？果真，4294967295是2的32次方－1。和开发人员一沟通，才发现由于开发人员设想页面最大不会超过2的32次方，所以对于这个字段可以输入的最大数值的类型，选择的是int32；但是同时又没有对超过这个范围的数值进行任何的处理，就造成了程序判断中对于请求更大数值的页面时的溢出，从而导致了产品页面的崩溃。</p>
-<p>发现了这个隐藏的缺陷，小蔡还是很有成就感的，但又觉得如果能早点知道代码的逻辑，可能自己就不会花这么长的时间了。同时，一直觉得计算机的理论知识不会应用到测试实践中，可没想到这次多亏了学校中学到的这些基础知识，不只是int32，2的32次方，甚至还有二分查找的算法也给了自己解决问题的灵感。没有这些知识，定位问题就更困难了。</p>
-<p>#####【扩展知识】<br>边界值分析<br>二分查找法</p>
 
       
     </div>
@@ -914,71 +1049,8 @@ ga('send', 'pageview');
 
 
     
-      <article id="post-UserTesting_In_Project" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2013/01/28/UserTesting_In_Project/">用户测试User Testing在项目中的实践</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2013/01/28/UserTesting_In_Project/" class="article-date">
-  <time datetime="2013-01-27T13:00:00.000Z" itemprop="datePublished">2013-01-28</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Test/">Test</a>
-  </div>
-
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本项目是对于养老金进行管理和投资的一个网站。</p>
-<p>以往大家对于养老金甚至银行的看法是守旧和难于打交道，他们的网站也是一样的糟糕。而恰恰是这一点，被我们当做是自己做有可能解决和成功的关键。</p>
-<p>为此，我们设计了Gamification（游戏化），并通过User Testing来检验整个系统的易用性。Gamification本身也是需要通过User Testing来验证的。</p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/User_Testing.png" alt="网站界面"></p>
-<p>对于User Testing，我们是在项目初期，就邀请用户参与（当然会发放一下小礼品或者现金），来了解用户对于产品的接受程度。这对我们很重要，因为养老金的用户覆盖范围比较广，从15岁到70岁，我们主要针对的是年轻的客户，同时也需要兼顾老年用户。</p>
-<p>我们基本上会每一个月或两个月进行一次User Testing，以确定我们的方向是正确的；在项目初期User Testing的频率会更高。</p>
-<p>在User Testing的初期，选择用户也是很关键的，因为我们需要让选择的用户对实际的目标客户有好的覆盖，也需要针对不同的User Testing侧重点选择有针对性的用户。（选择新的用户vs邀请以前参与过测试的用户；选择对产品一点都不了解的客户vs邀请对产品基本概念有一定了解的用户vs产品专家。。。）</p>
-<p>在测试过程中，我们最好能控制自己去协助用户进行操作的冲动，所以最好是留一个人，甚至是不留人和用户一起测试，而是通过视频等手段来记录用户行为（同时通过摄像头来录制用户的表情也是很有帮助的）。</p>
-<p>在测试结束后，需要让用户对产品进行反馈，并协助进行总结和归纳。</p>
-<p>我们在测试结束后，还需要对所有的反馈进行分析和整理，以确定对于项目的影响以及我们对应的行动。</p>
-<p>P.S. 测试人员的选择可以不仅是那些定期地User Testing的用户，也可以是项目组或者办公室的同事，能更多更频繁地提供反馈。我们在圣诞节时尝试让在用户所在地的成员把User Testing的脚本打印出来，拿回家让家里的长辈帮助测试。因为对家人的了解程度更高，这对我们针对反馈进行的行动提供了更多的信息和依据。</p>
-<p>Gamification的wiki:<a href="http://en.wikipedia.org/wiki/Gamification" target="_blank" rel="external">http://en.wikipedia.org/wiki/Gamification</a> 以及个人觉得比较好的中文解释: <a href="http://ucdchina.com/snap/9587" target="_blank" rel="external">http://ucdchina.com/snap/9587</a></p>
-
-      
-    </div>
-    
-    
-      <footer class="article-footer">
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Practice/">Practice</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/User-Testing/">User Testing</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-    
       <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
+        <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
       </nav>
     </section>
     

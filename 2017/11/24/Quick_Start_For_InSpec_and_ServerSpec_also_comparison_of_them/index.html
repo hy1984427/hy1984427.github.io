@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Quick start for InSpec and ServerSpec also comparison of them - Test &amp; testing &amp; tester</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="InSpec and ServerSpec are Infrastructure Testing tools based on Ruby. InSpec is newly added into ThoughtWorks Tech Radar.Prerequisite:  RVM, Ruby (&amp;gt;2.2) and rubygems should be installed. Get Starte">
+<meta name="keywords" content="Infrastructure Testing,ServerSpec,Ruby,Comparison,Quick-Start,InSpec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quick start for InSpec and ServerSpec also comparison of them">
+<meta property="og:url" content="http://hy1984427.github.io/2017/11/24/Quick_Start_For_InSpec_and_ServerSpec_also_comparison_of_them/index.html">
+<meta property="og:site_name" content="Test &amp; testing &amp; tester">
+<meta property="og:description" content="InSpec and ServerSpec are Infrastructure Testing tools based on Ruby. InSpec is newly added into ThoughtWorks Tech Radar.Prerequisite:  RVM, Ruby (&amp;gt;2.2) and rubygems should be installed. Get Starte">
+<meta property="og:updated_time" content="2017-11-24T00:57:32.277Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Quick start for InSpec and ServerSpec also comparison of them">
+<meta name="twitter:description" content="InSpec and ServerSpec are Infrastructure Testing tools based on Ruby. InSpec is newly added into ThoughtWorks Tech Radar.Prerequisite:  RVM, Ruby (&amp;gt;2.2) and rubygems should be installed. Get Starte">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', '73216141', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/AboutMe.html">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hy1984427.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Quick_Start_For_InSpec_and_ServerSpec_also_comparison_of_them" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Quick start for InSpec and ServerSpec also comparison of them
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/11/24/Quick_Start_For_InSpec_and_ServerSpec_also_comparison_of_them/" class="article-date">
+  <time datetime="2017-11-23T13:00:00.000Z" itemprop="datePublished">2017-11-24</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="InSpec-and-ServerSpec-are-Infrastructure-Testing-tools-based-on-Ruby-InSpec-is-newly-added-into-ThoughtWorks-Tech-Radar"><a href="#InSpec-and-ServerSpec-are-Infrastructure-Testing-tools-based-on-Ruby-InSpec-is-newly-added-into-ThoughtWorks-Tech-Radar" class="headerlink" title="InSpec and ServerSpec are Infrastructure Testing tools based on Ruby. InSpec is newly added into ThoughtWorks Tech Radar."></a>InSpec and ServerSpec are Infrastructure Testing tools based on Ruby. InSpec is newly added into <a href="https://www.thoughtworks.com/radar" target="_blank" rel="external">ThoughtWorks Tech Radar</a>.</h5><h3 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite:"></a>Prerequisite:</h3><p>  RVM, Ruby (&gt;2.2) and rubygems should be installed.</p>
+<h3 id="Get-Started-for-InSpec"><a href="#Get-Started-for-InSpec" class="headerlink" title="Get Started for InSpec:"></a>Get Started for InSpec:</h3><ol>
+<li><p>Install InSpec.</p>
+<p><code>gem install inspec</code></p>
+</li>
+<li><p>Write and run the InSpec script according to its <a href="https://www.inspec.io/docs/reference/resources/" target="_blank" rel="external">API document</a>.</p>
+<p>You can reference the script  <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/sample_inspec.rb" target="_blank" rel="external">here</a>.</p>
+<p>Using <code>inspec exec inspec.rb</code> to run and check the result.</p>
+<p>As you can see the script is pretty much the same as the one we used for ServerSpec, you can reference that script <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/ServerSpec.zip" target="_blank" rel="external">here</a>. The instruction of running it is in <a href="http://hy1984427.github.io/2017/09/01/Qucik_Start_For_ServerSpec_and_TestInfra_also_comparison_of_them/">this article</a>.</p>
+<p>And there is <a href="https://www.inspec.io/docs/reference/migration/" target="_blank" rel="external">another official article</a> talking about the migration from ServerSpec to InSpec (we can also see the differences of resources between the two).</p>
+</li>
+<li><p>To generate a json file as the test result, we run <code>inspec exec sample_inspec.rb --format json &gt;report</code>.</p>
+<p>And it will generate the test result named “report” every time the test runs.</p>
+</li>
+</ol>
+<h3 id="Comparison-between-InSpec-and-ServerSpec"><a href="#Comparison-between-InSpec-and-ServerSpec" class="headerlink" title="Comparison between InSpec and ServerSpec:"></a>Comparison between InSpec and ServerSpec:</h3><ul>
+<li><p>InSpec has 98 types of resources but ServerSpec has only 41.</p>
+</li>
+<li><p>InSpec has more comprehensive documents, you can reference <a href="https://www.inspec.io/docs/" target="_blank" rel="external">here</a>, and it even has a series of <a href="https://www.inspec.io/tutorials/" target="_blank" rel="external">detailed tutorials</a>.</p>
+</li>
+</ul>
+<p>In general, I would suggest to use InSpec for Infrastructure Testing in new projects.</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Comparison/">Comparison</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/InSpec/">InSpec</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Infrastructure-Testing/">Infrastructure Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quick-Start/">Quick-Start</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ServerSpec/">ServerSpec</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/18/Configure_ServerSpec_To_Run_Tests_Against_Multiple_Hosts/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Configure ServerSpec to run tests against multiple hosts&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Huang Yong&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

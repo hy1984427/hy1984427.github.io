@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>在ThoughtWroks内部，我们如何度量交付项目 - Test &amp; testing &amp; tester</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="度量从来就不是件容易的事，因为我们想通过度量得到的并不仅仅是数据和表格，而是激励团队追求更高目标的动力。 软件项目的度量通常会分为两种，一种是针对产品的度量，一种是针对项目的度量。 之所以这么区分是因为产品的度量在不同的公司之间通常是一致的，不管它们是否使用敏捷开发模式。产品的度量一般包含以下内容：  线上Bug数和严重等级  用户评分  用户粘性：例如跳出率（Bounce Rate），留存率（R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在ThoughtWroks内部，我们如何度量交付项目">
+<meta property="og:url" content="http://hy1984427.github.io/2018/12/20/How_To_Measure_The_Success_Of_A_Delivery_Project_In_ThoughtWorks_CN/index.html">
+<meta property="og:site_name" content="Test &amp; testing &amp; tester">
+<meta property="og:description" content="度量从来就不是件容易的事，因为我们想通过度量得到的并不仅仅是数据和表格，而是激励团队追求更高目标的动力。 软件项目的度量通常会分为两种，一种是针对产品的度量，一种是针对项目的度量。 之所以这么区分是因为产品的度量在不同的公司之间通常是一致的，不管它们是否使用敏捷开发模式。产品的度量一般包含以下内容：  线上Bug数和严重等级  用户评分  用户粘性：例如跳出率（Bounce Rate），留存率（R">
+<meta property="og:updated_time" content="2018-12-20T05:34:34.607Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在ThoughtWroks内部，我们如何度量交付项目">
+<meta name="twitter:description" content="度量从来就不是件容易的事，因为我们想通过度量得到的并不仅仅是数据和表格，而是激励团队追求更高目标的动力。 软件项目的度量通常会分为两种，一种是针对产品的度量，一种是针对项目的度量。 之所以这么区分是因为产品的度量在不同的公司之间通常是一致的，不管它们是否使用敏捷开发模式。产品的度量一般包含以下内容：  线上Bug数和严重等级  用户评分  用户粘性：例如跳出率（Bounce Rate），留存率（R">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', '73216141', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/AboutMe.html">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hy1984427.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-How_To_Measure_The_Success_Of_A_Delivery_Project_In_ThoughtWorks_CN" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在ThoughtWroks内部，我们如何度量交付项目
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2018/12/20/How_To_Measure_The_Success_Of_A_Delivery_Project_In_ThoughtWorks_CN/" class="article-date">
+  <time datetime="2018-12-19T13:00:00.000Z" itemprop="datePublished">2018-12-20</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Measurement/">Measurement</a><span>></span><a class="article-category-link" href="/categories/Measurement/Project-Management/">Project Management</a><span>></span><a class="article-category-link" href="/categories/Measurement/Project-Management/ThoughtWorks/">ThoughtWorks</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>度量</strong>从来就不是件容易的事，因为我们想通过度量得到的并不仅仅是数据和表格，而是激励团队追求更高目标的动力。</p>
+<p>软件项目的度量通常会分为两种，一种是针对产品的度量，一种是针对项目的度量。</p>
+<p>之所以这么区分是因为产品的度量在不同的公司之间通常是一致的，不管它们是否使用敏捷开发模式。产品的度量一般包含以下内容：</p>
+<ul>
+<li><p>线上Bug数和严重等级</p>
+</li>
+<li><p>用户评分</p>
+</li>
+<li><p>用户粘性：例如跳出率（Bounce Rate），留存率（Retention Rate），转化率（Conversion Rate），单次使用时长（Duration），使用间隔（Interval）等；</p>
+</li>
+<li><p>用户数量：例如新增用户数（New Users），活跃用户数（Active Users），升级用户数（Updated Users）等；</p>
+</li>
+<li><p>访问量：例如页面浏览量（Page View)，独立访问者（Unique Visitor），访问数（Visit）等；</p>
+</li>
+<li><p>利润：例如每用户平均收益（Average Revenue Per User, ARPU），每付费用户平均收益（Average Revenue Per Paid User, ARPPU），月付费率（Monthly Payment Ratio, MPR），生命周期价值（Life Time Value, LTV）等。</p>
+</li>
+</ul>
+<p>这些度量都是数据驱动的，因此也更客观。</p>
+<p>项目的度量就并非如此了。而且项目的度量也包含了两方面的度量：</p>
+<ol>
+<li>我们如何评价项目组？</li>
+<li>我们如何评价独立的项目成员？</li>
+</ol>
+<p><strong>传统上</strong>我们会使用诸如KPI和ROI（投入产出比）来度量项目组，用KPI以及管理者的意见来度量个人的贡献。</p>
+<p><strong>在敏捷的环境中</strong>，尤其是像ThoughtWorks这样没有自己产品而是为客户提供专业服务的公司里，对产品和对项目这两方面的度量就融合在一起了。</p>
+<ul>
+<li><p>首先，<strong>度量项目的指标被合并进我们如何度量项目中</strong>，而不是像在产品公司中，这两者是分离的。也就是说，如果产品的度量达到或者超出客户的期望，团队就能在客户满意度这一方面的度量中表现突出。因此，项目组受此驱动，自然会持续关注产品的各项指标，并尽力把这些指标集成进CI流水线和诸如NewRelic的各种监测和分析平台中。</p>
+<p>  同时，<strong>项目组也会聚焦于向客户交付（对于终端用户，对于客户和客户公司的）价值</strong>，以便提高客户满意度。当要开发某一特性时，项目团队总是不急于着手实现功能，而是试图找出特性需要解决的问题和根因，特性完成时交付的各种价值，再集思广益寻求更好的解决办法从而使客户的ROI更高。这种方法促使每个团队成员在日常工作中自己思考自己做的事情给产品和团队带来的价值，更有效地选择和处理高价值和高优先级的事情，而不是只关注于手里是否有活，自己是否显得很忙而不考虑产品。</p>
+</li>
+<li><p>其次，<strong>客户关系对于度量项目也至关重要</strong>。这并不是说ThoughtWorks会不假思索地接受所有的客户请求，而是根据我们的经验和专业性给出客户最好的解决方案，哪怕这可能会和客户因为理念/想法不一致而产生冲突。因为我们相信，本着对客户负责的态度和客户进行沟通，协调和平衡短期效益和长期受益从而达成共识要比唯唯诺诺更能给客户带来价值。</p>
+</li>
+<li><p>再次，<strong>ROI和利润仍然是评价项目时重要的一环</strong>。每个公司最基本的需求就是生存，而‘<strong>合理的</strong>’利润才能保持公司的问题发展。为什么我们在这里要提‘合理的’利润而不是越高越好呢？因为追求高利润会导致在别的方面（下面会提到）做出妥协，所以为了更方面的平衡，我们只会追求‘合理的’利润。</p>
+</li>
+<li><p>然后，<strong>对客户的影响力也是度量关注的一个要点</strong>。多数情况下，之所以客户选择ThoughtWorks并不单纯想让我们交付一个产品或者功能，更重要的是希望我们能通过协作开发来提升客户团队的能力，引入新的思维、技术趋势和技能。为了达到这个目标，项目团队通常会定期举行各种分享活动，并通过结对和只是分享等形式影响更多人。因此，对影响力的度量也被当作是对这些活动的反馈而被包含近项目度量中。</p>
+</li>
+<li><p>此外，<strong>每个团队成员的满意程度也是项目度量的核心标准之一</strong>。纵然让项目组种每个人都开心耗时耗力，可是只有这么做才能让每个人都关注于技能的提升，做有挑战的事情，从而对产品贡献更多，工作也会更有效率。ThoughtWorks相信只有身心健康的团队和团队成员才能更高效和充满活力地完成各种充满挑战的项目。</p>
+</li>
+<li><p>还有，<strong>提升团队成员能力不仅是每个人的责任，也是项目组和ThoughtWorks关注的</strong>，因此也是项目度量的一个方面。只有当团队成员的能力越强，经验越多，才更有可能独立完成更有挑战的任务和项目，才会对客户和行业产生更深更广的影响。</p>
+</li>
+<li><p>最后，<strong>在项目度量中还会考虑通过产品和在项目本身的开发过程中，我们是否让世界变得更好了</strong>。ThoughtWorks希望通过我们在技术上的努力，让世界变得更平等更和谐，所以很多时候，为了追求这些美好的愿望，ThoughtWorks会舍弃那些更赚钱的项目而投身于公益类的项目中。</p>
+</li>
+</ul>
+<p>总结一下，ThoughtWorks会从以下7个方面来度量一个交付项目：</p>
+<ol>
+<li>客户满意度和交付的价值</li>
+<li>客户关系</li>
+<li>利润</li>
+<li>对客户的影响</li>
+<li>团队成员满意度</li>
+<li>团队成员的能力提升</li>
+<li>社会公正</li>
+</ol>
+<p>如果你熟悉ThoughtWorks的3个支柱（<strong>支柱1</strong>:可持续的业务；<strong>支柱2</strong>:软件卓越；<strong>支柱3</strong>:社会和经济公正）的业务模式，你就会发现对于项目的度量恰恰反应了这种业务模式。上述度量中的1～3体现了支柱1:可持续的业务；度量中的4～6体现了支柱2:软件卓越；而度量中的7体现了支柱3:社会和经济公正。</p>
+<p>在我看来，正如<strong>康威定律</strong>中所说“任何设计系统的组织，必然会产生以下设计结果：即其结构就是该组织沟通结构的写照。简单来说： 产品必然是其组织沟通结构的缩影。”，<strong>对项目的度量也必然是其商业模式和企业文化的缩影</strong>。</p>
+<p>你的公司是如何来进行度量的呢？</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/13/What_I_Learnt_From_Interviews/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">What I learnt from interviews&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Huang Yong&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

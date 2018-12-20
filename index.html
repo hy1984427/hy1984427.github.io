@@ -67,6 +67,298 @@ ga('send', 'pageview');
   </div>
 </header>
     <section id="main" class="outer">
+      <article id="post-How_To_Measure_The_Success_Of_A_Delivery_Project_In_ThoughtWorks_CN" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/20/How_To_Measure_The_Success_Of_A_Delivery_Project_In_ThoughtWorks_CN/">在ThoughtWroks内部，我们如何度量交付项目</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2018/12/20/How_To_Measure_The_Success_Of_A_Delivery_Project_In_ThoughtWorks_CN/" class="article-date">
+  <time datetime="2018-12-19T13:00:00.000Z" itemprop="datePublished">2018-12-20</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Measurement/">Measurement</a><span>></span><a class="article-category-link" href="/categories/Measurement/Project-Management/">Project Management</a><span>></span><a class="article-category-link" href="/categories/Measurement/Project-Management/ThoughtWorks/">ThoughtWorks</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>度量</strong>从来就不是件容易的事，因为我们想通过度量得到的并不仅仅是数据和表格，而是激励团队追求更高目标的动力。</p>
+<p>软件项目的度量通常会分为两种，一种是针对产品的度量，一种是针对项目的度量。</p>
+<p>之所以这么区分是因为产品的度量在不同的公司之间通常是一致的，不管它们是否使用敏捷开发模式。产品的度量一般包含以下内容：</p>
+<ul>
+<li><p>线上Bug数和严重等级</p>
+</li>
+<li><p>用户评分</p>
+</li>
+<li><p>用户粘性：例如跳出率（Bounce Rate），留存率（Retention Rate），转化率（Conversion Rate），单次使用时长（Duration），使用间隔（Interval）等；</p>
+</li>
+<li><p>用户数量：例如新增用户数（New Users），活跃用户数（Active Users），升级用户数（Updated Users）等；</p>
+</li>
+<li><p>访问量：例如页面浏览量（Page View)，独立访问者（Unique Visitor），访问数（Visit）等；</p>
+</li>
+<li><p>利润：例如每用户平均收益（Average Revenue Per User, ARPU），每付费用户平均收益（Average Revenue Per Paid User, ARPPU），月付费率（Monthly Payment Ratio, MPR），生命周期价值（Life Time Value, LTV）等。</p>
+</li>
+</ul>
+<p>这些度量都是数据驱动的，因此也更客观。</p>
+<p>项目的度量就并非如此了。而且项目的度量也包含了两方面的度量：</p>
+<ol>
+<li>我们如何评价项目组？</li>
+<li>我们如何评价独立的项目成员？</li>
+</ol>
+<p><strong>传统上</strong>我们会使用诸如KPI和ROI（投入产出比）来度量项目组，用KPI以及管理者的意见来度量个人的贡献。</p>
+<p><strong>在敏捷的环境中</strong>，尤其是像ThoughtWorks这样没有自己产品而是为客户提供专业服务的公司里，对产品和对项目这两方面的度量就融合在一起了。</p>
+<ul>
+<li><p>首先，<strong>度量项目的指标被合并进我们如何度量项目中</strong>，而不是像在产品公司中，这两者是分离的。也就是说，如果产品的度量达到或者超出客户的期望，团队就能在客户满意度这一方面的度量中表现突出。因此，项目组受此驱动，自然会持续关注产品的各项指标，并尽力把这些指标集成进CI流水线和诸如NewRelic的各种监测和分析平台中。</p>
+<p>  同时，<strong>项目组也会聚焦于向客户交付（对于终端用户，对于客户和客户公司的）价值</strong>，以便提高客户满意度。当要开发某一特性时，项目团队总是不急于着手实现功能，而是试图找出特性需要解决的问题和根因，特性完成时交付的各种价值，再集思广益寻求更好的解决办法从而使客户的ROI更高。这种方法促使每个团队成员在日常工作中自己思考自己做的事情给产品和团队带来的价值，更有效地选择和处理高价值和高优先级的事情，而不是只关注于手里是否有活，自己是否显得很忙而不考虑产品。</p>
+</li>
+<li><p>其次，<strong>客户关系对于度量项目也至关重要</strong>。这并不是说ThoughtWorks会不假思索地接受所有的客户请求，而是根据我们的经验和专业性给出客户最好的解决方案，哪怕这可能会和客户因为理念/想法不一致而产生冲突。因为我们相信，本着对客户负责的态度和客户进行沟通，协调和平衡短期效益和长期受益从而达成共识要比唯唯诺诺更能给客户带来价值。</p>
+</li>
+<li><p>再次，<strong>ROI和利润仍然是评价项目时重要的一环</strong>。每个公司最基本的需求就是生存，而‘<strong>合理的</strong>’利润才能保持公司的问题发展。为什么我们在这里要提‘合理的’利润而不是越高越好呢？因为追求高利润会导致在别的方面（下面会提到）做出妥协，所以为了更方面的平衡，我们只会追求‘合理的’利润。</p>
+</li>
+<li><p>然后，<strong>对客户的影响力也是度量关注的一个要点</strong>。多数情况下，之所以客户选择ThoughtWorks并不单纯想让我们交付一个产品或者功能，更重要的是希望我们能通过协作开发来提升客户团队的能力，引入新的思维、技术趋势和技能。为了达到这个目标，项目团队通常会定期举行各种分享活动，并通过结对和只是分享等形式影响更多人。因此，对影响力的度量也被当作是对这些活动的反馈而被包含近项目度量中。</p>
+</li>
+<li><p>此外，<strong>每个团队成员的满意程度也是项目度量的核心标准之一</strong>。纵然让项目组种每个人都开心耗时耗力，可是只有这么做才能让每个人都关注于技能的提升，做有挑战的事情，从而对产品贡献更多，工作也会更有效率。ThoughtWorks相信只有身心健康的团队和团队成员才能更高效和充满活力地完成各种充满挑战的项目。</p>
+</li>
+<li><p>还有，<strong>提升团队成员能力不仅是每个人的责任，也是项目组和ThoughtWorks关注的</strong>，因此也是项目度量的一个方面。只有当团队成员的能力越强，经验越多，才更有可能独立完成更有挑战的任务和项目，才会对客户和行业产生更深更广的影响。</p>
+</li>
+<li><p>最后，<strong>在项目度量中还会考虑通过产品和在项目本身的开发过程中，我们是否让世界变得更好了</strong>。ThoughtWorks希望通过我们在技术上的努力，让世界变得更平等更和谐，所以很多时候，为了追求这些美好的愿望，ThoughtWorks会舍弃那些更赚钱的项目而投身于公益类的项目中。</p>
+</li>
+</ul>
+<p>总结一下，ThoughtWorks会从以下7个方面来度量一个交付项目：</p>
+<ol>
+<li>客户满意度和交付的价值</li>
+<li>客户关系</li>
+<li>利润</li>
+<li>对客户的影响</li>
+<li>团队成员满意度</li>
+<li>团队成员的能力提升</li>
+<li>社会公正</li>
+</ol>
+<p>如果你熟悉ThoughtWorks的3个支柱（<strong>支柱1</strong>:可持续的业务；<strong>支柱2</strong>:软件卓越；<strong>支柱3</strong>:社会和经济公正）的业务模式，你就会发现对于项目的度量恰恰反应了这种业务模式。上述度量中的1～3体现了支柱1:可持续的业务；度量中的4～6体现了支柱2:软件卓越；而度量中的7体现了支柱3:社会和经济公正。</p>
+<p>在我看来，正如<strong>康威定律</strong>中所说“任何设计系统的组织，必然会产生以下设计结果：即其结构就是该组织沟通结构的写照。简单来说： 产品必然是其组织沟通结构的缩影。”，<strong>对项目的度量也必然是其商业模式和企业文化的缩影</strong>。</p>
+<p>你的公司是如何来进行度量的呢？</p>
+
+      
+    </div>
+    
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-What_I_Learnt_From_Interviews" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/13/What_I_Learnt_From_Interviews/">What I learnt from interviews</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2018/12/13/What_I_Learnt_From_Interviews/" class="article-date">
+  <time datetime="2018-12-12T13:00:00.000Z" itemprop="datePublished">2018-12-13</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Interview/">Interview</a><span>></span><a class="article-category-link" href="/categories/Interview/ThoughtWorks/">ThoughtWorks</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Interview</strong> is a two-edge sword to an interviewer:</p>
+<ul>
+<li><p>if you attend too many times, it would be a burden as it will take a lot of time;</p>
+</li>
+<li><p>if you don’t take part in it, the company will lack of adequate qualified employee, thus you will work to death, but no one can help you out.</p>
+</li>
+</ul>
+<p>In this article, I will not talk about the technics we can use in the interview to find out a qualified co-worker, but something I learnt from the interviews which helps me to <strong>change my mindset</strong> and help me to use the time for interview wisely.</p>
+<p>Many people are pleased when they are asked to join an interview as an interviewer for the first time, because they treat interview as a privilege of senior employee, while after some time, they think interview is just a waste of time since they just repeat themselves regardless of the background of the candidate.</p>
+<p>Thus, the first thing we need to change in an interview is our mindset: we need to understand <strong>the benefits</strong> an interview can bring to us and to the company.</p>
+<ul>
+<li><p><strong>Find the qualified co-worker is the most obvious one</strong>.</p>
+<p> It seems only the company would benefit from this, but if the candidate is supposed to join YOUR team, the interview becomes more important to you. You should know there is no solid team in which no one can leave, so it’s important to help yourself evaluate whether the candidate is the one you want to work with.</p>
+</li>
+<li><p><strong>Learn from the others</strong> can also happen in the interview.</p>
+<p> It’s not only learning from your peer interviewer about their interview skills, their style and even their knowledge, but also from the candidate.</p>
+<p> By definition, “An interview is a conversation where questions are asked and answers are given … between an interviewer and an interviewee.”</p>
+<p> As we can see, interview is not a one-way conversation but a two-way communication, which requires both parties can share their understanding and experience around certain topic, rather than just letting the candidate ask questions at the end of the interview.</p>
+<p> We all understand everyone is unique and has their own experience and knowledge, at the meanwhile, no one is perfect. Hence, we need to learn from everyone. The person who join the interview as an interviewee doesn’t mean they are inferior than the interviewer; so if you are a passionate learner, you won’t miss this opportunity. Sometimes, if you ask the candidate the real problem in your current project, they may help you to find a better solution!</p>
+</li>
+<li><p>Like ‘Learning by Teaching’, <strong>learning by interviewing</strong>.</p>
+<p> <em>In the preparation</em>, you need to consolidate your knowledge for the questions you are going to ask; you also need to prepare for the questions the candidate is going to ask.</p>
+<p> <em>In the interview</em>, you can learn from both your pair interviewer and the candidate.</p>
+<p> <em>After the interview</em>, you can learn from the retro by yourself or with your pair, or from the feedbacks from your pair and even the candidate.</p>
+</li>
+<li><p>You can also <strong>practise and excel your skills</strong> in the interview.</p>
+<p> There are lots of soft skills you can practise and improve: such as facilitation skills, communication skill and even summarization skill. The more you practise, the more expertise you will have.</p>
+</li>
+<li><p>Interview is also <strong>a propaganda</strong>.</p>
+<p> In the interview, you will demonstrate the culture of the company and the way of working. You are the window through which the candidate can know the company.</p>
+</li>
+</ul>
+<p>As above, interview is not a waste of time, but a medium for us to learn and improve at the mean time.</p>
+<p>If we don’t think it’s a waste any more, how we can make it <strong>more efficient</strong> for our goals?</p>
+<ul>
+<li><p>Personally speaking, I prepared my set of questions for the interview, so that I won’t take a lot effort in the questions themselves but focused on the candidates and their experience to dig out questions in depth, which can lead the answers more detailed, meaningful and knowledgeable.</p>
+</li>
+<li><p>Also, before interview, I will go through the candidate’s resume to mark all the key points, such as key roles, changes and something may lead to an in-depth question, and also write down my assumptions, so that I can validate in the interview.</p>
+</li>
+<li><p>In the interview, I will put myself into the candidate’s situation in their narratives, think about my own actions, compare them to the candidate’s and then figure the cause of difference and learn how to improve after the interview.</p>
+</li>
+<li><p>After interview, I will plan my actions to improve according to the summary I written down in the interview. I will also ask my pair to give me feedback.</p>
+</li>
+</ul>
+<p>Interview can be anything you want, according to how you see it. <strong>Don’t be a slave of interview, be the master of it!</strong></p>
+
+      
+    </div>
+    
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-How_To_Measure_The_Success_Of_A_Delivery_Project_In_ThoughtWorks" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/06/How_To_Measure_The_Success_Of_A_Delivery_Project_In_ThoughtWorks/">How to measure the success of a delivery project in ThoughtWorks</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2018/12/06/How_To_Measure_The_Success_Of_A_Delivery_Project_In_ThoughtWorks/" class="article-date">
+  <time datetime="2018-12-05T13:00:00.000Z" itemprop="datePublished">2018-12-06</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Measurement/">Measurement</a><span>></span><a class="article-category-link" href="/categories/Measurement/Project-Management/">Project Management</a><span>></span><a class="article-category-link" href="/categories/Measurement/Project-Management/ThoughtWorks/">ThoughtWorks</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Measurement</strong> is never been an easy job. It’s not just about the metrics but measurement also acts as a motivation for the team to achieve a better goal.</p>
+<p>There are two kinds of measurements commonly used: the measurement of a product and a project.</p>
+<p>You may wonder why we separate it like this. It is because the measurement of a product is quite common in most companies, whether the product was developed in an Agile way or traditional way. Usually it includes following contents:</p>
+<ul>
+<li><p>Bugs found in production (with severity);</p>
+</li>
+<li><p>Customer Rating (if applicable);</p>
+</li>
+<li><p>Customer Engagement: e.g. bounce rate, retention rate, conversion rate, duration, interval;</p>
+</li>
+<li><p>Number of Users: e.g. active users, new users and updated users;</p>
+</li>
+<li><p>Visits: e.g. page view/PV, unique visitor/UV, total visits;</p>
+</li>
+<li><p>Revenue: e.g. average revenue per user/ARPU, average revenue per paid user/ARPPU, monthly payment ratio/MPR, lifetime value/LTV.</p>
+</li>
+</ul>
+<p>All those measurements are data driven, thus they are objective.</p>
+<p>But when it comes to measurement of a project, things are different. The measurement of a project combines two aspects:</p>
+<ol>
+<li><p>how do we review the project team?</p>
+</li>
+<li><p>how do we review each individual team member?</p>
+</li>
+</ol>
+<p><strong>Traditionally</strong>, we use Key Performance Indicators (KPI) or Return on investment (ROI) to evaluate the team, using KPI and manager’s opinion to evaluate team members.</p>
+<p><strong>In an Agile world</strong>, especially in a company like ThoughtWorks, which doesn’t have a product itself but delivers value to clients through product delivery, the measurements are combined.</p>
+<ul>
+<li><p>Firstly, <strong>the product success metrics are aggregated into how we measure the project</strong>; unlike the traditional way, the measurement of a product and the project to deliver it are separated. That is to say, if the measurement of the product met or went beyond the client’s expectation, the team will get a high client satisfaction score. Hence, the project team is continuously monitoring product metrics , mostly by integrating them into CI pipelines and analytical platform such as New Relic.</p>
+<p>  In the meantime, <strong>the project team is also focused on delivering value to customers</strong> (end-user, stakeholders and the client’s company), which can also improve the client’s satisfaction. When implementing a feature, the team will always figure out the hidden problem to be solved and the value delivered when it’s done and then try to brainstorm all the possible solutions before actually working on it. This approach forces everyone to think about the value they bring to product and team in daily work, rather than just piling up an endless backlog and try to make themselves busy but never really think about the product.</p>
+</li>
+<li><p>Secondly, as part of the measurements, <strong>the client’s relationship is also taken into consideration.</strong> In this aspect, ThoughtWorks expects the team to provide the best solutions based on the experience and expertise, even if this does not align with what the client originally asked for. This benefits the relationship in the long run and from a big picture because the client understands that we are focused on the things that bring them value.</p>
+</li>
+<li><p>Thirdly, <strong>ROI or margin also plays an important role in the review.</strong> Every company’s primary objective is to survive, so only ‘Reasonable’ margin can help the company to grow sustainably. Why does ThoughtWorks think that the margin should be ‘Reasonable’ rather than as much as possible? That’s due to the rest of aspects we need to think about in the review listed below and then do a trade-off.</p>
+</li>
+<li><p>Fourthly, <strong>the influence on client is also considered to be an important aspect in the review.</strong>  In most cases, ThoughtWorks is not only considered as a vendor to just deliver a product or a piece of work, but more importantly – leveraging the client’s team, bringing new thinking and technical expertise as well. To meet this expectation, usually the team conducts brown bag sessions, pair programming and knowledge sharing to influence more. As a result, measurement of influence is served as feedback to those actions.</p>
+</li>
+<li><p>Fifthly, <strong>the satisfaction of each team member is also a critical measurement among all the measurements.</strong> It takes great efforts to make everyone in the team happy, since everyone is eager to improve their own skills, to work on challenging tasks, to contribute more to the product, to work more efficiently, and, of course to not have to work overtime. This is why ThoughtWorks values health of both project and team members and believes it can bring more efficiency and energy to the team.</p>
+</li>
+<li><p>Sixthly, <strong>the leveraging of team members is important</strong> not just from team member’s personal perspective, but also as a company like ThoughtWorks. The more experience and expertise the employee has, the more challenge situation and project they can handle, thus the more influence on client and industry the company can have.</p>
+</li>
+<li><p>Last but not the least, <strong>how we change the world is also largely considered in the measurements.</strong> ThoughtWorks always gives the products and projects which can have more social and economic justice influence a high priority, even for sometimes, it means less profit.</p>
+</li>
+</ul>
+<p><strong>In summary</strong>, ThoughtWorks assesses a delivery projects from 7 aspects:</p>
+<ol>
+<li>Client’s satisfaction and value delivered</li>
+<li>Client Relationship</li>
+<li>Margin</li>
+<li>Influence on Client</li>
+<li>Team members’ satisfaction</li>
+<li>Leveraging of team</li>
+<li>Social and Economic Justice</li>
+</ol>
+<p>If you are familiar with ThoughtWorks’ three pillars Business Model (<strong>Pillar 1</strong>: Sustainable Business; <strong>Pillar 2</strong>: Software Excellence; <strong>Pillar 3</strong>: Social and economic justice), you will find the measurements just reflect the business models. The measurements 1 to 3 are aligned with Pillar 1, 4 to 6 are aligned with pillar 2 and 7 is aligned with Pillar 3.</p>
+<p>To my experience, just like in <strong>Conway’s law</strong>:” organizations which design systems … are constrained to produce designs which are copies of the communication structures of these organizations.”; an organization is constrained to produce design the measurements of a project which are copies of the business model and culture of that organization.</p>
+<p>What are the measurements in your company?</p>
+
+      
+    </div>
+    
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
       <article id="post-Quick_Start_For_UI_tests_with_XCTest" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -759,523 +1051,8 @@ ga('send', 'pageview');
 
 
     
-      <article id="post-Quick_Start_For_Mocha_Chai_SuperTest_In_API_Testing_With_Tips_And_Mock_Server_Moco" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/14/Quick_Start_For_Mocha_Chai_SuperTest_In_API_Testing_With_Tips_And_Mock_Server_Moco/">Quick start for Mocha + Chai + SuperTest in API Testing with Mock Server (moco) and Tips</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2017/07/14/Quick_Start_For_Mocha_Chai_SuperTest_In_API_Testing_With_Tips_And_Mock_Server_Moco/" class="article-date">
-  <time datetime="2017-07-13T14:00:00.000Z" itemprop="datePublished">2017-07-14</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="There-are-many-combinations-to-test-APIs-but-here-we-choose-a-commonly-used-combination-for-demonstration-the-rests-will-be-pretty-much-the-same-or-likely-And-we-will-use-moco-to-quickly-simulate-a-server"><a href="#There-are-many-combinations-to-test-APIs-but-here-we-choose-a-commonly-used-combination-for-demonstration-the-rests-will-be-pretty-much-the-same-or-likely-And-we-will-use-moco-to-quickly-simulate-a-server" class="headerlink" title="There are many combinations to test APIs, but here we choose a commonly used combination for demonstration, the rests will be pretty much the same or likely. And we will use moco to quickly simulate a server."></a>There are many combinations to test APIs, but here we choose a commonly used combination for demonstration, the rests will be pretty much the same or likely. And we will use moco to quickly simulate a server.</h5><h3 id="Environment-Settings"><a href="#Environment-Settings" class="headerlink" title="Environment Settings:"></a>Environment Settings:</h3><ol>
-<li><p>Install Homebrew</p>
-<p><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p>
-</li>
-<li><p>Install NodeJS</p>
-<p><code>brew install node</code></p>
-</li>
-<li><p>Install Mocha, Chai, SuperTest, Exoress and Body-Parser</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> -g mocha</div><div class="line">npm <span class="keyword">install</span> chai</div><div class="line">npm <span class="keyword">install</span> supertest</div><div class="line">npm <span class="keyword">install</span> express</div><div class="line">npm <span class="keyword">install</span> <span class="keyword">body</span>-parser</div></pre></td></tr></table></figure>
-</li>
-<li><p>Download the moco standalone file from <a href="http://central.maven.org/maven2/com/github/dreamhead/moco-runner/0.11.1/moco-runner-0.11.1-standalone.jar" target="_blank" rel="external">Github</a></p>
-</li>
-<li><p>Since Mocha will only run scripts under “test” folder, so we have to create a folder named “test”.</p>
-</li>
-</ol>
-<h3 id="Start-a-simple-server-and-test-on-it"><a href="#Start-a-simple-server-and-test-on-it" class="headerlink" title="Start a simple server and test on it:"></a>Start a simple server and test on it:</h3><ol>
-<li><p>Create a json file named “user1.json”, and add following content to it:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"response"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"status"</span> : <span class="string">"200"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-<p><em>Please note: we only define the HTTP status code here for now.</em></p>
-</li>
-<li><p>Start the Mock server using the command when under the “test” folder:</p>
-<p><code>java -jar moco-runner-0.11.1-standalone.jar http -p 3000 -c user1.json</code></p>
-<p>And you should see following lines in your Terminal:</p>
-<figure class="highlight basic"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">10 </span>Jul <span class="number">2017</span> <span class="number">16</span>:<span class="number">17</span>:<span class="number">43</span> [main] INFO  Server is started at <span class="number">3000</span></div><div class="line"><span class="symbol">10 </span>Jul <span class="number">2017</span> <span class="number">16</span>:<span class="number">17</span>:<span class="number">43</span> [main] INFO  Shutdown port is <span class="number">56123</span></div><div class="line"><span class="symbol">10 </span>Jul <span class="number">2017</span> <span class="number">16</span>:<span class="number">17</span>:<span class="number">45</span> [nioEventLoopGroup-<span class="number">3</span>-<span class="number">2</span>] INFO  Request received:</div></pre></td></tr></table></figure>
-</li>
-<li><p>You can open the URL <a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a> in browser to check the response of the API, but currently since we havn’t set and response value except the status code, so you won’t see anything in the browser.</p>
-</li>
-<li><p>Create a script file named “user1_test.js”, and add following to it:</p>
-<p>1) Add the alias to shorten the names for requiring libs:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> should = <span class="built_in">require</span>(<span class="string">'chai'</span>).should(),</div><div class="line">expect = <span class="built_in">require</span>(<span class="string">'chai'</span>).expect,</div><div class="line">supertest = <span class="built_in">require</span>(<span class="string">'supertest'</span>),</div></pre></td></tr></table></figure>
-<p>2) Setup the URL we want to test against:</p>
-<p><code>api = supertest(&#39;http://localhost:3000&#39;);</code></p>
-<p>3) Define a function to describe the feature we want to test:</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">describe(<span class="string">'User'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>4) Define a detailed test step to execute the test script, by adding it in the content of function above:</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">it('should return a response with HTTP code <span class="number">200</span>', function(<span class="name">done</span>) &#123;</div><div class="line">  api.get('').expect(<span class="number">200</span>, done)<span class="comment">;</span></div><div class="line">&#125;)<span class="comment">;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>Run the test to check the result by using:</p>
-<p><code>mocha</code> or <code>mocha user1_test.js</code></p>
-<p>And you should see the result like:</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  ✓ should return <span class="selector-tag">a</span> response with HTTP <span class="selector-tag">code</span> <span class="number">200</span></div><div class="line"></div><div class="line"><span class="number">1</span> passing (<span class="number">28ms</span>)</div></pre></td></tr></table></figure>
-<p>Great! It works.</p>
-</li>
-<li><p>Now, let’s make sure it works as expected by change the expected HTTP code to 404, and run it again. You should see the following:</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  1) should return a response with HTTP code 200</div><div class="line"></div><div class="line">0 passing (32ms)</div><div class="line">1 failing</div><div class="line"></div><div class="line">1)<span class="built_in"> User </span>should return a response with HTTP code 200:</div><div class="line">   Error: expected 404 <span class="string">"Not Found"</span>, got 200 <span class="string">"OK"</span></div></pre></td></tr></table></figure>
-<p>Awesome! It means the test really works. Now, revert the change.</p>
-</li>
-<li><p>It’s time to add more parameters to make it a little complex.</p>
-<p>1) Add the formatter of HTTP request header in test script, and change the line of API test to following:</p>
-<p><code>api.get(&#39;&#39;).set(&#39;Accept&#39;, &#39;application/json&#39;).expect(200, done);</code></p>
-<p>2) Change the response of server to point to a specific URL, by adding the URI above the HTTP status code in “user1.json”, and the entire file should looks like:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"request"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"uri"</span> : <span class="string">"/users/1"</span></div><div class="line">    &#125;,</div><div class="line">  <span class="attr">"response"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"status"</span> : <span class="string">"200"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-<p><em>Please note: don’t bother to restart the Mock Server. Once you save the json file with correct format moco provided, it will restart itself automatically. But if you save with any error, you have to fix it before start it, otherwise it won’t response correctly. For detailed moco usage and API docuemnts, please refer to the Documents section on <a href="https://github.com/dreamhead/moco" target="_blank" rel="external">moco Github page</a>.</em></p>
-<p>3) Now, it’s time to change the test script accordingly. We need to change the line of API test to following:</p>
-<p><code>api.get(&#39;/users/1&#39;).set(&#39;Accept&#39;, &#39;application/json&#39;).expect(200, done);</code></p>
-<p>4) Let’s run the test script again, you should see the test pass:</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">✓ should return a response with HTTP code <span class="number">200</span> (<span class="number">177</span>ms)</div><div class="line"></div><div class="line"><span class="number">1</span> passing (<span class="number">186</span>ms)</div></pre></td></tr></table></figure>
-<p>5) We can also add some text response into API response, like following:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"request"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"uri"</span> : <span class="string">"/users/1"</span></div><div class="line">    &#125;,</div><div class="line">  <span class="attr">"response"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"status"</span> : <span class="string">"200"</span>,</div><div class="line">      <span class="attr">"json"</span>:</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"text"</span>: <span class="string">"Not Empty"</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-<p>6) Then change the test script correspondingly:</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">it('should return a response with HTTP code <span class="number">200</span> and the response text should be <span class="string">"Not Empty"</span>', function(<span class="name">done</span>) &#123;</div><div class="line">  api.get('/users/1').set('Accept', 'application/json').expect(<span class="number">200</span>).end(<span class="name">function</span>(<span class="name">err</span>,res)&#123;</div><div class="line">    expect(<span class="name">res</span>.body).to.have.property(<span class="string">"text"</span>)<span class="comment">;</span></div><div class="line">    expect(<span class="name">res</span>.body.text).to.equal(<span class="string">"Not Empty"</span>)<span class="comment">;</span></div><div class="line">    done(<span class="name">err</span>)<span class="comment">;</span></div><div class="line">  &#125;)<span class="comment">;</span></div><div class="line">&#125;)<span class="comment">;</span></div></pre></td></tr></table></figure>
-<p>The test result should show “Pass”.</p>
-<p>7) What if we change the expected HTTP status code ot the expected response text? Let’s try.</p>
-<p>After change the expected HTTP status code to 500, once the test run, the result will be:</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  <span class="number">1</span>) should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span> <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Not Empty"</span></div><div class="line"></div><div class="line"><span class="number">0</span> passing (<span class="number">44</span>ms)</div><div class="line"><span class="number">1</span> failing</div><div class="line"></div><div class="line"><span class="number">1</span>) User should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span> <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Not Empty"</span>:</div><div class="line">   Error: expected <span class="number">500</span> <span class="string">"Internal Server Error"</span>, got <span class="number">200</span> <span class="string">"OK"</span></div></pre></td></tr></table></figure>
-<p>Revert the change and change the expected response text to “Empty”, once the test run, the result will be:</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  <span class="number">1</span>) should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span> <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Not Empty"</span></div><div class="line"></div><div class="line"><span class="number">0</span> passing (<span class="number">46</span>ms)</div><div class="line"><span class="number">1</span> failing</div><div class="line"></div><div class="line"><span class="number">1</span>) User should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span> <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Not Empty"</span>:</div><div class="line"></div><div class="line">    Uncaught AssertionError: expected <span class="string">'Not Empty'</span> <span class="built_in">to</span> equal <span class="string">'Empty'</span></div><div class="line">    + expected - actual</div><div class="line"></div><div class="line">    -Not Empty</div><div class="line">    +Empty</div></pre></td></tr></table></figure>
-<p> Don’t forget to revert the change.</p>
-<p>8) The test script works as expected, so next, we will make it more complex.</p>
-</li>
-</ol>
-<h3 id="Make-the-server-more-complex-and-of-course-test-against-it"><a href="#Make-the-server-more-complex-and-of-course-test-against-it" class="headerlink" title="Make the server more complex and of course, test against it:"></a>Make the server more complex and of course, test against it:</h3><ol>
-<li><p>Append the API response to only respond to specific request, change the API response to:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"request"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"uri"</span> : <span class="string">"/users/1"</span>,</div><div class="line">      <span class="attr">"json"</span>: &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"Yale"</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">  <span class="attr">"response"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"status"</span> : <span class="string">"200"</span>,</div><div class="line">      <span class="attr">"json"</span>:</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"gender"</span>: <span class="string">"Male"</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-</li>
-<li><p>Change the test script to reflect the changes:</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">it('should return a response with HTTP code <span class="number">200</span>, and the response text should be <span class="string">"Male"</span> if request the gender of <span class="string">"Yale"</span> as <span class="string">"name"</span>', function(<span class="name">done</span>) &#123;</div><div class="line">  api.get('/users/1').set('Accept', 'application/json').send(&#123;name:<span class="string">"Yale"</span>&#125;).expect(<span class="number">200</span>).end(<span class="name">function</span>(<span class="name">err</span>,res)&#123;</div><div class="line">    expect(<span class="name">res</span>.body).to.have.property(<span class="string">"gender"</span>)<span class="comment">;</span></div><div class="line">    expect(<span class="name">res</span>.body.gender).to.equal(<span class="string">"Male"</span>)<span class="comment">;</span></div><div class="line">    done(<span class="name">err</span>)<span class="comment">;</span></div><div class="line">  &#125;)<span class="comment">;</span></div><div class="line">&#125;)<span class="comment">;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>Once run the test script, it will Pass.</p>
-</li>
-<li><p>If we change the value in the request, like change “Yale” to “Yong”, once test script runs, it will show:</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">    <span class="number">1</span>) should <span class="literal">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="built_in">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line">  <span class="number">0</span> passing (<span class="number">47</span>ms)</div><div class="line">  <span class="number">1</span> failing</div><div class="line"></div><div class="line">  <span class="number">1</span>) User should <span class="literal">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="built_in">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span>:</div><div class="line">     Uncaught AssertionError: expected &#123;&#125; <span class="keyword">to</span> have <span class="keyword">property</span> 'gender'</div></pre></td></tr></table></figure>
-</li>
-<li><p>If we change the value in the request, like change the 2 “gender” to “sex”, once test script runs, it will show:</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  <span class="number">1</span>) should <span class="literal">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="built_in">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line"><span class="number">0</span> passing (<span class="number">39</span>ms)</div><div class="line"><span class="number">1</span> failing</div><div class="line"></div><div class="line"><span class="number">1</span>) User should <span class="literal">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="built_in">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span>:</div><div class="line">   Uncaught AssertionError: expected &#123;&#125; <span class="keyword">to</span> have <span class="keyword">property</span> 'sex'</div></pre></td></tr></table></figure>
-</li>
-<li><p>If we change the value in the request, like change “Male” to “Man”, once test script runs, it will show:</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  <span class="number">1</span>) should <span class="literal">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="built_in">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line"><span class="number">0</span> passing (<span class="number">44</span>ms)</div><div class="line"><span class="number">1</span> failing</div><div class="line"></div><div class="line"><span class="number">1</span>) User should <span class="literal">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="built_in">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span>:</div><div class="line">   Uncaught AssertionError: expected &#123;&#125; <span class="keyword">to</span> have <span class="keyword">property</span> 'gender'</div></pre></td></tr></table></figure>
-</li>
-<li><p>You may notice that in the test script, we still use GET method rather than PUT or POST, but we still can let the test Pass. Now, let’s strict it. In the API response, we need to change it to following:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"request"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"uri"</span> : <span class="string">"/users/1"</span>,</div><div class="line">      <span class="attr">"method"</span>: <span class="string">"get"</span>,</div><div class="line">      <span class="attr">"json"</span>: &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"Yale"</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">  <span class="attr">"response"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"status"</span> : <span class="string">"500"</span>,</div><div class="line">      <span class="attr">"json"</span>:</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"gender"</span>: <span class="string">"Male"</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"request"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"uri"</span> : <span class="string">"/users/1"</span>,</div><div class="line">      <span class="attr">"method"</span>: <span class="string">"put"</span>,</div><div class="line">      <span class="attr">"json"</span>: &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"Yale"</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">  <span class="attr">"response"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"status"</span> : <span class="string">"200"</span>,</div><div class="line">      <span class="attr">"json"</span>:</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"gender"</span>: <span class="string">"Male"</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-</li>
-<li><p>Simply change the HTTP method to “put” in test script and check the result:</p>
-<p>In the test script:</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">api</span><span class="selector-class">.put</span>(<span class="string">'/users/1'</span>)<span class="selector-class">.set</span>(<span class="string">'Accept'</span>, <span class="string">'application/json'</span>)<span class="selector-class">.send</span>(&#123;<span class="attribute">name</span>:<span class="string">"Yale"</span>&#125;)<span class="selector-class">.expect</span>(<span class="number">200</span>)<span class="selector-class">.end</span>(function(err,res)&#123;</div><div class="line">  <span class="selector-tag">expect</span>(res.body)<span class="selector-class">.to</span><span class="selector-class">.have</span><span class="selector-class">.property</span>(<span class="string">"gender"</span>);</div><div class="line">  <span class="selector-tag">expect</span>(res.body.gender)<span class="selector-class">.to</span><span class="selector-class">.equal</span>(<span class="string">"Male"</span>);</div><div class="line">  <span class="selector-tag">done</span>(err);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>And the test result:</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  ✓ should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line"><span class="number">1</span> passing (<span class="number">41</span>ms)</div></pre></td></tr></table></figure>
-</li>
-<li><p>Let’s see what if we change the HTTP method to “get” again in test script and check the result:</p>
-<p>In the test script:</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">api</span><span class="selector-class">.get</span>(<span class="string">'/users/1'</span>)<span class="selector-class">.set</span>(<span class="string">'Accept'</span>, <span class="string">'application/json'</span>)<span class="selector-class">.send</span>(&#123;<span class="attribute">name</span>:<span class="string">"Yale"</span>&#125;)<span class="selector-class">.expect</span>(<span class="number">200</span>)<span class="selector-class">.end</span>(function(err,res)&#123;</div><div class="line">  <span class="selector-tag">expect</span>(res.body)<span class="selector-class">.to</span><span class="selector-class">.have</span><span class="selector-class">.property</span>(<span class="string">"gender"</span>);</div><div class="line">  <span class="selector-tag">expect</span>(res.body.gender)<span class="selector-class">.to</span><span class="selector-class">.equal</span>(<span class="string">"Male"</span>);</div><div class="line">  <span class="selector-tag">done</span>(err);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>And the test result:</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">  <span class="number">1</span>) should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line"><span class="number">0</span> passing (<span class="number">39</span>ms)</div><div class="line"><span class="number">1</span> failing</div><div class="line"></div><div class="line"><span class="number">1</span>) User should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span>:</div><div class="line">   Error: expected <span class="number">200</span> <span class="string">"OK"</span>, got <span class="number">500</span> <span class="string">"Internal Server Error"</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="Final-stage-more-advanced-usage"><a href="#Final-stage-more-advanced-usage" class="headerlink" title="Final stage - more advanced usage:"></a>Final stage - more advanced usage:</h3><ol>
-<li><p>If we want to add more API responses, do we need to add them into one json file? Certainly not, let’s see how we can do that.</p>
-<p>1) Create another json file named “user2”, and add following content to it:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"request"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"uri"</span> : <span class="string">"/users/2"</span>,</div><div class="line">      <span class="attr">"method"</span>: <span class="string">"post"</span>,</div><div class="line">      <span class="attr">"json"</span>: &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"Yong"</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">  <span class="attr">"response"</span> :</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"status"</span> : <span class="string">"500"</span>,</div><div class="line">      <span class="attr">"text"</span> : <span class="string">"Internal Server Error"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-<p>2) Create another js file named “user2_test.js”, and add following into its content:</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var should = <span class="built_in">require</span>(<span class="string">'chai'</span>).should(),</div><div class="line">  expect = <span class="built_in">require</span>(<span class="string">'chai'</span>).expect,</div><div class="line">  supertest = <span class="built_in">require</span>(<span class="string">'supertest'</span>),</div><div class="line">  api = supertest(<span class="string">'http://localhost:3000'</span>);</div><div class="line">describe(<span class="string">'User'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span> &#123;</div><div class="line">  it(<span class="string">'should return a response with HTTP code 500 and its content if request the gender of "Yong" as "name"'</span>, <span class="function"><span class="keyword">function</span><span class="params">(done)</span></span> &#123;</div><div class="line">    api.post(<span class="string">'/users/2'</span>).set(<span class="string">'Accept'</span>, <span class="string">'application/json'</span>).send(&#123;name:<span class="string">"Yong"</span>&#125;).expect(<span class="number">500</span>).<span class="keyword">end</span>(<span class="function"><span class="keyword">function</span><span class="params">(err,res)</span></span>&#123;</div><div class="line">      <span class="keyword">if</span> (err) <span class="keyword">return</span> done(err);</div><div class="line">      expect(res.<span class="built_in">error</span>.text).to.equal(<span class="string">"Internal Server Error"</span>);</div><div class="line">      done(err);</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>3) Once you run the test script, it will show:</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">    ✓ should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">500</span> <span class="keyword">and</span> its content <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yong"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line">  <span class="number">1</span> passing (<span class="number">41</span>ms)</div></pre></td></tr></table></figure>
-<p>4) If we only change the expected HTTP status code in the test script to 404, the result will be:</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line"><span class="number">1</span>) should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">500</span> <span class="keyword">and</span> its content <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yong"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line"><span class="number">0</span> passing (<span class="number">45</span>ms)</div><div class="line"><span class="number">1</span> failing</div><div class="line"></div><div class="line"><span class="number">1</span>) User should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">500</span> <span class="keyword">and</span> its content <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yong"</span> <span class="keyword">as</span> <span class="string">"name"</span>:</div><div class="line">  Error: expected <span class="number">404</span> <span class="string">"Not Found"</span>, got <span class="number">500</span> <span class="string">"Internal Server Error"</span></div></pre></td></tr></table></figure>
-<p>5) And if we only change the expected response message to “Not Found”, the result will be:</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line"><span class="number">1</span>) should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">500</span> <span class="keyword">and</span> its content <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yong"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line"><span class="number">0</span> passing (<span class="number">43</span>ms)</div><div class="line"><span class="number">1</span> failing</div><div class="line"></div><div class="line"><span class="number">1</span>) User should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">500</span> <span class="keyword">and</span> its content <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yong"</span> <span class="keyword">as</span> <span class="string">"name"</span>:</div><div class="line"></div><div class="line">    Uncaught AssertionError: expected <span class="string">'Internal Server Error'</span> <span class="built_in">to</span> equal <span class="string">'Not Found'</span></div><div class="line">    + expected - actual</div><div class="line"></div><div class="line">    -Internal Server Error</div><div class="line">    +Not Found</div></pre></td></tr></table></figure>
-<p>6) Revert all changes back again, and create another json file named “combined.json”, and add following:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">    <span class="attr">"include"</span>: <span class="string">"user1.json"</span></div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    <span class="attr">"include"</span>: <span class="string">"user2.json"</span></div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-<p> And start the Mock Server using <code>java -jar moco-runner-0.11.1-standalone.jar http -p 3000 -g combined.json</code></p>
-<p>7) Use Mocha to run all the test scripts:</p>
-<p><code>mocha *.js</code></p>
-<p>And you should see:</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">User</div><div class="line">    ✓ should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> <span class="keyword">the</span> response <span class="keyword">text</span> should be <span class="string">"Male"</span> <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yale"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line">  User</div><div class="line">    ✓ should <span class="literal">return</span> <span class="keyword">a</span> response <span class="keyword">with</span> HTTP code <span class="number">500</span> <span class="keyword">and</span> its content <span class="keyword">if</span> request <span class="keyword">the</span> gender <span class="keyword">of</span> <span class="string">"Yong"</span> <span class="keyword">as</span> <span class="string">"name"</span></div><div class="line"></div><div class="line">  <span class="number">2</span> passing (<span class="number">49</span>ms)</div></pre></td></tr></table></figure>
-<p>8) If you want to run a single test script to test all steps, you can create a js file named “users_test.js”, and add following content:</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var should = require(<span class="symbol">'chai</span>').should(),</div><div class="line">  expect = require(<span class="symbol">'chai</span>').expect,</div><div class="line">  supertest = require(<span class="symbol">'supertest</span>'),</div><div class="line">  api = supertest(<span class="symbol">'http</span>://localhost:<span class="number">3000</span>');</div><div class="line">describe(<span class="symbol">'User</span>', <span class="keyword">function</span>() &#123;</div><div class="line">  it(<span class="symbol">'should</span> <span class="keyword">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">200</span>, <span class="keyword">and</span> the response text should be <span class="string">"Male"</span> <span class="keyword">if</span> request the gender <span class="keyword">of</span> <span class="string">"Yale"</span> as <span class="string">"name"</span>', <span class="keyword">function</span>(done) &#123;</div><div class="line">    api.put('/users/<span class="number">1</span>').set(<span class="symbol">'Accept</span>', <span class="symbol">'application</span>/json').send(&#123;name:<span class="string">"Yale"</span>&#125;).expect(<span class="number">200</span>).<span class="keyword">end</span>(<span class="keyword">function</span>(err,res)&#123;</div><div class="line">      expect(res.<span class="keyword">body</span>).to.have.property(<span class="string">"gender"</span>);</div><div class="line">      expect(res.<span class="keyword">body</span>.gender).to.equal(<span class="string">"Male"</span>);</div><div class="line">      done(err);</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  it(<span class="symbol">'should</span> <span class="keyword">return</span> a response <span class="keyword">with</span> HTTP code <span class="number">500</span> <span class="keyword">and</span> its content <span class="keyword">if</span> request the gender <span class="keyword">of</span> <span class="string">"Yong"</span> as <span class="string">"name"</span>', <span class="keyword">function</span>(done) &#123;</div><div class="line">    api.post('/users/<span class="number">2</span>').set(<span class="symbol">'Accept</span>', <span class="symbol">'application</span>/json').send(&#123;name:<span class="string">"Yong"</span>&#125;).expect(<span class="number">500</span>).<span class="keyword">end</span>(<span class="keyword">function</span>(err,res)&#123;</div><div class="line">      <span class="keyword">if</span> (err) <span class="keyword">return</span> done(err);</div><div class="line">      expect(res.error.text).to.equal(<span class="string">"Internal Server Error"</span>);</div><div class="line">      done(err);</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>9) Run the test using <code>mocha users_test.js</code>, it will show the same result as above.</p>
-</li>
-</ol>
-<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h3><ol>
-<li>If you want to test against OAuth protocol, you need to change SuperTest to unirest. Thanks to <a href="https://qaseven.github.io/" target="_blank" rel="external">QiLei</a>.</li>
-</ol>
-<h3 id="Later-on"><a href="#Later-on" class="headerlink" title="Later on:"></a>Later on:</h3><p>Since you already can run your test scripts smoothly through command line, you can simply add them to CI tools, such as Jenkins and such.</p>
-<p>Have fun!</p>
-<p><strong><em>You can find all the test scripts from <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/API_Test_Mocha_Chai_SuperTest.zip" target="_blank" rel="external">here</a>.</em></strong></p>
-
-      
-    </div>
-    
-    
-      <footer class="article-footer">
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/API/">API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chai/">Chai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mocha/">Mocha</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mock-Server/">Mock Server</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quick-Start/">Quick-Start</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Supertest/">Supertest</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/moco/">moco</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-    
-      <article id="post-Quick_Start_For_Appium_iOS_And_Android" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/10/Quick_Start_For_Appium_iOS_And_Android/">Quick start for appium (iOS and Android)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2017/07/10/Quick_Start_For_Appium_iOS_And_Android/" class="article-date">
-  <time datetime="2017-07-09T14:00:00.000Z" itemprop="datePublished">2017-07-10</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="There-are-many-changes-compared-to-the-early-version-of-appium-so-I-would-like-to-start-from-scratch-to-build-a-simple-testing-script-for-appium-For-further-reading-about-how-to-apply-Page-Object-and-BDD-to-appium-you-can-read-my-previous-article-Cookbook-for-appium-and-BDD-with-PageObject"><a href="#There-are-many-changes-compared-to-the-early-version-of-appium-so-I-would-like-to-start-from-scratch-to-build-a-simple-testing-script-for-appium-For-further-reading-about-how-to-apply-Page-Object-and-BDD-to-appium-you-can-read-my-previous-article-Cookbook-for-appium-and-BDD-with-PageObject" class="headerlink" title="There are many changes compared to the early version of appium, so I would like to start from scratch to build a simple testing script for appium. For further reading about how to apply Page Object and BDD to appium, you can read my previous article Cookbook for appium and BDD with PageObject."></a>There are many changes compared to the early version of appium, so I would like to start from scratch to build a simple testing script for appium. For further reading about how to apply Page Object and BDD to appium, you can read my previous article <a href="http://hy1984427.github.io/appium/">Cookbook for appium</a> and <a href="http://hy1984427.github.io/BDD-with-PageObject/">BDD with PageObject</a>.</h5><h3 id="Environment-Settings"><a href="#Environment-Settings" class="headerlink" title="Environment Settings:"></a>Environment Settings:</h3><ol>
-<li><p>Install XCode and its command line tool.</p>
-<p>To install XCode command line tool, you can use the following command in Terminal:</p>
-<p><code>xcode-select --install</code></p>
-<p>And download the OS versions you want to work with.</p>
-</li>
-<li><p>It’s better to choose Ruby to write the test script as it’s easy to get familiar with. And to install/upgrade it, we can use following commands:</p>
-<p>1) Install Homebrew</p>
-<p><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p>
-<p>2) Install Ruby</p>
-<p><code>brew install ruby</code></p>
-</li>
-<li><p>Install appium and related gems:</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>libimobiledevice --HEAD</div><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>node</div><div class="line">npm <span class="keyword">install </span>-g ios-deploy</div><div class="line">sudo gem <span class="keyword">install </span>xcpretty</div><div class="line">npm <span class="keyword">install </span>appium-doctor -g</div><div class="line">npm <span class="keyword">install </span>-g appium</div><div class="line">npm <span class="keyword">install </span>wd</div><div class="line">npm <span class="keyword">install </span>appium-xcuitest-driver</div><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>carthage</div><div class="line">gem <span class="keyword">install </span>--no-rdoc --no-ri <span class="keyword">bundler</span></div><div class="line">gem <span class="keyword">install </span>--no-rdoc --no-ri appium_lib</div><div class="line">gem <span class="keyword">install </span>--no-rdoc --no-ri appium_console</div></pre></td></tr></table></figure>
-</li>
-<li><p>Install JDK for Android:</p>
-<p>Download from <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">Java SE Development Kit 8 - Downloads</a> and install.</p>
-</li>
-<li><p>Install Android Studio from <a href="https://developer.android.com/studio/index.html" target="_blank" rel="external">Download Android Studio and SDK Tools | Android Studio</a> and download the OS version you want to work with.</p>
-</li>
-<li><p>Configure the bach_profile to set environment parameters:</p>
-<p>Edit your <em><code>~/.bash_profile</code></em>, if you don’t have one, just create it and add following lines to it:</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="builtin-name">export</span> <span class="attribute">ANDROID_HOME</span>=/Users/$your_name/Library/Android/sdk</div><div class="line"><span class="builtin-name">export</span> <span class="attribute">ANDROID_SDK</span>=<span class="variable">$ANDROID_HOME</span></div><div class="line"><span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$ANDROID_HOME/build-tools</div><div class="line"><span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$ANDROID_HOME/platform-tools</div><div class="line"><span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$ANDROID_HOME/tools</div><div class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=<span class="string">"`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home`"</span></div><div class="line"><span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$JAVA_HOME/bin</div><div class="line"><span class="builtin-name">export</span> PATH</div></pre></td></tr></table></figure>
-</li>
-<li><p>Run <em><code>appium-doctor</code></em> in Terminal to see if everything works fine. (You need to see there are all green.)</p>
-</li>
-</ol>
-<h3 id="Generate-the-apps-to-be-tested"><a href="#Generate-the-apps-to-be-tested" class="headerlink" title="Generate the apps to be tested:"></a>Generate the apps to be tested:</h3><ol>
-<li><p>Download the iOS UIKit Catalog source code from <a href="https://developer.apple.com/library/content/samplecode/UICatalog/UIKitCatalogiOSCreatingandCustomizingUIKitControls.zip" target="_blank" rel="external">UIKitCatalog</a>.</p>
-<p>1) Unzip it and open the project in the Swift folder.</p>
-<p>2) Build it in XCode by selecting the OS version you would like to test.</p>
-<p>3) Expand the “Products” folder in the project structure, and select the app generated.</p>
-<p>4) Right click it and select “Show in Finder”, and copy the app with extension as .app to your test folder for future use.</p>
-</li>
-<li><p>Download the “TextSwitcher” from “Import an Android code sample” in Android Studio welcome screen.</p>
-<p>1) Change the “minSdkVersion” from 7 to 9 in “build.gradle (Module:Application)” and build the app.</p>
-<p>2) Right click the root of project structure and select “Reveal in Finder”, and copy the app with extension as .apk in “/Users/$your_name/AndroidStudioProjects/TextSwitcher/Application/build/outputs/apk” to your test folder for future use.</p>
-</li>
-</ol>
-<h3 id="Identify-elements-using-appium-GUI"><a href="#Identify-elements-using-appium-GUI" class="headerlink" title="Identify elements using appium GUI:"></a>Identify elements using appium GUI:</h3><ol>
-<li><p>Download the appium GUI through their website;</p>
-</li>
-<li><p>Start appium GUI after install;</p>
-</li>
-<li><p>Start the server by default;</p>
-</li>
-<li><p>Start a new session;</p>
-</li>
-<li><p>Input all capabilities you want to use in “Desired Capabilities”, such as:</p>
-<figure class="highlight mel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">platformName   <span class="keyword">text</span>   iOS</div><div class="line">platformVersion   <span class="keyword">text</span>   <span class="number">10.2</span></div><div class="line">deviceName   <span class="keyword">text</span>   iPhone <span class="number">7</span></div><div class="line">app   <span class="keyword">text</span> /Users/$your_name/Documents/UIKitCatalog.app</div></pre></td></tr></table></figure>
-<p>Above shows the basic capabilities you must pass to appium to run the app. (For Android, it’s basically the same, unless you first activity is not MainActivity so you need to set “appActivity” pointed to the right one.)</p>
-</li>
-<li><p>Then you can actually “Start Session”. (For Android, you need to start your emulator before this, appium won’t automatically start Android emulator like it does for iOS.)</p>
-</li>
-<li><p>Wait for some time, another window would popup. In this window, you should see the app’s visual and could inspect elements in it.</p>
-</li>
-<li><p>Once click the element on app UI in the inspector window, you can see the properties of the element shows on the right side.</p>
-<p>1) Try to use id to locate element as possible.</p>
-<p>2) The “Tap”, “Send Keys” and “Clear” button in the right “Selected Element” panel will simulate the corresponding action, and you will see the consequences in the app UI.</p>
-<p>3) You can use “Back” on the top of this window to simulate hardware Back action, and next to it is Refresh.</p>
-<p>4) The eye icon is very useful if you would like to record all your steps into a script. Any action after you click that icon will be recorded, until it’s been clicked again.</p>
-<p>5) You can choose the language you want to record, and you can select to show/hide the supporting code (the code to support you start and end tests rather than the test steps), copy and delete the test codes.</p>
-<p>6) The last one on the top will close this window and entire session.</p>
-</li>
-<li><p>With the inspector, you have recorded some script, or you have written your own code with the inspector to locate elements. The code should look like following:</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">require 'rubygems'</div><div class="line">require 'appium_lib'</div><div class="line">caps = &#123;&#125;</div><div class="line">caps[<span class="string">"platformName"</span>] = <span class="string">"iOS"</span></div><div class="line">caps[<span class="string">"platformVersion"</span>] = <span class="string">"10.2"</span></div><div class="line">caps[<span class="string">"deviceName"</span>] = <span class="string">"iPhone 7"</span></div><div class="line">caps[<span class="string">"app"</span>] = <span class="string">"/Users/$your_name/Documents/UIKitCatalog.app"</span></div><div class="line">opts = &#123;</div><div class="line"><span class="section">sauce_username: nil,</span></div><div class="line"><span class="section">server_url: "http://localhost:4723/wd/hub"</span></div><div class="line">&#125;</div><div class="line">driver = Appium::Driver.new(&#123;caps: caps, appium_lib: opts&#125;).start_driver</div><div class="line">driver.navigate.back</div><div class="line">el1 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[14]"</span>)</div><div class="line">el1.click</div><div class="line">el2 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[1]/XCUIElementTypeTextField"</span>)</div><div class="line">el2.send_keys <span class="string">"123"</span></div><div class="line">el3 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[2]/XCUIElementTypeTextField"</span>)</div><div class="line">el3.send_keys <span class="string">"456"</span></div><div class="line">driver.quit</div></pre></td></tr></table></figure>
-<p>Save the script to a .sh file, such as test.sh.</p>
-</li>
-</ol>
-<h3 id="Run-appium-test"><a href="#Run-appium-test" class="headerlink" title="Run appium test:"></a>Run appium test:</h3><ol>
-<li><p>Now we can run the script through the command line (Terminal).</p>
-</li>
-<li><p>After we close appium GUI, we need to run appium in a Terminal tab, then open your test folder. Under the folder, run following command:</p>
-<p> <code>ruby test.sh</code></p>
-</li>
-<li><p>You should see the simulator started and test runs.</p>
-</li>
-<li><p>But we DO NOT have any assertion. Let’s add some.</p>
-<p>1) Install RSpec through</p>
-<p><code>gem install rspec</code></p>
-<p>2) Include RSpec and its matchers in the “Require” section</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'rubygems'</span></div><div class="line"><span class="keyword">require</span> <span class="string">'appium_lib'</span></div><div class="line"><span class="keyword">require</span> <span class="string">'rspec'</span></div><div class="line"><span class="keyword">include</span> RSpec::Matchers</div></pre></td></tr></table></figure>
-<p>3) Add assertions to the test, like:</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">driver<span class="selector-class">.navigate</span><span class="selector-class">.back</span></div><div class="line">el1 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[14]"</span>)</div><div class="line">el1<span class="selector-class">.click</span></div><div class="line">el2 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[1]/XCUIElementTypeTextField"</span>)</div><div class="line">el2<span class="selector-class">.send_keys</span> <span class="string">"123"</span></div><div class="line">el2<span class="selector-class">.value</span><span class="selector-class">.should</span> == <span class="string">"123"</span></div><div class="line">el3 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[2]/XCUIElementTypeTextField"</span>)</div><div class="line">el3<span class="selector-class">.send_keys</span> <span class="string">"456"</span></div><div class="line">el3<span class="selector-class">.value</span><span class="selector-class">.should</span> == <span class="string">"456"</span></div></pre></td></tr></table></figure>
-<p>4) To make sure the assertions really works, we can alter like:</p>
-<p><code>el3.value.should == &quot;345&quot;</code></p>
-<p>5) And run it again, it should show following in Terminal:</p>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/usr/local/<span class="class"><span class="keyword">lib</span>/<span class="title">ruby</span>/<span class="title">gems</span>/2.4.0/<span class="title">gems</span>/<span class="title">rspec</span>-<span class="title">support</span>-3.6.0/<span class="title">lib</span>/<span class="title">rspec</span>/<span class="title">support</span>.<span class="title">rb</span>:87:<span class="title">in</span> `<span class="title">block</span> <span class="title">in</span> &lt;<span class="title">module</span>:<span class="title">Support</span>&gt;': <span class="title">expected</span>: "345" (<span class="title">RSpec::Expectations::ExpectationNotMetError</span>)</span></div><div class="line"><span class="symbol">got:</span> <span class="string">"456"</span> (using ==)</div></pre></td></tr></table></figure>
-<p>6) Now we can revert the change, and complete the test script.</p>
-<p>7) The final test script should looks like:</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">require <span class="string">'rubygems'</span></div><div class="line">require <span class="string">'appium_lib'</span></div><div class="line">require <span class="string">'rspec'</span></div><div class="line">include RSpec::Matchers</div><div class="line">caps = &#123;&#125;</div><div class="line">caps[<span class="string">"platformName"</span>] = <span class="string">"iOS"</span></div><div class="line">caps[<span class="string">"platformVersion"</span>] = <span class="string">"10.2"</span></div><div class="line">caps[<span class="string">"deviceName"</span>] = <span class="string">"iPhone 7"</span></div><div class="line">caps[<span class="string">"app"</span>] = <span class="string">"/Users/yhuang/Documents/appium/UIKitCatalog.app"</span></div><div class="line">opts = &#123;</div><div class="line">sauce_username: nil,</div><div class="line">server_url: <span class="string">"http://localhost:4723/wd/hub"</span></div><div class="line">&#125;</div><div class="line">driver = Appium::Driver.new(&#123;caps: caps, appium_lib: opts&#125;)<span class="selector-class">.start_driver</span></div><div class="line">driver<span class="selector-class">.navigate</span><span class="selector-class">.back</span></div><div class="line">el1 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[14]"</span>)</div><div class="line">el1<span class="selector-class">.click</span></div><div class="line">el2 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[1]/XCUIElementTypeTextField"</span>)</div><div class="line">el2<span class="selector-class">.send_keys</span> <span class="string">"123"</span></div><div class="line">el2<span class="selector-class">.value</span><span class="selector-class">.should</span> == <span class="string">"123"</span></div><div class="line">el3 = driver.find_element(:xpath, <span class="string">"//XCUIElementTypeCell[2]/XCUIElementTypeTextField"</span>)</div><div class="line">el3<span class="selector-class">.send_keys</span> <span class="string">"456"</span></div><div class="line">el3<span class="selector-class">.value</span><span class="selector-class">.should</span> == <span class="string">"456"</span></div><div class="line">driver.quit</div></pre></td></tr></table></figure>
-</li>
-<li><p>Now it’s all done.</p>
-</li>
-</ol>
-<h3 id="Please-Note"><a href="#Please-Note" class="headerlink" title="Please Note:"></a>Please Note:</h3><ol>
-<li><p>This is just a sample to run test, but we actually should write it in BDD way with Page Object.</p>
-</li>
-<li><p>It should also be integrated with CI.</p>
-</li>
-<li><p>If you want to use Appium to test Android, I recommend you to use Genymotion rather than AVD, even you are using x86 kernel for AVD.</p>
-</li>
-<li><p>You can reference to the <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/UIKitCatalog.zip" target="_blank" rel="external">app</a> and <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/UIKitCatalog.sh" target="_blank" rel="external">script</a> for UIKitCatalog and the <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/AndroidCalculator.apk" target="_blank" rel="external">app</a> and <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/AndroidCalculator.sh" target="_blank" rel="external">script</a> for Android Calculator.</p>
-</li>
-</ol>
-
-      
-    </div>
-    
-    
-      <footer class="article-footer">
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Appium/">Appium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quick-Start/">Quick-Start</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-    
-      <article id="post-Domestic_Project_Manager" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/06/Domestic_Project_Manager/">国内交付项目新手PM生存指南</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/06/06/Domestic_Project_Manager/" class="article-date">
-  <time datetime="2016-06-05T14:00:00.000Z" itemprop="datePublished">2016-06-06</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Test/">Test</a>
-  </div>
-
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong><em>长期以来一直做国外的交付项目，对于国内的项目总是很怵，因为总觉得做国内项目就需要像电视剧中一样边谈项目边喝酒应酬，而且还天天加班，所以一直以来没有机会也没有勇气接近国内项目。</em></strong></p>
-<p><strong><em>但是，机缘巧合，最近在国内项目上摸爬滚打了一段时间，感觉可以把自己的经历和经验记录下来，跟大家分享一下。</em></strong></p>
-<p>也许大家接触的都是国内客户，但是不同的客户会有自己独特的风格，在下文中我会按照交付项目开展的时间顺序为大家介绍它们通用的和特有的问题及经历。</p>
-<p>#售前阶段</p>
-<p>在正式开始项目前，我们需要对<strong>项目管理的“金三角”（时间、范围和成本）</strong>有明确的认识。但是在售前阶段这些问题的答案都很模糊，需要我们逐步分析和确认。</p>
-<p>一般会通过以下三个步骤来解决。</p>
-<p>###第一步：了解背景</p>
-<p>我们首先需要做的是<strong>找到这个项目机会的来源</strong>，也就向销售的同事获取尽可能多的信息，例如这个机会是哪个客户给的，他／她在客户组织架构中的位置是什么样的，他／她对我们有什么样的建议和想法，这个机会所在部门的背景情况和重视程度，这个项目现在遇到的问题和以后有可能遇到的问题，我们去谈需求时需要联系谁，联系方式是什么。</p>
-<p>拿到了这些消息后，我们还可以利用现有的信息，在公司内部找和客户同一部门或者类似部门打过交道的同事<strong>了解更多的背景和技术知识</strong>，尽可能找一个在同一客户下工作过，最好是客户熟知并且对客户有影响力的同事，在洽谈需求时能一起参加，这不仅会让我们更有底气，能更准确地了解客户需求，也会让客户增加更加信任。</p>
-<p>这些信息我们最好能够记录并保存下来，而且需要系统性地整理这些信息及注意事项。</p>
-<p>在这一阶段我们了解的更多都是全局的内容，而在项目中我们往往忽视了从全局观出发，如何能更好地解决问题。</p>
-<p>###第二步：拜访客户</p>
-<p>有了这些信息，下一步就是<strong>和客户约好时间，进行拜访</strong>。</p>
-<p>第一次进行客户拜访，通常双方需要先进行相互介绍，我们一般也会派出项目的PM和Tech Lead参与拜访，拜访的内容主要是<strong>了解需求</strong>。但是第一次谈需求，我们需要注意更多从业务和价值角度切入，而不要陷入技术细节。这时我们往往会发现自己之前设想的和客户描述出来的差别很大。但是我们要注意，不要过于坚持自己的想法，而需要根据客户的描述，通过自己的问题一步一步地引导客户说出他们的痛点和期望，从而能使项目的目标清晰。</p>
-<p>在这一阶段通常我们也要向客户展示我们的技术实力，让客户坚定选择我们的决策是正确的。采取的方式可以有针对项目相关技术的演讲或者演示。总的来说，最好把第一次拜访控制在一个小时左右，这样我们一方面得到了相关的项目知识，另一方面，为下一次会面向客户展示具体的项目相关技术实力提供了机会。</p>
-<p>在有了项目业务需求和痛点之后，我们需要修正自己之前的想法和设计，根据最新的情况进行总结，并且最好得到客户的确认。</p>
-<p>接着，根据这些信息，我们就可以着手进行<strong>技术架构的设计以及风险的评估</strong>，为后续的拜访明确目标，使会议更高效。之后的拜访或者会议都是一步一步的细化过程，包括确定是用什么技术栈，什么架构，客户如何与我们交付团队合作等等。不过我们需要控制每次会议以及为项目准备时间的投入，以及这一阶段持续的时间。因为持续时间长不仅会让客户感觉我们不专业，也会暗示我们不理解项目。再说，如果项目最后没有谈成，也是对于公司资源的浪费。</p>
-<p>###第三步：合同形式</p>
-<p>上面我们说的都是技术方面的，售前阶段有很重要的一点是需要了解<strong>客户想以什么样的方式和我们签合同</strong>。因为咨询和交付项目的工作方式以及交付物都是不一样的，如果我们以交付项目的形式签订合同，而以咨询的形式工作，那在项目结束时，我们会面临如何验收，如何提供交付物的问题。这也很有可能让客户在工作验收和领导汇报时陷入被动，因为实际完成的和合同上签署的内容是不一致的。</p>
-<p>如果我们能够顺利解决上面所说的问题，我们就可以等着进行投标等工作了。下面我们就来看看神秘的投标阶段都会有什么意想不到的问题吧。</p>
-<p>#投标阶段</p>
-<p>首先我们需要<strong>根据标书的要求，完成相关系统的设计</strong>。这些设计并不只是技术架构，还需要包含对于客户的理解，对于项目现状的理解，对于项目远景的理解，以及由此而产生的技术架构和实施计划。同时，我们还需要展现我们对于同一类型项目的经验和成功案例。</p>
-<p>编写标书的技术方案看起来简单，只要写命题作文就可以了。</p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Proposal_Index.png" alt="标书的大致目录"></p>
-<p>图 1.1 － 标书的大致目录</p>
-<p>但是，标书需要我们<strong>协同配合</strong>，尤其是需要售前同事和交付团队进行密切沟通，确保交付团队在得到客户真实意图，准确把握客户的期望和优先级的情况下，出具架构合理、充分考虑到客户需求和成本的方案。如果在投标前期给客户做过Inception，我们还需要和Inception团队全力合作，进行知识的有效传递（最好能让Inception团队来编写标书）。如果能从Inception的团队中获得例如线框图（如图1.4），用户画像，用户旅程，推荐的技术架构甚至Epic Story，对于确定项目范围和编写技术方案来说会助力很多。</p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Wireframe.png" alt="线框图和用户旅程"></p>
-<p>图 1.2 － 线框图和用户旅程</p>
-<p>###关键点一：技术栈和技术架构</p>
-<p><strong>在编写标书时的关键之一在于技术栈和技术架构</strong>。在我们根据客户的需求确定这两项之后，我们还需要进行架构评审，以便集思广益，减少架构设计时引入交付风险，同时也可以更好的权衡交付压力和技术卓越。我们不仅需要考虑使用什么技术来满足客户的需求，还需要考虑客户运行项目的成本，甚至客户是否需要付出很多成本招聘到合适的运维人员等。</p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Architecture.png" alt="技术架构"></p>
-<p>图 1.3 － 技术架构</p>
-<p>###关键点二：估算工作量</p>
-<p><strong>确定了技术栈和技术框架之后就需要对工作量进行估算了</strong>。在进行估算时我们不能按照特定的人员能力进行估算，而需要按照平均开发水平估算交付项目的人天，因为我们不能确定谁来进行开发。由于和客户签订合同通常是以人天为单位进行计算的，所以按照我们通常使用的以难易程度为点数进行估算也是可以的，不过最后也需要转换成人天。在估算出工作量之后还需要和售前同事权衡架构设计的精密性和交付周期。此外，对于有些客户，我们评估了工作量后，还需要和他们针对每一个功能的工作量进行PK，确定我们的工作量没有水分，因为我们更需要对项目业务和技术都有深入的了解。</p>
-<p>###关键点三：确定人员计划</p>
-<p><strong>编写标书的另一个关键是确定人员计划</strong>，但是这一点依赖于前面两项。在确定了技术方案后，我们需要根据具体的技术需求，确定需要什么样的角色，例如使用什么技术的前后端开发，是否需要iOS／Android的开发，是否需要UX等；以及根据对于交付项目的工作量估算，确定这些人员上项目和下项目的时间，并且最好能留一点buffer，以应对需求变化和请假等不确定因素，同时还需要考虑到项目交付后一段时间的维护计划。项目的利润也是PM需要重点关注的，这也会影响到选什么样的人加入项目。由于我们通常并不会获得完全适合项目技术的人员参加项目，所以作为PM也得负责人员的培养，以达到项目的要求。</p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Staffing_Plan.png" alt="人员计划"></p>
-<p>图 1.4 － 人员计划</p>
-<p>此外，我们不仅需要充分考虑以上三个方面，还需要<strong>突出我们的亮点</strong>，使客户能更直观地了解我们的价值所在。</p>
-<p>在编写标书前我们就得<strong>设定好心理预期</strong>，编写标书，尤其是第一次编写标书时，通常都会有很多地方都要修改很多遍。虽然修改很累很繁琐，但是只有做好了这一步，才能让后续工作更顺利。</p>
-<p>##讲标阶段</p>
-<p>投标不仅包含编写标书，还包括讲标的环节。两者中间实际上还有“投标”这一活动，但是一般是由特定的同事去投标的，所以作为PM和技术人员，通常在这一阶段更关注于投标之后的讲标。</p>
-<p>顾名思义，讲标就是在客户现场把投递的标书讲一遍。但实际上前后的准备工作都很多。</p>
-<p>首先，我们要<strong>准备讲标标书</strong>。大家会觉得奇怪，刚才不是写好标书都投了吗？还写什么讲标标书啊？其实一般投标的纸质版标书会有150～200页的内容，而讲标时间通常都是半小时，再加上15分钟左右的问答，所以在30分钟内不可能讲完标书上的所有内容，因此我们需要对标书进行精简，并且多以图表和图片的形式进行展示。这一过程也会和编写标书一样会修改很多次。</p>
-<p>其次，还需要进行讲<strong>标的演练</strong>。需要有人模仿客户，提出各种问题和挑战，让讲标的同学尽可能做好应对各种不同的听众和情况，随机应变，使整个讲标过程在控制中。同样演练也会进行多次，以使演讲技巧和临场能力得到锻炼。</p>
-<p>再次，在正式讲标前，我们需要准备好电脑电源，翻页笔，显示器转接头，装有讲标文件的优盘，各种格式的讲标文件（Keynote、PPT、PDF等）等设备和资料，<strong>避免任何出错的可能</strong>。并且我们需要提前到场，如果离客户远一定要留好充足的时间，避免迟到而影响讲标效果。</p>
-<p>最后，在讲标时，我们只要<strong>控制好节奏，把握好时间</strong>，按照演练的内容正常发挥就可以了。</p>
-<p>在投标和讲标之后是商务谈判和签订合同等活动，由于一般大家都不会接触（其实是本人并没有接触到），所以就略过啦。</p>
-<p>等前期准备都完成了，就可以开始正式的交付阶段了。</p>
-<p>#交付阶段</p>
-<p>在交付阶段作为PM关注的点很多，所以分为几个方面来说。</p>
-<p>###在这一阶段，我们还需要和客户沟通了解以下方面：</p>
-<ol>
-<li><p><strong>了解客户项目的上线流程</strong>：比如上线是否需要申请域名，是否有上线前的测试和安全检查等，内部工作流程和规范（需要使用的各种工具，以及是否每次会议结束后都需要发送会议纪要等），文档和报告（日报，周报以及项目交付时需要提供的诸如用户手册、维护指南等文档）。</p>
-</li>
-<li><p><strong>了解客户如何定义项目成功</strong>：因为对于客户的业务部门、技术部门和我们交付团队，成功的定义并不一样，但是需要我们了解这些不一致，然后相互协调相互妥协，尽量让各方都满意，使项目在交付后每一方都认为项目成功了。</p>
-</li>
-<li><p><strong>为客户提供统一的接口人</strong>：这并不是说交付团队只有PM和客户沟通而是说不同类型的事物至少客户可以找同一个人解决问题，而不是每次遇到问题，都是需要通过询问才能找到合适的人解决，甚至没有人负责解决问题。例如对于项目管理和人员安排，客户可以找PM；而对于技术架构和实现方面的问题，可以找Tech Lead。</p>
-</li>
-</ol>
-<p>除了了解上述方面，对于客户，尤其是业务部门，通常来说对于交付团队来说都很不放心，<strong>担心进度和实现效果</strong>。特别是对于第一次合作的团队来说更是如此。那我们能怎么样改变这种情况呢？</p>
-<ul>
-<li><p>首先我们可以通过每天的站会让客户了解我们工作的内容，也便于我们快速解决问题。不过我们需要控制站会的形式，不能把站会变成向汇报或者进行提问的方式。</p>
-</li>
-<li><p>其次我们可以通过故事墙（物理和电子的）让客户实时看到项目的进展和项目的状态，让他们觉得项目可控。</p>
-</li>
-<li><p>再次是需要适时而且适度向客户寻求解决问题。这样可以让客户更有参与感和成就感，不过需要控制好度。尽量避免交付团队自己开小会，让客户觉得自己被排除在团队之外。</p>
-</li>
-</ul>
-<p>其实，<strong>最关键的还是我们开发的软件</strong>。不仅是客户，交付团队也是看到了实际的产品之后，才会对项目进度和质量更有信心。</p>
-<p>###对于我们自己团队来说，需要注意以下几点：</p>
-<ol>
-<li><p>和很多公司不同，我们开始交付之后，并不是一上来就直接开发功能，而是会有<strong>迭代0</strong>的环节，包括交付范围的细化，迭代1的故事卡分析，制定发布计划，进行基础设施的搭建，验证技术可行性等任务。这可以让我们在项目伊始就尽量排除、发现和识别架构和框架以及技术可行性上的问题，迅速进行调整。</p>
-</li>
-<li><p>我们还需要<strong>和客户建立良好的关系</strong>，让他们意识到我们是在为同一个目标而努力，需要通力合作才能达到那个目标，所以各方需要相互配合与磨合。</p>
-</li>
-<li><p><strong>在坚持底线和原则的基础上适当妥协，尽量保证客户的满意度</strong>。但是在无法满足或者对于项目进度、质量、人员、成本以及和客户的关系有影响的方面，需要及时和交付保障的同事进行沟通和商量，尽量在萌芽阶段解决问题。</p>
-</li>
-<li><p><strong>关注并管理客户的期望</strong>。如果项目开发慢了，要及时向客户解释原因，并提供解决方案以及寻求帮助；如果交付快了，不仅需要介绍我们通过何种努力才能加快进度，同时需要介绍可能存在的问题以及可以改进的内容。</p>
-</li>
-<li><p>在开发过程中<strong>控制好项目的节奏</strong>，不能让团队一直加班或者没有事做，而需要让工作有节奏。对于客户可能提出的996（9点上班，9点下班，每周工作6天）的工作模式，一定要断然拒绝，因为我们希望的是可持续的高效开发，而不是短期的突击。当然这不包括上线前可能会需要加班的突发情况。</p>
-</li>
-<li><p>为了更好的合作，我们还需要在项目开始就和所有团队成员达成一致，<strong>定义内部工作流程，以及内部沟通机制</strong>，例如微信群和邮件群等。不过需要注意使用的频率，减少客户对于进度的担忧。此外对于和客户的沟通，我们也需要制定沟通计划，例如如何与客户确定需求等内容，什么时候给客户进行演示，以及客户有问题该怎么和团队沟通，以保证既能解决问题，又不会影响团队交付进度。</p>
-</li>
-<li><p>我们合作的很多客户对于<strong>文档</strong>都是有不少要求的，所以在开发过程中，由于交付压力，客户有可能允许我们延期提交相应的文档，例如设计文档等，但是我们还需要保留好原始材料，等客户需要这些文档时，我们可以通过这些材料快速生成相应的内容，而不是重新做起。</p>
-</li>
-</ol>
-<p>###对于PM来说还有哪些职责呢？</p>
-<ol>
-<li><p>PM还需要适当<strong>屏蔽干扰</strong>，让团队能集中精力工作，例如尽量减少不相关会议的打扰，以及回答客户随时提问技术细节等情况；同时需要避免压力过多传递到团队成员，例如客户对于需求或者架构的大改变，从而有可能对项目交付进度产生很大压力，PM需要先过滤这些信息，等改变明确后再告知整个团队，这样可以避免传递不确定的信息，避免造成军心不稳的情况。</p>
-</li>
-<li><p>PM还需要<strong>关注团队成员的精神状态</strong>，用积极的方式影响团队，提高团队士气；同时还要负责好后勤工作，例如开发所需要的各种资源的协调，办公用品等，以及Team Building这些活动。</p>
-</li>
-<li><p>交付团队还需要不时给客户一定的<strong>震撼和影响</strong>，以使客户对我们更信任。例如采用客户并没有用过的利用画图的方式展示架构图；</p>
-</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Architecture_Map.png" alt="用画图的形式展示架构图"></p>
-<p>图 1.5 － 用画图的形式展示架构图</p>
-<p>以及，可以用美纹胶带来装饰物力墙，而不是在白板上手动画上歪歪扭扭的线；</p>
-<p><img src="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/images/Story_Wall.jpg" alt="用美纹胶带来装饰物力墙"></p>
-<p>图 1.6 － 用美纹胶带来装饰物力墙</p>
-<p>也可以是针对技术问题的在白板上边画边讲的讨论等。</p>
-<ol>
-<li><p>如果在客户现场工作，客户一般会希望通过学习我们的工作方式提高自己员工的能力，所以我们也可以考虑在不影响进度的情况下，<strong>传播一些项目实践</strong>，例如举行公开的回顾会议等。</p>
-</li>
-<li><p>在客户现场工作需要注意客户的<strong>网络速度和质量</strong>是否会影响到我们的工作效率。如果发现了问题，一定要尽早解决，尤其是安装开发和生产环境的任务对于网络要求会很高。</p>
-</li>
-</ol>
-<p>虽然现在我经历的第一个国内交付项目还正在如火如荼地进行，但是并不妨碍我畅想一下交付之后的情形。</p>
-<p>#交付之后</p>
-<p>在项目完成以后，我们还会维护一段时间。这段时间只会就现有的代码问题进行修复，并不会进行功能开发。</p>
-<p>对于PM来说，</p>
-<ol>
-<li><p>PM需要发送<strong>上线邮件</strong>，让团队成员有成就感和荣誉感，也让更多人知道自己项目是做什么的。</p>
-</li>
-<li><p>PM还需要负责<strong>项目总结</strong>，不仅总结成功的经验，还需要分析出现的问题以及如何避免，让更多的人少走弯路。</p>
-</li>
-<li><p>最后少不了的就是<strong>团队的庆祝</strong>了，无论是买蛋糕庆祝还是别的活动，团队都需要被激励和感谢。</p>
-</li>
-</ol>
-<p>之后，大家又可以准备投入到新的项目中啦：）。</p>
-<p><strong><em>以上的总结更多的是从个人的经验出发，难免会有不足，希望这边文章能使大家在看的时候想到自己遗漏的一些内容，更好更完善地进行项目管理。也欢迎大家的指正。</em></strong></p>
-
-      
-    </div>
-    
-    
-      <footer class="article-footer">
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Delivery/">Delivery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Domestic-Project/">Domestic Project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Project-Management/">Project Management</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-    
       <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Далее &raquo;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Далее &raquo;</a>
       </nav>
     </section>
     
@@ -1283,7 +1060,7 @@ ga('send', 'pageview');
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 Huang Yong&nbsp;
+      &copy; 2018 Huang Yong&nbsp;
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
     </div>
   </div>

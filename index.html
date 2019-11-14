@@ -359,77 +359,6 @@ ga('send', 'pageview');
 
 
     
-      <article id="post-Quick_Start_For_UI_tests_with_XCTest" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/24/Quick_Start_For_UI_tests_with_XCTest/">Quick start for UI tests with XCTest</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2017/11/24/Quick_Start_For_UI_tests_with_XCTest/" class="article-date">
-  <time datetime="2017-11-23T13:00:00.000Z" itemprop="datePublished">2017-11-24</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Testing/">Testing</a>
-  </div>
-
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="XCTest-is-introduced-by-XCode-5-for-iOS-7-but-until-XCode-8-with-iOS-10-XCTest-became-the-default-and-the-only-choice-if-you-want-to-conduct-UI-testing-the-previous-UIAutomation-is-deprecated-at-that-time"><a href="#XCTest-is-introduced-by-XCode-5-for-iOS-7-but-until-XCode-8-with-iOS-10-XCTest-became-the-default-and-the-only-choice-if-you-want-to-conduct-UI-testing-the-previous-UIAutomation-is-deprecated-at-that-time" class="headerlink" title="XCTest is introduced by XCode 5 for iOS 7, but until XCode 8 with iOS 10, XCTest became the default and the only choice if you want to conduct UI testing, the previous UIAutomation is deprecated at that time."></a>XCTest is introduced by XCode 5 for iOS 7, but until XCode 8 with iOS 10, XCTest became the default and the only choice if you want to conduct UI testing, the previous UIAutomation is deprecated at that time.</h5><h3 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite:"></a>Prerequisite:</h3><ul>
-<li><p>XCode and XCode command line tools should be installed.</p>
-</li>
-<li><p>Download the sample XCOde project from <a href="https://developer.apple.com/library/content/samplecode/UICatalog/UIKitCatalogiOSCreatingandCustomizingUIKitControls.zip" target="_blank" rel="external">here</a>, unzip and open the Swift project.</p>
-</li>
-</ul>
-<h3 id="Get-Started-for-XCTest"><a href="#Get-Started-for-XCTest" class="headerlink" title="Get Started for XCTest:"></a>Get Started for XCTest:</h3><ol>
-<li><p>Add a new Target of iOS UI Testing through “File”-&gt;”New”-&gt;”Target…”-&gt;”iOS UI Testing Bundle”, and input all the required info.</p>
-</li>
-<li><p>Use the red dot (named “Record UI Test”) on the bottom to start recording, once finished, click it again to complete.</p>
-</li>
-<li><p>Add assertions to the ends of each scenarios, such as the script in the “UIKitCatalogUITests.swift” of <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/XCTestSample.zip" target="_blank" rel="external">XCTestSample.zip</a>.</p>
-<p>For the detailed usage of assertions, you can reference to the “Test Assertions” in the <a href="https://developer.apple.com/documentation/xctest" target="_blank" rel="external">XCTest Topics</a>.</p>
-</li>
-<li><p>It’s hard to just check the text on some labels, so if we want to check it, we need to add value to identifier of the label, then in the testing script, using following lines:</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let label=app<span class="selector-class">.staticTexts</span>[<span class="string">"label_identifier"</span>]</div><div class="line"><span class="function"><span class="title">XCTAssertEqual</span><span class="params">(label.label,<span class="string">"label_text"</span>)</span></span></div><div class="line"><span class="function"><span class="title">XCTAssert</span><span class="params">(app.staticTexts[<span class="string">"label_text"</span>].exists)</span></span></div></pre></td></tr></table></figure>
-</li>
-<li><p>If you want to know more usage of the XCTest, you can reference to <a href="https://github.com/joemasilotti/UI-Testing-Cheat-Sheet" target="_blank" rel="external">the Cheat Sheet</a>.</p>
-</li>
-</ol>
-
-      
-    </div>
-    
-    
-      <footer class="article-footer">
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quick-Start/">Quick-Start</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI-Tests/">UI Tests</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XCTest/">XCTest</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-    
       <article id="post-Quick_Start_For_InSpec_and_ServerSpec_also_comparison_of_them" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -488,6 +417,77 @@ ga('send', 'pageview');
       <footer class="article-footer">
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Comparison/">Comparison</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/InSpec/">InSpec</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Infrastructure-Testing/">Infrastructure Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quick-Start/">Quick-Start</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ServerSpec/">ServerSpec</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-Quick_Start_For_UI_tests_with_XCTest" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/24/Quick_Start_For_UI_tests_with_XCTest/">Quick start for UI tests with XCTest</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/11/24/Quick_Start_For_UI_tests_with_XCTest/" class="article-date">
+  <time datetime="2017-11-23T13:00:00.000Z" itemprop="datePublished">2017-11-24</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="XCTest-is-introduced-by-XCode-5-for-iOS-7-but-until-XCode-8-with-iOS-10-XCTest-became-the-default-and-the-only-choice-if-you-want-to-conduct-UI-testing-the-previous-UIAutomation-is-deprecated-at-that-time"><a href="#XCTest-is-introduced-by-XCode-5-for-iOS-7-but-until-XCode-8-with-iOS-10-XCTest-became-the-default-and-the-only-choice-if-you-want-to-conduct-UI-testing-the-previous-UIAutomation-is-deprecated-at-that-time" class="headerlink" title="XCTest is introduced by XCode 5 for iOS 7, but until XCode 8 with iOS 10, XCTest became the default and the only choice if you want to conduct UI testing, the previous UIAutomation is deprecated at that time."></a>XCTest is introduced by XCode 5 for iOS 7, but until XCode 8 with iOS 10, XCTest became the default and the only choice if you want to conduct UI testing, the previous UIAutomation is deprecated at that time.</h5><h3 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite:"></a>Prerequisite:</h3><ul>
+<li><p>XCode and XCode command line tools should be installed.</p>
+</li>
+<li><p>Download the sample XCOde project from <a href="https://developer.apple.com/library/content/samplecode/UICatalog/UIKitCatalogiOSCreatingandCustomizingUIKitControls.zip" target="_blank" rel="external">here</a>, unzip and open the Swift project.</p>
+</li>
+</ul>
+<h3 id="Get-Started-for-XCTest"><a href="#Get-Started-for-XCTest" class="headerlink" title="Get Started for XCTest:"></a>Get Started for XCTest:</h3><ol>
+<li><p>Add a new Target of iOS UI Testing through “File”-&gt;”New”-&gt;”Target…”-&gt;”iOS UI Testing Bundle”, and input all the required info.</p>
+</li>
+<li><p>Use the red dot (named “Record UI Test”) on the bottom to start recording, once finished, click it again to complete.</p>
+</li>
+<li><p>Add assertions to the ends of each scenarios, such as the script in the “UIKitCatalogUITests.swift” of <a href="https://raw.githubusercontent.com/hy1984427/hy1984427.github.io/master/documents/XCTestSample.zip" target="_blank" rel="external">XCTestSample.zip</a>.</p>
+<p>For the detailed usage of assertions, you can reference to the “Test Assertions” in the <a href="https://developer.apple.com/documentation/xctest" target="_blank" rel="external">XCTest Topics</a>.</p>
+</li>
+<li><p>It’s hard to just check the text on some labels, so if we want to check it, we need to add value to identifier of the label, then in the testing script, using following lines:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let label=app<span class="selector-class">.staticTexts</span>[<span class="string">"label_identifier"</span>]</div><div class="line"><span class="function"><span class="title">XCTAssertEqual</span><span class="params">(label.label,<span class="string">"label_text"</span>)</span></span></div><div class="line"><span class="function"><span class="title">XCTAssert</span><span class="params">(app.staticTexts[<span class="string">"label_text"</span>].exists)</span></span></div></pre></td></tr></table></figure>
+</li>
+<li><p>If you want to know more usage of the XCTest, you can reference to <a href="https://github.com/joemasilotti/UI-Testing-Cheat-Sheet" target="_blank" rel="external">the Cheat Sheet</a>.</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quick-Start/">Quick-Start</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI-Tests/">UI Tests</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XCTest/">XCTest</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 
       </footer>
     
@@ -1052,7 +1052,7 @@ ga('send', 'pageview');
 
     
       <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Далее &raquo;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
       </nav>
     </section>
     
@@ -1060,7 +1060,7 @@ ga('send', 'pageview');
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 Huang Yong&nbsp;
+      &copy; 2019 Huang Yong&nbsp;
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
     </div>
   </div>
